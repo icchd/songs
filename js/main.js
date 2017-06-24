@@ -31,10 +31,13 @@ var app = new Vue({
         });
 
         this.$http.get("save/" + this.filename).then(function (oData) {
+            if (oData.status !== 200) {
+                return;
+            }
             try {
                 Object.keys(that.selectedSongs).forEach(function (sMoment) {
-                    that.selectedSongs[sMoment].number = oData[sMoment].number;
-                    that.selectedSongs[sMoment].title = oData[sMoment].title;
+                    that.selectedSongs[sMoment].number = oData.body[sMoment].number;
+                    that.selectedSongs[sMoment].title = oData.body[sMoment].title;
                 });
                 console.log("done loading");
             } catch (e) {
