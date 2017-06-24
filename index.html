@@ -60,8 +60,8 @@
                 v-bind:title="selectedSong.number + ' - ' + selectedSong.title"
                 ref="whichSong">
                 <ui-button v-bind:type="selectedSongs.entrance.number.length > 0  ? 'primary' : 'secondary'" @click="setSong('entrance')">Entrance</ui-button>
-                <ui-button v-bind:type="selectedSongs.offertory.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('offertory')">Communion</ui-button>
-                <ui-button v-bind:type="selectedSongs.communion.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('communion')">Offertory</ui-button>
+                <ui-button v-bind:type="selectedSongs.offertory.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('offertory')">Offertory</ui-button>
+                <ui-button v-bind:type="selectedSongs.communion.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('communion')">Communion</ui-button>
                 <ui-button v-bind:type="selectedSongs.recession.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('recession')">Recession</ui-button>
             </ui-modal>
             <ui-modal 
