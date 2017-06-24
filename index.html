@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ICCH Songs</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="js/keen-ui.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto" rel="stylesheet">
+    </head>
+    <body>
+        <div id="app">
+            <h1>
+                Songs for Sunday {{ nextSunday }}
+            </h1>
+            <ul class="finalList">
+                <li><b>Entrance:</b> {{ selectedSongs.entrance.number }} {{ selectedSongs.entrance.title }}</li>
+                <li><b>Offertory:</b> {{ selectedSongs.offertory.number }} {{ selectedSongs.offertory.title }}</li>
+                <li><b>Communion:</b> {{ selectedSongs.communion.number }} {{ selectedSongs.communion.title }}</li>
+                <li><b>Recession:</b> {{ selectedSongs.recession.number }} {{ selectedSongs.recession.title }}</li>
+                <br />
+                <ui-button @click="clearSongs" color="default">Clear</ui-button>
+                <ui-button id="btnSave" color="primary">Save</ui-button>
+            </ul>
+            <h2>History</h2>
+            <p v-if="recentSongs.length === 0">
+                No songs removed from schedule yet...
+            </p>
+            <div class="song-list">
+                <ui-button v-for="song in recentSongs"
+                    type="primary"
+                    v-bind:color="song.selected ? 'orange' : 'default'"
+                    size="small"
+                    @click="openSelectSongModal('whichSong', song.number, song.title)"
+                    icon="music_note">
+
+                    <b>{{ song.number }}</b>&nbsp;{{ song.title }}
+                </ui-button>
+            </div>
+
+            <h1>
+                Search Songs
+            </h1>
+            <ui-textbox
+                name="search"
+                type="text"
+                placeholder="find a song"
+                icon="search"
+                v-model="searchText"></ui-textbox>
+            <div class="song-list">
+                <ui-button v-for="song in filteredSongs"
+                    type="primary"
+                    v-bind:color="song.selected ? 'green' : 'default'"
+                    size="small"
+                    @click="openSelectSongModal('whichSong', song.number, song.title)"
+                    icon="music_note">
+
+                    <b>{{ song.number }}</b>&nbsp;{{ song.title }}
+                </ui-button>
+            </div>
+            <ui-modal 
+                v-bind:title="selectedSong.number + ' - ' + selectedSong.title"
+                ref="whichSong">
+                <ui-button v-bind:type="selectedSongs.entrance.number.length > 0  ? 'primary' : 'secondary'" @click="setSong('entrance')">Entrance</ui-button>
+                <ui-button v-bind:type="selectedSongs.offertory.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('offertory')">Communion</ui-button>
+                <ui-button v-bind:type="selectedSongs.communion.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('communion')">Offertory</ui-button>
+                <ui-button v-bind:type="selectedSongs.recession.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('recession')">Recession</ui-button>
+            </ui-modal>
+        </div>
+        <script src="js/moment-with-locales.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/vue.min.js"></script>
+        <script src="js/vue-resource.min.js"></script>
+        <script src="js/keen-ui.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
