@@ -1,6 +1,10 @@
+var S_HEROKU_ENDPOINT = "http://icch-api.herokuapp.com/songs";
+
 var app = new Vue({
     el: "#app",
     data: {
+        filename: getNextSunday("DD-MM-YYYY") + ".json",
+        password: "",
         searchText: "",
         recentSongs: [],
         selectedSong: {
@@ -14,8 +18,6 @@ var app = new Vue({
             recession: { number: "", title: "" }
         },
         songs: []
-    },
-    watch: {
     },
     mounted: function () {
         var that = this;
@@ -35,6 +37,9 @@ var app = new Vue({
                 that.selectedSongs[sMoment].number = "";
                 that.selectedSongs[sMoment].title = "";
             });
+        },
+        openModal: function (ref) {
+            this.$refs[ref].open();
         },
         openSelectSongModal: function (ref, number, title) {
             this.selectedSong.number = number;
@@ -67,6 +72,14 @@ var app = new Vue({
 
             this.selectedSongs[sMoment].number = that.selectedSong.number;
             this.selectedSongs[sMoment].title = that.selectedSong.title;
+        },
+        saveSongList: function () {
+        },
+        save: function () {
+            var that = this;
+            this.$refs.saveDialog.close();
+
+            save(this.password);
         }
     },
     computed: {
@@ -102,4 +115,35 @@ function getNextSunday(sFormat) {
         days++;
     }
     return m().add(days, "days").format(sFormat || "LL");
+}
+
+function save(sPassword) {
+    return new Promise(function (fnDone, fnError) {
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function () {
+            if (request.readyState === XMLHttpRequest.DONE) {
+                try {
+                    var oResponse = JSON.parse(request.responseText);
+                    if (!oResponse.success) {
+                        alert("Error");
+                        return;
+                    }
+
+                    alert("Saved");
+                    fnDone(oResponse);
+
+                } catch (oError) {
+                    fnError(oError);
+                }
+            }
+        };
+        request.open("POST", S_HEROKU_ENDPOINT, true);
+        request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+
+        var oClone = JSON.parse(JSON.stringify(app.selectedSongs));
+        oClone.password = sPassword;
+        oClone.saveAs = app.filename;
+        debugger;
+        request.send(JSON.stringify(oClone));
+    });
 }

@@ -9,9 +9,7 @@
     </head>
     <body>
         <div id="app">
-            <h1>
-                Songs for Sunday {{ nextSunday }}
-            </h1>
+            <h1>Songs for Sunday {{ nextSunday }}</h1>
             <ul class="finalList">
                 <li><b>Entrance:</b> {{ selectedSongs.entrance.number }} {{ selectedSongs.entrance.title }}</li>
                 <li><b>Offertory:</b> {{ selectedSongs.offertory.number }} {{ selectedSongs.offertory.title }}</li>
@@ -19,7 +17,7 @@
                 <li><b>Recession:</b> {{ selectedSongs.recession.number }} {{ selectedSongs.recession.title }}</li>
                 <br />
                 <ui-button @click="clearSongs" color="default">Clear</ui-button>
-                <ui-button id="btnSave" color="primary">Save</ui-button>
+                <ui-button @click="openModal('saveDialog')" id="btnSave" color="primary">Save</ui-button>
             </ul>
             <h2>History</h2>
             <p v-if="recentSongs.length === 0">
@@ -64,6 +62,19 @@
                 <ui-button v-bind:type="selectedSongs.offertory.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('offertory')">Communion</ui-button>
                 <ui-button v-bind:type="selectedSongs.communion.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('communion')">Offertory</ui-button>
                 <ui-button v-bind:type="selectedSongs.recession.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('recession')">Recession</ui-button>
+            </ui-modal>
+            <ui-modal 
+                title="Enter Password"
+                ref="saveDialog">
+
+                <ui-textbox
+                    name="password"
+                    type="password"
+                    icon="vpn_key"
+                    v-model:text="password"></ui-textbox>
+
+                <ui-button @click="save">Save</ui-button>
+
             </ui-modal>
         </div>
         <script src="js/moment-with-locales.min.js" type="text/javascript" charset="utf-8"></script>
