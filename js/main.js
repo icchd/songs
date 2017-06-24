@@ -29,6 +29,20 @@ var app = new Vue({
                 that.songs.push(oSong);
             });
         });
+
+        this.$http.get("save/" + this.filename).then(function (oData) {
+            try {
+                Object.keys(that.selectedSongs).forEach(function (sMoment) {
+                    that.selectedSongs[sMoment].number = oData[sMoment].number;
+                    that.selectedSongs[sMoment].title = oData[sMoment].title;
+                });
+                console.log("done loading");
+            } catch (e) {
+                alert("Unable to load");
+            }
+        }, function () {
+            // nothing saved yet!
+        });
     },
     methods: {
         clearSongs: function () {
@@ -72,8 +86,6 @@ var app = new Vue({
 
             this.selectedSongs[sMoment].number = that.selectedSong.number;
             this.selectedSongs[sMoment].title = that.selectedSong.title;
-        },
-        saveSongList: function () {
         },
         save: function () {
             var that = this;
@@ -143,7 +155,6 @@ function save(sPassword) {
         var oClone = JSON.parse(JSON.stringify(app.selectedSongs));
         oClone.password = sPassword;
         oClone.saveAs = app.filename;
-        debugger;
         request.send(JSON.stringify(oClone));
     });
 }
