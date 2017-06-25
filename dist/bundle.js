@@ -787,6 +787,7 @@ var app = new Vue({
             oData.body.list.forEach(function(oSong) {
                 that.songs.push(oSong);
             });
+            that.refreshSelectedState();
         });
 
         this.$http.get("save/" + this.filename).then(function (oData) {
@@ -798,9 +799,8 @@ var app = new Vue({
                     that.selectedSongs[sMoment].number = oData.body[sMoment].number;
                     that.selectedSongs[sMoment].title = oData.body[sMoment].title;
                 });
-                console.log("done loading");
             } catch (e) {
-                alert("Unable to load");
+                alert("Unable to load: " + e);
             }
         }, function () {
             // nothing saved yet!
@@ -841,11 +841,16 @@ var app = new Vue({
             this.selectedSongs[sMoment].number = that.selectedSong.number;
             this.selectedSongs[sMoment].title = that.selectedSong.title;
 
-            // handle selection
+            this.refreshSelectedState();
+
+        },
+        refreshSelectedState: function () {
+            var that = this;
             var oSelectedSongs = {};
             Object.keys(that.selectedSongs).forEach(function (sType) {
                 oSelectedSongs[that.selectedSongs[sType].number] = true;
             });
+
             this.songs.forEach(function (oSong) {
                 oSong.selected = !!oSelectedSongs[oSong.number];
             });
@@ -891,9 +896,14 @@ var app = new Vue({
         filteredSongs: function () {
             var filteredSongs = [];
             var sSearch = this.searchText;
+            var iFound = 0;
             this.songs.forEach(function (oSong, iIdx) {
-                if (iIdx <= I_MAX_SONGS_IN_SEARCH && oSong.title.toLowerCase().indexOf(sSearch.toLowerCase()) > -1) {
+                if (iFound === I_MAX_SONGS_IN_SEARCH) {
+                    return;
+                }
+                if (oSong.title.toLowerCase().indexOf(sSearch.toLowerCase()) > -1) {
                     filteredSongs.push(oSong);
+                    iFound++;
                 }
             });
             return filteredSongs;
