@@ -1,4 +1,5 @@
 var S_HEROKU_ENDPOINT = "http://icch-api.herokuapp.com/songs";
+var I_MAX_SONGS_IN_SEARCH = 50;
 
 var app = new Vue({
     el: "#app",
@@ -25,7 +26,6 @@ var app = new Vue({
         // check the url and log in with the log-in hash
         this.$http.get("songs.json").then(function (oData) {
             oData.body.list.forEach(function(oSong) {
-                oSong.matches = true;
                 that.songs.push(oSong);
             });
         });
@@ -63,32 +63,60 @@ var app = new Vue({
             this.selectedSong.title = title;
             this.$refs[ref].open();
         },
+        removeSong: function (sMoment) {
+            // add song to the recent
+
+            this.addSongToRecents(this.selectedSongs[sMoment]);
+
+            this.selectedSongs[sMoment].number = "";
+            this.selectedSongs[sMoment].title = "";
+        },
         setSong: function (sMoment) {
             var that = this;
             this.$refs.whichSong.close();
 
             if (this.selectedSongs[sMoment].number) {
-
-                // remove existing before
-                var iExistingPos = this.recentSongs.some(function (oSong) {
-                    return oSong.number === that.selectedSongs[sMoment].number;
-                });
-                if (iExistingPos >= 0) {
-                    this.recentSongs.splice(iExistingPos, 1);
-                }
-
-                this.recentSongs.unshift({
-                    number: this.selectedSongs[sMoment].number,
-                    title: this.selectedSongs[sMoment].title
-                });
-
-                if (this.recentSongs.length > 10) {
-                    this.recentSongs.pop();
-                }
+                this.addSongToRecents(this.selectedSongs[sMoment]);
             }
 
             this.selectedSongs[sMoment].number = that.selectedSong.number;
             this.selectedSongs[sMoment].title = that.selectedSong.title;
+
+            // handle selection
+            var oSelectedSongs = {};
+            Object.keys(that.selectedSongs).forEach(function (sType) {
+                oSelectedSongs[that.selectedSongs[sType].number] = true;
+            });
+            this.songs.forEach(function (oSong) {
+                oSong.selected = !!oSelectedSongs[oSong.number];
+            });
+        },
+        addSongToRecents: function (oSong) {
+            // unselect song first
+            var oOriginalSong = this.songs.filter(function (oOriginalSong) {
+                return oSong.number === oOriginalSong.number;
+            })[0];
+            oOriginalSong.selected = false;
+
+            // remove existing before
+            var iExistingPos = this.recentSongs.map(function (oRecentSong) {
+                return oRecentSong.number;
+            }).indexOf(oSong.number);
+
+            if (iExistingPos >= 0) {
+                this.recentSongs.splice(iExistingPos, 1);
+            }
+
+            var oSongCopy = {
+                number: oSong.number,
+                title: oSong.title
+            };
+
+            this.recentSongs.unshift(oSongCopy);
+
+            if (this.recentSongs.length > 10) {
+                this.recentSongs.pop();
+            }
         },
         save: function () {
             var that = this;
@@ -98,27 +126,18 @@ var app = new Vue({
         }
     },
     computed: {
-        filteredSongs: function () {
-            var oSelectedSongs,
-                sText,
-                that = this;
-
-            sText = this.searchText;
-            oSelectedSongs = {};
-
-            Object.keys(this.selectedSongs).forEach(function (sType) {
-                oSelectedSongs[that.selectedSongs[sType].number] = true;
-            });
-
-            return this.songs.filter(function (oSong) {
-                return oSong.title.toLowerCase().indexOf(sText.toLowerCase()) > -1;
-            }).map(function (oSong) {
-                oSong.selected = oSelectedSongs[oSong.number];
-                return oSong;
-            });
-        },
         nextSunday: function () {
             return getNextSunday("DD MMM YYYY");
+        },
+        filteredSongs: function () {
+            var filteredSongs = [];
+            var sSearch = this.searchText;
+            this.songs.forEach(function (oSong, iIdx) {
+                if (iIdx <= I_MAX_SONGS_IN_SEARCH && oSong.title.toLowerCase().indexOf(sSearch.toLowerCase()) > -1) {
+                    filteredSongs.push(oSong);
+                }
+            });
+            return filteredSongs;
         }
     },
 });
