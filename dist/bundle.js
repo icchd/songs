@@ -901,7 +901,7 @@ var app = new Vue({
                 if (iFound === I_MAX_SONGS_IN_SEARCH) {
                     return;
                 }
-                if (oSong.title.toLowerCase().indexOf(sSearch.toLowerCase()) > -1) {
+                if (oSong.number === sSearch || oSong.title.toLowerCase().indexOf(sSearch.toLowerCase()) > -1) {
                     filteredSongs.push(oSong);
                     iFound++;
                 }
