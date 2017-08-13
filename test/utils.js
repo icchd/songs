@@ -1,10 +1,7 @@
 var chai = require("chai");
-var chaiDeepMatch = require("chai-deep-match");
 var expect = chai.expect;
 
 var utils = require("../lib/utils.js");
-
-chai.use(chaiDeepMatch);
 
 describe("getUpdatedStatisticsForCurrentDay", function () {
     var sTestDate = "some date";
@@ -57,7 +54,7 @@ describe("getUpdatedStatisticsForCurrentDay", function () {
 
 describe("getUpdatedStatistics", function () {
     it("returns statistics as expected when no days exist", function () {
-        expect(utils.getUpdatedStatistics([], [])).to.deep.match([]);
+        expect(utils.getUpdatedStatistics([], [])).to.deep.equal([]);
     });
     it("returns statistics as expected when only one day exists", function () {
         var oTestDay = {
@@ -68,7 +65,12 @@ describe("getUpdatedStatistics", function () {
         };
 
         expect(utils.getUpdatedStatistics([ oTestDay ], ["12-12-1212"]))
-            .to.deep.match([ {} ]);
+            .to.deep.equal([ {
+                "597": { count: 1, lastSung: "12-12-1212" },
+                "829": { count: 1, lastSung: "12-12-1212" },
+                "822": { count: 1, lastSung: "12-12-1212" },
+                "851": { count: 1, lastSung: "12-12-1212" }
+            } ]);
     });
     it("returns statistics as expected when multiple days exist", function () {
         var oTestDay1 = {
@@ -87,12 +89,21 @@ describe("getUpdatedStatistics", function () {
         var oResult = utils.getUpdatedStatistics([ oTestDay1, oTestDay2 ], [ "day1", "day2" ]);
 
         expect(oResult).to.deep.equal([
-            {},
             {
                 "1": { count: 1, lastSung: "day1" },
                 "2": { count: 1, lastSung: "day1" },
                 "3": { count: 1, lastSung: "day1" },
                 "4": { count: 1, lastSung: "day1" }
+            },
+            {
+                "1": { count: 1, lastSung: "day1" },
+                "2": { count: 1, lastSung: "day1" },
+                "3": { count: 1, lastSung: "day1" },
+                "4": { count: 1, lastSung: "day1" },
+                "5": { count: 1, lastSung: "day2" },
+                "6": { count: 1, lastSung: "day2" },
+                "7": { count: 1, lastSung: "day2" },
+                "8": { count: 1, lastSung: "day2" }
             }
         ]);
     });
@@ -119,12 +130,21 @@ describe("getUpdatedStatistics", function () {
         var oResult = utils.getUpdatedStatistics([ oTestDay1, oTestDay2 ], [ "day1", "day2" ]);
 
         expect(oResult).to.deep.equal([
-            {},
             {
                 "1": { count: 1, lastSung: "day1" },
                 "2": { count: 1, lastSung: "day1" },
                 "3": { count: 1, lastSung: "day1" },
                 "4": { count: 1, lastSung: "day1" }
+            },
+            {
+                "1": { count: 1, lastSung: "day1" },
+                "2": { count: 1, lastSung: "day1" },
+                "3": { count: 1, lastSung: "day1" },
+                "4": { count: 1, lastSung: "day1" },
+                "5": { count: 1, lastSung: "day2" },
+                "6": { count: 1, lastSung: "day2" },
+                "7": { count: 1, lastSung: "day2" },
+                "8": { count: 1, lastSung: "day2" }
             }
         ]);
     });
@@ -145,7 +165,6 @@ describe("getUpdatedStatistics", function () {
         var oResult = utils.getUpdatedStatistics([ oTestDay1, oTestDay2, oTestDay2 ], [ "day1", "day2", "day3" ]);
 
         expect(oResult).to.deep.equal([
-            {},
             {
                 "1": { count: 1, lastSung: "day1" },
                 "2": { count: 1, lastSung: "day1" },
@@ -159,6 +178,14 @@ describe("getUpdatedStatistics", function () {
                 "4": { count: 1, lastSung: "day1" },
                 "5": { count: 1, lastSung: "day2" },
                 "8": { count: 1, lastSung: "day2" }
+            },
+            {
+                "1": { count: 1, lastSung: "day1" },
+                "2": { count: 5, lastSung: "day3" },
+                "3": { count: 1, lastSung: "day1" },
+                "4": { count: 1, lastSung: "day1" },
+                "5": { count: 2, lastSung: "day3" },
+                "8": { count: 2, lastSung: "day3" }
             }
         ]);
     });
