@@ -777,7 +777,8 @@ var app = new Vue({
             communion: { number: "", title: "" },
             recession: { number: "", title: "" }
         },
-        songs: []
+        songs: [],
+        stats: {}
     },
     mounted: function () {
         var that = this;
@@ -790,15 +791,25 @@ var app = new Vue({
             that.refreshSelectedState();
         });
 
+        // get previous sundays stats
+        this.getStatsFrom(
+            getPreviousSunday("DD-MM-YYYY", -1) + ".json"
+        ).catch(function () {
+            return that.getStatsFrom(getPreviousSunday("DD-MM-YYYY", -8) + ".json");
+        }).catch(function () {
+            return that.getStatsFrom(getPreviousSunday("DD-MM-YYYY", -15) + ".json");
+        });
+
         this.$http.get("save/" + this.filename).then(function (oData) {
             if (oData.status !== 200) {
                 return;
             }
             try {
-                Object.keys(that.selectedSongs).forEach(function (sMoment) {
-                    that.selectedSongs[sMoment].number = oData.body[sMoment].number;
-                    that.selectedSongs[sMoment].title = oData.body[sMoment].title;
-                });
+                Object.keys(that.selectedSongs)
+                    .forEach(function (sMoment) {
+                        that.selectedSongs[sMoment].number = oData.body[sMoment].number;
+                        that.selectedSongs[sMoment].title = oData.body[sMoment].title;
+                    });
             } catch (e) {
                 alert("Unable to load: " + e);
             }
@@ -807,6 +818,19 @@ var app = new Vue({
         });
     },
     methods: {
+        getStatsFrom: function (sFilename) {
+            var that = this;
+            return this.$http.get("save/" + sFilename).then(function (oData) {
+                if (oData.status !== 200) {
+                    return;
+                }
+                try {
+                    that.stats = oData.body.stats;
+                } catch (e) {
+                    alert("Unable to load: " + e);
+                }
+            });
+        },
         clearSongs: function () {
             var that = this;
             Object.keys(this.selectedSongs).forEach(function (sMoment) {
@@ -911,6 +935,15 @@ var app = new Vue({
     },
 });
 
+function getPreviousSunday(sFormat, iDayOffset) {
+    var m = function () { return moment.apply(this, arguments).locale("en-gb"); }
+    var days = iDayOffset;
+    while (m().add(days, "days").format("dddd") !== "Sunday") {
+        days--;
+    }
+    return m().add(days, "days").format(sFormat || "LL");
+}
+
 function getNextSunday(sFormat) {
     var m = function () { return moment.apply(this, arguments).locale("en-gb"); }
     var days = 0;
@@ -921,6 +954,7 @@ function getNextSunday(sFormat) {
 }
 
 function save(sPassword) {
+    var that = this;
     return new Promise(function (fnDone, fnError) {
         var request = new XMLHttpRequest();
         request.onreadystatechange = function () {
@@ -944,8 +978,22 @@ function save(sPassword) {
         request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
         var oClone = JSON.parse(JSON.stringify(app.selectedSongs));
+        oClone.stats = app.stats;
+
+        // update stats
+        Object.keys(app.selectedSongs).forEach(function (sMoment) {
+            var sSongNumber = app.selectedSongs[sMoment].number;
+            if (!oClone.stats[sSongNumber]) {
+                oClone.stats[sSongNumber] = {
+                    count: 0
+                };
+            }
+            oClone.stats[sSongNumber].count++;
+            oClone.stats[sSongNumber].lastSung = getNextSunday("DD-MM-YYYY");
+        });
+
         oClone.password = sPassword;
         oClone.saveAs = app.filename;
-        request.send(JSON.stringify(oClone));
+        request.send(JSON.stringify(oClone, null, 3));
     });
 }

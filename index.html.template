@@ -78,7 +78,7 @@
                 v-bind:color="song.selected ? 'green' : 'default'"
                 size="small"
                 @click="openSelectSongModal('whichSong', song.number, song.title)"
-                icon="music_note">
+                v-bind:icon="stats[song.number] ? 'music_note': ''">
 
                 <b>{{ song.number }}</b>&nbsp;{{ song.title }}
             </ui-button>
@@ -90,6 +90,12 @@
                 <ui-button v-bind:type="selectedSongs.offertory.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('offertory')">Offertory</ui-button>
                 <ui-button v-bind:type="selectedSongs.communion.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('communion')">Communion</ui-button>
                 <ui-button v-bind:type="selectedSongs.recession.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('recession')">Recession</ui-button>
+                <h3>Song Statistics</h3>
+                <ul v-if="!!stats[selectedSong.number]">
+                    <li>We sung this song {{ (stats[selectedSong.number] || {}).count || "unknown" }} times</li>
+                    <li>We last sung it on {{ (stats[selectedSong.number] || {}).lastSung || "unknown" }}</li>
+                </ul>
+                <p v-else>No statistics available for this song</p>
             </ui-modal>
 
             <ui-modal 
