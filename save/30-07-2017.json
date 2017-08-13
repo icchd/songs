@@ -1,1 +1,96 @@
-{"entrance":{"number":"792","title":"As We Gather at Your Table"},"offertory":{"number":"749","title":"God Is Love"},"communion":{"number":"821","title":"Taste and See (Hurd)"},"recession":{"number":"720","title":"Seek Ye First"}}
+{
+   "entrance": {
+      "number": "792",
+      "title": "As We Gather at Your Table"
+   },
+   "offertory": {
+      "number": "749",
+      "title": "God Is Love"
+   },
+   "communion": {
+      "number": "821",
+      "title": "Taste and See (Hurd)"
+   },
+   "recession": {
+      "number": "720",
+      "title": "Seek Ye First"
+   },
+   "stats": {
+      "595": {
+         "count": 1,
+         "lastSung": "16-07-2017"
+      },
+      "597": {
+         "count": 1,
+         "lastSung": "02-07-2017"
+      },
+      "650": {
+         "count": 1,
+         "lastSung": "09-07-2017"
+      },
+      "706": {
+         "count": 1,
+         "lastSung": "25-06-2017"
+      },
+      "709": {
+         "count": 1,
+         "lastSung": "25-06-2017"
+      },
+      "729": {
+         "count": 1,
+         "lastSung": "09-07-2017"
+      },
+      "760": {
+         "count": 1,
+         "lastSung": "16-07-2017"
+      },
+      "770": {
+         "count": 1,
+         "lastSung": "09-07-2017"
+      },
+      "790": {
+         "count": 1,
+         "lastSung": "23-07-2017"
+      },
+      "793": {
+         "count": 1,
+         "lastSung": "23-07-2017"
+      },
+      "803": {
+         "count": 1,
+         "lastSung": "25-06-2017"
+      },
+      "806": {
+         "count": 1,
+         "lastSung": "23-07-2017"
+      },
+      "811": {
+         "count": 1,
+         "lastSung": "16-07-2017"
+      },
+      "821": {
+         "count": 1,
+         "lastSung": "09-07-2017"
+      },
+      "822": {
+         "count": 1,
+         "lastSung": "02-07-2017"
+      },
+      "829": {
+         "count": 1,
+         "lastSung": "02-07-2017"
+      },
+      "836": {
+         "count": 1,
+         "lastSung": "16-07-2017"
+      },
+      "849": {
+         "count": 2,
+         "lastSung": "23-07-2017"
+      },
+      "851": {
+         "count": 1,
+         "lastSung": "02-07-2017"
+      }
+   }
+}

@@ -1,1 +1,36 @@
-{"entrance":{"number":"597","title":"Praise to the Lord"},"offertory":{"number":"829","title":"The Servant Song"},"communion":{"number":"822","title":"See this bread; take and eat and live in me"},"recession":{"number":"851","title":"Companions on the Journey"}}
+{
+   "entrance": {
+      "number": "597",
+      "title": "Praise to the Lord"
+   },
+   "offertory": {
+      "number": "829",
+      "title": "The Servant Song"
+   },
+   "communion": {
+      "number": "822",
+      "title": "See this bread; take and eat and live in me"
+   },
+   "recession": {
+      "number": "851",
+      "title": "Companions on the Journey"
+   },
+   "stats": {
+      "706": {
+         "count": 1,
+         "lastSung": "25-06-2017"
+      },
+      "709": {
+         "count": 1,
+         "lastSung": "25-06-2017"
+      },
+      "803": {
+         "count": 1,
+         "lastSung": "25-06-2017"
+      },
+      "849": {
+         "count": 1,
+         "lastSung": "25-06-2017"
+      }
+   }
+}

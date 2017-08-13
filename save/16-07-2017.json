@@ -1,1 +1,68 @@
-{"entrance":{"number":"595","title":"All the Ends of the Earth"},"offertory":{"number":"760","title":"Unless a Grain of Wheat (Farrell)"},"communion":{"number":"811","title":"Seed, Scattered and Sown"},"recession":{"number":"836","title":"Take Christ to the World"}}
+{
+   "entrance": {
+      "number": "595",
+      "title": "All the Ends of the Earth"
+   },
+   "offertory": {
+      "number": "760",
+      "title": "Unless a Grain of Wheat (Farrell)"
+   },
+   "communion": {
+      "number": "811",
+      "title": "Seed, Scattered and Sown"
+   },
+   "recession": {
+      "number": "836",
+      "title": "Take Christ to the World"
+   },
+   "stats": {
+      "597": {
+         "count": 1,
+         "lastSung": "02-07-2017"
+      },
+      "650": {
+         "count": 1,
+         "lastSung": "09-07-2017"
+      },
+      "706": {
+         "count": 1,
+         "lastSung": "25-06-2017"
+      },
+      "709": {
+         "count": 1,
+         "lastSung": "25-06-2017"
+      },
+      "729": {
+         "count": 1,
+         "lastSung": "09-07-2017"
+      },
+      "770": {
+         "count": 1,
+         "lastSung": "09-07-2017"
+      },
+      "803": {
+         "count": 1,
+         "lastSung": "25-06-2017"
+      },
+      "821": {
+         "count": 1,
+         "lastSung": "09-07-2017"
+      },
+      "822": {
+         "count": 1,
+         "lastSung": "02-07-2017"
+      },
+      "829": {
+         "count": 1,
+         "lastSung": "02-07-2017"
+      },
+      "849": {
+         "count": 1,
+         "lastSung": "25-06-2017"
+      },
+      "851": {
+         "count": 1,
+         "lastSung": "02-07-2017"
+      }
+   }
+}
