@@ -16,9 +16,17 @@
       "title": "I Heard the Voice of Jesus"
    },
    "stats": {
+      "2": {
+         "count": 1,
+         "lastSung": "13-08-2017"
+      },
       "595": {
          "count": 1,
          "lastSung": "16-07-2017"
+      },
+      "596": {
+         "count": 1,
+         "lastSung": "13-08-2017"
       },
       "597": {
          "count": 1,
@@ -36,17 +44,13 @@
          "count": 1,
          "lastSung": "25-06-2017"
       },
-      "720": {
+      "722": {
          "count": 1,
-         "lastSung": "30-07-2017"
+         "lastSung": "13-08-2017"
       },
       "729": {
-         "count": 1,
-         "lastSung": "09-07-2017"
-      },
-      "749": {
-         "count": 1,
-         "lastSung": "30-07-2017"
+         "count": 2,
+         "lastSung": "13-08-2017"
       },
       "760": {
          "count": 1,
@@ -59,10 +63,6 @@
       "790": {
          "count": 1,
          "lastSung": "23-07-2017"
-      },
-      "792": {
-         "count": 1,
-         "lastSung": "30-07-2017"
       },
       "793": {
          "count": 1,
@@ -81,8 +81,8 @@
          "lastSung": "16-07-2017"
       },
       "821": {
-         "count": 2,
-         "lastSung": "30-07-2017"
+         "count": 1,
+         "lastSung": "09-07-2017"
       },
       "822": {
          "count": 1,
