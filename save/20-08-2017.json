@@ -1,7 +1,7 @@
 {
    "entrance": {
-      "number": "597",
-      "title": "Praise to the Lord"
+      "number": "482",
+      "title": "All Hail the Power of Jesus’ Name"
    },
    "offertory": {
       "number": "661",
@@ -12,8 +12,8 @@
       "title": "I Am the Living Bread"
    },
    "recession": {
-      "number": "704",
-      "title": "On Eagle’s Wings"
+      "number": "597",
+      "title": "Praise to the Lord"
    },
    "stats": {
       "2": {
@@ -37,8 +37,8 @@
          "sungFor": "entrance"
       },
       "482": {
-         "count": 1,
-         "lastSung": "21-05-2017",
+         "count": 2,
+         "lastSung": "20-08-2017",
          "sungFor": "entrance"
       },
       "542": {
@@ -57,7 +57,7 @@
          "sungFor": "entrance, offertory"
       },
       "597": {
-         "count": 2,
+         "count": 3,
          "lastSung": "20-08-2017",
          "sungFor": "entrance"
       },
@@ -82,7 +82,7 @@
          "sungFor": "entrance"
       },
       "661": {
-         "count": 2,
+         "count": 3,
          "lastSung": "20-08-2017",
          "sungFor": "offertory"
       },
@@ -242,7 +242,7 @@
          "sungFor": "communion"
       },
       "822": {
-         "count": 2,
+         "count": 3,
          "lastSung": "20-08-2017",
          "sungFor": "communion"
       },
