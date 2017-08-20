@@ -259,18 +259,33 @@ function save(sPassword) {
         request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
         var oClone = JSON.parse(JSON.stringify(app.selectedSongs));
-        oClone.stats = app.stats;
+        oClone.stats = JSON.parse(JSON.stringify(app.stats));
 
         // update stats
         Object.keys(app.selectedSongs).forEach(function (sMoment) {
             var sSongNumber = app.selectedSongs[sMoment].number;
             if (!oClone.stats[sSongNumber]) {
                 oClone.stats[sSongNumber] = {
-                    count: 0
+                    count: 0,
+                    sungFor: ""
                 };
             }
+
+            // update sungFor statistics
+            var oAllMoments = (oClone.stats[sSongNumber].sungFor || "").split(", ").filter(function (x) { 
+                return !!x;
+            }).reduce(function (o, sMoment) {
+                o[sMoment] = true;
+                return o;
+            }, {});
+
+            // add current moment
+            oAllMoments[sMoment] = true;
+
             oClone.stats[sSongNumber].count++;
-            oClone.stats[sSongNumber].lastSung = getNextSunday("DD-MM-YYYY");
+            oClone.stats[sSongNumber].lastSung = that.currentDate;
+            oClone.stats[sSongNumber].sungFor = Object.keys(oAllMoments).sort().join(", ");
+
         });
 
         oClone.password = sPassword;

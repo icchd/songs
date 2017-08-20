@@ -20,7 +20,7 @@ describe("getUpdatedStatisticsForCurrentDay", function () {
         expect(utils.getUpdatedStatisticsForCurrentDay({
             "communion": { number: "123", title: "song title" }
         }, { }, sTestDate)).to.deep.equal({
-            "123": { count: 1, lastSung: sTestDate }
+            "123": { count: 1, lastSung: sTestDate, sungFor: "communion" }
         });
     });
 
@@ -31,10 +31,10 @@ describe("getUpdatedStatisticsForCurrentDay", function () {
                 title: "song title"
             }
         }, {
-            "456": { count: 1, lastSung: sTestDate }
+            "456": { count: 1, lastSung: sTestDate, sungFor: "entrance" }
         }, sTestDate)).to.deep.equal({
-            "123": { count: 1, lastSung: sTestDate },
-            "456": { count: 1, lastSung: sTestDate }
+            "123": { count: 1, lastSung: sTestDate, sungFor: "communion" },
+            "456": { count: 1, lastSung: sTestDate, sungFor: "entrance" }
         });
     });
 
@@ -45,9 +45,9 @@ describe("getUpdatedStatisticsForCurrentDay", function () {
                 title: "song title"
             }
         }, {
-            "123": { count: 1, lastSung: sTestDate }
+            "123": { count: 1, lastSung: sTestDate, sungFor: "communion" }
         }, sTestDate)).to.deep.equal({
-            "123": { count: 2, lastSung: sTestDate }
+            "123": { count: 2, lastSung: sTestDate, sungFor: "communion" }
         });
     });
 });
@@ -66,10 +66,10 @@ describe("getUpdatedStatistics", function () {
 
         expect(utils.getUpdatedStatistics([ oTestDay ], ["12-12-1212"]))
             .to.deep.equal([ {
-                "597": { count: 1, lastSung: "12-12-1212" },
-                "829": { count: 1, lastSung: "12-12-1212" },
-                "822": { count: 1, lastSung: "12-12-1212" },
-                "851": { count: 1, lastSung: "12-12-1212" }
+                "597": { count: 1, lastSung: "12-12-1212", sungFor: "entrance" },
+                "829": { count: 1, lastSung: "12-12-1212", sungFor: "offertory" },
+                "822": { count: 1, lastSung: "12-12-1212", sungFor: "communion" },
+                "851": { count: 1, lastSung: "12-12-1212", sungFor: "recession" }
             } ]);
     });
     it("returns statistics as expected when multiple days exist", function () {
@@ -90,20 +90,20 @@ describe("getUpdatedStatistics", function () {
 
         expect(oResult).to.deep.equal([
             {
-                "1": { count: 1, lastSung: "day1" },
-                "2": { count: 1, lastSung: "day1" },
-                "3": { count: 1, lastSung: "day1" },
-                "4": { count: 1, lastSung: "day1" }
+                "1": { count: 1, lastSung: "day1", sungFor: "entrance" },
+                "2": { count: 1, lastSung: "day1", sungFor: "offertory" },
+                "3": { count: 1, lastSung: "day1", sungFor: "communion" },
+                "4": { count: 1, lastSung: "day1", sungFor: "recession" }
             },
             {
-                "1": { count: 1, lastSung: "day1" },
-                "2": { count: 1, lastSung: "day1" },
-                "3": { count: 1, lastSung: "day1" },
-                "4": { count: 1, lastSung: "day1" },
-                "5": { count: 1, lastSung: "day2" },
-                "6": { count: 1, lastSung: "day2" },
-                "7": { count: 1, lastSung: "day2" },
-                "8": { count: 1, lastSung: "day2" }
+                "1": { count: 1, lastSung: "day1", sungFor: "entrance" },
+                "2": { count: 1, lastSung: "day1", sungFor: "offertory" },
+                "3": { count: 1, lastSung: "day1", sungFor: "communion" },
+                "4": { count: 1, lastSung: "day1", sungFor: "recession" },
+                "5": { count: 1, lastSung: "day2", sungFor: "entrance" },
+                "6": { count: 1, lastSung: "day2", sungFor: "offertory" },
+                "7": { count: 1, lastSung: "day2", sungFor: "communion" },
+                "8": { count: 1, lastSung: "day2", sungFor: "recession" }
             }
         ]);
     });
@@ -131,20 +131,20 @@ describe("getUpdatedStatistics", function () {
 
         expect(oResult).to.deep.equal([
             {
-                "1": { count: 1, lastSung: "day1" },
-                "2": { count: 1, lastSung: "day1" },
-                "3": { count: 1, lastSung: "day1" },
-                "4": { count: 1, lastSung: "day1" }
+                "1": { count: 1, lastSung: "day1", sungFor: "entrance" },
+                "2": { count: 1, lastSung: "day1", sungFor: "offertory" },
+                "3": { count: 1, lastSung: "day1", sungFor: "communion" },
+                "4": { count: 1, lastSung: "day1", sungFor: "recession" }
             },
             {
-                "1": { count: 1, lastSung: "day1" },
-                "2": { count: 1, lastSung: "day1" },
-                "3": { count: 1, lastSung: "day1" },
-                "4": { count: 1, lastSung: "day1" },
-                "5": { count: 1, lastSung: "day2" },
-                "6": { count: 1, lastSung: "day2" },
-                "7": { count: 1, lastSung: "day2" },
-                "8": { count: 1, lastSung: "day2" }
+                "1": { count: 1, lastSung: "day1", sungFor: "entrance" },
+                "2": { count: 1, lastSung: "day1", sungFor: "offertory" },
+                "3": { count: 1, lastSung: "day1", sungFor: "communion" },
+                "4": { count: 1, lastSung: "day1", sungFor: "recession" },
+                "5": { count: 1, lastSung: "day2", sungFor: "entrance" },
+                "6": { count: 1, lastSung: "day2", sungFor: "offertory" },
+                "7": { count: 1, lastSung: "day2", sungFor: "communion" },
+                "8": { count: 1, lastSung: "day2", sungFor: "recession" }
             }
         ]);
     });
@@ -166,26 +166,26 @@ describe("getUpdatedStatistics", function () {
 
         expect(oResult).to.deep.equal([
             {
-                "1": { count: 1, lastSung: "day1" },
-                "2": { count: 1, lastSung: "day1" },
-                "3": { count: 1, lastSung: "day1" },
-                "4": { count: 1, lastSung: "day1" }
+                "1": { count: 1, lastSung: "day1", sungFor: "entrance" },
+                "2": { count: 1, lastSung: "day1", sungFor: "offertory" },
+                "3": { count: 1, lastSung: "day1", sungFor: "communion" },
+                "4": { count: 1, lastSung: "day1", sungFor: "recession" }
             },
             {
-                "1": { count: 1, lastSung: "day1" },
-                "2": { count: 3, lastSung: "day2" },
-                "3": { count: 1, lastSung: "day1" },
-                "4": { count: 1, lastSung: "day1" },
-                "5": { count: 1, lastSung: "day2" },
-                "8": { count: 1, lastSung: "day2" }
+                "1": { count: 1, lastSung: "day1", sungFor: "entrance" },
+                "2": { count: 3, lastSung: "day2", sungFor: "communion, offertory" },
+                "3": { count: 1, lastSung: "day1", sungFor: "communion" },
+                "4": { count: 1, lastSung: "day1", sungFor: "recession" },
+                "5": { count: 1, lastSung: "day2", sungFor: "entrance" },
+                "8": { count: 1, lastSung: "day2", sungFor: "recession" }
             },
             {
-                "1": { count: 1, lastSung: "day1" },
-                "2": { count: 5, lastSung: "day3" },
-                "3": { count: 1, lastSung: "day1" },
-                "4": { count: 1, lastSung: "day1" },
-                "5": { count: 2, lastSung: "day3" },
-                "8": { count: 2, lastSung: "day3" }
+                "1": { count: 1, lastSung: "day1", sungFor: "entrance" },
+                "2": { count: 5, lastSung: "day3", sungFor: "communion, offertory" },
+                "3": { count: 1, lastSung: "day1", sungFor: "communion" },
+                "4": { count: 1, lastSung: "day1", sungFor: "recession" },
+                "5": { count: 2, lastSung: "day3", sungFor: "entrance" },
+                "8": { count: 2, lastSung: "day3", sungFor: "recession" }
             }
         ]);
     });

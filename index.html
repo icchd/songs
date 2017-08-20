@@ -110,7 +110,7 @@
                 <ui-button v-bind:type="selectedSongs.recession.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('recession')">Recession</ui-button>
                 <h3>Song Statistics</h3>
                 <ul v-if="!!stats[selectedSong.number]">
-                    <li>We sung this song {{ (stats[selectedSong.number] || {}).count || "unknown" }} times</li>
+                    <li>We sung this song {{ (stats[selectedSong.number] || {}).count || "unknown" }} times during {{ (stats[selectedSong.number] || {}).sungFor }}</li>
                     <li>We last sung it on {{ (stats[selectedSong.number] || {}).lastSung || "unknown" }}</li>
                 </ul>
                 <p v-else>No statistics available for this song</p>
