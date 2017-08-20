@@ -1,7 +1,7 @@
 {
    "entrance": {
-      "number": "469",
-      "title": "Holy, Holy, Holy (NICAEA)"
+      "number": "597",
+      "title": "Praise to the Lord"
    },
    "offertory": {
       "number": "661",
@@ -31,11 +31,6 @@
          "lastSung": "11-06-2017",
          "sungFor": "recession"
       },
-      "469": {
-         "count": 1,
-         "lastSung": "20-08-2017",
-         "sungFor": "entrance"
-      },
       "480": {
          "count": 1,
          "lastSung": "23-04-2017",
@@ -62,8 +57,8 @@
          "sungFor": "entrance, offertory"
       },
       "597": {
-         "count": 1,
-         "lastSung": "02-07-2017",
+         "count": 2,
+         "lastSung": "20-08-2017",
          "sungFor": "entrance"
       },
       "602": {
@@ -104,7 +99,7 @@
       "704": {
          "count": 2,
          "lastSung": "20-08-2017",
-         "sungFor": "offertory, recession"
+         "sungFor": "offertory"
       },
       "706": {
          "count": 2,
