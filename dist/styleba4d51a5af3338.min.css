@@ -1,4 +1,4 @@
-*,::after,::before{box-sizing:border-box}html{font-size:100%}body{color:#333;font-family:Roboto,Verdana,Sans-serif}.one-song{margin:1px}.finalList{position:relative;padding-left:0;list-style:none;line-height:1.5em}.finalList #btnSave{position:absolute;right:0}#app{width:80%;margin:0 auto}/*!
+*,::after,::before{box-sizing:border-box}html{font-size:100%}body{color:#333;font-family:Roboto,Verdana,Sans-serif}h1{text-align:center}#btnPrevSunday{float:left;margin-right:.5em}#btnNextSunday{margin-left:.5em;float:right}.one-song{margin:1px}.finalList{position:relative;padding-left:0;list-style:none;line-height:1.5em}.finalList #btnSave{position:absolute;right:0}#app{width:80%;margin:0 auto}@media only screen and (max-width:500px){h1{font-size:14pt}}/*!
  * Keen UI v1.0.0 (https://github.com/JosephusPaye/keen-ui)
  * (c) 2017 Josephus Paye II
  * Released under the MIT License.

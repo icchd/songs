@@ -1,10 +1,12 @@
 var S_HEROKU_ENDPOINT = "http://icch-api.herokuapp.com/songs";
 var I_MAX_SONGS_IN_SEARCH = 50;
 
+var m = function () { return moment.apply(this, arguments).locale("en-gb"); }
+
 var app = new Vue({
     el: "#app",
     data: {
-        filename: getNextSunday("DD-MM-YYYY") + ".json",
+        currentDate: getNextSunday(),
         password: "",
         searchText: "",
         recentSongs: [],
@@ -32,33 +34,62 @@ var app = new Vue({
             that.refreshSelectedState();
         });
 
-        // get previous sundays stats
-        this.getStatsFrom(
-            getPreviousSunday("DD-MM-YYYY", -1) + ".json"
-        ).catch(function () {
-            return that.getStatsFrom(getPreviousSunday("DD-MM-YYYY", -8) + ".json");
-        }).catch(function () {
-            return that.getStatsFrom(getPreviousSunday("DD-MM-YYYY", -15) + ".json");
-        });
-
-        this.$http.get("save/" + this.filename).then(function (oData) {
-            if (oData.status !== 200) {
-                return;
-            }
-            try {
-                Object.keys(that.selectedSongs)
-                    .forEach(function (sMoment) {
-                        that.selectedSongs[sMoment].number = oData.body[sMoment].number;
-                        that.selectedSongs[sMoment].title = oData.body[sMoment].title;
-                    });
-            } catch (e) {
-                alert("Unable to load: " + e);
-            }
-        }, function () {
-            // nothing saved yet!
-        });
+        var sCurrentSunday = getNextSunday("DD-MM-YYYY");
+        this.onCurrentSundayChanged(sCurrentSunday);
     },
     methods: {
+        onCurrentSundayChanged: function (sDate) {
+            var that = this;
+
+            this.currentDate = sDate;
+
+            // get previous sundays stats
+            if (m(sDate, "DD-MM-YYYY").isSameOrBefore(m())) {
+                var sPrevSunday = getSundayBeforeSunday(sDate);
+                var sPrevPrevSunday = getSundayBeforeSunday(sPrevSunday);
+                var sPrevPrevPrevSunday = getSundayBeforeSunday(sPrevPrevSunday);
+                this.getStatsFrom(
+                    sPrevSunday + ".json"
+                ).catch(function () {
+                    return that.getStatsFrom(sPrevPrevSunday + ".json");
+                }).catch(function () {
+                    return that.getStatsFrom(sPrevPrevPrevSunday + ".json");
+                });
+            }
+
+            this.$http.get("save/" + sDate + ".json").then(function (oData) {
+                if (oData.status !== 200) {
+                    return;
+                }
+                try {
+                    Object.keys(that.selectedSongs)
+                        .forEach(function (sMoment) {
+                            that.selectedSongs[sMoment].number = oData.body[sMoment].number;
+                            that.selectedSongs[sMoment].title = oData.body[sMoment].title;
+                        });
+                } catch (e) {
+                    alert("Unable to load: " + e);
+                }
+            }, function (oData) {
+                if (oData.status === 404) {
+                    // nothing saved yet!
+                    this.selectedSongs = {
+                        entrance:  { number: "", title: "" },
+                        offertory: { number: "", title: "" },
+                        communion: { number: "", title: "" },
+                        recession: { number: "", title: "" }
+                    };
+                }
+            });
+        },
+        onPreviousSundayClicked: function () {
+            var sPrevSunday = getSundayBeforeSunday(this.currentDate);
+            this.onCurrentSundayChanged(sPrevSunday);
+        },
+        onNextSundayClicked: function () {
+            var sNextSunday = getSundayAfterSunday(this.currentDate);
+            this.onCurrentSundayChanged(sNextSunday);
+        },
         getStatsFrom: function (sFilename) {
             var that = this;
             return this.$http.get("save/" + sFilename).then(function (oData) {
@@ -156,7 +187,7 @@ var app = new Vue({
     },
     computed: {
         nextSunday: function () {
-            return getNextSunday("DD MMM YYYY");
+            return m(this.currentDate, "DD-MM-YYYY").format("DD MMM YYYY");
         },
         filteredSongs: function () {
             var filteredSongs = [];
@@ -176,8 +207,18 @@ var app = new Vue({
     },
 });
 
+function getSundayBeforeSunday(sSunday) {
+    var oDate = m(sSunday, "DD-MM-YYYY");
+
+    return oDate.add(-7, "days").format("DD-MM-YYYY");
+}
+function getSundayAfterSunday(sSunday) {
+    var oDate = m(sSunday, "DD-MM-YYYY");
+
+    return oDate.add(7, "days").format("DD-MM-YYYY");
+}
+
 function getPreviousSunday(sFormat, iDayOffset) {
-    var m = function () { return moment.apply(this, arguments).locale("en-gb"); }
     var days = iDayOffset;
     while (m().add(days, "days").format("dddd") !== "Sunday") {
         days--;
@@ -186,7 +227,6 @@ function getPreviousSunday(sFormat, iDayOffset) {
 }
 
 function getNextSunday(sFormat) {
-    var m = function () { return moment.apply(this, arguments).locale("en-gb"); }
     var days = 0;
     while (m().add(days, "days").format("dddd") !== "Sunday") {
         days++;
@@ -234,7 +274,7 @@ function save(sPassword) {
         });
 
         oClone.password = sPassword;
-        oClone.saveAs = app.filename;
+        oClone.saveAs = app.currentDate + ".json";
         request.send(JSON.stringify(oClone, null, 3));
     });
 }

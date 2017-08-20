@@ -12,6 +12,18 @@ body {
     color: #333;
     font-family: Roboto, Verdana, Sans-serif;
 }
+h1 {
+    text-align: center;
+}
+
+#btnPrevSunday {
+    float: left;
+    margin-right: 0.5em;
+}
+#btnNextSunday {
+    margin-left: 0.5em;
+    float: right;
+}
 
 .one-song {
     margin: 1px;
@@ -31,6 +43,12 @@ body {
 #app {
     width: 80%;
     margin: 0 auto;
+}
+
+@media only screen and (max-width: 500px) {
+    h1 {
+        font-size: 14pt;
+    }
 }
 /*!
  * Keen UI v1.0.0 (https://github.com/JosephusPaye/keen-ui)

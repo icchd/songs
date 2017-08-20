@@ -9,6 +9,18 @@
     </head>
     <body>
         <div id="app">
+            <ui-fab
+                id="btnPrevSunday"
+                @click="onPreviousSundayClicked()"
+                size="small"
+                icon="skip_previous"
+                ></ui-fab>
+            <ui-fab
+                id="btnNextSunday"
+                @click="onNextSundayClicked()"
+                size="small"
+                icon="skip_next"
+                ></ui-fab>
             <h1>Songs for Sunday {{ nextSunday }}</h1>
             <ul class="finalList">
                 <li><b>Entrance:</b> {{ selectedSongs.entrance.number }} {{ selectedSongs.entrance.title }}    <ui-button type="secondary" @click="removeSong('entrance')" size="small" v-if="selectedSongs.entrance.number.length > 0" icon="delete"></ui-button></li>
@@ -30,13 +42,13 @@
                     v-bind:color="song.selected ? 'orange' : 'default'"
                     size="small"
                     @click="openSelectSongModal('whichSong', song.number, song.title)"
-                    icon="music_note">
+                    v-bind:icon="stats[song.number] ? 'music_note': ''">
 
                     <b>{{ song.number }}</b>&nbsp;{{ song.title }}
                 </ui-button>
             </div>
 
-            <h1>Suggest Songs</h1>
+            <h2>Suggest Songs</h2>
             <ul>
                 <li>
                     Canadian Conference of Catholic Bishops:
@@ -66,9 +78,9 @@
                     <a target="_blank" href="http://www.stpatshistoric.org/index.php/bulletins/">The Historic Church of Saint Patrick</a> - songs listed in the bulletin
                 </li>
             </ul>
-            <h1>
+            <h2>
                 Search Songs
-            </h1>
+            </h2>
             <ui-textbox
                 key="txtSearch"
                 name="search"

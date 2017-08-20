@@ -760,10 +760,12 @@ break}}else for(var o=t+1;o<this.$refs.tabElements.length;o++)if(!this.$refs.tab
 ref:"tabsContainer",staticClass:"ui-tabs__header-items",attrs:{role:"tablist"}},t._l(t.tabs,function(e){return t._c("ui-tab-header-item",{directives:[{name:"show",rawName:"v-show",value:e.show,expression:"tab.show"}],ref:"tabElements",refInFor:!0,attrs:{active:t.activeTabId===e.id,"disable-ripple":t.disableRipple,disabled:e.disabled,"icon-props":e.iconProps,icon:e.icon,id:e.id,show:e.show,title:e.title,type:t.type},nativeOn:{click:function(i){t.selectTab(i,e)},keydown:[function(e){t._k(e.keyCode,"left",37)||t.selectPreviousTab(e)},function(e){t._k(e.keyCode,"right",39)||t.selectNextTab(e)}]}},[e.$slots.icon?t._c("render-vnodes",{attrs:{nodes:e.$slots.icon},slot:"icon"}):t._e()],1)})),t._v(" "),0!=t.tabContainerWidth?t._c("div",{staticClass:"ui-tabs__active-tab-indicator",style:{left:t.indicatorLeft,right:t.indicatorRight}}):t._e()]),t._v(" "),t._c("div",{staticClass:"ui-tabs__body"},[t._t("default")],2)])},staticRenderFns:[]}},function(t,e){t.exports={render:function(){var t=this;t.$createElement;return t._c("label",{staticClass:"ui-switch",class:t.classes},[t._c("div",{staticClass:"ui-switch__input-wrapper"},[t._c("input",{staticClass:"ui-switch__input",attrs:{type:"checkbox",disabled:t.disabled,name:t.name},domProps:{checked:t.isChecked,value:t.submittedValue},on:{blur:t.onBlur,change:t.onChange,click:t.onClick,focus:t.onFocus}}),t._v(" "),t._m(0),t._v(" "),t._c("div",{staticClass:"ui-switch__track"})]),t._v(" "),t.label||t.$slots.default?t._c("div",{staticClass:"ui-switch__label-text"},[t._t("default",[t._v(t._s(t.label))])],2):t._e()])},staticRenderFns:[function(){var t=this;t.$createElement;return t._c("div",{staticClass:"ui-switch__thumb"},[t._c("div",{staticClass:"ui-switch__focus-ring"})])}]}},function(t,e){t.exports={render:function(){var t=this;t.$createElement;return t._c("li",{ref:"menuOption",staticClass:"ui-menu-option",class:t.classes,attrs:{role:"menu-item",tabindex:t.isDivider||t.disabled?null:"0"}},[t.isDivider?t._e():t._t("default",[t._c("div",{staticClass:"ui-menu-option__content"},[t.icon?t._c("ui-icon",{staticClass:"ui-menu-option__icon",attrs:{"icon-set":t.iconProps.iconSet,icon:t.icon,"remove-text":t.iconProps.removeText,"use-svg":t.iconProps.useSvg}}):t._e(),t._v(" "),t._c("div",{staticClass:"ui-menu-option__text"},[t._v(t._s(t.label))]),t._v(" "),t.secondaryText?t._c("div",{staticClass:"ui-menu-option__secondary-text"},[t._v("\n                "+t._s(t.secondaryText)+"\n            ")]):t._e()],1)]),t._v(" "),t.disabled||t.isDivider||t.disableRipple?t._e():t._c("ui-ripple-ink",{attrs:{trigger:"menuOption"}})],2)},staticRenderFns:[]}},function(t,e){t.exports={render:function(){var t=this;t.$createElement;return t._c("span",{staticClass:"ui-icon",class:[t.iconSet,t.icon],attrs:{"aria-label":t.ariaLabel}},[t.useSvg?t._c("svg",{staticClass:"ui-icon__svg"},[t._c("use",{attrs:{"xmlns:xlink":"http://www.w3.org/1999/xlink","xlink:href":"#"+t.icon}})]):t._t("default",[t._v(t._s(t.removeText?null:t.icon))])],2)},staticRenderFns:[]}},function(t,e){t.exports={render:function(){var t=this;t.$createElement;return t._c("label",{staticClass:"ui-checkbox",class:t.classes},[t._c("input",{staticClass:"ui-checkbox__input",attrs:{type:"checkbox",disabled:t.disabled,name:t.name},domProps:{checked:t.isChecked,value:t.submittedValue},on:{blur:t.onBlur,change:t.onChange,click:t.onClick,focus:t.onFocus}}),t._v(" "),t._m(0),t._v(" "),t.label||t.$slots.default?t._c("div",{staticClass:"ui-checkbox__label-text"},[t._t("default",[t._v(t._s(t.label))])],2):t._e()])},staticRenderFns:[function(){var t=this;t.$createElement;return t._c("div",{staticClass:"ui-checkbox__checkmark"},[t._c("div",{staticClass:"ui-checkbox__focus-ring"})])}]}},function(t,e){t.exports={render:function(){var t=this;t.$createElement;return t._c("ul",{staticClass:"ui-menu",class:t.classes,attrs:{role:"menu"}},[t._l(t.options,function(e){return t._c("ui-menu-option",{attrs:{"disable-ripple":t.disableRipple,disabled:e[t.keys.disabled],"icon-props":t.iconProps||e[t.keys.iconProps],icon:t.hasIcons?e[t.keys.icon]:null,label:"divider"===e[t.keys.type]?null:e[t.keys.label]||e,"secondary-text":t.hasSecondaryText?e[t.keys.secondaryText]:null,type:e[t.keys.type]},nativeOn:{click:function(i){t.selectOption(e)},keydown:[function(i){t._k(i.keyCode,"enter",13)||(i.preventDefault(),t.selectOption(e))},function(e){t._k(e.keyCode,"esc",27)||t.closeMenu(e)}]}},[t._t("option",null,{option:e})],2)}),t._v(" "),t.containFocus?t._c("div",{staticClass:"ui-menu__focus-redirector",attrs:{tabindex:"0"},on:{focus:t.redirectFocus}}):t._e()],2)},staticRenderFns:[]}},function(t,e){t.exports={render:function(){var t=this;t.$createElement;return t._c("button",{ref:"button",staticClass:"ui-close-button",class:t.classes,attrs:{"aria-label":"Close",type:"button",disabled:t.disabled},on:{click:t.onClick}},[t._c("div",{staticClass:"ui-close-button__icon"},[t._c("ui-icon",[t._c("svg",{attrs:{xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",viewBox:"0 0 24 24"}},[t._c("path",{attrs:{d:"M18.984 6.422L13.406 12l5.578 5.578-1.406 1.406L12 13.406l-5.578 5.578-1.406-1.406L10.594 12 5.016 6.422l1.406-1.406L12 10.594l5.578-5.578z"}})])])],1),t._v(" "),t._c("span",{staticClass:"ui-close-button__focus-ring"}),t._v(" "),t.disableRipple||t.disabled?t._e():t._c("ui-ripple-ink",{attrs:{trigger:"button"}})],1)},staticRenderFns:[]}},function(t,e){t.exports={render:function(){var t=this;t.$createElement;return t._c("div",{staticClass:"ui-datepicker",class:t.classes},[t._c("input",{staticClass:"ui-datepicker__hidden-input",attrs:{type:"hidden",name:t.name},domProps:{value:t.submittedValue}}),t._v(" "),t.icon||t.$slots.icon?t._c("div",{staticClass:"ui-datepicker__icon-wrapper"},[t._t("icon",[t._c("ui-icon",{attrs:{icon:t.icon}})])],2):t._e(),t._v(" "),t._c("div",{staticClass:"ui-datepicker__content"},[t._c("div",{ref:"label",staticClass:"ui-datepicker__label",attrs:{tabindex:t.disabled?null:"0"},on:{click:t.onClick,focus:t.onFocus,keydown:[function(e){t._k(e.keyCode,"enter",13)||(e.preventDefault(),t.openPicker(e))},function(e){t._k(e.keyCode,"space",32)||(e.preventDefault(),t.openPicker(e))},function(e){t._k(e.keyCode,"tab",9)||t.onBlur(e)}]}},[t.label||t.$slots.default?t._c("div",{staticClass:"ui-datepicker__label-text",class:t.labelClasses},[t._t("default",[t._v(t._s(t.label))])],2):t._e(),t._v(" "),t._c("div",{staticClass:"ui-datepicker__display"},[t._c("div",{staticClass:"ui-datepicker__display-value",class:{"is-placeholder":!t.hasDisplayText}},[t._v("\n                    "+t._s(t.hasDisplayText?t.displayText:t.hasFloatingLabel&&t.isLabelInline?null:t.placeholder)+"\n                ")]),t._v(" "),t.usesPopover&&!t.disabled?t._c("ui-icon",{staticClass:"ui-datepicker__dropdown-button"},[t._c("svg",{attrs:{xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",viewBox:"0 0 24 24"}},[t._c("path",{attrs:{d:"M6.984 9.984h10.03L12 15z"}})])]):t._e()],1)]),t._v(" "),t.hasFeedback?t._c("div",{staticClass:"ui-datepicker__feedback"},[t.showError?t._c("div",{staticClass:"ui-datepicker__feedback-text"},[t._t("error",[t._v(t._s(t.error))])],2):t.showHelp?t._c("div",{staticClass:"ui-datepicker__feedback-text"},[t._t("help",[t._v(t._s(t.help))])],2):t._e()]):t._e()]),t._v(" "),t.usesModal&&!t.disabled?t._c("ui-modal",{ref:"modal",attrs:{"remove-header":""},on:{close:t.onPickerClose,open:t.onPickerOpen}},[t._c("ui-calendar",{attrs:{color:t.color,"date-filter":t.dateFilter,lang:t.lang,"max-date":t.maxDate,"min-date":t.minDate,orientation:t.orientation,value:t.value},on:{"date-select":t.onDateSelect}},[t._c("div",{staticClass:"ui-datepicker__modal-buttons",slot:"footer"},[t._c("ui-button",{attrs:{type:"secondary",color:t.color},on:{click:function(e){t.$refs.modal.close()}}},[t._v(t._s(t.okButtonText))]),t._v(" "),t._c("ui-button",{attrs:{type:"secondary",color:t.color},on:{click:t.onPickerCancel}},[t._v(t._s(t.cancelButtonText))])],1)])],1):t._e(),t._v(" "),t.usesPopover&&!t.disabled?t._c("ui-popover",{ref:"popover",attrs:{"contain-focus":"",trigger:"label"},on:{close:t.onPickerClose,open:t.onPickerOpen}},[t._c("ui-calendar",{attrs:{color:t.color,"date-filter":t.dateFilter,lang:t.lang,"max-date":t.maxDate,"min-date":t.minDate,orientation:t.orientation,value:t.value},on:{"date-select":t.onDateSelect}})],1):t._e()],1)},staticRenderFns:[]}},function(t,e){t.exports={render:function(){var t=this;t.$createElement;return t._c("label",{ref:"label",staticClass:"ui-fileupload",class:t.classes},[t._c("input",{ref:"input",staticClass:"ui-fileupload__input",attrs:{type:"file",accept:t.accept,disabled:t.disabled,multiple:t.multiple,name:t.name,required:t.required},on:{blur:t.onBlur,change:t.onChange,focus:t.onFocus}}),t._v(" "),t._c("div",{staticClass:"ui-fileupload__content"},[t._c("div",{staticClass:"ui-fileupload__icon"},[t._t("icon",[t._c("ui-icon",[t._c("svg",{attrs:{xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",viewBox:"0 0 24 24"}},[t._c("path",{attrs:{d:"M5.016 18h13.969v2.016H5.016V18zM9 15.984v-6H5.016L12 3l6.984 6.984H15v6H9z"}})])])])],2),t._v(" "),t.hasSelection?t._c("span",{staticClass:"ui-fileupload__display-text"},[t._v(t._s(t.displayText))]):t._t("default",[t._v(t._s(t.placeholder))])],2),t._v(" "),t._c("div",{staticClass:"ui-fileupload__focus-ring",style:t.focusRingStyle}),t._v(" "),t.disableRipple||t.disabled?t._e():t._c("ui-ripple-ink",{attrs:{trigger:"label"}})],1)},staticRenderFns:[]}},function(t,e){t.exports={render:function(){var t=this;t.$createElement;return t._c("button",{ref:"button",staticClass:"ui-icon-button",class:t.classes,attrs:{"aria-label":t.ariaLabel||t.tooltip,disabled:t.disabled||t.loading,type:t.buttonType},on:{click:t.onClick}},[t.icon||t.$slots.default?t._c("div",{staticClass:"ui-icon-button__icon"},[t._t("default",[t._c("ui-icon",{attrs:{icon:t.icon}})])],2):t._e(),t._v(" "),t._c("div",{staticClass:"ui-icon-button__focus-ring"}),t._v(" "),t._c("ui-progress-circular",{directives:[{name:"show",rawName:"v-show",value:t.loading,expression:"loading"}],staticClass:"ui-icon-button__progress",attrs:{color:t.progressColor,size:"large"===t.size?24:18,stroke:4.5}}),t._v(" "),t.disableRipple||t.disabled?t._e():t._c("ui-ripple-ink",{attrs:{trigger:"button"}}),t._v(" "),t.hasDropdown?t._c("ui-popover",{ref:"dropdown",attrs:{trigger:"button","dropdown-position":t.dropdownPosition,"open-on":t.openDropdownOn},on:{close:t.onDropdownClose,open:t.onDropdownOpen}},[t._t("dropdown")],2):t._e(),t._v(" "),t.tooltip?t._c("ui-tooltip",{attrs:{trigger:"button","open-on":t.openTooltipOn,position:t.tooltipPosition}},[t._v(t._s(t.tooltip))]):t._e()],1)},staticRenderFns:[]}},function(t,e){t.exports={render:function(){var t=this;t.$createElement;return t._c("div",{staticClass:"ui-slider",class:t.classes,attrs:{role:"slider","aria-valuemax":100,"aria-valuemin":0,"aria-valuenow":t.localValue,tabindex:t.disabled?null:0},on:{blur:t.onBlur,focus:t.onFocus,keydown:[function(e){t._k(e.keyCode,"down",40)||(e.preventDefault(),t.decrementValue(e))},function(e){t._k(e.keyCode,"left",37)||(e.preventDefault(),t.decrementValue(e))},function(e){t._k(e.keyCode,"right",39)||(e.preventDefault(),t.incrementValue(e))},function(e){t._k(e.keyCode,"up",38)||(e.preventDefault(),t.incrementValue(e))}]}},[t.name?t._c("input",{staticClass:"ui-slider__hidden-input",attrs:{type:"hidden",name:t.name},domProps:{value:t.value}}):t._e(),t._v(" "),t.hasIcon?t._c("div",{staticClass:"ui-slider__icon"},[t._t("icon",[t._c("ui-icon",{attrs:{icon:t.icon}})])],2):t._e(),t._v(" "),t._c("div",{ref:"track",staticClass:"ui-slider__track",on:{mousedown:t.onDragStart,touchstart:t.onDragStart}},[t._c("div",{staticClass:"ui-slider__track-background"},t._l(t.snapPoints,function(e){return t.snapToSteps?t._c("span",{staticClass:"ui-slider__snap-point",style:{left:e+"%"}}):t._e()})),t._v(" "),t._c("div",{staticClass:"ui-slider__track-fill",style:t.fillStyle}),t._v(" "),t._c("div",{ref:"thumb",staticClass:"ui-slider__thumb",style:t.thumbStyle},[t.showMarker?t._c("div",{staticClass:"ui-slider__marker"},[t._c("svg",{attrs:{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24",width:"36",height:"36"}},[t._c("path",{attrs:{d:"M11 .5c-1.7.2-3.4.9-4.7 2-1.1.9-2 2-2.5 3.2-1.2 2.4-1.2 5.1-.1 7.7 1.1 2.6 2.8 5 5.3 7.5 1.2 1.2 2.8 2.7 3 2.7 0 0 .3-.2.6-.5 3.2-2.7 5.6-5.6 7.1-8.5.8-1.5 1.1-2.6 1.3-3.8.2-1.4 0-2.9-.5-4.3-1.2-3.2-4.1-5.4-7.5-5.8-.5-.2-1.5-.2-2-.2z"}})]),t._v(" "),t._c("span",{staticClass:"ui-slider__marker-text"},[t._v(t._s(t.markerText))])]):t._e()])])])},staticRenderFns:[]}},function(t,e){t.exports={render:function(){var t=this;t.$createElement;return t._c("div",{ref:"tooltip",staticClass:"ui-tooltip"},[t._t("default")],2)},staticRenderFns:[]}},function(t,e){t.exports={render:function(){var t=this;t.$createElement;return t._c("div",{staticClass:"ui-collapsible",class:t.classes},[t._c("div",{ref:"header",staticClass:"ui-collapsible__header",attrs:{"aria-controls":t.id,"aria-expanded":t.isOpen?"true":"false",tabindex:t.disabled?null:0},on:{click:t.toggleCollapsible,keydown:[function(e){t._k(e.keyCode,"enter",13)||(e.preventDefault(),t.toggleCollapsible(e))},function(e){t._k(e.keyCode,"space",32)||(e.preventDefault(),t.toggleCollapsible(e))}]}},[t._c("div",{staticClass:"ui-collapsible__header-content"},[t._t("header",[t._v(t._s(t.title))])],2),t._v(" "),t.removeIcon?t._e():t._c("ui-icon",{staticClass:"ui-collapsible__header-icon"},[t._c("svg",{attrs:{xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",viewBox:"0 0 24 24"}},[t._c("path",{attrs:{d:"M7.406 7.828L12 12.422l4.594-4.594L18 9.234l-6 6-6-6z"}})])]),t._v(" "),t.disableRipple||t.disabled||!t.isReady?t._e():t._c("ui-ripple-ink",{attrs:{trigger:"header"}})],1),t._v(" "),t._c("transition",{attrs:{name:"ui-collapsible--transition-toggle"},on:{"after-enter":t.onEnter,"after-leave":t.onLeave}},[t._c("div",{directives:[{name:"show",rawName:"v-show",value:t.isOpen,expression:"isOpen"}],ref:"body",staticClass:"ui-collapsible__body-wrapper",style:{height:t.calculatedHeight}},[t._c("div",{staticClass:"ui-collapsible__body",attrs:{"aria-hidden":t.isOpen?null:"true",id:t.id}},[t._t("default")],2)])])],1)},staticRenderFns:[]}},function(t,e){t.exports={render:function(){var t=this;t.$createElement;return t._c("button",{ref:"button",staticClass:"ui-button",class:t.classes,attrs:{disabled:t.disabled||t.loading,type:t.buttonType},on:{click:t.onClick,"~focus":function(e){t.onFocus(e)}}},[t._c("div",{staticClass:"ui-button__content"},[t.icon||t.$slots.icon?t._c("div",{staticClass:"ui-button__icon"},[t._t("icon",[t._c("ui-icon",{attrs:{icon:t.icon}})])],2):t._e(),t._v(" "),t._t("default"),t._v(" "),t.hasDropdown&&"right"!==t.iconPosition?t._c("ui-icon",{staticClass:"ui-button__dropdown-icon"},[t._c("svg",{attrs:{xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",viewBox:"0 0 24 24"}},[t._c("path",{attrs:{d:"M6.984 9.984h10.03L12 15z"}})])]):t._e()],2),t._v(" "),t._c("div",{staticClass:"ui-button__focus-ring",style:t.focusRingStyle}),t._v(" "),t._c("ui-progress-circular",{directives:[{name:"show",rawName:"v-show",value:t.loading,expression:"loading"}],staticClass:"ui-button__progress",attrs:{"disable-transition":"",color:t.progressColor,size:18,stroke:4.5}}),t._v(" "),t.disableRipple||t.disabled?t._e():t._c("ui-ripple-ink",{attrs:{trigger:"button"}}),t._v(" "),t.hasDropdown?t._c("ui-popover",{ref:"dropdown",attrs:{trigger:"button","dropdown-position":t.dropdownPosition,"open-on":t.openDropdownOn},on:{close:t.onDropdownClose,open:t.onDropdownOpen}},[t._t("dropdown")],2):t._e()],1)},staticRenderFns:[]}},function(t,e){t.exports={render:function(){var t=this;t.$createElement;return t._c("div",{staticClass:"ui-confirm"},[t._c("ui-modal",{ref:"modal",attrs:{role:"alertdialog","dismiss-on":t.dismissOn,dismissible:!t.loading,title:t.title,transition:t.transition},on:{close:t.onModalClose,open:t.onModalOpen}},[t._c("div",{staticClass:"ui-confirm__message"},[t._t("default")],2),t._v(" "),t._c("div",{staticClass:"ui-confirm__footer",slot:"footer"},[t._c("ui-button",{ref:"confirmButton",attrs:{color:t.confirmButtonColor,icon:t.confirmButtonIcon,loading:t.loading},on:{click:t.confirm}},[t._v(t._s(t.confirmButtonText))]),t._v(" "),t._c("ui-button",{ref:"denyButton",attrs:{disabled:t.loading,icon:t.denyButtonIcon},on:{click:t.deny}},[t._v(t._s(t.denyButtonText))])],1)])],1)},staticRenderFns:[]}},function(t,e){t.exports={render:function(){var t=this;t.$createElement;return t._c("div",{staticClass:"ui-popover",class:{"is-raised":t.raised},attrs:{role:"dialog",tabindex:"-1"},on:{keydown:function(e){t._k(e.keyCode,"esc",27)||t.closeDropdown(e)}}},[t._t("default"),t._v(" "),t._c("div",{staticClass:"ui-popover__focus-redirector",attrs:{tabindex:"0"},on:{focus:t.restrictFocus}})],2)},staticRenderFns:[]}},function(t,e){var i;i=function(){return this}();try{i=i||Function("return this")()||(0,eval)("this")}catch(t){"object"==typeof window&&(i=window)}t.exports=i},function(t,e,i){"use strict";function n(t){return t&&t.__esModule?t:{default:t}}Object.defineProperty(e,"__esModule",{value:!0}),e.UiTooltip=e.UiToolbar=e.UiTextbox=e.UiTabs=e.UiTab=e.UiSwitch=e.UiSnackbarContainer=e.UiSnackbar=e.UiSlider=e.UiSelect=e.UiRippleInk=e.UiRadioGroup=e.UiRadio=e.UiProgressLinear=e.UiProgressCircular=e.UiPreloader=e.UiPopover=e.UiModal=e.UiMenu=e.UiIconButton=e.UiIcon=e.UiFileupload=e.UiFab=e.UiDatepicker=e.UiConfirm=e.UiCollapsible=e.UiCheckboxGroup=e.UiCheckbox=e.UiCalendar=e.UiButton=e.UiAutocomplete=e.UiAlert=void 0,i(65);var o=i(66),s=n(o),a=i(67),r=n(a),l=i(14),u=n(l),c=i(42),d=n(c),f=i(43),h=n(f),p=i(68),v=n(p),g=i(69),m=n(g),b=i(70),_=n(b),y=i(71),w=n(y),x=i(72),k=n(x),C=i(73),S=n(C),O=i(1),D=n(O),T=i(25),E=n(T),$=i(74),P=n($),M=i(26),B=n(M),F=i(15),I=n(F),A=i(75),L=n(A),U=i(16),j=n(U),R=i(44),V=n(R),z=i(45),N=n(z),H=i(76),W=n(H),q=i(3),Y=n(q),X=i(77),K=n(X),G=i(78),J=n(G),Q=i(46),Z=n(Q),tt=i(79),et=n(tt),it=i(80),nt=n(it),ot=i(81),st=n(ot),at=i(82),rt=n(at),lt=i(83),ut=n(lt),ct=i(84),dt=n(ct),ft=i(27),ht=n(ft),pt={UiAlert:s.default,UiAutocomplete:r.default,UiButton:u.default,UiCalendar:d.default,UiCheckbox:h.default,UiCheckboxGroup:v.default,UiCollapsible:m.default,UiConfirm:_.default,UiDatepicker:w.default,UiFab:k.default,UiFileupload:S.default,UiIcon:D.default,UiIconButton:E.default,UiMenu:P.default,UiModal:B.default,UiPopover:I.default,UiPreloader:L.default,UiProgressCircular:j.default,UiProgressLinear:V.default,UiRadio:N.default,UiRadioGroup:W.default,UiRippleInk:Y.default,UiSelect:K.default,UiSlider:J.default,UiSnackbar:Z.default,UiSnackbarContainer:et.default,UiSwitch:nt.default,UiTab:st.default,UiTabs:rt.default,UiTextbox:ut.default,UiToolbar:dt.default,UiTooltip:ht.default,install:function(t){t.component("ui-alert",s.default),t.component("ui-autocomplete",r.default),t.component("ui-button",u.default),t.component("ui-calendar",d.default),t.component("ui-checkbox",h.default),t.component("ui-checkbox-group",v.default),t.component("ui-collapsible",m.default),t.component("ui-confirm",_.default),t.component("ui-datepicker",w.default),t.component("ui-fab",k.default),t.component("ui-fileupload",S.default),t.component("ui-icon",D.default),t.component("ui-icon-button",E.default),t.component("ui-menu",P.default),t.component("ui-modal",B.default),t.component("ui-popover",I.default),t.component("ui-preloader",L.default),t.component("ui-progress-circular",j.default),t.component("ui-progress-linear",V.default),t.component("ui-radio",N.default),t.component("ui-radio-group",W.default),t.component("ui-ripple-ink",Y.default),t.component("ui-select",K.default),t.component("ui-slider",J.default),t.component("ui-snackbar",Z.default),t.component("ui-snackbar-container",et.default),t.component("ui-switch",nt.default),t.component("ui-tab",st.default),t.component("ui-tabs",rt.default),t.component("ui-textbox",ut.default),t.component("ui-toolbar",dt.default),t.component("ui-tooltip",ht.default)}};"undefined"!=typeof window&&window.Vue&&window.Vue.use(pt),e.default=pt,e.UiAlert=s.default,e.UiAutocomplete=r.default,e.UiButton=u.default,e.UiCalendar=d.default,e.UiCheckbox=h.default,e.UiCheckboxGroup=v.default,e.UiCollapsible=m.default,e.UiConfirm=_.default,e.UiDatepicker=w.default,e.UiFab=k.default,e.UiFileupload=S.default,e.UiIcon=D.default,e.UiIconButton=E.default,e.UiMenu=P.default,e.UiModal=B.default,e.UiPopover=I.default,e.UiPreloader=L.default,e.UiProgressCircular=j.default,e.UiProgressLinear=V.default,e.UiRadio=N.default,e.UiRadioGroup=W.default,e.UiRippleInk=Y.default,e.UiSelect=K.default,e.UiSlider=J.default,e.UiSnackbar=Z.default,e.UiSnackbarContainer=et.default,e.UiSwitch=nt.default,e.UiTab=st.default,e.UiTabs=rt.default,e.UiTextbox=ut.default,e.UiToolbar=dt.default,e.UiTooltip=ht.default}])});;var S_HEROKU_ENDPOINT = "http://icch-api.herokuapp.com/songs";
 var I_MAX_SONGS_IN_SEARCH = 50;
 
+var m = function () { return moment.apply(this, arguments).locale("en-gb"); }
+
 var app = new Vue({
     el: "#app",
     data: {
-        filename: getNextSunday("DD-MM-YYYY") + ".json",
+        currentDate: getNextSunday(),
         password: "",
         searchText: "",
         recentSongs: [],
@@ -791,33 +793,62 @@ var app = new Vue({
             that.refreshSelectedState();
         });
 
-        // get previous sundays stats
-        this.getStatsFrom(
-            getPreviousSunday("DD-MM-YYYY", -1) + ".json"
-        ).catch(function () {
-            return that.getStatsFrom(getPreviousSunday("DD-MM-YYYY", -8) + ".json");
-        }).catch(function () {
-            return that.getStatsFrom(getPreviousSunday("DD-MM-YYYY", -15) + ".json");
-        });
-
-        this.$http.get("save/" + this.filename).then(function (oData) {
-            if (oData.status !== 200) {
-                return;
-            }
-            try {
-                Object.keys(that.selectedSongs)
-                    .forEach(function (sMoment) {
-                        that.selectedSongs[sMoment].number = oData.body[sMoment].number;
-                        that.selectedSongs[sMoment].title = oData.body[sMoment].title;
-                    });
-            } catch (e) {
-                alert("Unable to load: " + e);
-            }
-        }, function () {
-            // nothing saved yet!
-        });
+        var sCurrentSunday = getNextSunday("DD-MM-YYYY");
+        this.onCurrentSundayChanged(sCurrentSunday);
     },
     methods: {
+        onCurrentSundayChanged: function (sDate) {
+            var that = this;
+
+            this.currentDate = sDate;
+
+            // get previous sundays stats
+            if (m(sDate, "DD-MM-YYYY").isSameOrBefore(m())) {
+                var sPrevSunday = getSundayBeforeSunday(sDate);
+                var sPrevPrevSunday = getSundayBeforeSunday(sPrevSunday);
+                var sPrevPrevPrevSunday = getSundayBeforeSunday(sPrevPrevSunday);
+                this.getStatsFrom(
+                    sPrevSunday + ".json"
+                ).catch(function () {
+                    return that.getStatsFrom(sPrevPrevSunday + ".json");
+                }).catch(function () {
+                    return that.getStatsFrom(sPrevPrevPrevSunday + ".json");
+                });
+            }
+
+            this.$http.get("save/" + sDate + ".json").then(function (oData) {
+                if (oData.status !== 200) {
+                    return;
+                }
+                try {
+                    Object.keys(that.selectedSongs)
+                        .forEach(function (sMoment) {
+                            that.selectedSongs[sMoment].number = oData.body[sMoment].number;
+                            that.selectedSongs[sMoment].title = oData.body[sMoment].title;
+                        });
+                } catch (e) {
+                    alert("Unable to load: " + e);
+                }
+            }, function (oData) {
+                if (oData.status === 404) {
+                    // nothing saved yet!
+                    this.selectedSongs = {
+                        entrance:  { number: "", title: "" },
+                        offertory: { number: "", title: "" },
+                        communion: { number: "", title: "" },
+                        recession: { number: "", title: "" }
+                    };
+                }
+            });
+        },
+        onPreviousSundayClicked: function () {
+            var sPrevSunday = getSundayBeforeSunday(this.currentDate);
+            this.onCurrentSundayChanged(sPrevSunday);
+        },
+        onNextSundayClicked: function () {
+            var sNextSunday = getSundayAfterSunday(this.currentDate);
+            this.onCurrentSundayChanged(sNextSunday);
+        },
         getStatsFrom: function (sFilename) {
             var that = this;
             return this.$http.get("save/" + sFilename).then(function (oData) {
@@ -915,7 +946,7 @@ var app = new Vue({
     },
     computed: {
         nextSunday: function () {
-            return getNextSunday("DD MMM YYYY");
+            return m(this.currentDate, "DD-MM-YYYY").format("DD MMM YYYY");
         },
         filteredSongs: function () {
             var filteredSongs = [];
@@ -935,8 +966,18 @@ var app = new Vue({
     },
 });
 
+function getSundayBeforeSunday(sSunday) {
+    var oDate = m(sSunday, "DD-MM-YYYY");
+
+    return oDate.add(-7, "days").format("DD-MM-YYYY");
+}
+function getSundayAfterSunday(sSunday) {
+    var oDate = m(sSunday, "DD-MM-YYYY");
+
+    return oDate.add(7, "days").format("DD-MM-YYYY");
+}
+
 function getPreviousSunday(sFormat, iDayOffset) {
-    var m = function () { return moment.apply(this, arguments).locale("en-gb"); }
     var days = iDayOffset;
     while (m().add(days, "days").format("dddd") !== "Sunday") {
         days--;
@@ -945,7 +986,6 @@ function getPreviousSunday(sFormat, iDayOffset) {
 }
 
 function getNextSunday(sFormat) {
-    var m = function () { return moment.apply(this, arguments).locale("en-gb"); }
     var days = 0;
     while (m().add(days, "days").format("dddd") !== "Sunday") {
         days++;
@@ -993,7 +1033,7 @@ function save(sPassword) {
         });
 
         oClone.password = sPassword;
-        oClone.saveAs = app.filename;
+        oClone.saveAs = app.currentDate + ".json";
         request.send(JSON.stringify(oClone, null, 3));
     });
 }
