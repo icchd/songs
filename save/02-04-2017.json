@@ -1,0 +1,80 @@
+{
+   "entrance": {
+      "number": "595",
+      "title": "All the Ends of the Earth"
+   },
+   "offertory": {
+      "number": "714",
+      "title": "We Will Rise Again"
+   },
+   "communion": {
+      "number": "814",
+      "title": "One Love Released"
+   },
+   "recession": {
+      "number": "849",
+      "title": "They’ll Know We Are Christians"
+   },
+   "stats": {
+      "595": {
+         "count": 1,
+         "lastSung": "20-08-2017"
+      },
+      "674": {
+         "count": 1,
+         "lastSung": "20-08-2017"
+      },
+      "706": {
+         "count": 1,
+         "lastSung": "25-06-2017"
+      },
+      "709": {
+         "count": 1,
+         "lastSung": "25-06-2017"
+      },
+      "714": {
+         "count": 1,
+         "lastSung": "20-08-2017"
+      },
+      "720": {
+         "count": 2,
+         "lastSung": "20-08-2017"
+      },
+      "725": {
+         "count": 1,
+         "lastSung": "20-08-2017"
+      },
+      "733": {
+         "count": 1,
+         "lastSung": "20-08-2017"
+      },
+      "790": {
+         "count": 2,
+         "lastSung": "20-08-2017"
+      },
+      "793": {
+         "count": 2,
+         "lastSung": "20-08-2017"
+      },
+      "803": {
+         "count": 1,
+         "lastSung": "25-06-2017"
+      },
+      "809": {
+         "count": 2,
+         "lastSung": "20-08-2017"
+      },
+      "811": {
+         "count": 1,
+         "lastSung": "20-08-2017"
+      },
+      "814": {
+         "count": 1,
+         "lastSung": "20-08-2017"
+      },
+      "849": {
+         "count": 2,
+         "lastSung": "20-08-2017"
+      }
+   }
+}
