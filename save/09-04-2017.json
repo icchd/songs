@@ -1,0 +1,84 @@
+{
+   "entrance": {
+      "number": "607",
+      "title": "Sing a New Song"
+   },
+   "offertory": {
+      "number": "724",
+      "title": "Shelter Me, O God"
+   },
+   "communion": {
+      "number": "766",
+      "title": "Only This I Want"
+   },
+   "recession": {
+      "number": "400",
+      "title": "At the Name of Jesus (Toolan)"
+   },
+   "stats": {
+      "400": {
+         "count": 1,
+         "lastSung": "20-08-2017"
+      },
+      "607": {
+         "count": 1,
+         "lastSung": "20-08-2017"
+      },
+      "674": {
+         "count": 1,
+         "lastSung": "20-08-2017"
+      },
+      "706": {
+         "count": 1,
+         "lastSung": "25-06-2017"
+      },
+      "709": {
+         "count": 1,
+         "lastSung": "25-06-2017"
+      },
+      "720": {
+         "count": 2,
+         "lastSung": "20-08-2017"
+      },
+      "724": {
+         "count": 1,
+         "lastSung": "20-08-2017"
+      },
+      "725": {
+         "count": 1,
+         "lastSung": "20-08-2017"
+      },
+      "733": {
+         "count": 1,
+         "lastSung": "20-08-2017"
+      },
+      "766": {
+         "count": 1,
+         "lastSung": "20-08-2017"
+      },
+      "790": {
+         "count": 2,
+         "lastSung": "20-08-2017"
+      },
+      "793": {
+         "count": 2,
+         "lastSung": "20-08-2017"
+      },
+      "803": {
+         "count": 1,
+         "lastSung": "25-06-2017"
+      },
+      "809": {
+         "count": 2,
+         "lastSung": "20-08-2017"
+      },
+      "811": {
+         "count": 1,
+         "lastSung": "20-08-2017"
+      },
+      "849": {
+         "count": 1,
+         "lastSung": "25-06-2017"
+      }
+   }
+}
