@@ -132,8 +132,8 @@
          "sungFor": "offertory"
       },
       "720": {
-         "count": 2,
-         "lastSung": "30-07-2017",
+         "count": 3,
+         "lastSung": "27-08-2017",
          "sungFor": "recession"
       },
       "722": {
@@ -289,11 +289,6 @@
       "851": {
          "count": 1,
          "lastSung": "02-07-2017",
-         "sungFor": "recession"
-      },
-      "": {
-         "count": 1,
-         "lastSung": "27-08-2017",
          "sungFor": "recession"
       }
    }
