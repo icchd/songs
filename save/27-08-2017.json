@@ -12,8 +12,8 @@
       "title": "One Bread, One Body (Foley)"
    },
    "recession": {
-      "number": "",
-      "title": ""
+      "number": "720",
+      "title": "Seek Ye First"
    },
    "stats": {
       "2": {
@@ -102,8 +102,8 @@
          "sungFor": "offertory"
       },
       "706": {
-         "count": 3,
-         "lastSung": "27-08-2017",
+         "count": 4,
+         "lastSung": "10-09-2017",
          "sungFor": "entrance, offertory"
       },
       "709": {
@@ -117,8 +117,8 @@
          "sungFor": "offertory"
       },
       "720": {
-         "count": 2,
-         "lastSung": "30-07-2017",
+         "count": 4,
+         "lastSung": "10-09-2017",
          "sungFor": "recession"
       },
       "722": {
@@ -187,9 +187,8 @@
          "sungFor": "offertory"
       },
       "779": {
-         "count": 1,
-         "lastSung": "27-08-2017",
-         "sungFor": "entrance"
+         "count": 2,
+         "lastSung": "10-09-2017"
       },
       "790": {
          "count": 4,
@@ -242,9 +241,8 @@
          "sungFor": "communion"
       },
       "820": {
-         "count": 1,
-         "lastSung": "27-08-2017",
-         "sungFor": "communion"
+         "count": 2,
+         "lastSung": "10-09-2017"
       },
       "821": {
          "count": 3,
@@ -274,11 +272,6 @@
       "851": {
          "count": 1,
          "lastSung": "02-07-2017",
-         "sungFor": "recession"
-      },
-      "": {
-         "count": 1,
-         "lastSung": "27-08-2017",
          "sungFor": "recession"
       }
    }
