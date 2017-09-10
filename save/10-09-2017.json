@@ -4,8 +4,8 @@
       "title": "Come, Worship the Lord"
    },
    "offertory": {
-      "number": "752",
-      "title": "Love One Another"
+      "number": "704",
+      "title": "On Eagle’s Wings"
    },
    "communion": {
       "number": "824",
@@ -112,8 +112,8 @@
          "sungFor": "entrance"
       },
       "704": {
-         "count": 1,
-         "lastSung": "18-06-2017",
+         "count": 2,
+         "lastSung": "10-09-2017",
          "sungFor": "offertory"
       },
       "706": {
@@ -177,8 +177,8 @@
          "sungFor": "offertory"
       },
       "752": {
-         "count": 3,
-         "lastSung": "10-09-2017",
+         "count": 1,
+         "lastSung": "21-05-2017",
          "sungFor": "communion"
       },
       "760": {
@@ -192,7 +192,7 @@
          "sungFor": "communion, offertory"
       },
       "768": {
-         "count": 6,
+         "count": 5,
          "lastSung": "10-09-2017",
          "sungFor": "recession"
       },
@@ -207,7 +207,7 @@
          "sungFor": "entrance"
       },
       "790": {
-         "count": 6,
+         "count": 5,
          "lastSung": "10-09-2017",
          "sungFor": "entrance"
       },
@@ -272,7 +272,7 @@
          "sungFor": "communion"
       },
       "824": {
-         "count": 2,
+         "count": 1,
          "lastSung": "10-09-2017"
       },
       "829": {
