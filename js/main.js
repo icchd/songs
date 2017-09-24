@@ -1,4 +1,4 @@
-var S_HEROKU_ENDPOINT = "http://icch-api.herokuapp.com/songs";
+var S_HEROKU_ENDPOINT = "https://icch-api-icch-api.a3c1.starter-us-west-1.openshiftapps.com/songs";
 var I_MAX_SONGS_IN_SEARCH = 50;
 
 var m = function () { return moment.apply(this, arguments).locale("en-gb"); }
