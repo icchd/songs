@@ -19,62 +19,86 @@
       "674": {
          "count": 1,
          "lastSung": "26-03-2017",
-         "sungFor": "entrance"
+         "sungFor": {
+            "entrance": true
+         }
       },
       "706": {
          "count": 1,
          "lastSung": "12-03-2017",
-         "sungFor": "entrance"
+         "sungFor": {
+            "entrance": true
+         }
       },
       "720": {
          "count": 1,
          "lastSung": "26-02-2017",
-         "sungFor": "recession"
+         "sungFor": {
+            "recession": true
+         }
       },
       "725": {
          "count": 1,
          "lastSung": "26-03-2017",
-         "sungFor": "offertory"
+         "sungFor": {
+            "offertory": true
+         }
       },
       "733": {
          "count": 1,
          "lastSung": "26-03-2017",
-         "sungFor": "recession"
+         "sungFor": {
+            "recession": true
+         }
       },
       "766": {
          "count": 1,
          "lastSung": "12-03-2017",
-         "sungFor": "offertory"
+         "sungFor": {
+            "offertory": true
+         }
       },
       "768": {
          "count": 1,
          "lastSung": "12-03-2017",
-         "sungFor": "recession"
+         "sungFor": {
+            "recession": true
+         }
       },
       "790": {
          "count": 1,
          "lastSung": "26-02-2017",
-         "sungFor": "entrance"
+         "sungFor": {
+            "entrance": true
+         }
       },
       "793": {
          "count": 1,
          "lastSung": "26-02-2017",
-         "sungFor": "offertory"
+         "sungFor": {
+            "offertory": true
+         }
       },
       "806": {
          "count": 1,
          "lastSung": "12-03-2017",
-         "sungFor": "communion"
+         "sungFor": {
+            "communion": true
+         }
       },
       "809": {
          "count": 1,
          "lastSung": "26-02-2017",
-         "sungFor": "communion"
+         "sungFor": {
+            "communion": true
+         }
       },
       "811": {
          "count": 1,
          "lastSung": "26-03-2017",
-         "sungFor": "communion"
+         "sungFor": {
+            "communion": true
+         }
       }
    }
 }

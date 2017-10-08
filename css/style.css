@@ -40,9 +40,18 @@ h1 {
     right: 0;
 }
 
+.ui-button {
+    text-transform: none;
+}
+
 #app {
     width: 80%;
     margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: #3b78e7;
 }
 
 @media only screen and (max-width: 500px) {

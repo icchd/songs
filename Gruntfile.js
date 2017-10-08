@@ -8,8 +8,8 @@ module.exports = function(grunt) {
         options: { separator: ';' },
         css: {
             src: [
-                "css/style.css",
-                "js/keen-ui.min.css"
+                "js/keen-ui.min.css",
+                "css/style.css"
             ],
             dest: "dist/style.css",
             options: { separator: '' }

@@ -1,5 +1,5 @@
 var S_HEROKU_ENDPOINT = "https://icch-api-icch-api.a3c1.starter-us-west-1.openshiftapps.com/songs";
-var I_MAX_SONGS_IN_SEARCH = 50;
+var I_MAX_SONGS_IN_SEARCH = 80;
 
 var m = function () { return moment.apply(this, arguments).locale("en-gb"); }
 
@@ -8,6 +8,7 @@ var app = new Vue({
     data: {
         currentDate: getNextSunday(),
         password: "",
+        searchFilterFlags: [],
         searchText: "",
         recentSongs: [],
         selectedSong: {
@@ -36,6 +37,44 @@ var app = new Vue({
 
         var sCurrentSunday = getNextSunday("DD-MM-YYYY");
         this.onCurrentSundayChanged(sCurrentSunday);
+    },
+    filters: {
+        formatLimitLabel: function (sCount) {
+            if (sCount === "") { return "?"; }
+            var iCount = parseInt(sCount, 10);
+            if (iCount === I_MAX_SONGS_IN_SEARCH + 1) {
+                return I_MAX_SONGS_IN_SEARCH + "+";
+            }
+            return "" + sCount;
+        },
+        getSongIcon: function (oSongStats) {
+            if (!oSongStats) { return ""; }
+            var aMoments = Object.keys(oSongStats.sungFor || {});
+            var iNumMoments = aMoments.length;
+
+            if (iNumMoments === 0) { return ""; }
+            if (iNumMoments > 1)   { return "music_note"; }
+
+            var sMoment = aMoments.pop();
+            switch (sMoment) {
+                case "communion":
+                    return "lens";
+                case "entrance":
+                    return "file_download";
+                case "recession":
+                    return "file_upload";
+                case "offertory":
+                    return "grain";
+                default:
+                    return "star";
+            }
+        },
+        joinKeys: function (object) {
+            if (!object) {
+                return '';
+            }
+            return Object.keys(object).sort().join(", ");
+        }
     },
     methods: {
         onCurrentSundayChanged: function (sDate) {
@@ -190,19 +229,50 @@ var app = new Vue({
             return m(this.currentDate, "DD-MM-YYYY").format("DD MMM YYYY");
         },
         filteredSongs: function () {
+            var that = this;
             var filteredSongs = [];
             var sSearch = this.searchText;
-            var iFound = 0;
-            this.songs.forEach(function (oSong, iIdx) {
-                if (iFound === I_MAX_SONGS_IN_SEARCH) {
-                    return;
+            var bThereAreFilters = that.searchFilterFlags.length > 0;
+            var oSongNumberToAge = {
+                // 124 --> 20160421
+            };
+
+            return this.songs.reduce(function (aFilteredSongs, oSong, iIdx) {
+                if (aFilteredSongs.length > I_MAX_SONGS_IN_SEARCH) {
+                    return aFilteredSongs;
                 }
-                if (oSong.number === sSearch || oSong.title.toLowerCase().indexOf(sSearch.toLowerCase()) > -1) {
-                    filteredSongs.push(oSong);
-                    iFound++;
+
+                var bMatchesSearch = oSong.number === sSearch
+                  || oSong.title.toLowerCase().indexOf(sSearch.toLowerCase()) > -1;
+
+                var oSongStats = that.stats[oSong.number] || {
+                    count: 0,
+                    sungFor: {}
+                };
+                var bMatchesFilters = that.searchFilterFlags.every(function (sFilter) {
+                    switch (sFilter) {
+                        case "any known songs":
+                            return oSongStats.count > 0;
+                        default:  // assume it's a moment: e.g., 'communion'
+                            return oSongStats.sungFor[sFilter];
+                    }
+                });
+
+                if (bMatchesSearch && (!bThereAreFilters || bMatchesFilters)) {
+                    // keep date to age
+                    var aDateParts = (oSongStats.lastSung || "01-01-1900").split("-");
+                    oSongNumberToAge[oSong.number] = parseInt(aDateParts.reverse().join(""));
+                    aFilteredSongs.push(oSong);
                 }
+
+                return aFilteredSongs;
+
+            }, []).sort(function (oSa, oSb) {
+                var iAgeA = oSongNumberToAge[oSa.number];
+                var iAgeB = oSongNumberToAge[oSb.number];
+                if (iAgeA === iAgeB) { return 0; }
+                return iAgeA < iAgeB ? -1 : 1;
             });
-            return filteredSongs;
         }
     },
 });
@@ -267,13 +337,14 @@ function save(sPassword) {
             if (!oClone.stats[sSongNumber]) {
                 oClone.stats[sSongNumber] = {
                     count: 0,
-                    sungFor: ""
+                    sungFor: {}
                 };
             }
 
             // update sungFor statistics
-            var oAllMoments = (oClone.stats[sSongNumber].sungFor || "").split(", ").filter(function (x) { 
-                return !!x;
+            var oSongSungMoments = oClone.stats[sSongNumber].sungFor || {};
+            var oAllMoments = Object.keys(oSongSungMoments).filter(function (sMoment) {
+                return oSongSungMoments[sMoment] === true;
             }).reduce(function (o, sMoment) {
                 o[sMoment] = true;
                 return o;
@@ -284,7 +355,7 @@ function save(sPassword) {
 
             oClone.stats[sSongNumber].count++;
             oClone.stats[sSongNumber].lastSung = that.currentDate;
-            oClone.stats[sSongNumber].sungFor = Object.keys(oAllMoments).sort().join(", ");
+            oClone.stats[sSongNumber].sungFor = oAllMoments;
 
         });
 

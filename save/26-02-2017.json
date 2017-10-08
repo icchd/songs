@@ -19,22 +19,30 @@
       "720": {
          "count": 1,
          "lastSung": "26-02-2017",
-         "sungFor": "recession"
+         "sungFor": {
+            "recession": true
+         }
       },
       "790": {
          "count": 1,
          "lastSung": "26-02-2017",
-         "sungFor": "entrance"
+         "sungFor": {
+            "entrance": true
+         }
       },
       "793": {
          "count": 1,
          "lastSung": "26-02-2017",
-         "sungFor": "offertory"
+         "sungFor": {
+            "offertory": true
+         }
       },
       "809": {
          "count": 1,
          "lastSung": "26-02-2017",
-         "sungFor": "communion"
+         "sungFor": {
+            "communion": true
+         }
       }
    }
 }
