@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>ICCH Songs</title>
-        <link rel="stylesheet" href="dist/stylecccd8ce11ccba.min.css" />
+        <link rel="stylesheet" href="dist/style67c50fcd376778.min.css" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto" rel="stylesheet">
         <meta http-equiv="cache-control" content="max-age=0" />
         <meta http-equiv="cache-control" content="no-cache" />
@@ -115,7 +115,7 @@
                 <ui-button v-bind:type="selectedSongs.recession.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('recession')">Recession</ui-button>
                 <h3>Song Statistics</h3>
                 <ul v-if="!!stats[selectedSong.number]">
-                    <li>We sung this song {{ (stats[selectedSong.number] || {}).count || "unknown" }} times</li>
+                    <li>We sung this song {{ (stats[selectedSong.number] || {}).count || "unknown" }} times during {{ (stats[selectedSong.number] || {}).sungFor }}</li>
                     <li>We last sung it on {{ (stats[selectedSong.number] || {}).lastSung || "unknown" }}</li>
                 </ul>
                 <p v-else>No statistics available for this song</p>
@@ -135,6 +135,6 @@
 
             </ui-modal>
         </div>
-        <script type="text/javascript" src="dist/bundlecccd8ce11ccba.min.js"></script>
+        <script type="text/javascript" src="dist/bundle67c50fcd376778.min.js"></script>
     </body>
 </html>
