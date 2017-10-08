@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test",
-    "genStats": "node bin/genStats.js"
+    "genStats": "node bin/genStats.js",
+    "build": "grunt"
   },
   "repository": {
     "type": "git",
