@@ -58,7 +58,8 @@
       },
       "560": {
          "count": 1,
-         "lastSung": "17-09-2017"
+         "lastSung": "17-09-2017",
+         "sungFor": "offertory"
       },
       "595": {
          "count": 3,
@@ -172,7 +173,8 @@
       },
       "738": {
          "count": 1,
-         "lastSung": "10-09-2017"
+         "lastSung": "10-09-2017",
+         "sungFor": "offertory"
       },
       "739": {
          "count": 1,
@@ -281,7 +283,8 @@
       },
       "824": {
          "count": 1,
-         "lastSung": "10-09-2017"
+         "lastSung": "10-09-2017",
+         "sungFor": "communion"
       },
       "829": {
          "count": 1,
