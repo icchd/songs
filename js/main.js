@@ -39,6 +39,12 @@ var app = new Vue({
         this.onCurrentSundayChanged(sCurrentSunday);
     },
     filters: {
+        hasKeys: function (oStats) {
+            return Object.keys(oStats).length > 0;
+        },
+        not: function (bVal) {
+            return !bVal;
+        },
         formatLimitLabel: function (sCount) {
             if (sCount === "") { return "?"; }
             var iCount = parseInt(sCount, 10);

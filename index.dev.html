@@ -88,8 +88,12 @@
                 Search Songs ({{ filteredSongs.length | formatLimitLabel }} / {{ songs.length }})
             </h2>
 
+            <div v-if="!$options.filters.hasKeys(stats)">
+                <ui-alert type="warning" :dismissible="false">Filters disabled: song statistics not available</ui-alert>
+            </div>
             <ui-checkbox-group
               v-model="searchFilterFlags"
+              :disabled="stats | hasKeys | not"
               :options="['any known songs', 'entrance','offertory','communion','recession']"
               :vertical="window.screen.availWidth < 667"
             ></ui-checkbox-group>
