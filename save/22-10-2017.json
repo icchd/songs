@@ -45,8 +45,8 @@
          }
       },
       "482": {
-         "count": 2,
-         "lastSung": "20-08-2017",
+         "count": 3,
+         "lastSung": "08-10-2017",
          "sungFor": {
             "entrance": true
          }
@@ -95,8 +95,8 @@
          }
       },
       "597": {
-         "count": 2,
-         "lastSung": "20-08-2017",
+         "count": 3,
+         "lastSung": "08-10-2017",
          "sungFor": {
             "recession": true,
             "entrance": true
@@ -274,8 +274,8 @@
          }
       },
       "760": {
-         "count": 1,
-         "lastSung": "16-07-2017",
+         "count": 2,
+         "lastSung": "08-10-2017",
          "sungFor": {
             "offertory": true
          }
@@ -311,6 +311,7 @@
       },
       "790": {
          "count": 7,
+         "lastSung": "22-10-2017",
          "sungFor": {
             "entrance": true
          }
@@ -324,9 +325,10 @@
       },
       "793": {
          "count": 5,
+         "lastSung": "22-10-2017",
          "sungFor": {
-            "entrance": true,
-            "offertory": true
+            "offertory": true,
+            "entrance": true
          }
       },
       "803": {
@@ -337,8 +339,8 @@
          }
       },
       "806": {
-         "count": 2,
-         "lastSung": "23-07-2017",
+         "count": 3,
+         "lastSung": "08-10-2017",
          "sungFor": {
             "communion": true
          }
@@ -387,6 +389,7 @@
       },
       "821": {
          "count": 5,
+         "lastSung": "22-10-2017",
          "sungFor": {
             "communion": true
          }
@@ -421,6 +424,7 @@
       },
       "849": {
          "count": 6,
+         "lastSung": "22-10-2017",
          "sungFor": {
             "recession": true
          }

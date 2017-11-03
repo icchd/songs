@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>ICCH Songs</title>
-        <link rel="stylesheet" href="dist/style28015d1c0c74de.min.css" />
+        <link rel="stylesheet" href="dist/styleb318c9e3dc1bf8.min.css" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto" rel="stylesheet">
         <meta http-equiv="cache-control" content="max-age=0" />
         <meta http-equiv="cache-control" content="no-cache" />
@@ -13,6 +13,7 @@
         <meta http-equiv="pragma" content="no-cache" />
     </head>
     <body>
+        <div id="version">ver. b318c9e3dc1bf8</div>
         <div id="app">
             <ui-fab
                 id="btnPrevSunday"
@@ -26,7 +27,7 @@
                 size="small"
                 icon="skip_next"
                 ></ui-fab>
-            <h1>Songs for Sunday {{ nextSunday }}</h1>
+            <h1>Songs for {{ currentFeastName }} {{ currentFeastDate }}</h1>
             <ul class="finalList">
                 <li><b>Entrance:</b> {{ selectedSongs.entrance.number }} {{ selectedSongs.entrance.title }}    <ui-button type="secondary" @click="removeSong('entrance')" size="small" v-if="selectedSongs.entrance.number.length > 0" icon="delete"></ui-button></li>
                 <li><b>Offertory:</b> {{ selectedSongs.offertory.number }} {{ selectedSongs.offertory.title }} <ui-button type="secondary" @click="removeSong('offertory')" size="small" v-if="selectedSongs.offertory.number.length > 0" icon="delete"></ui-button></li>
@@ -91,9 +92,11 @@
                 <ui-alert type="warning" :dismissible="false">Filters disabled: song statistics not available</ui-alert>
             </div>
             <ui-checkbox-group
-              v-model="searchFilterFlags"
+              id="searchFilters"
+              @input="onFilterCheckboxClicked"
+              :value="[]"
               :disabled="stats | hasKeys | not"
-              :options="['any known songs', 'entrance','offertory','communion','recession']"
+              :options="possibleSearchFilterFlags"
               :vertical="window.screen.availWidth < 667"
             ></ui-checkbox-group>
 
@@ -146,6 +149,6 @@
 
             </ui-modal>
         </div>
-        <script type="text/javascript" src="dist/bundle28015d1c0c74de.min.js"></script>
+        <script type="text/javascript" src="dist/bundleb318c9e3dc1bf8.min.js"></script>
     </body>
 </html>

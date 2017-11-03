@@ -14,6 +14,7 @@
         <meta http-equiv="pragma" content="no-cache" />
     </head>
     <body>
+        <div id="version">ver. DEVELOPMENT</div>
         <div id="app">
             <ui-fab
                 id="btnPrevSunday"
@@ -27,7 +28,7 @@
                 size="small"
                 icon="skip_next"
                 ></ui-fab>
-            <h1>Songs for Sunday {{ nextSunday }}</h1>
+            <h1>Songs for {{ currentFeastName }} {{ currentFeastDate }}</h1>
             <ul class="finalList">
                 <li><b>Entrance:</b> {{ selectedSongs.entrance.number }} {{ selectedSongs.entrance.title }}    <ui-button type="secondary" @click="removeSong('entrance')" size="small" v-if="selectedSongs.entrance.number.length > 0" icon="delete"></ui-button></li>
                 <li><b>Offertory:</b> {{ selectedSongs.offertory.number }} {{ selectedSongs.offertory.title }} <ui-button type="secondary" @click="removeSong('offertory')" size="small" v-if="selectedSongs.offertory.number.length > 0" icon="delete"></ui-button></li>
@@ -92,9 +93,11 @@
                 <ui-alert type="warning" :dismissible="false">Filters disabled: song statistics not available</ui-alert>
             </div>
             <ui-checkbox-group
-              v-model="searchFilterFlags"
+              id="searchFilters"
+              @input="onFilterCheckboxClicked"
+              :value="[]"
               :disabled="stats | hasKeys | not"
-              :options="['any known songs', 'entrance','offertory','communion','recession']"
+              :options="possibleSearchFilterFlags"
               :vertical="window.screen.availWidth < 667"
             ></ui-checkbox-group>
 
@@ -148,6 +151,7 @@
             </ui-modal>
         </div>
         <script src="js/moment-with-locales.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/catholicHolidays.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/vue.min.js"></script>
         <script src="js/vue-resource.min.js"></script>
         <script src="js/keen-ui.min.js"></script>

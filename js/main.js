@@ -3,11 +3,16 @@ var I_MAX_SONGS_IN_SEARCH = 80;
 
 var m = function () { return moment.apply(this, arguments).locale("en-gb"); }
 
+var catholicHolidays = catholicHolidays.createLibrary(m);
+
+var oInitialFestiveDay = catholicHolidays.getNextFestiveDay(m());
+
 var app = new Vue({
     el: "#app",
     data: {
-        currentDate: getNextSunday(),
+        currentFeast: oInitialFestiveDay,
         password: "",
+        possibleSearchFilterFlags: ["any known songs", "entrance", "offertory", "communion", "recession"],
         searchFilterFlags: [],
         searchText: "",
         recentSongs: [],
@@ -35,8 +40,7 @@ var app = new Vue({
             that.refreshSelectedState();
         });
 
-        var sCurrentSunday = getNextSunday("DD-MM-YYYY");
-        this.onCurrentSundayChanged(sCurrentSunday);
+        this.setCurrentFeast(oInitialFestiveDay);
     },
     filters: {
         hasKeys: function (oStats) {
@@ -83,26 +87,47 @@ var app = new Vue({
         }
     },
     methods: {
-        onCurrentSundayChanged: function (sDate) {
+        onFilterCheckboxClicked: function () {
+            var that = this;
+            setTimeout(function () {
+                /*
+                 * keenui's v-model doesn't work on phones, therefore we need to
+                 * keep track of the value manually as this is changed...
+                 */
+                 var aCheckboxLabels = document.querySelectorAll("#searchFilters label");
+                 var i;
+                 that.searchFilterFlags = [];
+                 for (i = 0; i < aCheckboxLabels.length; i++) {
+                    // we have found the index
+                    var sLabelValue = that.possibleSearchFilterFlags[i];
+                    var bSelected = aCheckboxLabels[i].value === "true";
+                    if (bSelected) {
+                        that.searchFilterFlags.push(sLabelValue);
+                    }
+                 }
+            }, 0);
+        },
+        loadStatistics: function (oFestiveDay, iMaxDaysBack) {
             var that = this;
 
-            this.currentDate = sDate;
+            new Array(iMaxDaysBack).join(",").split(",").reduce(function (oPreviousPromise, oNextIteration) {
 
-            // get previous sundays stats
-            if (m(sDate, "DD-MM-YYYY").isSameOrBefore(m())) {
-                var sPrevSunday = getSundayBeforeSunday(sDate);
-                var sPrevPrevSunday = getSundayBeforeSunday(sPrevSunday);
-                var sPrevPrevPrevSunday = getSundayBeforeSunday(sPrevPrevSunday);
-                this.getStatsFrom(
-                    sPrevSunday + ".json"
-                ).catch(function () {
-                    return that.getStatsFrom(sPrevPrevSunday + ".json");
-                }).catch(function () {
-                    return that.getStatsFrom(sPrevPrevPrevSunday + ".json");
+                return oPreviousPromise.catch(function (oTryWithThisDate) {
+
+                    return that.loadStatsFrom(oTryWithThisDate.format("DD-MM-YYYY") + ".json")
+                        .catch(function () {
+                            var oPreviousDate = catholicHolidays.getPreviousFestiveDay(oTryWithThisDate);
+                            return Promise.reject(oPreviousDate);
+                        });
                 });
-            }
 
-            this.$http.get("save/" + sDate + ".json").then(function (oData) {
+            }, Promise.reject(catholicHolidays.getPreviousFestiveDay(oFestiveDay)));
+        },
+        loadCurrentSongSelection: function (oFestiveDay) {
+            var that = this;
+
+            // Attempt to load songs
+            this.$http.get("save/" + oFestiveDay.format("DD-MM-YYYY") + ".json").then(function (oData) {
                 if (oData.status !== 200) {
                     return;
                 }
@@ -127,15 +152,21 @@ var app = new Vue({
                 }
             });
         },
+        setCurrentFeast: function (oFeastDay) {
+
+            this.currentFeast = oFeastDay;
+
+            this.loadCurrentSongSelection(oFeastDay);
+
+            this.loadStatistics(oFeastDay, 5);
+        },
         onPreviousSundayClicked: function () {
-            var sPrevSunday = getSundayBeforeSunday(this.currentDate);
-            this.onCurrentSundayChanged(sPrevSunday);
+            this.setCurrentFeast(catholicHolidays.getPreviousFestiveDay(this.currentFeast));
         },
         onNextSundayClicked: function () {
-            var sNextSunday = getSundayAfterSunday(this.currentDate);
-            this.onCurrentSundayChanged(sNextSunday);
+            this.setCurrentFeast(catholicHolidays.getNextFestiveDay(this.currentFeast));
         },
-        getStatsFrom: function (sFilename) {
+        loadStatsFrom: function (sFilename) {
             var that = this;
             return this.$http.get("save/" + sFilename).then(function (oData) {
                 if (oData.status !== 200) {
@@ -231,8 +262,11 @@ var app = new Vue({
         }
     },
     computed: {
-        nextSunday: function () {
-            return m(this.currentDate, "DD-MM-YYYY").format("DD MMM YYYY");
+        currentFeastDate: function () {
+            return m(this.currentFeast, "DD-MM-YYYY").format("DD MMM YYYY");
+        },
+        currentFeastName: function () {
+            return catholicHolidays.getFeastName(this.currentFeast);
         },
         filteredSongs: function () {
             var that = this;
@@ -282,33 +316,6 @@ var app = new Vue({
         }
     },
 });
-
-function getSundayBeforeSunday(sSunday) {
-    var oDate = m(sSunday, "DD-MM-YYYY");
-
-    return oDate.add(-7, "days").format("DD-MM-YYYY");
-}
-function getSundayAfterSunday(sSunday) {
-    var oDate = m(sSunday, "DD-MM-YYYY");
-
-    return oDate.add(7, "days").format("DD-MM-YYYY");
-}
-
-function getPreviousSunday(sFormat, iDayOffset) {
-    var days = iDayOffset;
-    while (m().add(days, "days").format("dddd") !== "Sunday") {
-        days--;
-    }
-    return m().add(days, "days").format(sFormat || "LL");
-}
-
-function getNextSunday(sFormat) {
-    var days = 0;
-    while (m().add(days, "days").format("dddd") !== "Sunday") {
-        days++;
-    }
-    return m().add(days, "days").format(sFormat || "LL");
-}
 
 function save(sPassword) {
     var that = this;
@@ -360,13 +367,13 @@ function save(sPassword) {
             oAllMoments[sMoment] = true;
 
             oClone.stats[sSongNumber].count++;
-            oClone.stats[sSongNumber].lastSung = that.currentDate;
+            oClone.stats[sSongNumber].lastSung = that.currentFeast.format("DD-MM-YYYY");
             oClone.stats[sSongNumber].sungFor = oAllMoments;
 
         });
 
         oClone.password = sPassword;
-        oClone.saveAs = app.currentDate + ".json";
+        oClone.saveAs = app.currentFeast.format("DD-MM-YYYY") + ".json";
         request.send(JSON.stringify(oClone, null, 3));
     });
 }
