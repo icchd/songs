@@ -45,6 +45,7 @@ module.exports = function(grunt) {
                 "js/vue-resource.min.js",
                 "js/keen-ui.min.js",
                 "js/catholicHolidays.js",
+                "js/qrcode.js",
                 "js/main.js"
             ],
             dest: "dist/bundle.js"

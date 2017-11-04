@@ -1,5 +1,6 @@
 var S_HEROKU_ENDPOINT = "https://icch-api-icch-api.a3c1.starter-us-west-1.openshiftapps.com/songs";
 var I_MAX_SONGS_IN_SEARCH = 80;
+var A_MOMENTS = ["entrance", "offertory", "communion", "recession"];
 
 var m = function () { return moment.apply(this, arguments).locale("en-gb"); }
 
@@ -7,12 +8,16 @@ var catholicHolidays = catholicHolidays.createLibrary(m);
 
 var oInitialFestiveDay = catholicHolidays.getNextFestiveDay(m());
 
+var qrCodeObj;
+
 var app = new Vue({
     el: "#app",
     data: {
+        qrCodeUrl: "",
         currentFeast: oInitialFestiveDay,
         password: "",
-        possibleSearchFilterFlags: ["any known songs", "entrance", "offertory", "communion", "recession"],
+        possibleMoments: A_MOMENTS,
+        possibleSearchFilterFlags: ["any known songs"].concat(A_MOMENTS),
         searchFilterFlags: [],
         searchText: "",
         recentSongs: [],
@@ -38,9 +43,13 @@ var app = new Vue({
                 that.songs.push(oSong);
             });
             that.refreshSelectedState();
+
+            var sInitialSongSet = document.URL.split("#")[1];
+            that.setSongsFromString(sInitialSongSet);
         });
 
         this.setCurrentFeast(oInitialFestiveDay);
+
     },
     filters: {
         hasKeys: function (oStats) {
@@ -87,6 +96,42 @@ var app = new Vue({
         }
     },
     methods: {
+        setSongsFromString: function(sSongs) {
+            var that = this;
+            if (!sSongs) {
+                return;
+            }
+            sSongs.split(",").forEach(function (sSongNumber, iIdx) {
+                if (/^[0-9]+$/.test(sSongNumber)) {
+                    that.setSongByNumber(sSongNumber, that.possibleMoments[iIdx]);
+                }
+            });
+        },
+        showQrCode: function () {
+            var that = this;
+
+            if (!qrCodeObj) {
+                qrCodeObj = new QRCode(
+                    document.getElementById("qrcode"), "");
+            }
+
+            var sSongs = A_MOMENTS.map(function (sMoment) {
+                return that.selectedSongs[sMoment].number || "x";
+            }).join(",");
+
+            var sUrl;
+            if (document.URL.indexOf("#") >= 0) {
+                sUrl = document.URL.replace(/#.+/, "#" + sSongs);
+            } else {
+                sUrl = document.URL + "#" + sSongs;
+            }
+
+            this.qrCodeUrl = sUrl;
+            qrCodeObj.clear();
+            qrCodeObj.makeCode(sUrl);
+
+            this.openModal("qrcode");
+        },
         onFilterCheckboxClicked: function () {
             var that = this;
             setTimeout(function () {
@@ -186,6 +231,9 @@ var app = new Vue({
                 that.selectedSongs[sMoment].title = "";
             });
         },
+        closeModal: function (ref) {
+            this.$refs[ref].close();
+        },
         openModal: function (ref) {
             this.$refs[ref].open();
         },
@@ -202,19 +250,34 @@ var app = new Vue({
             this.selectedSongs[sMoment].number = "";
             this.selectedSongs[sMoment].title = "";
         },
-        setSong: function (sMoment) {
-            var that = this;
-            this.$refs.whichSong.close();
+        setSongByNumber: function (sSongNumber, sMoment) {
+            // recover song informations
+            var oSong = this.songs.filter(function (oSong) {
+                return oSong.number === sSongNumber;
+            })[0];
 
+            if (!oSong) {
+                console.log("Cannot find song " + sSongNumber);
+                return;
+            }
+
+            this.setSongByItem(oSong, sMoment);
+        },
+        setSongByItem: function (oSong, sMoment) {
             if (this.selectedSongs[sMoment].number) {
                 this.addSongToRecents(this.selectedSongs[sMoment]);
             }
 
-            this.selectedSongs[sMoment].number = that.selectedSong.number;
-            this.selectedSongs[sMoment].title = that.selectedSong.title;
+            this.selectedSongs[sMoment].number = oSong.number;
+            this.selectedSongs[sMoment].title = oSong.title;
 
             this.refreshSelectedState();
+        },
+        setSong: function (sMoment) {
+            var that = this;
+            this.$refs.whichSong.close();
 
+            this.setSongByItem(this.selectedSong, sMoment);
         },
         refreshSelectedState: function () {
             var that = this;
