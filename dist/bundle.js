@@ -14237,6 +14237,15 @@ var app = new Vue({
     mounted: function () {
         var that = this;
 
+        var sHash = document.URL.split("#")[1];
+        var sInitialSongSet = "";
+        var sInitialDate = "";
+        if (sHash) {
+            var aHash = sHash.split("_");
+            sInitialDate = aHash[0];
+            sInitialSongSet = aHash[1];
+        }
+
         // check the url and log in with the log-in hash
         this.$http.get("songs.json").then(function (oData) {
             oData.body.list.forEach(function(oSong) {
@@ -14244,12 +14253,14 @@ var app = new Vue({
             });
             that.refreshSelectedState();
 
-            var sInitialSongSet = document.URL.split("#")[1];
             that.setSongsFromString(sInitialSongSet);
         });
 
-        this.setCurrentFeast(oInitialFestiveDay);
-
+        if (sInitialDate) {
+            this.setCurrentFeast(m(sInitialDate, "DD-MM-YYYY"));
+        } else {
+            this.setCurrentFeast(oInitialFestiveDay);
+        }
     },
     filters: {
         hasKeys: function (oStats) {
@@ -14315,15 +14326,17 @@ var app = new Vue({
                     document.getElementById("qrcode"), "");
             }
 
+            var sDate = that.currentFeast.format("DD-MM-YYYY");
+
             var sSongs = A_MOMENTS.map(function (sMoment) {
                 return that.selectedSongs[sMoment].number || "x";
             }).join(",");
 
             var sUrl;
             if (document.URL.indexOf("#") >= 0) {
-                sUrl = document.URL.replace(/#.+/, "#" + sSongs);
+                sUrl = document.URL.replace(/#.+/, "#" + sDate + "_" + sSongs);
             } else {
-                sUrl = document.URL + "#" + sSongs;
+                sUrl = document.URL + "#" + sDate + "_" + sSongs;
             }
 
             this.qrCodeUrl = sUrl;

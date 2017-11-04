@@ -36,7 +36,7 @@
                 <li><b>Recession:</b> {{ selectedSongs.recession.number }} {{ selectedSongs.recession.title }} <ui-button type="secondary" @click="removeSong('recession')" size="small" v-if="selectedSongs.recession.number.length > 0" icon="delete"></ui-button></li>
                 <br />
                 <ui-button @click="clearSongs" icon="clear" color="default">Clear</ui-button>
-                <ui-button @click="showQrCode" icon="fingerprint" color="default">QR Code</ui-button>
+                <ui-button @click="showQrCode" icon="select_all" color="default">QR</ui-button>
                 <ui-button @click="openModal('saveDialog')" icon="save" id="btnSave" color="primary">Save</ui-button>
             </ul>
             <h2>History</h2>
