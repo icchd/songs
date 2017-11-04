@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>ICCH Songs</title>
-        <link rel="stylesheet" href="dist/style6aa48799b065a8.min.css" />
+        <link rel="stylesheet" href="dist/styled30d21af1e395.min.css" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto" rel="stylesheet">
         <meta http-equiv="cache-control" content="max-age=0" />
         <meta http-equiv="cache-control" content="no-cache" />
@@ -13,7 +13,7 @@
         <meta http-equiv="pragma" content="no-cache" />
     </head>
     <body>
-        <div id="version">ver. 6aa48799b065a8</div>
+        <div id="version">ver. d30d21af1e395</div>
         <div id="app">
             <ui-fab
                 id="btnPrevSunday"
@@ -34,8 +34,9 @@
                 <li><b>Communion:</b> {{ selectedSongs.communion.number }} {{ selectedSongs.communion.title }} <ui-button type="secondary" @click="removeSong('communion')" size="small" v-if="selectedSongs.communion.number.length > 0" icon="delete"></ui-button></li>
                 <li><b>Recession:</b> {{ selectedSongs.recession.number }} {{ selectedSongs.recession.title }} <ui-button type="secondary" @click="removeSong('recession')" size="small" v-if="selectedSongs.recession.number.length > 0" icon="delete"></ui-button></li>
                 <br />
-                <ui-button @click="clearSongs" color="default">Clear</ui-button>
-                <ui-button @click="openModal('saveDialog')" id="btnSave" color="primary">Save</ui-button>
+                <ui-button @click="clearSongs" icon="clear" color="default">Clear</ui-button>
+                <ui-button @click="showQrCode" icon="fingerprint" color="default">QR Code</ui-button>
+                <ui-button @click="openModal('saveDialog')" icon="save" id="btnSave" color="primary">Save</ui-button>
             </ul>
             <h2>History</h2>
             <p v-if="recentSongs.length === 0">
@@ -120,6 +121,15 @@
                 <b>{{ song.number }}</b>&nbsp;{{ song.title }}
             </ui-button>
 
+            <ui-modal
+                size="large"
+                title="QR Code"
+                ref="qrcode">
+
+                <div id="qrcode"></div>
+                <p class="centerText"><a :href="qrCodeUrl" target="_blank">{{ qrCodeUrl }}</a></p>
+            </ui-modal>
+
             <ui-modal 
                 v-bind:title="selectedSong.number + ' - ' + selectedSong.title"
                 ref="whichSong">
@@ -149,6 +159,6 @@
 
             </ui-modal>
         </div>
-        <script type="text/javascript" src="dist/bundle6aa48799b065a8.min.js"></script>
+        <script type="text/javascript" src="dist/bundled30d21af1e395.min.js"></script>
     </body>
 </html>
