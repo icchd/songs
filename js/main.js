@@ -324,6 +324,11 @@ function save(sPassword) {
         request.onreadystatechange = function () {
             if (request.readyState === XMLHttpRequest.DONE) {
                 try {
+                    if (request.responseText === "") {
+                        alert("Error: Empty response");
+                        return;
+                    }
+
                     var oResponse = JSON.parse(request.responseText);
                     if (!oResponse.success) {
                         alert("Error");
@@ -334,6 +339,7 @@ function save(sPassword) {
                     fnDone(oResponse);
 
                 } catch (oError) {
+                    alert("Unexpected Error: " + oError);
                     fnError(oError);
                 }
             }
@@ -367,7 +373,7 @@ function save(sPassword) {
             oAllMoments[sMoment] = true;
 
             oClone.stats[sSongNumber].count++;
-            oClone.stats[sSongNumber].lastSung = that.currentFeast.format("DD-MM-YYYY");
+            oClone.stats[sSongNumber].lastSung = app.currentFeast.format("DD-MM-YYYY");
             oClone.stats[sSongNumber].sungFor = oAllMoments;
 
         });
