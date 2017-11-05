@@ -12,8 +12,8 @@
       "title": "Behold the Lamb"
    },
    "recession": {
-      "number": "739",
-      "title": "Let There Be Peace on Earth"
+      "number": "388",
+      "title": "Somebody’s Knockin’ at Your Door"
    },
    "stats": {
       "2": {
@@ -22,6 +22,13 @@
          "sungFor": {
             "offertory": true
          }
+      },
+      "388": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "05-11-2017"
       },
       "400": {
          "count": 1,
@@ -267,8 +274,8 @@
          }
       },
       "739": {
-         "count": 2,
-         "lastSung": "05-11-2017",
+         "count": 1,
+         "lastSung": "07-05-2017",
          "sungFor": {
             "recession": true
          }
