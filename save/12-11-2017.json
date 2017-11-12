@@ -1,19 +1,19 @@
 {
    "entrance": {
-      "number": "",
-      "title": ""
+      "number": "482",
+      "title": "All Hail the Power of Jesus’ Name"
    },
    "offertory": {
-      "number": "",
-      "title": ""
+      "number": "661",
+      "title": "Christ Be Our Light"
    },
    "communion": {
-      "number": "",
-      "title": ""
+      "number": "725",
+      "title": "Because the Lord Is My Shepherd"
    },
    "recession": {
-      "number": "",
-      "title": ""
+      "number": "830",
+      "title": "City of God"
    },
    "stats": {
       "2": {
@@ -22,6 +22,13 @@
          "sungFor": {
             "offertory": true
          }
+      },
+      "388": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "05-11-2017"
       },
       "400": {
          "count": 1,
@@ -45,8 +52,8 @@
          }
       },
       "482": {
-         "count": 4,
-         "lastSung": "29-10-2017",
+         "count": 5,
+         "lastSung": "12-11-2017",
          "sungFor": {
             "entrance": true
          }
@@ -152,8 +159,8 @@
          "lastSung": "01-11-2017"
       },
       "661": {
-         "count": 4,
-         "lastSung": "29-10-2017",
+         "count": 5,
+         "lastSung": "12-11-2017",
          "sungFor": {
             "offertory": true
          }
@@ -237,8 +244,8 @@
          }
       },
       "725": {
-         "count": 2,
-         "lastSung": "07-05-2017",
+         "count": 3,
+         "lastSung": "12-11-2017",
          "sungFor": {
             "communion": true,
             "offertory": true
@@ -331,8 +338,8 @@
          }
       },
       "792": {
-         "count": 2,
-         "lastSung": "17-09-2017",
+         "count": 3,
+         "lastSung": "05-11-2017",
          "sungFor": {
             "entrance": true
          }
@@ -360,8 +367,8 @@
          }
       },
       "809": {
-         "count": 2,
-         "lastSung": "23-04-2017",
+         "count": 3,
+         "lastSung": "05-11-2017",
          "sungFor": {
             "communion": true
          }
@@ -423,11 +430,18 @@
          }
       },
       "829": {
-         "count": 1,
-         "lastSung": "02-07-2017",
+         "count": 2,
+         "lastSung": "05-11-2017",
          "sungFor": {
             "offertory": true
          }
+      },
+      "830": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "12-11-2017"
       },
       "836": {
          "count": 3,
@@ -449,16 +463,6 @@
          "sungFor": {
             "recession": true
          }
-      },
-      "": {
-         "count": 4,
-         "sungFor": {
-            "entrance": true,
-            "offertory": true,
-            "communion": true,
-            "recession": true
-         },
-         "lastSung": "12-11-2017"
       }
    }
 }
