@@ -28,7 +28,7 @@
                 size="small"
                 icon="skip_next"
                 ></ui-fab>
-            <h1>Songs for {{ currentFeastName }} {{ currentFeastDate }}</h1>
+            <h1>Songs for {{ currentFeastName }} <a target="_blank" :href="'http://www.usccb.org/bible/readings/' + currentFeastDateShort + '.cfm'">{{ currentFeastDate }}</a></h1>
             <ul class="finalList">
                 <li><b>Entrance:</b> {{ selectedSongs.entrance.number }} {{ selectedSongs.entrance.title }}    <ui-button type="secondary" @click="removeSong('entrance')" size="small" v-if="selectedSongs.entrance.number.length > 0" icon="delete"></ui-button></li>
                 <li><b>Offertory:</b> {{ selectedSongs.offertory.number }} {{ selectedSongs.offertory.title }} <ui-button type="secondary" @click="removeSong('offertory')" size="small" v-if="selectedSongs.offertory.number.length > 0" icon="delete"></ui-button></li>

@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>ICCH Songs</title>
-        <link rel="stylesheet" href="dist/style46a8c1d32c529c.min.css" />
+        <link rel="stylesheet" href="dist/style324dd99acb25dc.min.css" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto" rel="stylesheet">
         <meta http-equiv="cache-control" content="max-age=0" />
         <meta http-equiv="cache-control" content="no-cache" />
@@ -14,7 +14,7 @@
         <meta http-equiv="pragma" content="no-cache" />
     </head>
     <body>
-        <div id="version">ver. 46a8c1d32c529c</div>
+        <div id="version">ver. 324dd99acb25dc</div>
         <div id="app">
             <ui-fab
                 id="btnPrevSunday"
@@ -28,7 +28,7 @@
                 size="small"
                 icon="skip_next"
                 ></ui-fab>
-            <h1>Songs for {{ currentFeastName }} {{ currentFeastDate }}</h1>
+            <h1>Songs for {{ currentFeastName }} <a target="_blank" :href="'http://www.usccb.org/bible/readings/' + currentFeastDateShort + '.cfm'">{{ currentFeastDate }}</a></h1>
             <ul class="finalList">
                 <li><b>Entrance:</b> {{ selectedSongs.entrance.number }} {{ selectedSongs.entrance.title }}    <ui-button type="secondary" @click="removeSong('entrance')" size="small" v-if="selectedSongs.entrance.number.length > 0" icon="delete"></ui-button></li>
                 <li><b>Offertory:</b> {{ selectedSongs.offertory.number }} {{ selectedSongs.offertory.title }} <ui-button type="secondary" @click="removeSong('offertory')" size="small" v-if="selectedSongs.offertory.number.length > 0" icon="delete"></ui-button></li>
@@ -160,6 +160,6 @@
 
             </ui-modal>
         </div>
-        <script type="text/javascript" src="dist/bundle46a8c1d32c529c.min.js"></script>
+        <script type="text/javascript" src="dist/bundle324dd99acb25dc.min.js"></script>
     </body>
 </html>

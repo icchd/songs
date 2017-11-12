@@ -14541,6 +14541,9 @@ var app = new Vue({
         currentFeastDate: function () {
             return m(this.currentFeast, "DD-MM-YYYY").format("DD MMM YYYY");
         },
+        currentFeastDateShort: function () {
+            return m(this.currentFeast, "DD-MM-YYYY").format("MMDDYY");
+        },
         currentFeastName: function () {
             return catholicHolidays.getFeastName(this.currentFeast);
         },
