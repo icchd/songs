@@ -14206,7 +14206,7 @@ var m = function () { return moment.apply(this, arguments).locale("en-gb"); }
 
 var catholicHolidays = catholicHolidays.createLibrary(m);
 
-var oInitialFestiveDay = catholicHolidays.getNextFestiveDay(m());
+var oInitialFestiveDay = catholicHolidays.getNextFestiveDay(m().subtract(14, "hours"));
 
 var qrCodeObj;
 
