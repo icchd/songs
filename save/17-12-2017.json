@@ -8,8 +8,8 @@
       "title": "Ready the Way"
    },
    "communion": {
-      "number": "",
-      "title": ""
+      "number": "505",
+      "title": "Holy Is His Name"
    },
    "recession": {
       "number": "",
@@ -87,10 +87,11 @@
          }
       },
       "505": {
-         "count": 1,
-         "lastSung": "03-09-2017",
+         "count": 2,
+         "lastSung": "17-12-2017",
          "sungFor": {
-            "offertory": true
+            "offertory": true,
+            "communion": true
          }
       },
       "522": {
@@ -493,7 +494,7 @@
          }
       },
       "": {
-         "count": 12,
+         "count": 11,
          "sungFor": {
             "entrance": true,
             "offertory": true,
