@@ -1,7 +1,7 @@
 {
    "entrance": {
-      "number": "650",
-      "title": "Come to the Water (Foley)"
+      "number": "655",
+      "title": "God, Whose Glory Reigns Eternal"
    },
    "offertory": {
       "number": "725",
@@ -145,11 +145,18 @@
          }
       },
       "650": {
-         "count": 2,
-         "lastSung": "26-11-2017",
+         "count": 1,
+         "lastSung": "09-07-2017",
          "sungFor": {
             "entrance": true
          }
+      },
+      "655": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "26-11-2017"
       },
       "659": {
          "count": 1,
