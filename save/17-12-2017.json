@@ -4,8 +4,8 @@
       "title": "O Come, Divine Messiah"
    },
    "offertory": {
-      "number": "",
-      "title": ""
+      "number": "323",
+      "title": "Ready the Way"
    },
    "communion": {
       "number": "",
@@ -41,6 +41,13 @@
          "count": 1,
          "sungFor": {
             "entrance": true
+         },
+         "lastSung": "17-12-2017"
+      },
+      "323": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
          },
          "lastSung": "17-12-2017"
       },
@@ -486,7 +493,7 @@
          }
       },
       "": {
-         "count": 13,
+         "count": 12,
          "sungFor": {
             "entrance": true,
             "offertory": true,
