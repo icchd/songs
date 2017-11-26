@@ -8,8 +8,8 @@
       "title": "Because the Lord Is My Shepherd"
    },
    "communion": {
-      "number": "",
-      "title": ""
+      "number": "809",
+      "title": "Behold the Lamb"
    },
    "recession": {
       "number": "522",
@@ -66,7 +66,7 @@
          }
       },
       "522": {
-         "count": 3,
+         "count": 2,
          "lastSung": "26-11-2017",
          "sungFor": {
             "recession": true
@@ -145,7 +145,7 @@
          }
       },
       "650": {
-         "count": 3,
+         "count": 2,
          "lastSung": "26-11-2017",
          "sungFor": {
             "entrance": true
@@ -244,7 +244,7 @@
          }
       },
       "725": {
-         "count": 5,
+         "count": 4,
          "lastSung": "26-11-2017",
          "sungFor": {
             "communion": true,
@@ -367,8 +367,8 @@
          }
       },
       "809": {
-         "count": 3,
-         "lastSung": "05-11-2017",
+         "count": 4,
+         "lastSung": "26-11-2017",
          "sungFor": {
             "communion": true
          }
@@ -465,11 +465,14 @@
          }
       },
       "": {
-         "count": 2,
+         "count": 4,
          "sungFor": {
-            "communion": true
+            "entrance": true,
+            "offertory": true,
+            "communion": true,
+            "recession": true
          },
-         "lastSung": "26-11-2017"
+         "lastSung": "19-11-2017"
       }
    }
 }
