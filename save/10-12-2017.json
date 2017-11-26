@@ -4,8 +4,8 @@
       "title": "On Jordan’s Bank"
    },
    "offertory": {
-      "number": "",
-      "title": ""
+      "number": "323",
+      "title": "Ready the Way"
    },
    "communion": {
       "number": "",
@@ -34,6 +34,13 @@
          "count": 1,
          "sungFor": {
             "entrance": true
+         },
+         "lastSung": "10-12-2017"
+      },
+      "323": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
          },
          "lastSung": "10-12-2017"
       },
@@ -479,7 +486,7 @@
          }
       },
       "": {
-         "count": 10,
+         "count": 9,
          "sungFor": {
             "entrance": true,
             "offertory": true,
