@@ -1,19 +1,19 @@
 {
    "entrance": {
-      "number": "650",
-      "title": "Come to the Water (Foley)"
+      "number": "",
+      "title": ""
    },
    "offertory": {
-      "number": "725",
-      "title": "Because the Lord Is My Shepherd"
+      "number": "",
+      "title": ""
    },
    "communion": {
       "number": "",
       "title": ""
    },
    "recession": {
-      "number": "522",
-      "title": "Lift High the Cross"
+      "number": "",
+      "title": ""
    },
    "stats": {
       "2": {
@@ -66,8 +66,8 @@
          }
       },
       "522": {
-         "count": 2,
-         "lastSung": "19-11-2017",
+         "count": 1,
+         "lastSung": "03-09-2017",
          "sungFor": {
             "recession": true
          }
@@ -145,8 +145,8 @@
          }
       },
       "650": {
-         "count": 2,
-         "lastSung": "19-11-2017",
+         "count": 1,
+         "lastSung": "09-07-2017",
          "sungFor": {
             "entrance": true
          }
@@ -244,8 +244,8 @@
          }
       },
       "725": {
-         "count": 4,
-         "lastSung": "19-11-2017",
+         "count": 3,
+         "lastSung": "12-11-2017",
          "sungFor": {
             "communion": true,
             "offertory": true
@@ -465,9 +465,12 @@
          }
       },
       "": {
-         "count": 1,
+         "count": 4,
          "sungFor": {
-            "communion": true
+            "entrance": true,
+            "offertory": true,
+            "communion": true,
+            "recession": true
          },
          "lastSung": "19-11-2017"
       }
