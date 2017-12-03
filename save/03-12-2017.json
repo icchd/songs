@@ -4,8 +4,8 @@
       "title": "O Come, O Come, Emmanuel"
    },
    "offertory": {
-      "number": "323",
-      "title": "Ready the Way"
+      "number": "661",
+      "title": "Christ Be Our Light"
    },
    "communion": {
       "number": "766",
@@ -27,13 +27,6 @@
          "count": 1,
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "03-12-2017"
-      },
-      "323": {
-         "count": 1,
-         "sungFor": {
-            "offertory": true
          },
          "lastSung": "03-12-2017"
       },
@@ -187,8 +180,8 @@
          "lastSung": "01-11-2017"
       },
       "661": {
-         "count": 5,
-         "lastSung": "12-11-2017",
+         "count": 6,
+         "lastSung": "03-12-2017",
          "sungFor": {
             "offertory": true
          }
