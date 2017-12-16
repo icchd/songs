@@ -4,16 +4,16 @@
       "title": "On Jordan’s Bank"
    },
    "offertory": {
-      "number": "704",
-      "title": "Eagle’s Wings"
+      "number": "714",
+      "title": "We Will Rise Again"
    },
    "communion": {
       "number": "822",
       "title": "I Am the Living Bread"
    },
    "recession": {
-      "number": "",
-      "title": ""
+      "number": "323",
+      "title": "Ready the Way"
    },
    "stats": {
       "2": {
@@ -34,6 +34,13 @@
          "count": 1,
          "sungFor": {
             "entrance": true
+         },
+         "lastSung": "10-12-2017"
+      },
+      "323": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
          },
          "lastSung": "10-12-2017"
       },
@@ -208,8 +215,8 @@
          }
       },
       "704": {
-         "count": 2,
-         "lastSung": "10-12-2017",
+         "count": 1,
+         "lastSung": "18-06-2017",
          "sungFor": {
             "offertory": true
          }
@@ -237,8 +244,8 @@
          }
       },
       "714": {
-         "count": 1,
-         "lastSung": "02-04-2017",
+         "count": 2,
+         "lastSung": "10-12-2017",
          "sungFor": {
             "offertory": true
          }
@@ -493,14 +500,14 @@
          }
       },
       "": {
-         "count": 5,
+         "count": 4,
          "sungFor": {
             "entrance": true,
             "offertory": true,
             "communion": true,
             "recession": true
          },
-         "lastSung": "10-12-2017"
+         "lastSung": "19-11-2017"
       }
    }
 }
