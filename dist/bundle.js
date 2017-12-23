@@ -14038,6 +14038,8 @@ return hooks;
 });;(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.catholicHolidays = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 "use strict";
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 function getEasterSunday(m, iYear) {
     var a = (iYear / 100 | 0) * 1483 - (iYear / 400 | 0) * 2225 + 2613;
     var b = ((iYear % 19 * 3510 + (a / 25 | 0) * 319) / 330 | 0) % 29;
@@ -14046,8 +14048,21 @@ function getEasterSunday(m, iYear) {
     return m({ year: iYear, month: (c / 31 | 0) - 1, day: c % 31 + 1 });
 }
 
+function getEpiphany(m, iYear) {
+    return m({ year: iYear, month: 0, day: 6 });
+}
+
 function getAllSaints(m, iYear) {
     return m({ year: iYear, month: 10, day: 0 });
+}
+
+function getChristmasDay(m, iYear) {
+    return m({ year: iYear, month: 11, day: 25 });
+}
+
+function getOctaveDayOfChristmas(m, iYear) {
+    var oChristmasDayPreviousYear = getChristmasDay(m, iYear - 1);
+    return oChristmasDayPreviousYear.add(7, "days");
 }
 
 function getAllHolidays(m, iYear) {
@@ -14082,8 +14097,13 @@ function getNextFestiveDay(m, oStartFromDay) {
     var aFestiveDaysThisYear = getAllHolidays(m, iYear).map(function (o) {
         return o.date;
     });
+    var aFestiveDaysNextYear = getAllHolidays(m, iYear + 1).map(function (o) {
+        return o.date;
+    });
 
-    return _getNextFestiveDay(m, oStartFromDay.clone(), aFestiveDaysThisYear);
+    var aFestiveDays = [].concat(_toConsumableArray(aFestiveDaysThisYear), _toConsumableArray(aFestiveDaysNextYear));
+
+    return _getNextFestiveDay(m, oStartFromDay.clone(), aFestiveDays);
 }
 
 function getPreviousFestiveDay(m, oStartFromDay) {
@@ -14091,6 +14111,11 @@ function getPreviousFestiveDay(m, oStartFromDay) {
     var aFestiveDaysThisYear = getAllHolidays(m, iYear).map(function (o) {
         return o.date;
     });
+    var aFestiveDaysLastYear = getAllHolidays(m, iYear - 1).map(function (o) {
+        return o.date;
+    });
+
+    var aFestiveDays = [].concat(_toConsumableArray(aFestiveDaysLastYear), _toConsumableArray(aFestiveDaysThisYear));
 
     return _getPreviousFestiveDay(m, oStartFromDay, aFestiveDaysThisYear);
 }
@@ -14138,7 +14163,10 @@ function _isFestiveDay(oDay, aFestiveDays) {
 
 var oHolidayGetters = {
     getAllSaints: getAllSaints,
-    getEasterSunday: getEasterSunday
+    getEasterSunday: getEasterSunday,
+    getChristmasDay: getChristmasDay,
+    getOctaveDayOfChristmas: getOctaveDayOfChristmas,
+    getEpiphany: getEpiphany
 };
 
 var oPublic = {

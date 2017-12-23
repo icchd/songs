@@ -27,12 +27,24 @@ describe("getAllHolidays", function () {
         )
         .to.deep.equal([
           {
+            "date": "01-01-2017",
+            "description": "Octave Day Of Christmas"
+          },
+          {
+            "date": "06-01-2017",
+            "description": "Epiphany"
+          },
+          {
             "date": "16-04-2017",
             "description": "Easter Sunday"
           },
           {
             "date": "01-11-2017",
             "description": "All Saints"
+          },
+          {
+            "date": "25-12-2017",
+            "description": "Christmas Day"
           }
         ]);
     });
@@ -126,6 +138,12 @@ describe("getNextFestiveDay", function () {
         expect(
             oHolidays.getNextFestiveDay(oAllSaints).format("DD-MM-YYYY")
         ).to.equal("05-11-2017");
+
+        // Getting the octave day of christmas after new year's eve
+        var oNewYearsEve = m({ year: 2017, month: 11, day: 31 });
+        expect(
+            oHolidays.getNextFestiveDay(oNewYearsEve).format("DD-MM-YYYY")
+        ).to.equal("01-01-2018");
     });
 });
 
@@ -160,6 +178,12 @@ describe("getPreviousFestiveDay", function () {
                 oAllSaintsPlusOne
             ]).format("DD-MM-YYYY")
         ).to.equal(oAllSaintsPlusOne.format("DD-MM-YYYY")); // gives all saints plus one
+
+        // Getting the 31 of last year from first of January
+        var oOctaveDayOfChristmas2018 = m({ year: 2018, month: 0, day: 1 });
+        expect(
+            oHolidays.getPreviousFestiveDay(oOctaveDayOfChristmas2018).format("DD-MM-YYYY")
+        ).to.equal("31-12-2017"); // gives all saints
     });
 });
 
