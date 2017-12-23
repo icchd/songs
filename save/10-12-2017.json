@@ -25,38 +25,38 @@
       },
       "311": {
          "count": 1,
+         "lastSung": "03-12-2017",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "03-12-2017"
+         }
       },
       "315": {
          "count": 1,
+         "lastSung": "10-12-2017",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "10-12-2017"
+         }
       },
       "323": {
          "count": 1,
+         "lastSung": "10-12-2017",
          "sungFor": {
             "recession": true
-         },
-         "lastSung": "10-12-2017"
+         }
       },
       "329": {
          "count": 1,
+         "lastSung": "03-12-2017",
          "sungFor": {
             "recession": true
-         },
-         "lastSung": "03-12-2017"
+         }
       },
       "388": {
          "count": 1,
+         "lastSung": "05-11-2017",
          "sungFor": {
             "recession": true
-         },
-         "lastSung": "05-11-2017"
+         }
       },
       "400": {
          "count": 1,
@@ -102,10 +102,10 @@
       },
       "526": {
          "count": 1,
+         "lastSung": "01-11-2017",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "01-11-2017"
+         }
       },
       "542": {
          "count": 1,
@@ -181,17 +181,17 @@
       },
       "655": {
          "count": 1,
+         "lastSung": "26-11-2017",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "26-11-2017"
+         }
       },
       "659": {
          "count": 1,
+         "lastSung": "01-11-2017",
          "sungFor": {
             "offertory": true
-         },
-         "lastSung": "01-11-2017"
+         }
       },
       "661": {
          "count": 6,
@@ -282,8 +282,8 @@
          "count": 4,
          "lastSung": "26-11-2017",
          "sungFor": {
-            "communion": true,
-            "offertory": true
+            "offertory": true,
+            "communion": true
          }
       },
       "729": {
@@ -473,10 +473,10 @@
       },
       "830": {
          "count": 1,
+         "lastSung": "12-11-2017",
          "sungFor": {
             "recession": true
-         },
-         "lastSung": "12-11-2017"
+         }
       },
       "836": {
          "count": 3,
@@ -501,13 +501,13 @@
       },
       "": {
          "count": 4,
+         "lastSung": "19-11-2017",
          "sungFor": {
-            "entrance": true,
-            "offertory": true,
+            "recession": true,
             "communion": true,
-            "recession": true
-         },
-         "lastSung": "19-11-2017"
+            "offertory": true,
+            "entrance": true
+         }
       }
    }
 }

@@ -67,10 +67,10 @@
       },
       "526": {
          "count": 1,
+         "lastSung": "01-11-2017",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "01-11-2017"
+         }
       },
       "542": {
          "count": 1,
@@ -146,10 +146,10 @@
       },
       "659": {
          "count": 1,
+         "lastSung": "01-11-2017",
          "sungFor": {
             "offertory": true
-         },
-         "lastSung": "01-11-2017"
+         }
       },
       "661": {
          "count": 4,
