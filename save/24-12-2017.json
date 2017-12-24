@@ -12,8 +12,8 @@
       "title": "Bread of Life"
    },
    "recession": {
-      "number": "435",
-      "title": "Let Heaven Rejoice"
+      "number": "316",
+      "title": "O Come, Divine Messiah"
    },
    "stats": {
       "2": {
@@ -38,10 +38,11 @@
          }
       },
       "316": {
-         "count": 1,
-         "lastSung": "17-12-2017",
+         "count": 2,
+         "lastSung": "24-12-2017",
          "sungFor": {
-            "entrance": true
+            "entrance": true,
+            "recession": true
          }
       },
       "323": {
@@ -79,13 +80,6 @@
          "sungFor": {
             "recession": true
          }
-      },
-      "435": {
-         "count": 1,
-         "sungFor": {
-            "recession": true
-         },
-         "lastSung": "24-12-2017"
       },
       "466": {
          "count": 1,
