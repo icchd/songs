@@ -8,8 +8,8 @@
       "title": "Blessed are the poor in spirit, longing for their Lord"
    },
    "communion": {
-      "number": "809",
-      "title": "Behold the Lamb"
+      "number": "819",
+      "title": "Bread of Life"
    },
    "recession": {
       "number": "435",
@@ -425,8 +425,8 @@
          }
       },
       "809": {
-         "count": 5,
-         "lastSung": "24-12-2017",
+         "count": 4,
+         "lastSung": "26-11-2017",
          "sungFor": {
             "communion": true
          }
@@ -453,8 +453,8 @@
          }
       },
       "819": {
-         "count": 2,
-         "lastSung": "01-10-2017",
+         "count": 3,
+         "lastSung": "24-12-2017",
          "sungFor": {
             "communion": true
          }
