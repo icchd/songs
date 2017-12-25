@@ -4,12 +4,12 @@
       "title": "Joy to the World"
    },
    "offertory": {
-      "number": "343",
-      "title": "Silent Night, Holy Night/ Noche de Paz, Noche de Amor/Stille Nacht, Heilige Nacht"
+      "number": "352",
+      "title": "Go, Tell It on the Mountain"
    },
    "communion": {
-      "number": "435",
-      "title": "Let Heaven Rejoice"
+      "number": "363",
+      "title": "The First Nowell"
    },
    "recession": {
       "number": "345",
@@ -74,17 +74,24 @@
          },
          "lastSung": "25-12-2017"
       },
-      "343": {
+      "345": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "25-12-2017"
+      },
+      "352": {
          "count": 1,
          "sungFor": {
             "offertory": true
          },
          "lastSung": "25-12-2017"
       },
-      "345": {
+      "363": {
          "count": 1,
          "sungFor": {
-            "recession": true
+            "communion": true
          },
          "lastSung": "25-12-2017"
       },
@@ -101,13 +108,6 @@
          "sungFor": {
             "recession": true
          }
-      },
-      "435": {
-         "count": 1,
-         "sungFor": {
-            "communion": true
-         },
-         "lastSung": "25-12-2017"
       },
       "466": {
          "count": 1,
