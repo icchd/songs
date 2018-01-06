@@ -4,8 +4,8 @@
       "title": "Joy to the World"
    },
    "offertory": {
-      "number": "",
-      "title": ""
+      "number": "354",
+      "title": "The Snow Lay on the Ground"
    },
    "communion": {
       "number": "364",
@@ -97,11 +97,11 @@
          "lastSung": "25-12-2017"
       },
       "354": {
-         "count": 1,
+         "count": 2,
          "sungFor": {
             "offertory": true
          },
-         "lastSung": "31-12-2017"
+         "lastSung": "06-01-2018"
       },
       "363": {
          "count": 2,
@@ -575,8 +575,8 @@
          }
       },
       "": {
-         "count": 6,
-         "lastSung": "06-01-2018",
+         "count": 5,
+         "lastSung": "17-12-2017",
          "sungFor": {
             "recession": true,
             "communion": true,
