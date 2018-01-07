@@ -12,8 +12,8 @@
       "title": "One Bread, One Body (Foley)"
    },
    "recession": {
-      "number": "710",
-      "title": "For You Are My God"
+      "number": "461",
+      "title": "Come Down, O Love Divine"
    },
    "stats": {
       "2": {
@@ -130,6 +130,13 @@
          "sungFor": {
             "recession": true
          }
+      },
+      "461": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "07-01-2018"
       },
       "466": {
          "count": 1,
@@ -309,13 +316,6 @@
          "sungFor": {
             "entrance": true
          }
-      },
-      "710": {
-         "count": 1,
-         "sungFor": {
-            "recession": true
-         },
-         "lastSung": "07-01-2018"
       },
       "713": {
          "count": 1,
