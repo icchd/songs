@@ -39,6 +39,15 @@ var app = new Vue({
         topics: []
     },
     mounted: function () {
+        function createSearachableString (oScriptures) {
+            return Object.keys(oScriptures).map(function (sBook) {
+                return oScriptures[sBook].map(function (sScripture) {
+                    return (sBook + " " + sScripture).toLowerCase();
+                }).join(" ");
+                return sString;
+            }).join(" ");
+        }
+
         var that = this;
 
         var sHash = document.URL.split("#")[1];
@@ -61,6 +70,8 @@ var app = new Vue({
                 oSong.topics.forEach(function (sTopic) {
                     oUniqueTopics[sTopic] = true;
                 });
+
+                oSong.scripturesSearchableString = createSearachableString(oSong.scriptures);
             });
             this.topics = Object.keys(oUniqueTopics).sort();
 
@@ -271,7 +282,7 @@ var app = new Vue({
             this.selectedSong.title = title;
             this.selectedSong.topics = topics;
             this.selectedSong.scriptures = Object.keys(scriptures).map(function (sBook) {
-                return sBook + " " + scriptures[sBook];
+                return sBook + " " + scriptures[sBook].join(", ");
             }).sort();
             this.$refs[ref].open();
         },
@@ -370,7 +381,7 @@ var app = new Vue({
         filteredSongs: function () {
             var that = this;
             var filteredSongs = [];
-            var sSearch = this.searchText;
+            var sSearch = this.searchText.toLowerCase();
             var bThereAreFilters = that.searchFilterFlags.length > 0 || that.searchTopics.length > 0;
             var oSongNumberToAge = {
                 // 124 --> 20160421
@@ -388,7 +399,8 @@ var app = new Vue({
                 }
 
                 var bMatchesSearch = oSong.number === sSearch
-                  || oSong.title.toLowerCase().indexOf(sSearch.toLowerCase()) > -1;
+                  || oSong.title.toLowerCase().indexOf(sSearch) > -1
+                  || oSong.scripturesSearchableString.indexOf(sSearch) > -1;
 
                 var oSongStats = that.stats[oSong.number] || {
                     count: 0,
