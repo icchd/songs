@@ -14253,7 +14253,8 @@ var app = new Vue({
         selectedSong: {
             number: "",
             title: "",
-            topics: []
+            topics: [],
+            scriptures: {}
         },
         selectedSongs: {
             entrance:  { number: "", title: "" },
@@ -14263,9 +14264,18 @@ var app = new Vue({
         },
         songs: [],
         stats: {},
-        topics: ["hope"]
+        topics: []
     },
     mounted: function () {
+        function createSearachableString (oScriptures) {
+            return Object.keys(oScriptures).map(function (sBook) {
+                return oScriptures[sBook].map(function (sScripture) {
+                    return (sBook + " " + sScripture).toLowerCase();
+                }).join(" ");
+                return sString;
+            }).join(" ");
+        }
+
         var that = this;
 
         var sHash = document.URL.split("#")[1];
@@ -14288,6 +14298,8 @@ var app = new Vue({
                 oSong.topics.forEach(function (sTopic) {
                     oUniqueTopics[sTopic] = true;
                 });
+
+                oSong.scripturesSearchableString = createSearachableString(oSong.scriptures);
             });
             this.topics = Object.keys(oUniqueTopics).sort();
 
@@ -14493,10 +14505,13 @@ var app = new Vue({
         openModal: function (ref) {
             this.$refs[ref].open();
         },
-        openSelectSongModal: function (ref, number, title, topics) {
+        openSelectSongModal: function (ref, number, title, topics, scriptures) {
             this.selectedSong.number = number;
             this.selectedSong.title = title;
             this.selectedSong.topics = topics;
+            this.selectedSong.scriptures = Object.keys(scriptures).map(function (sBook) {
+                return sBook + " " + scriptures[sBook].join(", ");
+            }).sort();
             this.$refs[ref].open();
         },
         removeSong: function (sMoment) {
@@ -14594,7 +14609,7 @@ var app = new Vue({
         filteredSongs: function () {
             var that = this;
             var filteredSongs = [];
-            var sSearch = this.searchText;
+            var sSearch = this.searchText.toLowerCase();
             var bThereAreFilters = that.searchFilterFlags.length > 0 || that.searchTopics.length > 0;
             var oSongNumberToAge = {
                 // 124 --> 20160421
@@ -14612,7 +14627,8 @@ var app = new Vue({
                 }
 
                 var bMatchesSearch = oSong.number === sSearch
-                  || oSong.title.toLowerCase().indexOf(sSearch.toLowerCase()) > -1;
+                  || oSong.title.toLowerCase().indexOf(sSearch) > -1
+                  || oSong.scripturesSearchableString.indexOf(sSearch) > -1;
 
                 var oSongStats = that.stats[oSong.number] || {
                     count: 0,

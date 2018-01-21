@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>ICCH Songs</title>
-        <link rel="stylesheet" href="dist/styled568dec115890.min.css" />
+        <link rel="stylesheet" href="dist/style40c92651d05edc.min.css" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto" rel="stylesheet">
         <meta http-equiv="cache-control" content="max-age=0" />
         <meta http-equiv="cache-control" content="no-cache" />
@@ -14,7 +14,7 @@
         <meta http-equiv="pragma" content="no-cache" />
     </head>
     <body>
-        <div id="version">ver. d568dec115890</div>
+        <div id="version">ver. 40c92651d05edc</div>
         <div id="app">
             <ui-fab
                 id="btnPrevSunday"
@@ -49,7 +49,7 @@
                     type="primary"
                     v-bind:color="song.selected ? 'orange' : 'default'"
                     size="small"
-                    @click="openSelectSongModal('whichSong', song.number, song.title, song.topics)"
+                    @click="openSelectSongModal('whichSong', song.number, song.title, song.topics, song.scriptures)"
                     v-bind:icon="stats[song.number] ? 'music_note': ''">
 
                     <b>{{ song.number }}</b>&nbsp;{{ song.title }}
@@ -133,7 +133,7 @@
                 type="primary"
                 v-bind:color="song.selected ? 'green' : 'default'"
                 size="small"
-                @click="openSelectSongModal('whichSong', song.number, song.title, song.topics)"
+                @click="openSelectSongModal('whichSong', song.number, song.title, song.topics, song.scriptures)"
                 v-bind:icon="stats[song.number] | getSongIcon">
 
                 <b>{{ song.number }}</b>&nbsp;{{ song.title }}
@@ -161,6 +161,12 @@
                     <li>We last sung it on {{ (stats[selectedSong.number] || {}).lastSung || "unknown" }}</li>
                 </ul>
                 <p v-else>No statistics available for this song</p>
+                <h3 v-if="selectedSong.scriptures.length > 0">Scriptures</h3>
+                <ul>
+                    <li v-for="scripture in selectedSong.scriptures">
+                        {{ scripture }}
+                    </li>
+                </ul>
                 <h3 v-if="selectedSong.topics.length > 0">Topics</h3>
                 <ul>
                     <li v-for="topic in selectedSong.topics">
@@ -183,6 +189,6 @@
 
             </ui-modal>
         </div>
-        <script type="text/javascript" src="dist/bundled568dec115890.min.js"></script>
+        <script type="text/javascript" src="dist/bundle40c92651d05edc.min.js"></script>
     </body>
 </html>
