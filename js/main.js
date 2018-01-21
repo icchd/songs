@@ -25,7 +25,8 @@ var app = new Vue({
         selectedSong: {
             number: "",
             title: "",
-            topics: []
+            topics: [],
+            scriptures: {}
         },
         selectedSongs: {
             entrance:  { number: "", title: "" },
@@ -35,7 +36,7 @@ var app = new Vue({
         },
         songs: [],
         stats: {},
-        topics: ["hope"]
+        topics: []
     },
     mounted: function () {
         var that = this;
@@ -265,10 +266,13 @@ var app = new Vue({
         openModal: function (ref) {
             this.$refs[ref].open();
         },
-        openSelectSongModal: function (ref, number, title, topics) {
+        openSelectSongModal: function (ref, number, title, topics, scriptures) {
             this.selectedSong.number = number;
             this.selectedSong.title = title;
             this.selectedSong.topics = topics;
+            this.selectedSong.scriptures = Object.keys(scriptures).map(function (sBook) {
+                return sBook + " " + scriptures[sBook];
+            }).sort();
             this.$refs[ref].open();
         },
         removeSong: function (sMoment) {
