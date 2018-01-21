@@ -1,7 +1,7 @@
 {
    "entrance": {
-      "number": "597",
-      "title": "Praise to the Lord"
+      "number": "610",
+      "title": "Sing Praise to God Who Reigns Above"
    },
    "offertory": {
       "number": "738",
@@ -218,8 +218,8 @@
          }
       },
       "597": {
-         "count": 5,
-         "lastSung": "21-01-2018",
+         "count": 4,
+         "lastSung": "29-10-2017",
          "sungFor": {
             "recession": true,
             "entrance": true
@@ -245,6 +245,13 @@
          "sungFor": {
             "entrance": true
          }
+      },
+      "610": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "21-01-2018"
       },
       "612": {
          "count": 1,
