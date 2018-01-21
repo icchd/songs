@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>ICCH Songs</title>
-        <link rel="stylesheet" href="dist/style362606b3001bfc.min.css" />
+        <link rel="stylesheet" href="dist/styled568dec115890.min.css" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto" rel="stylesheet">
         <meta http-equiv="cache-control" content="max-age=0" />
         <meta http-equiv="cache-control" content="no-cache" />
@@ -14,7 +14,7 @@
         <meta http-equiv="pragma" content="no-cache" />
     </head>
     <body>
-        <div id="version">ver. 362606b3001bfc</div>
+        <div id="version">ver. d568dec115890</div>
         <div id="app">
             <ui-fab
                 id="btnPrevSunday"
@@ -49,7 +49,7 @@
                     type="primary"
                     v-bind:color="song.selected ? 'orange' : 'default'"
                     size="small"
-                    @click="openSelectSongModal('whichSong', song.number, song.title)"
+                    @click="openSelectSongModal('whichSong', song.number, song.title, song.topics)"
                     v-bind:icon="stats[song.number] ? 'music_note': ''">
 
                     <b>{{ song.number }}</b>&nbsp;{{ song.title }}
@@ -93,6 +93,23 @@
             <div v-if="!$options.filters.hasKeys(stats)">
                 <ui-alert type="warning" :dismissible="false">Filters disabled: song statistics not available</ui-alert>
             </div>
+            <div class="row">
+                <ui-select
+                    id="txtTopicFilter"
+                    style="width: 50%"
+                    name="topics"
+                    v-model="searchTopics"
+                    :options="topics"
+                    multiple="true"
+                    multipleDelimiter=","
+                    placeholder="Topics">
+                </ui-select>
+                <ui-button 
+                    id="btnClearTopics"
+                    size="small"
+                    @click="clearTopicSearch"
+                    icon="cancel"/></ui-button>
+            </div>
             <ui-checkbox-group
               id="searchFilters"
               @input="onFilterCheckboxClicked"
@@ -101,7 +118,7 @@
               :options="possibleSearchFilterFlags"
               :vertical="window.screen.availWidth < 667"
             ></ui-checkbox-group>
-
+            <br />
             <ui-textbox
                 key="txtSearch"
                 name="search"
@@ -116,7 +133,7 @@
                 type="primary"
                 v-bind:color="song.selected ? 'green' : 'default'"
                 size="small"
-                @click="openSelectSongModal('whichSong', song.number, song.title)"
+                @click="openSelectSongModal('whichSong', song.number, song.title, song.topics)"
                 v-bind:icon="stats[song.number] | getSongIcon">
 
                 <b>{{ song.number }}</b>&nbsp;{{ song.title }}
@@ -144,6 +161,12 @@
                     <li>We last sung it on {{ (stats[selectedSong.number] || {}).lastSung || "unknown" }}</li>
                 </ul>
                 <p v-else>No statistics available for this song</p>
+                <h3 v-if="selectedSong.topics.length > 0">Topics</h3>
+                <ul>
+                    <li v-for="topic in selectedSong.topics">
+                        {{ topic }}
+                    </li>
+                </ul>
             </ui-modal>
 
             <ui-modal 
@@ -160,6 +183,6 @@
 
             </ui-modal>
         </div>
-        <script type="text/javascript" src="dist/bundle362606b3001bfc.min.js"></script>
+        <script type="text/javascript" src="dist/bundled568dec115890.min.js"></script>
     </body>
 </html>

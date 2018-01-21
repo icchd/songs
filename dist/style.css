@@ -71,6 +71,18 @@ h1 {
     margin: 0 auto;
 }
 
+.row > * {
+    float: left
+}
+.row:after {
+    display: table;
+    content: "";
+    clear: both;
+}
+#btnClearTopics {
+    margin-left: 1em;
+}
+
 a {
     text-decoration: none;
     color: #3b78e7;
