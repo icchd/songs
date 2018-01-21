@@ -20,10 +20,12 @@ var app = new Vue({
         possibleSearchFilterFlags: ["any known songs"].concat(A_MOMENTS),
         searchFilterFlags: [],
         searchText: "",
+        searchTopics: [],
         recentSongs: [],
         selectedSong: {
             number: "",
-            title: ""
+            title: "",
+            topics: []
         },
         selectedSongs: {
             entrance:  { number: "", title: "" },
@@ -32,7 +34,8 @@ var app = new Vue({
             recession: { number: "", title: "" }
         },
         songs: [],
-        stats: {}
+        stats: {},
+        topics: ["hope"]
     },
     mounted: function () {
         var that = this;
@@ -48,9 +51,18 @@ var app = new Vue({
 
         // check the url and log in with the log-in hash
         this.$http.get("songs.json").then(function (oData) {
+            var oUniqueTopics = {};
+
             oData.body.list.forEach(function(oSong) {
                 that.songs.push(oSong);
+
+                // find unique topics
+                oSong.topics.forEach(function (sTopic) {
+                    oUniqueTopics[sTopic] = true;
+                });
             });
+            this.topics = Object.keys(oUniqueTopics).sort();
+
             that.refreshSelectedState();
 
             that.setSongsFromString(sInitialSongSet);
@@ -107,6 +119,9 @@ var app = new Vue({
         }
     },
     methods: {
+        clearTopicSearch: function () {
+            this.searchTopics = [];
+        },
         setSongsFromString: function(sSongs) {
             var that = this;
             if (!sSongs) {
@@ -250,9 +265,10 @@ var app = new Vue({
         openModal: function (ref) {
             this.$refs[ref].open();
         },
-        openSelectSongModal: function (ref, number, title) {
+        openSelectSongModal: function (ref, number, title, topics) {
             this.selectedSong.number = number;
             this.selectedSong.title = title;
+            this.selectedSong.topics = topics;
             this.$refs[ref].open();
         },
         removeSong: function (sMoment) {
@@ -351,10 +367,16 @@ var app = new Vue({
             var that = this;
             var filteredSongs = [];
             var sSearch = this.searchText;
-            var bThereAreFilters = that.searchFilterFlags.length > 0;
+            var bThereAreFilters = that.searchFilterFlags.length > 0 || that.searchTopics.length > 0;
             var oSongNumberToAge = {
                 // 124 --> 20160421
             };
+
+            // for quick lookup
+            var oSearchedTopics = that.searchTopics.reduce(function (o, sTopic) {
+                o[sTopic] = true;
+                return o;
+            }, {});
 
             return this.songs.reduce(function (aFilteredSongs, oSong, iIdx) {
                 if (aFilteredSongs.length > I_MAX_SONGS_IN_SEARCH) {
@@ -368,6 +390,7 @@ var app = new Vue({
                     count: 0,
                     sungFor: {}
                 };
+
                 var bMatchesFilters = that.searchFilterFlags.every(function (sFilter) {
                     switch (sFilter) {
                         case "any known songs":
@@ -375,7 +398,9 @@ var app = new Vue({
                         default:  // assume it's a moment: e.g., 'communion'
                             return oSongStats.sungFor[sFilter];
                     }
-                });
+                }) && ( that.searchTopics.length === 0 || oSong.topics.some(function (sTopicFromSong) {
+                    return !!oSearchedTopics[sTopicFromSong];
+                }) );
 
                 if (bMatchesSearch && (!bThereAreFilters || bMatchesFilters)) {
                     // keep date to age
