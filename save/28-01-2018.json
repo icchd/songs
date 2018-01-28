@@ -4,8 +4,8 @@
       "title": "Come, Worship the Lord"
    },
    "offertory": {
-      "number": "697",
-      "title": "Center of My Life"
+      "number": "724",
+      "title": "Shelter Me, O God"
    },
    "communion": {
       "number": "809",
@@ -302,13 +302,6 @@
             "entrance": true
          }
       },
-      "697": {
-         "count": 1,
-         "sungFor": {
-            "offertory": true
-         },
-         "lastSung": "28-01-2018"
-      },
       "704": {
          "count": 1,
          "lastSung": "18-06-2017",
@@ -367,8 +360,8 @@
          }
       },
       "724": {
-         "count": 1,
-         "lastSung": "09-04-2017",
+         "count": 2,
+         "lastSung": "28-01-2018",
          "sungFor": {
             "offertory": true
          }
