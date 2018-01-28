@@ -8,8 +8,8 @@
       "title": "Center of My Life"
    },
    "communion": {
-      "number": "752",
-      "title": "Love One Another"
+      "number": "809",
+      "title": "Behold the Lamb"
    },
    "recession": {
       "number": "849",
@@ -418,8 +418,8 @@
          }
       },
       "752": {
-         "count": 2,
-         "lastSung": "28-01-2018",
+         "count": 1,
+         "lastSung": "21-05-2017",
          "sungFor": {
             "communion": true
          }
@@ -504,8 +504,8 @@
          }
       },
       "809": {
-         "count": 4,
-         "lastSung": "26-11-2017",
+         "count": 5,
+         "lastSung": "28-01-2018",
          "sungFor": {
             "communion": true
          }
