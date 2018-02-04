@@ -1,19 +1,19 @@
 {
    "entrance": {
-      "number": "486",
-      "title": "The King of Kings, Christ Jesus Reigns"
+      "number": "",
+      "title": ""
    },
    "offertory": {
-      "number": "637",
-      "title": "All My Days"
+      "number": "",
+      "title": ""
    },
    "communion": {
-      "number": "692",
-      "title": "There Is a Longing"
+      "number": "",
+      "title": ""
    },
    "recession": {
-      "number": "729",
-      "title": "I Heard the Voice of Jesus"
+      "number": "",
+      "title": ""
    },
    "stats": {
       "2": {
@@ -159,13 +159,6 @@
             "entrance": true
          }
       },
-      "486": {
-         "count": 1,
-         "sungFor": {
-            "entrance": true
-         },
-         "lastSung": "11-02-2018"
-      },
       "505": {
          "count": 2,
          "lastSung": "17-12-2017",
@@ -267,13 +260,6 @@
             "entrance": true
          }
       },
-      "637": {
-         "count": 1,
-         "sungFor": {
-            "offertory": true
-         },
-         "lastSung": "11-02-2018"
-      },
       "650": {
          "count": 2,
          "lastSung": "07-01-2018",
@@ -315,13 +301,6 @@
          "sungFor": {
             "entrance": true
          }
-      },
-      "692": {
-         "count": 1,
-         "sungFor": {
-            "communion": true
-         },
-         "lastSung": "11-02-2018"
       },
       "704": {
          "count": 1,
@@ -396,8 +375,8 @@
          }
       },
       "729": {
-         "count": 4,
-         "lastSung": "11-02-2018",
+         "count": 3,
+         "lastSung": "13-08-2017",
          "sungFor": {
             "recession": true,
             "offertory": true
@@ -624,8 +603,8 @@
          }
       },
       "": {
-         "count": 5,
-         "lastSung": "17-12-2017",
+         "count": 9,
+         "lastSung": "11-02-2018",
          "sungFor": {
             "recession": true,
             "communion": true,
