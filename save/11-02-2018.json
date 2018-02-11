@@ -8,8 +8,8 @@
       "title": "Loving and Forgiving"
    },
    "communion": {
-      "number": "752",
-      "title": "Love One Another"
+      "number": "821",
+      "title": "Taste and See (Hurd)"
    },
    "recession": {
       "number": "466",
@@ -432,8 +432,8 @@
          }
       },
       "752": {
-         "count": 2,
-         "lastSung": "11-02-2018",
+         "count": 1,
+         "lastSung": "21-05-2017",
          "sungFor": {
             "communion": true
          }
@@ -560,8 +560,8 @@
          }
       },
       "821": {
-         "count": 5,
-         "lastSung": "22-10-2017",
+         "count": 6,
+         "lastSung": "11-02-2018",
          "sungFor": {
             "communion": true
          }
