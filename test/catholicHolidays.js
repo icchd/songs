@@ -35,6 +35,22 @@ describe("getAllHolidays", function () {
             "description": "Epiphany"
           },
           {
+            "date": "05-03-2017",
+            "description": "First Sunday Of Lent"
+          },
+          {
+            "date": "12-03-2017",
+            "description": "Second Sunday Of Lent"
+          },
+          {
+            "date": "19-03-2017",
+            "description": "Third Sunday Of Lent"
+          },
+          {
+            "date": "26-03-2017",
+            "description": "Fourth Sunday Of Lent"
+          },
+          {
             "date": "16-04-2017",
             "description": "Easter Sunday"
           },
