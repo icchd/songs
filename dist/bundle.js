@@ -14040,6 +14040,8 @@ return hooks;
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
+// see https://www.staff.science.uu.nl/~gent0113/easter/easter_text2c.htm
+
 function getEasterSunday(m, iYear) {
     var a = (iYear / 100 | 0) * 1483 - (iYear / 400 | 0) * 2225 + 2613;
     var b = ((iYear % 19 * 3510 + (a / 25 | 0) * 319) / 330 | 0) % 29;
@@ -14048,6 +14050,18 @@ function getEasterSunday(m, iYear) {
     return m({ year: iYear, month: (c / 31 | 0) - 1, day: c % 31 + 1 });
 }
 
+function getFirstSundayOfLent(m, iYear) {
+    return getEasterSunday(m, iYear).subtract(6, "weeks");
+}
+function getSecondSundayOfLent(m, iYear) {
+    return getEasterSunday(m, iYear).subtract(5, "weeks");
+}
+function getThirdSundayOfLent(m, iYear) {
+    return getEasterSunday(m, iYear).subtract(4, "weeks");
+}
+function getFourthSundayOfLent(m, iYear) {
+    return getEasterSunday(m, iYear).subtract(3, "weeks");
+}
 function getEpiphany(m, iYear) {
     return m({ year: iYear, month: 0, day: 6 });
 }
@@ -14166,7 +14180,11 @@ var oHolidayGetters = {
     getEasterSunday: getEasterSunday,
     getChristmasDay: getChristmasDay,
     getOctaveDayOfChristmas: getOctaveDayOfChristmas,
-    getEpiphany: getEpiphany
+    getEpiphany: getEpiphany,
+    getFirstSundayOfLent: getFirstSundayOfLent,
+    getSecondSundayOfLent: getSecondSundayOfLent,
+    getThirdSundayOfLent: getThirdSundayOfLent,
+    getFourthSundayOfLent: getFourthSundayOfLent
 };
 
 var oPublic = {
