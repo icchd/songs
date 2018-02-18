@@ -14062,6 +14062,21 @@ function getThirdSundayOfLent(m, iYear) {
 function getFourthSundayOfLent(m, iYear) {
     return getEasterSunday(m, iYear).subtract(3, "weeks");
 }
+function getPassionSunday(m, iYear) {
+    return getEasterSunday(m, iYear).subtract(2, "weeks");
+}
+function getPalmSunday(m, iYear) {
+    return getEasterSunday(m, iYear).subtract(1, "weeks");
+}
+function getHolyThursday(m, iYear) {
+    return getEasterSunday(m, iYear).subtract(3, "days");
+}
+function getGoodFriday(m, iYear) {
+    return getEasterSunday(m, iYear).subtract(2, "days");
+}
+function getHolySaturday(m, iYear) {
+    return getEasterSunday(m, iYear).subtract(1, "days");
+}
 function getEpiphany(m, iYear) {
     return m({ year: iYear, month: 0, day: 6 });
 }
@@ -14125,11 +14140,6 @@ function getPreviousFestiveDay(m, oStartFromDay) {
     var aFestiveDaysThisYear = getAllHolidays(m, iYear).map(function (o) {
         return o.date;
     });
-    var aFestiveDaysLastYear = getAllHolidays(m, iYear - 1).map(function (o) {
-        return o.date;
-    });
-
-    var aFestiveDays = [].concat(_toConsumableArray(aFestiveDaysLastYear), _toConsumableArray(aFestiveDaysThisYear));
 
     return _getPreviousFestiveDay(m, oStartFromDay, aFestiveDaysThisYear);
 }
@@ -14184,7 +14194,12 @@ var oHolidayGetters = {
     getFirstSundayOfLent: getFirstSundayOfLent,
     getSecondSundayOfLent: getSecondSundayOfLent,
     getThirdSundayOfLent: getThirdSundayOfLent,
-    getFourthSundayOfLent: getFourthSundayOfLent
+    getFourthSundayOfLent: getFourthSundayOfLent,
+    getPassionSunday: getPassionSunday,
+    getPalmSunday: getPalmSunday,
+    getHolyThursday: getHolyThursday,
+    getGoodFriday: getGoodFriday,
+    getHolySaturday: getHolySaturday
 };
 
 var oPublic = {

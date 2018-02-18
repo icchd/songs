@@ -1,3 +1,4 @@
+/* global describe it */
 var chai = require("chai");
 var m = require("moment");
 var expect = chai.expect;
@@ -20,48 +21,71 @@ describe("getAllSaints", function () {
     });
 });
 
-describe("getAllHolidays", function () {
-    it("works as expected", function () {
+describe("getAllHolidays", function() {
+    it("works as expected", function() {
         expect(
-            oHolidays.getAllHolidays(2017).map(o => {  return { date: o.date.format("DD-MM-YYYY"), description: o.description }; })
-        )
-        .to.deep.equal([
-          {
+            oHolidays.getAllHolidays(2017).map(o => {
+                return {
+                    date: o.date.format("DD-MM-YYYY"),
+                    description: o.description
+                };
+            })
+        ).to.deep.equal([{
             "date": "01-01-2017",
             "description": "Octave Day Of Christmas"
-          },
-          {
+        },
+        {
             "date": "06-01-2017",
             "description": "Epiphany"
-          },
-          {
+        },
+        {
             "date": "05-03-2017",
             "description": "First Sunday Of Lent"
-          },
-          {
+        },
+        {
             "date": "12-03-2017",
             "description": "Second Sunday Of Lent"
-          },
-          {
+        },
+        {
             "date": "19-03-2017",
             "description": "Third Sunday Of Lent"
-          },
-          {
+        },
+        {
             "date": "26-03-2017",
             "description": "Fourth Sunday Of Lent"
-          },
-          {
+        },
+        {
+            "date": "02-04-2017",
+            "description": "Passion Sunday"
+        },
+        {
+            "date": "09-04-2017",
+            "description": "Palm Sunday"
+        },
+        {
+            "date": "13-04-2017",
+            "description": "Holy Thursday"
+        },
+        {
+            "date": "14-04-2017",
+            "description": "Good Friday"
+        },
+        {
+            "date": "15-04-2017",
+            "description": "Holy Saturday"
+        }, 
+        {
             "date": "16-04-2017",
             "description": "Easter Sunday"
-          },
-          {
+        },
+        {
             "date": "01-11-2017",
             "description": "All Saints"
-          },
-          {
+        },
+        {
             "date": "25-12-2017",
             "description": "Christmas Day"
-          }
+        }
         ]);
     });
 });
