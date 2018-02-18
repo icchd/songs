@@ -12,8 +12,8 @@
       "title": "Amén. El Cuerpo de Cristo"
    },
    "recession": {
-      "number": "720",
-      "title": "Seek Ye First"
+      "number": "522",
+      "title": "Lift High the Cross"
    },
    "stats": {
       "2": {
@@ -182,8 +182,8 @@
          }
       },
       "522": {
-         "count": 2,
-         "lastSung": "26-11-2017",
+         "count": 3,
+         "lastSung": "18-02-2018",
          "sungFor": {
             "recession": true
          }
@@ -374,8 +374,8 @@
          }
       },
       "720": {
-         "count": 5,
-         "lastSung": "18-02-2018",
+         "count": 4,
+         "lastSung": "24-09-2017",
          "sungFor": {
             "recession": true
          }
