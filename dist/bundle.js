@@ -14912,7 +14912,9 @@ var app = new Vue({
 
             var oSongCopy = {
                 number: oSong.number,
-                title: oSong.title
+                title: oSong.title,
+                scriptures: oOriginalSong.scriptures,
+                topics: oOriginalSong.topics
             };
 
             this.recentSongs.unshift(oSongCopy);
