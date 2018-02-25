@@ -12,8 +12,8 @@
       "title": "I Am the Living Bread"
    },
    "recession": {
-      "number": "",
-      "title": ""
+      "number": "830",
+      "title": "City of God"
    },
    "stats": {
       "2": {
@@ -609,8 +609,8 @@
          }
       },
       "830": {
-         "count": 2,
-         "lastSung": "01-01-2018",
+         "count": 3,
+         "lastSung": "25-02-2018",
          "sungFor": {
             "recession": true,
             "entrance": true
@@ -645,8 +645,8 @@
          }
       },
       "": {
-         "count": 6,
-         "lastSung": "25-02-2018",
+         "count": 5,
+         "lastSung": "17-12-2017",
          "sungFor": {
             "recession": true,
             "communion": true,
