@@ -4,8 +4,8 @@
       "title": "’Tis Good, Lord, to Be Here"
    },
    "offertory": {
-      "number": "661",
-      "title": "Christ Be Our Light"
+      "number": "602",
+      "title": "The God of Abraham Praise"
    },
    "communion": {
       "number": "822",
@@ -254,10 +254,11 @@
          }
       },
       "602": {
-         "count": 1,
-         "lastSung": "18-06-2017",
+         "count": 2,
+         "lastSung": "25-02-2018",
          "sungFor": {
-            "entrance": true
+            "entrance": true,
+            "offertory": true
          }
       },
       "603": {
@@ -317,8 +318,8 @@
          }
       },
       "661": {
-         "count": 8,
-         "lastSung": "25-02-2018",
+         "count": 7,
+         "lastSung": "01-01-2018",
          "sungFor": {
             "offertory": true
          }
