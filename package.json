@@ -36,5 +36,7 @@
     "live-server": "^1.2.0",
     "mocha": "^3.5.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "moment": "^2.20.1"
+  }
 }

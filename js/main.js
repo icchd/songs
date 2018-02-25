@@ -13,6 +13,7 @@ var qrCodeObj;
 var app = new Vue({
     el: "#app",
     data: {
+        showHangingDisplay: false,
         qrCodeUrl: "",
         currentFeast: oInitialFestiveDay,
         password: "",
@@ -131,6 +132,19 @@ var app = new Vue({
         }
     },
     methods: {
+        toggleHangingDisplay: function (sClass) {
+            var bCanToggle = true;
+            if (!this.showHangingDisplay) {
+                bCanToggle = this.selectedSongs.entrance.number
+                    && this.selectedSongs.offertory.number
+                    && this.selectedSongs.communion.number
+                    && this.selectedSongs.recession.number;
+            }
+
+            if (bCanToggle) {
+                this.showHangingDisplay = !this.showHangingDisplay;
+            }
+        },
         clearTopicSearch: function () {
             this.searchTopics = [];
         },
@@ -369,6 +383,10 @@ var app = new Vue({
         }
     },
     computed: {
+        currentLiturgicalYear: function () {
+            var mFeast = m(this.currentFeast, "DD-MM-YYYY");
+            return catholicHolidays.getLiturgicalYear(mFeast);
+        },
         currentFeastDate: function () {
             return m(this.currentFeast, "DD-MM-YYYY").format("DD MMM YYYY");
         },

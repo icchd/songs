@@ -10,6 +10,16 @@ describe("getEasterSunday", function () {
         expect(oHolidays.getEasterSunday(2017).format("DD-MM-YYYY")).to.equal("16-04-2017");
         expect(oHolidays.getEasterSunday(2018).format("DD-MM-YYYY")).to.equal("01-04-2018");
         expect(oHolidays.getEasterSunday(2024).format("DD-MM-YYYY")).to.equal("31-03-2024");
+        expect(oHolidays.getEasterSunday(1996).format("DD-MM-YYYY")).to.equal("07-04-1996");
+    });
+});
+
+describe("getFirstSundayOfAdvent", function () {
+    it("works as expected", function () {
+        expect(oHolidays.getFirstSundayOfAdvent(1996).format("DD-MM-YYYY")).to.equal("01-12-1996");
+        expect(oHolidays.getSecondSundayOfAdvent(1996).format("DD-MM-YYYY")).to.equal("08-12-1996");
+        expect(oHolidays.getThirdSundayOfAdvent(1996).format("DD-MM-YYYY")).to.equal("15-12-1996");
+        expect(oHolidays.getFourthSundayOfAdvent(1996).format("DD-MM-YYYY")).to.equal("22-12-1996");
     });
 });
 
@@ -18,6 +28,28 @@ describe("getAllSaints", function () {
         expect(oHolidays.getAllSaints(2017).format("DD-MM-YYYY")).to.equal("01-11-2017");
         expect(oHolidays.getAllSaints(2018).format("DD-MM-YYYY")).to.equal("01-11-2018");
         expect(oHolidays.getAllSaints(2024).format("DD-MM-YYYY")).to.equal("01-11-2024");
+    });
+});
+
+describe("getLiturgicalYear", function () {
+    it("works as expected", function() {
+        [
+            // YYYY-MM-DD
+            { "2018-02-25": "B" },
+            { "2017-12-20": "B" },
+            { "2017-11-20": "A" },
+            { "2022-04-19": "C" }
+        ].forEach(function (oFixture) {
+            var sDate = Object.keys(oFixture)[0];
+            var sExpectedLiturgicalYear = oFixture[sDate];
+            var aDateForMoment = sDate.split("-").map(s => parseInt(s, 10));
+            aDateForMoment[1]--; // month is 0 based
+
+            var mCurrentDate = m(aDateForMoment);
+
+            expect(oHolidays.getLiturgicalYear(mCurrentDate), "Got " + sDate + " right")
+                .to.equal(sExpectedLiturgicalYear);
+        });
     });
 });
 
@@ -81,6 +113,22 @@ describe("getAllHolidays", function() {
         {
             "date": "01-11-2017",
             "description": "All Saints"
+        },
+        {
+            "date": "03-12-2017",
+            "description": "First Sunday Of Advent"
+        },
+        {
+            "date": "10-12-2017",
+            "description": "Second Sunday Of Advent"
+        },
+        {
+            "date": "17-12-2017",
+            "description": "Third Sunday Of Advent"
+        },
+        {
+            "date": "24-12-2017",
+            "description": "Fourth Sunday Of Advent"
         },
         {
             "date": "25-12-2017",

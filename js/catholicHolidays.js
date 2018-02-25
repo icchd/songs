@@ -107,6 +107,31 @@ function getPreviousFestiveDay(m, oStartFromDay) {
     return _getPreviousFestiveDay(m, oStartFromDay, aFestiveDaysThisYear);
 }
 
+function getFirstSundayOfAdvent(m, iYear) {
+    // Nearest Sunday to 30 November
+    var o30Nov = m({ year: iYear, month: 10, day: 30 });
+    var iWeekDay30Nov = o30Nov.weekday();
+    return o30Nov.add(7 - iWeekDay30Nov, "days");
+}
+function getSecondSundayOfAdvent(m, iYear) {
+    return getFirstSundayOfAdvent(m, iYear).add(1, "week");
+}
+function getThirdSundayOfAdvent(m, iYear) {
+    return getSecondSundayOfAdvent(m, iYear).add(1, "week");
+}
+function getFourthSundayOfAdvent(m, iYear) {
+    return getThirdSundayOfAdvent(m, iYear).add(1, "week");
+}
+
+function getLiturgicalYear(m, mCurrentDate) {
+    var iYear = mCurrentDate.year();
+    var oFirstSundayOfAdvent = getFirstSundayOfAdvent(m, iYear);
+
+    var iMaybePlusOne = oFirstSundayOfAdvent.diff(mCurrentDate) <= 0 ? 1 : 0;
+
+    return ["C", "A", "B"][(iYear + iMaybePlusOne) % 3];
+}
+
 function _getNextFestiveDay(m, oStartFromDay, aFestiveDaysThisYear) {
     return _getSuccessiveFestiveDay(m, oStartFromDay, aFestiveDaysThisYear, true /* forward */);
 }
@@ -152,6 +177,10 @@ var oHolidayGetters = {
     getAllSaints: getAllSaints,
     getEasterSunday: getEasterSunday,
     getChristmasDay: getChristmasDay,
+    getFirstSundayOfAdvent: getFirstSundayOfAdvent,
+    getSecondSundayOfAdvent: getSecondSundayOfAdvent,
+    getThirdSundayOfAdvent: getThirdSundayOfAdvent,
+    getFourthSundayOfAdvent: getFourthSundayOfAdvent,
     getOctaveDayOfChristmas: getOctaveDayOfChristmas,
     getEpiphany: getEpiphany,
     getFirstSundayOfLent: getFirstSundayOfLent,
@@ -169,7 +198,8 @@ var oPublic = {
     getAllHolidays: getAllHolidays,
     getNextFestiveDay: getNextFestiveDay,
     getPreviousFestiveDay: getPreviousFestiveDay,
-    getFeastName: getFeastName
+    getFeastName: getFeastName,
+    getLiturgicalYear: getLiturgicalYear
 };
 
 var oPrivate = {

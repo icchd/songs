@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>ICCH Songs</title>
-        <link rel="stylesheet" href="dist/style54e15afdfdaeac.min.css" />
+        <link rel="stylesheet" href="dist/stylea8a6afca98b0a8.min.css" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto" rel="stylesheet">
         <meta http-equiv="cache-control" content="max-age=0" />
         <meta http-equiv="cache-control" content="no-cache" />
@@ -14,181 +14,189 @@
         <meta http-equiv="pragma" content="no-cache" />
     </head>
     <body>
-        <div id="version">ver. 54e15afdfdaeac</div>
         <div id="app">
-            <ui-fab
-                id="btnPrevSunday"
-                @click="onPreviousSundayClicked()"
-                size="small"
-                icon="skip_previous"
-                ></ui-fab>
-            <ui-fab
-                id="btnNextSunday"
-                @click="onNextSundayClicked()"
-                size="small"
-                icon="skip_next"
-                ></ui-fab>
-            <h1>Songs for {{ currentFeastName }} <a target="_blank" :href="'http://www.usccb.org/bible/readings/' + currentFeastDateShort + '.cfm'">{{ currentFeastDate }}</a></h1>
-            <ul class="finalList">
-                <li><b>Entrance:</b> {{ selectedSongs.entrance.number }} {{ selectedSongs.entrance.title }}    <ui-button type="secondary" @click="removeSong('entrance')" size="small" v-if="selectedSongs.entrance.number.length > 0" icon="delete"></ui-button></li>
-                <li><b>Offertory:</b> {{ selectedSongs.offertory.number }} {{ selectedSongs.offertory.title }} <ui-button type="secondary" @click="removeSong('offertory')" size="small" v-if="selectedSongs.offertory.number.length > 0" icon="delete"></ui-button></li>
-                <li><b>Communion:</b> {{ selectedSongs.communion.number }} {{ selectedSongs.communion.title }} <ui-button type="secondary" @click="removeSong('communion')" size="small" v-if="selectedSongs.communion.number.length > 0" icon="delete"></ui-button></li>
-                <li><b>Recession:</b> {{ selectedSongs.recession.number }} {{ selectedSongs.recession.title }} <ui-button type="secondary" @click="removeSong('recession')" size="small" v-if="selectedSongs.recession.number.length > 0" icon="delete"></ui-button></li>
-                <br />
+            <div id="header">
+                <div id="version">ver. a8a6afca98b0a8</div>
+                <ui-fab
+                    id="btnPrevSunday"
+                    @click="onPreviousSundayClicked()"
+                    size="small"
+                    icon="skip_previous"
+                    ></ui-fab>
+                <ui-fab
+                    id="btnNextSunday"
+                    @click="onNextSundayClicked()"
+                    size="small"
+                    icon="skip_next"
+                    ></ui-fab>
+                <h1>Songs for {{ currentFeastName }} <a target="_blank" :href="'http://www.usccb.org/bible/readings/' + currentFeastDateShort + '.cfm'">{{ currentFeastDate }}</a></h1>
+                <h2>Year {{ currentLiturgicalYear }}</h2>
+            </div>
+            <div id="content">
+                <ul :class="{
+                    finalList: true,
+                    hangingDisplay: showHangingDisplay
+                }" @click="toggleHangingDisplay">
+                    <li class="reading"><b>Reading:</b><span class="song-number">&nbsp;</span></li>
+                    <li><b>Entrance:</b><span class="song-number">{{ selectedSongs.entrance.number }}</span><span class="song-title">{{ selectedSongs.entrance.title }}</span><ui-button type="secondary" @click="removeSong('entrance')" size="small" v-if="selectedSongs.entrance.number.length > 0" icon="delete"></ui-button></li>
+                    <li><b>Offertory:</b><span class="song-number">{{ selectedSongs.offertory.number }}</span><span class="song-title">{{ selectedSongs.offertory.title }}</span><ui-button type="secondary" @click="removeSong('offertory')" size="small" v-if="selectedSongs.offertory.number.length > 0" icon="delete"></ui-button></li>
+                    <li><b>Communion:</b><span class="song-number">{{ selectedSongs.communion.number }}</span><span class="song-title">{{ selectedSongs.communion.title }}</span><ui-button type="secondary" @click="removeSong('communion')" size="small" v-if="selectedSongs.communion.number.length > 0" icon="delete"></ui-button></li>
+                    <li><b>Recession:</b><span class="song-number">{{ selectedSongs.recession.number }}</span><span class="song-title">{{ selectedSongs.recession.title }}</span><ui-button type="secondary" @click="removeSong('recession')" size="small" v-if="selectedSongs.recession.number.length > 0" icon="delete"></ui-button></li>
+                </ul>
                 <ui-button @click="clearSongs" icon="clear" color="default">Clear</ui-button>
                 <ui-button @click="showQrCode" icon="select_all" color="default">QR</ui-button>
                 <ui-button @click="openModal('saveDialog')" icon="save" id="btnSave" color="primary">Save</ui-button>
-            </ul>
-            <h2>History</h2>
-            <p v-if="recentSongs.length === 0">
-                No songs removed from schedule yet...
-            </p>
-            <div class="song-list">
-                <ui-button v-for="song in recentSongs"
+                <h2>History</h2>
+                <p v-if="recentSongs.length === 0">
+                    No songs removed from schedule yet...
+                </p>
+                <div class="song-list">
+                    <ui-button v-for="song in recentSongs"
+                        class="one-song"
+                        type="primary"
+                        v-bind:color="song.selected ? 'orange' : 'default'"
+                        size="small"
+                        @click="openSelectSongModal('whichSong', song.number, song.title, song.topics, song.scriptures)"
+                        v-bind:icon="stats[song.number] ? 'music_note': ''">
+
+                        <b>{{ song.number }}</b>&nbsp;{{ song.title }}
+                    </ui-button>
+                </div>
+
+                <h2>Suggest Songs</h2>
+                <ul>
+                    <li>
+                        Canadian Conference of Catholic Bishops:
+                        <a target="_blank" href="http://www.cccb.ca/site/Files/CBW_III_Music_suggestions_YrA.html">Year A</a>
+                        <a target="_blank" href="http://www.cccb.ca/site/Files/CBW_III_Music_suggestions_YrB.html">Year B</a>
+                        <a target="_blank" href="http://www.cccb.ca/site/Files/CBW_III_Music_suggestions_YrC.html">Year C</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://sites.google.com/site/musicministrywenty/music-suggestions">Music Ministry - Our Lady of Mount Carmel</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.liturgytools.net/p/roman-catholic-lectionary-based-hymn.html">Liturgytools.net</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.asonevoice.com.au/liturgical-song-selection">As One Voice</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://hymnary.org/browse/lectionary">Hymnary.org</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.canticanova.com/pln_main.htm">CanticaNOVA</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://cc.blessedsacramentnc.org/music">Blessed Sacrament Catholic Community</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.stpatshistoric.org/index.php/bulletins/">The Historic Church of Saint Patrick</a> - songs listed in the bulletin
+                    </li>
+                </ul>
+                <h2>
+                    Search Songs ({{ filteredSongs.length | formatLimitLabel }} / {{ songs.length }})
+                </h2>
+
+                <div v-if="!$options.filters.hasKeys(stats)">
+                    <ui-alert type="warning" :dismissible="false">Filters disabled: song statistics not available</ui-alert>
+                </div>
+                <div class="row">
+                    <ui-select
+                        id="txtTopicFilter"
+                        style="width: 50%"
+                        name="topics"
+                        v-model="searchTopics"
+                        :options="topics"
+                        multiple="true"
+                        multipleDelimiter=","
+                        placeholder="Topics">
+                    </ui-select>
+                    <ui-button 
+                        id="btnClearTopics"
+                        size="small"
+                        @click="clearTopicSearch"
+                        icon="cancel"/></ui-button>
+                </div>
+                <ui-checkbox-group
+                  id="searchFilters"
+                  @input="onFilterCheckboxClicked"
+                  :value="[]"
+                  :disabled="stats | hasKeys | not"
+                  :options="possibleSearchFilterFlags"
+                  :vertical="window.screen.availWidth < 667"
+                ></ui-checkbox-group>
+                <br />
+                <ui-textbox
+                    key="txtSearch"
+                    name="search"
+                    type="text"
+                    placeholder="find a song"
+                    icon="search"
+                    v-model="searchText"
+                    ></ui-textbox>
+
+                <ui-button v-for="song in filteredSongs"
                     class="one-song"
                     type="primary"
-                    v-bind:color="song.selected ? 'orange' : 'default'"
+                    v-bind:color="song.selected ? 'green' : 'default'"
                     size="small"
                     @click="openSelectSongModal('whichSong', song.number, song.title, song.topics, song.scriptures)"
-                    v-bind:icon="stats[song.number] ? 'music_note': ''">
+                    v-bind:icon="stats[song.number] | getSongIcon">
 
                     <b>{{ song.number }}</b>&nbsp;{{ song.title }}
                 </ui-button>
+
+                <ui-modal
+                    size="large"
+                    title="QR Code"
+                    ref="qrcode">
+
+                    <div id="qrcode"></div>
+                    <p class="centerText"><a :href="qrCodeUrl" target="_blank">{{ qrCodeUrl }}</a></p>
+                </ui-modal>
+
+                <ui-modal 
+                    v-bind:title="selectedSong.number + ' - ' + selectedSong.title"
+                    ref="whichSong">
+                    <ui-button v-bind:type="selectedSongs.entrance.number.length > 0  ? 'primary' : 'secondary'" @click="setSong('entrance')">Entrance</ui-button>
+                    <ui-button v-bind:type="selectedSongs.offertory.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('offertory')">Offertory</ui-button>
+                    <ui-button v-bind:type="selectedSongs.communion.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('communion')">Communion</ui-button>
+                    <ui-button v-bind:type="selectedSongs.recession.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('recession')">Recession</ui-button>
+                    <h3>Song Statistics</h3>
+                    <ul v-if="!!stats[selectedSong.number]">
+                        <li>We sung this song {{ (stats[selectedSong.number] || {}).count || "unknown" }} times during {{ (stats[selectedSong.number] || {}).sungFor | joinKeys }}</li>
+                        <li>We last sung it on {{ (stats[selectedSong.number] || {}).lastSung || "unknown" }}</li>
+                    </ul>
+                    <p v-else>No statistics available for this song</p>
+                    <h3 v-if="selectedSong.scriptures.length > 0">Scriptures</h3>
+                    <ul>
+                        <li v-for="scripture in selectedSong.scriptures">
+                            {{ scripture }}
+                        </li>
+                    </ul>
+                    <h3 v-if="selectedSong.topics.length > 0">Topics</h3>
+                    <ul>
+                        <li v-for="topic in selectedSong.topics">
+                            {{ topic }}
+                        </li>
+                    </ul>
+                </ui-modal>
+
+                <ui-modal 
+                    title="Enter Password"
+                    ref="saveDialog">
+
+                    <ui-textbox
+                        name="password"
+                        type="password"
+                        icon="vpn_key"
+                        v-model:text="password"></ui-textbox>
+
+                    <ui-button @click="save">Save</ui-button>
+
+                </ui-modal>
             </div>
-
-            <h2>Suggest Songs</h2>
-            <ul>
-                <li>
-                    Canadian Conference of Catholic Bishops:
-                    <a target="_blank" href="http://www.cccb.ca/site/Files/CBW_III_Music_suggestions_YrA.html">Year A</a>
-                    <a target="_blank" href="http://www.cccb.ca/site/Files/CBW_III_Music_suggestions_YrB.html">Year B</a>
-                    <a target="_blank" href="http://www.cccb.ca/site/Files/CBW_III_Music_suggestions_YrC.html">Year C</a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://sites.google.com/site/musicministrywenty/music-suggestions">Music Ministry - Our Lady of Mount Carmel</a>
-                </li>
-                <li>
-                    <a target="_blank" href="http://www.liturgytools.net/p/roman-catholic-lectionary-based-hymn.html">Liturgytools.net</a>
-                </li>
-                <li>
-                    <a target="_blank" href="http://www.asonevoice.com.au/liturgical-song-selection">As One Voice</a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://hymnary.org/browse/lectionary">Hymnary.org</a>
-                </li>
-                <li>
-                    <a target="_blank" href="http://www.canticanova.com/pln_main.htm">CanticaNOVA</a>
-                </li>
-                <li>
-                    <a target="_blank" href="http://cc.blessedsacramentnc.org/music">Blessed Sacrament Catholic Community</a>
-                </li>
-                <li>
-                    <a target="_blank" href="http://www.stpatshistoric.org/index.php/bulletins/">The Historic Church of Saint Patrick</a> - songs listed in the bulletin
-                </li>
-            </ul>
-            <h2>
-                Search Songs ({{ filteredSongs.length | formatLimitLabel }} / {{ songs.length }})
-            </h2>
-
-            <div v-if="!$options.filters.hasKeys(stats)">
-                <ui-alert type="warning" :dismissible="false">Filters disabled: song statistics not available</ui-alert>
-            </div>
-            <div class="row">
-                <ui-select
-                    id="txtTopicFilter"
-                    style="width: 50%"
-                    name="topics"
-                    v-model="searchTopics"
-                    :options="topics"
-                    multiple="true"
-                    multipleDelimiter=","
-                    placeholder="Topics">
-                </ui-select>
-                <ui-button 
-                    id="btnClearTopics"
-                    size="small"
-                    @click="clearTopicSearch"
-                    icon="cancel"/></ui-button>
-            </div>
-            <ui-checkbox-group
-              id="searchFilters"
-              @input="onFilterCheckboxClicked"
-              :value="[]"
-              :disabled="stats | hasKeys | not"
-              :options="possibleSearchFilterFlags"
-              :vertical="window.screen.availWidth < 667"
-            ></ui-checkbox-group>
-            <br />
-            <ui-textbox
-                key="txtSearch"
-                name="search"
-                type="text"
-                placeholder="find a song"
-                icon="search"
-                v-model="searchText"
-                ></ui-textbox>
-
-            <ui-button v-for="song in filteredSongs"
-                class="one-song"
-                type="primary"
-                v-bind:color="song.selected ? 'green' : 'default'"
-                size="small"
-                @click="openSelectSongModal('whichSong', song.number, song.title, song.topics, song.scriptures)"
-                v-bind:icon="stats[song.number] | getSongIcon">
-
-                <b>{{ song.number }}</b>&nbsp;{{ song.title }}
-            </ui-button>
-
-            <ui-modal
-                size="large"
-                title="QR Code"
-                ref="qrcode">
-
-                <div id="qrcode"></div>
-                <p class="centerText"><a :href="qrCodeUrl" target="_blank">{{ qrCodeUrl }}</a></p>
-            </ui-modal>
-
-            <ui-modal 
-                v-bind:title="selectedSong.number + ' - ' + selectedSong.title"
-                ref="whichSong">
-                <ui-button v-bind:type="selectedSongs.entrance.number.length > 0  ? 'primary' : 'secondary'" @click="setSong('entrance')">Entrance</ui-button>
-                <ui-button v-bind:type="selectedSongs.offertory.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('offertory')">Offertory</ui-button>
-                <ui-button v-bind:type="selectedSongs.communion.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('communion')">Communion</ui-button>
-                <ui-button v-bind:type="selectedSongs.recession.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('recession')">Recession</ui-button>
-                <h3>Song Statistics</h3>
-                <ul v-if="!!stats[selectedSong.number]">
-                    <li>We sung this song {{ (stats[selectedSong.number] || {}).count || "unknown" }} times during {{ (stats[selectedSong.number] || {}).sungFor | joinKeys }}</li>
-                    <li>We last sung it on {{ (stats[selectedSong.number] || {}).lastSung || "unknown" }}</li>
-                </ul>
-                <p v-else>No statistics available for this song</p>
-                <h3 v-if="selectedSong.scriptures.length > 0">Scriptures</h3>
-                <ul>
-                    <li v-for="scripture in selectedSong.scriptures">
-                        {{ scripture }}
-                    </li>
-                </ul>
-                <h3 v-if="selectedSong.topics.length > 0">Topics</h3>
-                <ul>
-                    <li v-for="topic in selectedSong.topics">
-                        {{ topic }}
-                    </li>
-                </ul>
-            </ui-modal>
-
-            <ui-modal 
-                title="Enter Password"
-                ref="saveDialog">
-
-                <ui-textbox
-                    name="password"
-                    type="password"
-                    icon="vpn_key"
-                    v-model:text="password"></ui-textbox>
-
-                <ui-button @click="save">Save</ui-button>
-
-            </ui-modal>
         </div>
-        <script type="text/javascript" src="dist/bundle54e15afdfdaeac.min.js"></script>
+        <script type="text/javascript" src="dist/bundlea8a6afca98b0a8.min.js"></script>
     </body>
 </html>
