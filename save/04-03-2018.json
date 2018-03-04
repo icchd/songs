@@ -12,8 +12,8 @@
       "title": "Love One Another"
    },
    "recession": {
-      "number": "",
-      "title": ""
+      "number": "522",
+      "title": "Lift High the Cross"
    },
    "stats": {
       "2": {
@@ -189,8 +189,8 @@
          "lastSung": "25-02-2018"
       },
       "522": {
-         "count": 3,
-         "lastSung": "18-02-2018",
+         "count": 4,
+         "lastSung": "04-03-2018",
          "sungFor": {
             "recession": true
          }
@@ -646,8 +646,8 @@
          }
       },
       "": {
-         "count": 6,
-         "lastSung": "04-03-2018",
+         "count": 5,
+         "lastSung": "17-12-2017",
          "sungFor": {
             "recession": true,
             "communion": true,
