@@ -163,3 +163,7 @@ a {
         font-size: 12pt;
     }
 }
+
+button.ui-button.one-song.has-links {
+    color: #000066;
+}

@@ -1,6 +1,14 @@
 {
    "list": [
       {
+         "title": "In the Lord I'll be ever thankful",
+         "links": [
+             "https://www.youtube.com/watch?v=uAx8gjQrsOY"
+         ],
+         "topics": [],
+         "scriptures": {}
+      },
+      {
          "number": "340",
          "title": "A Child Is Born in Bethlehem",
          "topics": [],
@@ -9516,7 +9524,8 @@
             "1 CORINTHIANS": [
                "13"
             ]
-         }
+         },
+         "notes": "only the refrain is available for this song on the book"
       },
       {
          "number": "573",

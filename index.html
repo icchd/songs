@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>ICCH Songs</title>
-        <link rel="stylesheet" href="dist/styled85380fa50f07.min.css" />
+        <link rel="stylesheet" href="dist/stylea7b8fa843f2378.min.css" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto" rel="stylesheet">
         <meta http-equiv="cache-control" content="max-age=0" />
         <meta http-equiv="cache-control" content="no-cache" />
@@ -16,7 +16,7 @@
     <body>
         <div id="app">
             <div id="header">
-                <div id="version">ver. d85380fa50f07</div>
+                <div id="version">ver. a7b8fa843f2378</div>
                 <ui-fab
                     id="btnPrevSunday"
                     @click="onPreviousSundayClicked()"
@@ -38,10 +38,10 @@
                     hangingDisplay: showHangingDisplay
                 }" @click="toggleHangingDisplay">
                     <li class="reading"><b>Reading:</b><span class="song-number">&nbsp;</span></li>
-                    <li><b>Entrance:</b><span class="song-number">{{ selectedSongs.entrance.number }}</span><span class="song-title">{{ selectedSongs.entrance.title }}</span><ui-button type="secondary" @click="removeSong('entrance')" size="small" v-if="selectedSongs.entrance.number.length > 0" icon="delete"></ui-button></li>
-                    <li><b>Offertory:</b><span class="song-number">{{ selectedSongs.offertory.number }}</span><span class="song-title">{{ selectedSongs.offertory.title }}</span><ui-button type="secondary" @click="removeSong('offertory')" size="small" v-if="selectedSongs.offertory.number.length > 0" icon="delete"></ui-button></li>
-                    <li><b>Communion:</b><span class="song-number">{{ selectedSongs.communion.number }}</span><span class="song-title">{{ selectedSongs.communion.title }}</span><ui-button type="secondary" @click="removeSong('communion')" size="small" v-if="selectedSongs.communion.number.length > 0" icon="delete"></ui-button></li>
-                    <li><b>Recession:</b><span class="song-number">{{ selectedSongs.recession.number }}</span><span class="song-title">{{ selectedSongs.recession.title }}</span><ui-button type="secondary" @click="removeSong('recession')" size="small" v-if="selectedSongs.recession.number.length > 0" icon="delete"></ui-button></li>
+                    <li><b>Entrance:</b><span class="song-number">{{ formatSongNumber(selectedSongs.entrance.number) }}</span><span class="song-title">{{ selectedSongs.entrance.title }}</span><ui-button type="secondary" @click="removeSong('entrance')" size="small" v-if="selectedSongs.entrance.number && selectedSongs.entrance.number.length > 0" icon="delete"></ui-button></li>
+                    <li><b>Offertory:</b><span class="song-number">{{ formatSongNumber(selectedSongs.offertory.number) }}</span><span class="song-title">{{ selectedSongs.offertory.title }}</span><ui-button type="secondary" @click="removeSong('offertory')" size="small" v-if="selectedSongs.offertory.number && selectedSongs.offertory.number.length > 0" icon="delete"></ui-button></li>
+                    <li><b>Communion:</b><span class="song-number">{{ formatSongNumber(selectedSongs.communion.number) }}</span><span class="song-title">{{ selectedSongs.communion.title }}</span><ui-button type="secondary" @click="removeSong('communion')" size="small" v-if="selectedSongs.communion.number && selectedSongs.communion.number.length > 0" icon="delete"></ui-button></li>
+                    <li><b>Recession:</b><span class="song-number">{{ formatSongNumber(selectedSongs.recession.number) }}</span><span class="song-title">{{ selectedSongs.recession.title }}</span><ui-button type="secondary" @click="removeSong('recession')" size="small" v-if="selectedSongs.recession.number && selectedSongs.recession.number.length > 0" icon="delete"></ui-button></li>
                 </ul>
                 <ui-button @click="clearSongs" icon="clear" color="default">Clear</ui-button>
                 <ui-button @click="showQrCode" icon="select_all" color="default">QR</ui-button>
@@ -52,14 +52,17 @@
                 </p>
                 <div class="song-list">
                     <ui-button v-for="song in recentSongs"
-                        class="one-song"
+                        :class="{
+                           'one-song': true,
+                           'has-links': song.links && song.links.length > 0
+                        }"
                         type="primary"
-                        v-bind:color="song.selected ? 'orange' : 'default'"
+                        :color="isSongSelected(song.number) ? 'orange' : 'default'"
                         size="small"
-                        @click="openSelectSongModal('whichSong', song.number, song.title, song.topics, song.scriptures)"
-                        v-bind:icon="stats[song.number] ? 'music_note': ''">
+                        @click="openSelectSongModal('whichSong', song.number)"
+                        :icon="stats[song.number] | getSongIcon">
 
-                        <b>{{ song.number }}</b>&nbsp;{{ song.title }}
+                        <b>{{ song.notes && "*" || "" }} {{ formatSongNumber(song.number) }}</b>&nbsp;{{ song.title }}
                     </ui-button>
                 </div>
 
@@ -136,14 +139,17 @@
                     ></ui-textbox>
 
                 <ui-button v-for="song in filteredSongs"
-                    class="one-song"
+                    :class="{
+                       'one-song': true,
+                       'has-links': song.links && song.links.length > 0
+                    }"
                     type="primary"
                     v-bind:color="song.selected ? 'green' : 'default'"
                     size="small"
-                    @click="openSelectSongModal('whichSong', song.number, song.title, song.topics, song.scriptures)"
+                    @click="openSelectSongModal('whichSong', song.number)"
                     v-bind:icon="stats[song.number] | getSongIcon">
 
-                    <b>{{ song.number }}</b>&nbsp;{{ song.title }}
+                    <b>{{ song.notes && "*" || "" }} {{ formatSongNumber(song.number) }}</b>&nbsp;{{ song.title }}
                 </ui-button>
 
                 <ui-modal
@@ -156,30 +162,38 @@
                 </ui-modal>
 
                 <ui-modal 
-                    v-bind:title="selectedSong.number + ' - ' + selectedSong.title"
+                    :title="formatSongNumber(selectedSong.number) + ' &bull; ' + selectedSong.title"
                     ref="whichSong">
-                    <ui-button v-bind:type="selectedSongs.entrance.number.length > 0  ? 'primary' : 'secondary'" @click="setSong('entrance')">Entrance</ui-button>
-                    <ui-button v-bind:type="selectedSongs.offertory.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('offertory')">Offertory</ui-button>
-                    <ui-button v-bind:type="selectedSongs.communion.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('communion')">Communion</ui-button>
-                    <ui-button v-bind:type="selectedSongs.recession.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('recession')">Recession</ui-button>
+                    <ui-button v-bind:type="selectedSongs.entrance.number && selectedSongs.entrance.number.length > 0  ? 'primary' : 'secondary'" @click="setSong('entrance')">Entrance</ui-button>
+                    <ui-button v-bind:type="selectedSongs.offertory.number && selectedSongs.offertory.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('offertory')">Offertory</ui-button>
+                    <ui-button v-bind:type="selectedSongs.communion.number && selectedSongs.communion.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('communion')">Communion</ui-button>
+                    <ui-button v-bind:type="selectedSongs.recession.number && selectedSongs.recession.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('recession')">Recession</ui-button>
                     <h3>Song Statistics</h3>
                     <ul v-if="!!stats[selectedSong.number]">
                         <li>We sung this song {{ (stats[selectedSong.number] || {}).count || "unknown" }} times during {{ (stats[selectedSong.number] || {}).sungFor | joinKeys }}</li>
                         <li>We last sung it on {{ (stats[selectedSong.number] || {}).lastSung || "unknown" }}</li>
                     </ul>
                     <p v-else>No statistics available for this song</p>
-                    <h3 v-if="selectedSong.scriptures.length > 0">Scriptures</h3>
+                    <h3 v-if="Object.keys(selectedSong.scriptures).length > 0">Scriptures</h3>
                     <ul>
-                        <li v-for="scripture in selectedSong.scriptures">
-                            {{ scripture }}
+                        <li v-for="book in Object.keys(selectedSong.scriptures).sort()">
+                            {{ book }} {{ selectedSong.scriptures[book].join(", ") }}
                         </li>
                     </ul>
-                    <h3 v-if="selectedSong.topics.length > 0">Topics</h3>
+                    <h3 v-if="selectedSong.topics && selectedSong.topics.length > 0">Topics</h3>
                     <ul>
                         <li v-for="topic in selectedSong.topics">
                             {{ topic }}
                         </li>
                     </ul>
+                    <h3 v-if="selectedSong.links && selectedSong.links.length > 0">Related Links</h3>
+                    <ul v-if="selectedSong.links && selectedSong.links.length > 0">
+                        <li v-for="link in selectedSong.links"><a :href="link" target="_blank">{{link}}</a></li>
+                    </ul>
+                    <h3 v-if="selectedSong.notes">Notes</h3>
+                    <p v-if="selectedSong.notes">
+                        * {{ selectedSong.notes }}
+                    </p>
                 </ui-modal>
 
                 <ui-modal 
@@ -197,6 +211,6 @@
                 </ui-modal>
             </div>
         </div>
-        <script type="text/javascript" src="dist/bundled85380fa50f07.min.js"></script>
+        <script type="text/javascript" src="dist/bundlea7b8fa843f2378.min.js"></script>
     </body>
 </html>
