@@ -8,8 +8,16 @@
       "title": "Christ Be Our Light"
    },
    "communion": {
-      "number": "",
-      "title": ""
+      "number": "other-1",
+      "title": "In the Lord I'll be ever thankful",
+      "links": [
+         "https://www.youtube.com/watch?v=uAx8gjQrsOY"
+      ],
+      "topics": [],
+      "scriptures": {},
+      "scripturesSearchableString": "",
+      "notes": "",
+      "selected": false
    },
    "recession": {
       "number": "522",
@@ -646,14 +654,21 @@
          }
       },
       "": {
-         "count": 6,
-         "lastSung": "04-03-2018",
+         "count": 5,
+         "lastSung": "17-12-2017",
          "sungFor": {
             "recession": true,
             "communion": true,
             "offertory": true,
             "entrance": true
          }
+      },
+      "other-1": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "04-03-2018"
       }
    }
 }
