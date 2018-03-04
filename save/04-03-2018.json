@@ -8,8 +8,8 @@
       "title": "Christ Be Our Light"
    },
    "communion": {
-      "number": "752",
-      "title": "Love One Another"
+      "number": "",
+      "title": ""
    },
    "recession": {
       "number": "522",
@@ -454,8 +454,8 @@
          }
       },
       "752": {
-         "count": 2,
-         "lastSung": "04-03-2018",
+         "count": 1,
+         "lastSung": "21-05-2017",
          "sungFor": {
             "communion": true
          }
@@ -646,8 +646,8 @@
          }
       },
       "": {
-         "count": 5,
-         "lastSung": "17-12-2017",
+         "count": 6,
+         "lastSung": "04-03-2018",
          "sungFor": {
             "recession": true,
             "communion": true,
