@@ -1,114 +1,38 @@
 {
    "entrance": {
       "number": "705",
-      "title": "O God, Our Help in Ages Past",
-      "links": [],
-      "topics": [
-         "ENTRANCE SONG",
-         "FAITH",
-         "HOPE",
-         "REFUGE",
-         "TRUST"
-      ],
-      "scriptures": {
-         "PSALMS": [
-            "33:20",
-            "38:15",
-            "46:1",
-            "48:14",
-            "90",
-            "90:1-5",
-            "91:1-2"
-         ],
-         "ISAIAH": [
-            "26:4"
-         ],
-         "LAMENTATIONS": [
-            "5:19"
-         ],
-         "2 PETER": [
-            "3:8"
-         ]
-      },
-      "scripturesSearchableString": "psalms 33:20 psalms 38:15 psalms 46:1 psalms 48:14 psalms 90 psalms 90:1-5 psalms 91:1-2 isaiah 26:4 lamentations 5:19 2 peter 3:8",
-      "notes": "",
-      "selected": false
+      "title": "O God, Our Help in Ages Past"
    },
    "offertory": {
       "number": "713",
-      "title": "Amazing Grace",
-      "links": [],
-      "topics": [
-         "CONVERSION",
-         "ENTRANCE SONG",
-         "FAITH",
-         "HOPE",
-         "JOURNEY",
-         "SALVATION"
-      ],
-      "scriptures": {
-         "1 CHRONICLES": [
-            "17:16-17"
-         ],
-         "PSALMS": [
-            "142:5",
-            "145:1-2"
-         ],
-         "LUKE": [
-            "15:24, 32"
-         ],
-         "JOHN": [
-            "1:16-17",
-            "9:25"
-         ],
-         "ROMANS": [
-            "3:22-24",
-            "5:2-17, 20-21"
-         ],
-         "1 CORINTHIANS": [
-            "15:10"
-         ],
-         "2 CORINTHIANS": [
-            "9:14",
-            "12:9"
-         ],
-         "EPHESIANS": [
-            "1:6-7",
-            "2:8"
-         ],
-         "1 TIMOTHY": [
-            "1:15-16"
-         ],
-         "TITUS": [
-            "2:11"
-         ],
-         "1 JOHN": [
-            "3:1"
-         ]
-      },
-      "scripturesSearchableString": "1 chronicles 17:16-17 psalms 142:5 psalms 145:1-2 luke 15:24, 32 john 1:16-17 john 9:25 romans 3:22-24 romans 5:2-17, 20-21 1 corinthians 15:10 2 corinthians 9:14 2 corinthians 12:9 ephesians 1:6-7 ephesians 2:8 1 timothy 1:15-16 titus 2:11 1 john 3:1",
-      "notes": "",
-      "selected": false
+      "title": "Amazing Grace"
    },
    "communion": {
       "number": "809",
-      "title": "Behold the Lamb",
-      "links": [],
-      "topics": [
-         "UNITY"
-      ],
-      "scriptures": {
-         "JOHN": [
-            "1:29"
-         ]
-      },
-      "scripturesSearchableString": "john 1:29",
-      "notes": "",
-      "selected": false
+      "title": "Behold the Lamb"
    },
    "recession": {
-      "number": "",
-      "title": ""
+      "number": "587",
+      "title": "The Lord Is My Light (Walker)",
+      "links": [],
+      "topics": [
+         "CARE OF THE SICK",
+         "CONFIDENCE",
+         "DARKNESS",
+         "ENTRANCE SONG",
+         "HEALING",
+         "HOPE",
+         "LIGHT",
+         "RESURRECTION"
+      ],
+      "scriptures": {
+         "PSALMS": [
+            "27"
+         ]
+      },
+      "scripturesSearchableString": "psalms 27",
+      "notes": "",
+      "selected": false
    },
    "stats": {
       "2": {
@@ -324,6 +248,13 @@
          "sungFor": {
             "offertory": true
          }
+      },
+      "587": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "11-03-2018"
       },
       "595": {
          "count": 3,
@@ -748,8 +679,8 @@
          }
       },
       "": {
-         "count": 6,
-         "lastSung": "11-03-2018",
+         "count": 5,
+         "lastSung": "17-12-2017",
          "sungFor": {
             "recession": true,
             "communion": true,
