@@ -1,7 +1,7 @@
 {
    "entrance": {
-      "number": "790",
-      "title": "Come, Worship the Lord"
+      "number": "792",
+      "title": "As We Gather at Your Table"
    },
    "offertory": {
       "number": "760",
@@ -525,15 +525,15 @@
          }
       },
       "790": {
-         "count": 9,
-         "lastSung": "18-03-2018",
+         "count": 8,
+         "lastSung": "28-01-2018",
          "sungFor": {
             "entrance": true
          }
       },
       "792": {
-         "count": 3,
-         "lastSung": "05-11-2017",
+         "count": 4,
+         "lastSung": "18-03-2018",
          "sungFor": {
             "entrance": true
          }
