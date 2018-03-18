@@ -1,80 +1,19 @@
 {
    "entrance": {
       "number": "790",
-      "title": "Come, Worship the Lord",
-      "links": [],
-      "topics": [
-         "GATHERING",
-         "MEDITATION",
-         "PRAISE",
-         "RETREATS"
-      ],
-      "scriptures": {
-         "PSALMS": [
-            "95",
-            "95:1-7"
-         ]
-      },
-      "scripturesSearchableString": "psalms 95 psalms 95:1-7",
-      "notes": "",
-      "selected": false
+      "title": "Come, Worship the Lord"
    },
    "offertory": {
-      "number": "",
-      "title": ""
+      "number": "760",
+      "title": "Unless a Grain of Wheat (Farrell)"
    },
    "communion": {
-      "number": "760",
-      "title": "Unless a Grain of Wheat (Farrell)",
-      "links": [],
-      "topics": [
-         "DISCIPLESHIP",
-         "ENTRANCE SONG",
-         "FAITH",
-         "HOPE",
-         "MERCY",
-         "PASCHAL MYSTERY",
-         "RESURRECTION"
-      ],
-      "scriptures": {
-         "PSALMS": [
-            "12:24"
-         ],
-         "JOHN": [
-            "12:24-26",
-            "14:23-27",
-            "15:4-5, 7-8, 27"
-         ],
-         "2 TIMOTHY": [
-            "2:11-12"
-         ]
-      },
-      "scripturesSearchableString": "psalms 12:24 john 12:24-26 john 14:23-27 john 15:4-5, 7-8, 27 2 timothy 2:11-12",
-      "notes": "",
-      "selected": false
+      "number": "766",
+      "title": "Only This I Want"
    },
    "recession": {
       "number": "533",
-      "title": "Church of God, Elect and Glorious",
-      "links": [],
-      "topics": [
-         "CHRISTIAN LIFE",
-         "CHURCH",
-         "COMMISSIONING",
-         "LOVE FOR OTHERS",
-         "MERCY",
-         "OBEDIENCE",
-         "PEOPLE OF GOD",
-         "SENDING FORTH"
-      ],
-      "scriptures": {
-         "1 PETER": [
-            "2"
-         ]
-      },
-      "scripturesSearchableString": "1 peter 2",
-      "notes": "",
-      "selected": false
+      "title": "Church of God, Elect and Glorious"
    },
    "stats": {
       "2": {
@@ -546,8 +485,7 @@
          "count": 3,
          "lastSung": "18-03-2018",
          "sungFor": {
-            "offertory": true,
-            "communion": true
+            "offertory": true
          }
       },
       "764": {
@@ -558,8 +496,8 @@
          "lastSung": "21-01-2018"
       },
       "766": {
-         "count": 3,
-         "lastSung": "03-12-2017",
+         "count": 4,
+         "lastSung": "18-03-2018",
          "sungFor": {
             "communion": true,
             "offertory": true
@@ -729,8 +667,8 @@
          }
       },
       "": {
-         "count": 6,
-         "lastSung": "18-03-2018",
+         "count": 5,
+         "lastSung": "17-12-2017",
          "sungFor": {
             "recession": true,
             "communion": true,
