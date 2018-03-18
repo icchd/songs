@@ -14574,10 +14574,10 @@ init().then(function (oEnv) {
             recentSongs: [],
             selectedSong: oEnv.defaultSongFields,
             selectedSongs: {
-                entrance:  { },
-                offertory: { },
-                communion: { },
-                recession: { }
+                entrance:  { number: "", title: "" },
+                offertory: { number: "", title: "" },
+                communion: { number: "", title: "" },
+                recession: { number: "", title: "" }
             },
             songFieldNames: Object.keys(oEnv.defaultSongFields),
             songs: oEnv.songs,
@@ -14798,8 +14798,10 @@ init().then(function (oEnv) {
                 });
             },
             clearSong: function (sMoment) {
-                this.selectedSongs[sMoment].number = "";
-                this.selectedSongs[sMoment].title = "";
+                var that = this;
+                Object.keys(this.selectedSongs[sMoment]).forEach(function (sKey) {
+                    that.selectedSongs[sMoment][sKey] = "";
+                });
             },
             clearSongs: function () {
                 Object.keys(this.selectedSongs).forEach(this.clearSong);
@@ -14825,7 +14827,7 @@ init().then(function (oEnv) {
             },
             removeSong: function (sMoment) {
                 // add song to the recent
-                this.addSongToRecents(this.selectedSongs[sMoment]);
+                this.addSongToRecents(this.selectedSongs[sMoment]);  // TODO
                 this.clearSong(sMoment);
             },
             findSong: function (sSongNumber) {
@@ -14856,12 +14858,11 @@ init().then(function (oEnv) {
                 var that = this;
 
                 if (this.selectedSongs[sMoment].number) {
-                    this.addSongToRecents(this.selectedSongs[sMoment]);
+                    this.addSongToRecents(this.selectedSongs[sMoment]);  // TODO
                 }
 
-                Object.keys(oSong).forEach(function (sKey) {
-                    that.selectedSongs[sMoment][sKey] = oSong[sKey];
-                });
+                that.selectedSongs[sMoment].number = oSong.number;
+                that.selectedSongs[sMoment].title = oSong.title;
 
                 this.refreshSelectedState();
             },
