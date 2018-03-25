@@ -1,7 +1,7 @@
 {
    "entrance": {
-      "number": "396",
-      "title": "Hosanna to the Son of David (Schutte)"
+      "number": "399",
+      "title": "All Glory, Laud and Honor"
    },
    "offertory": {
       "number": "411",
@@ -131,7 +131,7 @@
          },
          "lastSung": "04-03-2018"
       },
-      "396": {
+      "399": {
          "count": 1,
          "sungFor": {
             "entrance": true
