@@ -41,8 +41,15 @@
                     <li class="moment" v-for="(moment, idx) in possibleMoments">
                         <ui-icon-button :disabled="idx === 0" type="secondary" size="small" icon="arrow_drop_up" @click="moveMomentUp(moment)"></ui-icon-button>
                         <ui-icon-button :disabled="idx === possibleMoments.length - 1" type="secondary" size="small" icon="arrow_drop_down" @click="moveMomentDown(moment)"></ui-icon-button>
+                        <ui-icon-button type="secondary" size="small" icon="clear" @click="deleteMoment(moment)"></ui-icon-button>
                         <!-- ui-icon-button type="secondary" size="small" icon="mode_edit" @click="editMoment(moment)"></ui-icon-button -->
                         <b>{{ moment }}:</b><span class="song-number" @click="toggleHangingDisplay">{{ formatSongNumber(selectedSongs[moment].number) }}</span><span class="song-title">{{ selectedSongs[moment].title }}</span><ui-button type="secondary" @click="removeSong(moment)" size="small" v-if="selectedSongs[moment].number && selectedSongs[moment].number.length > 0" icon="delete"></ui-button>
+                    </li>
+                    <li class="new-moment">
+                        <div class="row">
+                            <ui-textbox v-model="newMomentName" placeholder="e.g., sprinkling of water"></ui-textbox>
+                            <ui-icon-button size="small" icon="add" @click="addNewMoment"></ui-icon-button>
+                        </div>
                     </li>
                 </ul>
                 <ui-button @click="clearSongs" icon="clear" color="default">Clear</ui-button>

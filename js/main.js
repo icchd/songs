@@ -22,7 +22,7 @@ init().then(function (oEnv) {
     var app = new Vue({
         el: "#app",
         data: {
-            editingMoment: "",
+            newMomentName: "",
             showHangingDisplay: false,
             qrCodeUrl: "",
             currentFeast: oInitialFestiveDay,
@@ -126,6 +126,25 @@ init().then(function (oEnv) {
                         that.setSongByNumber(sSongNumber, that.possibleMoments[iIdx]);
                     }
                 });
+            },
+            deleteMoment: function (sMoment) {
+                this.removeSong(sMoment);
+
+                var iMomentPosition = this.possibleMoments.indexOf(sMoment);
+                this.possibleMoments.splice(iMomentPosition, 1);
+                this.$forceUpdate();
+            },
+            addNewMoment: function () {
+                var sMoment = this.newMomentName.toLowerCase().trim();
+                if (sMoment === "") {
+                    return; // empty moment
+                }
+                if (this.possibleMoments.indexOf(sMoment) >= 0) {
+                    return; // moment already exists
+                }
+                this.newMomentName = "";
+                this.selectedSongs[sMoment] = { number: "", title: "" };
+                this.possibleMoments.push(sMoment);
             },
             moveMoment: function (sMoment, iDirection) {
                 var iMomentFrom = this.possibleMoments.indexOf(sMoment);
@@ -274,7 +293,7 @@ init().then(function (oEnv) {
                 });
             },
             clearSongs: function () {
-                Object.keys(this.selectedSongs).forEach(this.clearSong);
+                Object.keys(this.selectedSongs).forEach(this.clearSong.bind(this));
             },
             closeModal: function (ref) {
                 this.$refs[ref].close();
@@ -296,8 +315,9 @@ init().then(function (oEnv) {
                 this.$refs[ref].open();
             },
             removeSong: function (sMoment) {
-                // add song to the recent
-                this.addSongToRecents(this.selectedSongs[sMoment]);  // TODO
+                if (this.selectedSongs[sMoment] && this.selectedSongs[sMoment].number) {
+                    this.addSongToRecents(this.selectedSongs[sMoment]);
+                }
                 this.clearSong(sMoment);
             },
             findSong: function (sSongNumber) {
@@ -337,8 +357,9 @@ init().then(function (oEnv) {
                 this.refreshSelectedState();
             },
             setSong: function (sMoment) {
-                this.$refs.whichSong.close();
                 this.setSongByItem(this.selectedSong, sMoment);
+                this.$refs.whichSong.close();
+                this.$forceUpdate();
             },
             refreshSelectedState: function () {
                 var that = this;

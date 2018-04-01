@@ -71,6 +71,9 @@ h2 {
 .hangingDisplay button {
     display: none;
 }
+.hangingDisplay .new-moment {
+    display: none;
+}
 
 #qrcode img {
     margin: 0 auto;
