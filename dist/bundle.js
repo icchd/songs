@@ -14547,6 +14547,12 @@ ref:"tabsContainer",staticClass:"ui-tabs__header-items",attrs:{role:"tablist"}},
 ;var S_HEROKU_ENDPOINT = "https://icch-api-icch-api.a3c1.starter-us-west-1.openshiftapps.com/songs";
 var I_MAX_SONGS_IN_SEARCH = 80;
 var A_MOMENTS = ["entrance", "offertory", "communion", "recession"];
+var O_MOMENT_ICON = {
+    entrance: "file_download",
+    offertory: "grain",
+    communion: "lens",
+    recession: "file_upload"
+};
 
 /* global QRCode Vue moment */
 
@@ -14562,23 +14568,19 @@ init().then(function (oEnv) {
     var app = new Vue({
         el: "#app",
         data: {
+            newMomentName: "",
             showHangingDisplay: false,
             qrCodeUrl: "",
             currentFeast: oInitialFestiveDay,
             password: "",
-            possibleMoments: A_MOMENTS,
+            possibleMoments: [],
             possibleSearchFilterFlags: ["any known songs"].concat(A_MOMENTS),
             searchFilterFlags: [],
             searchText: "",
             searchTopics: [],
             recentSongs: [],
             selectedSong: oEnv.defaultSongFields,
-            selectedSongs: {
-                entrance:  { number: "", title: "" },
-                offertory: { number: "", title: "" },
-                communion: { number: "", title: "" },
-                recession: { number: "", title: "" }
-            },
+            selectedSongs: {},
             songFieldNames: Object.keys(oEnv.defaultSongFields),
             songs: oEnv.songs,
             stats: {},
@@ -14624,18 +14626,11 @@ init().then(function (oEnv) {
                 if (iNumMoments > 1)   { return "music_note"; }
 
                 var sMoment = aMoments.pop();
-                switch (sMoment) {
-                case "communion":
-                    return "lens";
-                case "entrance":
-                    return "file_download";
-                case "recession":
-                    return "file_upload";
-                case "offertory":
-                    return "grain";
-                default:
-                    return "star";
-                }
+                var sMomentIcon = O_MOMENT_ICON[sMoment];
+
+                return sMomentIcon
+                    ? sMomentIcon
+                    : "star";
             },
             joinKeys: function (object) {
                 if (!object) {
@@ -14655,12 +14650,12 @@ init().then(function (oEnv) {
                 return sNumber;
             },
             toggleHangingDisplay: function () {
+                var that = this;
                 var bCanToggle = true;
                 if (!this.showHangingDisplay) {
-                    bCanToggle = this.selectedSongs.entrance.number
-                        && this.selectedSongs.offertory.number
-                        && this.selectedSongs.communion.number
-                        && this.selectedSongs.recession.number;
+                    bCanToggle = this.possibleMoments.every(function (sMoment) {
+                        return that.selectedSongs[sMoment].number;
+                    });
                 }
 
                 if (bCanToggle) {
@@ -14678,6 +14673,39 @@ init().then(function (oEnv) {
                     }
                 });
             },
+            deleteMoment: function (sMoment) {
+                this.removeSong(sMoment);
+
+                var iMomentPosition = this.possibleMoments.indexOf(sMoment);
+                this.possibleMoments.splice(iMomentPosition, 1);
+                this.$forceUpdate();
+            },
+            addNewMoment: function () {
+                var sMoment = this.newMomentName.toLowerCase().trim();
+                if (sMoment === "") {
+                    return; // empty moment
+                }
+                if (this.possibleMoments.indexOf(sMoment) >= 0) {
+                    return; // moment already exists
+                }
+                this.newMomentName = "";
+                this.selectedSongs[sMoment] = { number: "", title: "" };
+                this.possibleMoments.push(sMoment);
+            },
+            moveMoment: function (sMoment, iDirection) {
+                var iMomentFrom = this.possibleMoments.indexOf(sMoment);
+                var iMomentTo = iMomentFrom + iDirection;
+                var sTmp = this.possibleMoments[iMomentTo];
+                this.possibleMoments[iMomentTo] = this.possibleMoments[iMomentFrom];
+                this.possibleMoments[iMomentFrom] = sTmp;
+                this.$forceUpdate();
+            },
+            moveMomentUp: function (sMoment) {
+                this.moveMoment(sMoment, -1);
+            },
+            moveMomentDown: function (sMoment) {
+                this.moveMoment(sMoment, +1);
+            },
             showQrCode: function () {
                 var that = this;
 
@@ -14688,7 +14716,7 @@ init().then(function (oEnv) {
 
                 var sDate = that.currentFeast.format("DD-MM-YYYY");
 
-                var sSongs = A_MOMENTS.map(function (sMoment) {
+                var sSongs = that.possibleMoments.map(function (sMoment) {
                     return that.selectedSongs[sMoment].number || "x";
                 }).join(",");
 
@@ -14744,29 +14772,36 @@ init().then(function (oEnv) {
             loadCurrentSongSelection: function (oFestiveDay) {
                 var that = this;
 
+                // delete all entries
+                that.possibleMoments.splice(0, that.possibleMoments.length);
+
                 // Attempt to load songs
                 this.$http.get("save/" + oFestiveDay.format("DD-MM-YYYY") + ".json").then(function (oData) {
                     if (oData.status !== 200) {
                         return;
                     }
                     try {
-                        Object.keys(that.selectedSongs)
-                            .forEach(function (sMoment) {
-                                that.selectedSongs[sMoment].number = oData.body[sMoment].number;
-                                that.selectedSongs[sMoment].title = oData.body[sMoment].title;
-                            });
+                        var aMoments = oData.body.momentsOrder || A_MOMENTS;
+                        aMoments.forEach(function (sMoment) {
+                            if (!that.selectedSongs[sMoment]) {
+                                that.selectedSongs[sMoment] = {};
+                            }
+                            that.selectedSongs[sMoment].number = oData.body[sMoment].number;
+                            that.selectedSongs[sMoment].title = oData.body[sMoment].title;
+                            that.possibleMoments.push(sMoment);
+                        });
                     } catch (e) {
                         alert("Unable to load: " + e);
                     }
                 }, function (oData) {
                     if (oData.status === 404) {
                         // nothing saved yet!
-                        this.selectedSongs = {
-                            entrance:  { number: "", title: "" },
-                            offertory: { number: "", title: "" },
-                            communion: { number: "", title: "" },
-                            recession: { number: "", title: "" }
-                        };
+                        this.selectedSongs = A_MOMENTS.reduce(function (o, sMoment) {
+                            o[sMoment] = { number: "", title: "" };
+
+                            that.possibleMoments.push(sMoment);
+                            return o;
+                        }, {});
                     }
                 });
             },
@@ -14804,7 +14839,7 @@ init().then(function (oEnv) {
                 });
             },
             clearSongs: function () {
-                Object.keys(this.selectedSongs).forEach(this.clearSong);
+                Object.keys(this.selectedSongs).forEach(this.clearSong.bind(this));
             },
             closeModal: function (ref) {
                 this.$refs[ref].close();
@@ -14826,8 +14861,9 @@ init().then(function (oEnv) {
                 this.$refs[ref].open();
             },
             removeSong: function (sMoment) {
-                // add song to the recent
-                this.addSongToRecents(this.selectedSongs[sMoment]);  // TODO
+                if (this.selectedSongs[sMoment] && this.selectedSongs[sMoment].number) {
+                    this.addSongToRecents(this.selectedSongs[sMoment]);
+                }
                 this.clearSong(sMoment);
             },
             findSong: function (sSongNumber) {
@@ -14867,8 +14903,9 @@ init().then(function (oEnv) {
                 this.refreshSelectedState();
             },
             setSong: function (sMoment) {
-                this.$refs.whichSong.close();
                 this.setSongByItem(this.selectedSong, sMoment);
+                this.$refs.whichSong.close();
+                this.$forceUpdate();
             },
             refreshSelectedState: function () {
                 var that = this;
@@ -15017,6 +15054,8 @@ init().then(function (oEnv) {
 
             var oClone = JSON.parse(JSON.stringify(app.selectedSongs));
             oClone.stats = JSON.parse(JSON.stringify(app.stats));
+
+            oClone.momentsOrder = JSON.parse(JSON.stringify(app.possibleMoments));
 
             // update stats
             Object.keys(app.selectedSongs).forEach(function (sMoment) {

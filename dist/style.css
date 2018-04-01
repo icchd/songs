@@ -25,6 +25,13 @@ h2 {
     text-align: center;
 }
 
+.select-moment-btn .ui-button__content {
+    text-transform: capitalize;
+}
+
+.finalList > .moment > b {
+    text-transform: capitalize;
+}
 .finalList.hangingDisplay {
     background: #DEDFE2;
     color: white;
@@ -69,6 +76,9 @@ h2 {
 .hangingDisplay button {
     display: none;
 }
+.hangingDisplay .new-moment {
+    display: none;
+}
 
 #qrcode img {
     margin: 0 auto;
@@ -107,6 +117,10 @@ h2 {
 }
 .finalList .song-title {
     margin-left: 0.5em;
+}
+#btnClear {
+    float: right;
+    margin-right: 0.5em;
 }
 #btnSave {
     float: right;
