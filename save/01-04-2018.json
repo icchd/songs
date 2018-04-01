@@ -4,16 +4,16 @@
       "title": "Hail the Day That Sees Him Rise"
    },
    "offertory": {
+      "number": "439",
+      "title": "Alleluia, alleluia! Give thanks to the risen Lord"
+   },
+   "communion": {
       "number": "713",
       "title": "Amazing Grace"
    },
-   "communion": {
-      "number": "821",
-      "title": "Taste and See (Hurd)"
-   },
    "recession": {
-      "number": "445",
-      "title": "This Joyful Eastertide"
+      "number": "431",
+      "title": "The Strife Is O’er"
    },
    "stats": {
       "2": {
@@ -152,10 +152,17 @@
          },
          "lastSung": "25-03-2018"
       },
-      "445": {
+      "431": {
          "count": 1,
          "sungFor": {
             "recession": true
+         },
+         "lastSung": "01-04-2018"
+      },
+      "439": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
          },
          "lastSung": "01-04-2018"
       },
@@ -420,7 +427,8 @@
          "count": 3,
          "lastSung": "01-04-2018",
          "sungFor": {
-            "offertory": true
+            "offertory": true,
+            "communion": true
          }
       },
       "714": {
@@ -631,8 +639,8 @@
          }
       },
       "821": {
-         "count": 7,
-         "lastSung": "01-04-2018",
+         "count": 6,
+         "lastSung": "11-02-2018",
          "sungFor": {
             "communion": true
          }
