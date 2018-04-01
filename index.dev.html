@@ -36,14 +36,18 @@
                 <ul :class="{
                     finalList: true,
                     hangingDisplay: showHangingDisplay
-                }" @click="toggleHangingDisplay">
+                    }">
                     <li class="reading"><b>Reading:</b><span class="song-number">&nbsp;</span></li>
-                    <li class="moment" v-for="moment in possibleMoments">
-                        <b>{{ moment }}:</b><span class="song-number">{{ formatSongNumber(selectedSongs[moment].number) }}</span><span class="song-title">{{ selectedSongs[moment].title }}</span><ui-button type="secondary" @click="removeSong(moment)" size="small" v-if="selectedSongs[moment].number && selectedSongs[moment].number.length > 0" icon="delete"></ui-button>
+                    <li class="moment" v-for="(moment, idx) in possibleMoments">
+                        <ui-icon-button :disabled="idx === 0" type="secondary" size="small" icon="arrow_drop_up" @click="moveMomentUp(moment)"></ui-icon-button>
+                        <ui-icon-button :disabled="idx === possibleMoments.length - 1" type="secondary" size="small" icon="arrow_drop_down" @click="moveMomentDown(moment)"></ui-icon-button>
+                        <!-- ui-icon-button type="secondary" size="small" icon="mode_edit" @click="editMoment(moment)"></ui-icon-button -->
+                        <b>{{ moment }}:</b><span class="song-number" @click="toggleHangingDisplay">{{ formatSongNumber(selectedSongs[moment].number) }}</span><span class="song-title">{{ selectedSongs[moment].title }}</span><ui-button type="secondary" @click="removeSong(moment)" size="small" v-if="selectedSongs[moment].number && selectedSongs[moment].number.length > 0" icon="delete"></ui-button>
                     </li>
                 </ul>
                 <ui-button @click="clearSongs" icon="clear" color="default">Clear</ui-button>
                 <ui-button @click="showQrCode" icon="select_all" color="default">QR</ui-button>
+                <ui-button @click="toggleHangingDisplay" icon="view_agenda" color="default">Display</ui-button>
                 <ui-button @click="openModal('saveDialog')" icon="save" id="btnSave" color="primary">Save</ui-button>
                 <h2>History</h2>
                 <p v-if="recentSongs.length === 0">
