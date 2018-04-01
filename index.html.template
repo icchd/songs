@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <meta charset="UTF-8">
@@ -38,10 +37,9 @@
                     hangingDisplay: showHangingDisplay
                 }" @click="toggleHangingDisplay">
                     <li class="reading"><b>Reading:</b><span class="song-number">&nbsp;</span></li>
-                    <li><b>Entrance:</b><span class="song-number">{{ formatSongNumber(selectedSongs.entrance.number) }}</span><span class="song-title">{{ selectedSongs.entrance.title }}</span><ui-button type="secondary" @click="removeSong('entrance')" size="small" v-if="selectedSongs.entrance.number && selectedSongs.entrance.number.length > 0" icon="delete"></ui-button></li>
-                    <li><b>Offertory:</b><span class="song-number">{{ formatSongNumber(selectedSongs.offertory.number) }}</span><span class="song-title">{{ selectedSongs.offertory.title }}</span><ui-button type="secondary" @click="removeSong('offertory')" size="small" v-if="selectedSongs.offertory.number && selectedSongs.offertory.number.length > 0" icon="delete"></ui-button></li>
-                    <li><b>Communion:</b><span class="song-number">{{ formatSongNumber(selectedSongs.communion.number) }}</span><span class="song-title">{{ selectedSongs.communion.title }}</span><ui-button type="secondary" @click="removeSong('communion')" size="small" v-if="selectedSongs.communion.number && selectedSongs.communion.number.length > 0" icon="delete"></ui-button></li>
-                    <li><b>Recession:</b><span class="song-number">{{ formatSongNumber(selectedSongs.recession.number) }}</span><span class="song-title">{{ selectedSongs.recession.title }}</span><ui-button type="secondary" @click="removeSong('recession')" size="small" v-if="selectedSongs.recession.number && selectedSongs.recession.number.length > 0" icon="delete"></ui-button></li>
+                    <li class="moment" v-for="moment in possibleMoments">
+                        <b>{{ moment }}:</b><span class="song-number">{{ formatSongNumber(selectedSongs[moment].number) }}</span><span class="song-title">{{ selectedSongs[moment].title }}</span><ui-button type="secondary" @click="removeSong(moment)" size="small" v-if="selectedSongs[moment].number && selectedSongs[moment].number.length > 0" icon="delete"></ui-button>
+                    </li>
                 </ul>
                 <ui-button @click="clearSongs" icon="clear" color="default">Clear</ui-button>
                 <ui-button @click="showQrCode" icon="select_all" color="default">QR</ui-button>
@@ -164,10 +162,12 @@
                 <ui-modal 
                     :title="formatSongNumber(selectedSong.number) + ' &bull; ' + selectedSong.title"
                     ref="whichSong">
-                    <ui-button v-bind:type="selectedSongs.entrance.number && selectedSongs.entrance.number.length > 0  ? 'primary' : 'secondary'" @click="setSong('entrance')">Entrance</ui-button>
-                    <ui-button v-bind:type="selectedSongs.offertory.number && selectedSongs.offertory.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('offertory')">Offertory</ui-button>
-                    <ui-button v-bind:type="selectedSongs.communion.number && selectedSongs.communion.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('communion')">Communion</ui-button>
-                    <ui-button v-bind:type="selectedSongs.recession.number && selectedSongs.recession.number.length > 0 ? 'primary' : 'secondary'" @click="setSong('recession')">Recession</ui-button>
+                    <ui-button 
+                        class="select-moment-btn"
+                        v-for="moment in possibleMoments" 
+                        :type="selectedSongs[moment].number && selectedSongs[moment].number.length > 0  ? 'primary' : 'secondary'"
+                        @click="setSong(moment)">{{ moment }}</ui-button>
+
                     <h3>Song Statistics</h3>
                     <ul v-if="!!stats[selectedSong.number]">
                         <li>We sung this song {{ (stats[selectedSong.number] || {}).count || "unknown" }} times during {{ (stats[selectedSong.number] || {}).sungFor | joinKeys }}</li>
