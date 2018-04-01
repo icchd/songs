@@ -1,19 +1,19 @@
 {
    "entrance": {
-      "number": "",
-      "title": ""
+      "number": "621",
+      "title": "Immortal, Invisible, God Only Wise"
    },
    "offertory": {
-      "number": "",
-      "title": ""
+      "number": "661",
+      "title": "Christ Be Our Light"
    },
    "communion": {
       "number": "824",
       "title": "Amén. El Cuerpo de Cristo"
    },
    "recession": {
-      "number": "",
-      "title": ""
+      "number": "402",
+      "title": "Jesu, Jesu"
    },
    "stats": {
       "2": {
@@ -144,6 +144,13 @@
          "sungFor": {
             "recession": true
          }
+      },
+      "402": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "29-03-2018"
       },
       "411": {
          "count": 1,
@@ -317,6 +324,13 @@
             "entrance": true
          }
       },
+      "621": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "29-03-2018"
+      },
       "637": {
          "count": 1,
          "sungFor": {
@@ -346,8 +360,8 @@
          }
       },
       "661": {
-         "count": 8,
-         "lastSung": "04-03-2018",
+         "count": 9,
+         "lastSung": "29-03-2018",
          "sungFor": {
             "offertory": true
          }
@@ -681,8 +695,8 @@
          }
       },
       "": {
-         "count": 8,
-         "lastSung": "29-03-2018",
+         "count": 5,
+         "lastSung": "17-12-2017",
          "sungFor": {
             "recession": true,
             "communion": true,
