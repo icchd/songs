@@ -51,10 +51,10 @@
                         </div>
                     </li>
                 </ul>
-                <ui-button @click="clearSongs" icon="clear" color="default">Clear</ui-button>
                 <ui-button @click="showQrCode" icon="select_all" color="default">QR</ui-button>
                 <ui-button @click="toggleHangingDisplay" icon="view_agenda" color="default">Display</ui-button>
-                <ui-button @click="openModal('saveDialog')" icon="save" id="btnSave" color="primary">Save</ui-button>
+                <ui-icon-button @click="openModal('saveDialog')" icon="save" id="btnSave" color="primary"></ui-icon-button>
+                <ui-icon-button id="btnClear" @click="clearSongs" icon="clear" color="default"></ui-icon-button>
                 <h2>History</h2>
                 <p v-if="recentSongs.length === 0">
                     No songs removed from schedule yet...

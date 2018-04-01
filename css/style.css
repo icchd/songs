@@ -113,6 +113,10 @@ h2 {
 .finalList .song-title {
     margin-left: 0.5em;
 }
+#btnClear {
+    float: right;
+    margin-right: 0.5em;
+}
 #btnSave {
     float: right;
 }
