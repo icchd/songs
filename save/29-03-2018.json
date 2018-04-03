@@ -12,6 +12,10 @@
       "title": "Amén. El Cuerpo de Cristo"
    },
    "recession": {
+      "number": "",
+      "title": ""
+   },
+   "washing of feet": {
       "number": "402",
       "title": "Jesu, Jesu"
    },
@@ -148,7 +152,7 @@
       "402": {
          "count": 1,
          "sungFor": {
-            "recession": true
+            "washing of feet": true
          },
          "lastSung": "29-03-2018"
       },
@@ -695,8 +699,8 @@
          }
       },
       "": {
-         "count": 5,
-         "lastSung": "17-12-2017",
+         "count": 6,
+         "lastSung": "29-03-2018",
          "sungFor": {
             "recession": true,
             "communion": true,
@@ -711,5 +715,12 @@
          },
          "lastSung": "04-03-2018"
       }
-   }
+   },
+   "momentsOrder": [
+      "entrance",
+      "washing of feet",
+      "offertory",
+      "communion",
+      "recession"
+   ]
 }
