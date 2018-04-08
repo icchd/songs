@@ -1,19 +1,19 @@
 {
    "entrance": {
-      "number": "596",
-      "title": "Glory and Praise to Our God"
+      "number": "427",
+      "title": "Christ, the Lord, Is Risen Today (LLANFAIR)"
    },
    "offertory": {
-      "number": "871",
-      "title": "Morning Has Broken"
+      "number": "439",
+      "title": "Alleluia, alleluia! Give thanks to the risen Lord"
    },
    "communion": {
-      "number": "680",
-      "title": "Your Words Are Spirit and Life"
+      "number": "806",
+      "title": "Let Us Break Bread Together"
    },
    "recession": {
-      "number": "789",
-      "title": "Sing with All the Saints in Glory"
+      "number": "431",
+      "title": "The Strife Is O’er"
    },
    "stats": {
       "2": {
@@ -159,19 +159,26 @@
          },
          "lastSung": "01-04-2018"
       },
-      "431": {
+      "427": {
          "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "08-04-2018"
+      },
+      "431": {
+         "count": 2,
          "sungFor": {
             "recession": true
          },
-         "lastSung": "01-04-2018"
+         "lastSung": "08-04-2018"
       },
       "439": {
-         "count": 1,
+         "count": 2,
          "sungFor": {
             "offertory": true
          },
-         "lastSung": "01-04-2018"
+         "lastSung": "08-04-2018"
       },
       "451": {
          "count": 1,
@@ -294,8 +301,8 @@
          }
       },
       "596": {
-         "count": 4,
-         "lastSung": "08-04-2018",
+         "count": 3,
+         "lastSung": "14-01-2018",
          "sungFor": {
             "entrance": true,
             "offertory": true
@@ -394,13 +401,6 @@
          "sungFor": {
             "entrance": true
          }
-      },
-      "680": {
-         "count": 1,
-         "sungFor": {
-            "communion": true
-         },
-         "lastSung": "08-04-2018"
       },
       "692": {
          "count": 2,
@@ -575,13 +575,6 @@
             "entrance": true
          }
       },
-      "789": {
-         "count": 1,
-         "sungFor": {
-            "recession": true
-         },
-         "lastSung": "08-04-2018"
-      },
       "790": {
          "count": 8,
          "lastSung": "28-01-2018",
@@ -612,8 +605,8 @@
          }
       },
       "806": {
-         "count": 4,
-         "lastSung": "29-10-2017",
+         "count": 5,
+         "lastSung": "08-04-2018",
          "sungFor": {
             "communion": true
          }
@@ -723,13 +716,6 @@
          "sungFor": {
             "recession": true
          }
-      },
-      "871": {
-         "count": 1,
-         "sungFor": {
-            "offertory": true
-         },
-         "lastSung": "08-04-2018"
       },
       "": {
          "count": 9,
