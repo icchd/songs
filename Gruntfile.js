@@ -7,12 +7,28 @@ module.exports = function(grunt) {
     browserify: {
       catholicHolidays: {
         files: {
-          'js/catholicHolidays.js': ['lib/catholicHolidays.js'],
+          'js/catholicHolidays.js': ['lib/catholicHolidays.js']
         },
         options: {
             transform: [["babelify", { "presets": ["es2015"] }]],
             browserifyOptions: {
               standalone: 'catholicHolidays'
+            }
+        }
+      },
+      catholicReadings: {
+        files: {
+          'js/catholicReadings.js': ['lib/catholicReadings.js']
+        },
+        options: {
+            transform: [
+                ["browserify-shim"],
+                ["babelify", {
+                    "presets": ["es2015"]
+                }]
+            ],
+            browserifyOptions: {
+              standalone: 'catholicReadings'
             }
         }
       },
@@ -41,10 +57,10 @@ module.exports = function(grunt) {
             src: [
                 "js/moment-with-locales.js",
                 "js/catholicHolidays.js",
+                "js/catholicReadings.js",
                 "js/vue.min.js",
                 "js/vue-resource.min.js",
                 "js/keen-ui.min.js",
-                "js/catholicHolidays.js",
                 "js/qrcode.js",
                 "js/main.js"
             ],
@@ -97,4 +113,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browserify');
 
   grunt.registerTask('default', ['clean', 'browserify', 'concat', 'uglify', 'cssmin', 'string-replace']);
+  grunt.registerTask('bundle', ['clean', 'browserify']);
 };

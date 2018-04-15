@@ -176,3 +176,10 @@ a {
 button.ui-button.one-song.has-links {
     color: #000066;
 }
+
+.disabled {
+    color: #BBB;
+}
+.label {
+    margin-bottom: 0.5em;
+}

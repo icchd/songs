@@ -127,7 +127,7 @@
                         id="btnClearTopics"
                         size="small"
                         @click="clearTopicSearch"
-                        icon="cancel"/></ui-button>
+                        icon="cancel"></ui-button>
                 </div>
                 <ui-checkbox-group
                   id="searchFilters"
@@ -138,14 +138,24 @@
                   :vertical="window.screen.availWidth < 667"
                 ></ui-checkbox-group>
                 <br />
-                <ui-textbox
-                    key="txtSearch"
-                    name="search"
-                    type="text"
-                    placeholder="find a song"
-                    icon="search"
-                    v-model="searchText"
-                    ></ui-textbox>
+                <div class="row">
+                    <ui-textbox
+                        style="width: 80%; margin-right: 0.5em"
+                        key="txtSearch"
+                        name="search"
+                        type="text"
+                        placeholder="find a song"
+                        icon="search"
+                        v-model="searchText"
+                        ></ui-textbox>
+                    <ui-button
+                        icon="stars"
+                        @click="autoSearch"
+                        >auto</ui-button>
+                </div>
+                <div v-if="smartSearchMessage.length > 0" style="margin-left: 2em" class="label disabled">
+                    {{ smartSearchMessage }}
+                </div>
 
                 <ui-button v-for="song in filteredSongs"
                     :class="{

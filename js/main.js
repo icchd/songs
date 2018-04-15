@@ -8,7 +8,7 @@ var O_MOMENT_ICON = {
     recession: "file_upload"
 };
 
-/* global QRCode Vue moment */
+/* global QRCode Vue moment catholicReadings */
 
 var m = function () { return moment.apply(this, arguments).locale("en-gb"); };
 
@@ -17,9 +17,10 @@ var catholicHolidays = catholicHolidays.createLibrary(m);
 var oInitialFestiveDay = catholicHolidays.getNextFestiveDay(m().subtract(14, "hours"));
 
 var qrCodeObj;
+var app;
 
 init().then(function (oEnv) {
-    var app = new Vue({
+    app = new Vue({
         el: "#app",
         data: {
             newMomentName: "",
@@ -38,7 +39,8 @@ init().then(function (oEnv) {
             songFieldNames: Object.keys(oEnv.defaultSongFields),
             songs: oEnv.songs,
             stats: {},
-            topics: oEnv.topics
+            topics: oEnv.topics,
+            smartSearchMessage: ""
         },
         mounted: function () {
             var sHash = document.URL.split("#")[1];
@@ -94,6 +96,27 @@ init().then(function (oEnv) {
             }
         },
         methods: {
+            autoSearch: function () {
+                var that = this;
+                var sYYYY = this.currentFeast.format("YYYY");
+                var sMM = this.currentFeast.format("MM");
+                var sDD = this.currentFeast.format("DD");
+                catholicReadings.getReadings(sYYYY, sMM, sDD).then(function (oReadings) {
+                    var aAllReadings = [];
+                    var aSearchTerms = Object.keys(oReadings)
+                        .map(function (sKey) {
+                            return oReadings[sKey].map(function (sReading) {
+                                if (sReading) {
+                                    aAllReadings.push(sKey + ": " + sReading);
+                                    return sReading.split(":")[0] + ":";
+                                }
+                                return "";
+                            }).join("||");
+                        });
+                    that.searchText = aSearchTerms.join(" || ");
+                    that.smartSearchMessage = "From readings: " + aAllReadings.join(", ");
+                });
+            },
             formatSongNumber: function (sNumber) {
                 if (!sNumber) {
                     return;
@@ -420,7 +443,7 @@ init().then(function (oEnv) {
             },
             filteredSongs: function () {
                 var that = this;
-                var sSearch = this.searchText.toLowerCase();
+
                 var bThereAreFilters = that.searchFilterFlags.length > 0 || that.searchTopics.length > 0;
                 var oSongNumberToAge = {
                     // 124 --> 20160421
@@ -432,14 +455,28 @@ init().then(function (oEnv) {
                     return o;
                 }, {});
 
+                // -------
+
+                var sSearchText = this.searchText;
+                var aSearches = sSearchText.toLowerCase().split("||").map(function (x) { return x.trim(); });
+
                 return this.songs.reduce(function (aFilteredSongs, oSong, iIdx) {
                     if (aFilteredSongs.length > I_MAX_SONGS_IN_SEARCH) {
                         return aFilteredSongs;
                     }
 
-                    var bMatchesSearch = oSong.number === sSearch
-                      || oSong.title.toLowerCase().indexOf(sSearch) > -1
-                      || oSong.scripturesSearchableString.indexOf(sSearch) > -1;
+                    var sLowerCaseSongTitle = oSong.title.toLowerCase();
+                    var bAtLeastOneTermContainedInTitle = aSearches.some(function (sSearch) {
+                        return sLowerCaseSongTitle.indexOf(sSearch) > -1;
+                    });
+
+                    var bAtLeastOneTermContainedInScripturesSearchableString = aSearches.some(function (sSearch) {
+                        return oSong.scripturesSearchableString.indexOf(sSearch) > -1;
+                    });
+
+                    var bMatchesSearch = oSong.number === sSearchText
+                      || bAtLeastOneTermContainedInTitle
+                      || bAtLeastOneTermContainedInScripturesSearchableString;
 
                     var oSongStats = that.stats[oSong.number] || {
                         count: 0,

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>ICCH Songs</title>
-        <link rel="stylesheet" href="dist/style1b6eb170ff676e.min.css" />
+        <link rel="stylesheet" href="dist/style3cd44776b75c2c.min.css" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto" rel="stylesheet">
         <meta http-equiv="cache-control" content="max-age=0" />
         <meta http-equiv="cache-control" content="no-cache" />
@@ -15,7 +15,7 @@
     <body>
         <div id="app">
             <div id="header">
-                <div id="version">ver. 1b6eb170ff676e</div>
+                <div id="version">ver. 3cd44776b75c2c</div>
                 <ui-fab
                     id="btnPrevSunday"
                     @click="onPreviousSundayClicked()"
@@ -127,7 +127,7 @@
                         id="btnClearTopics"
                         size="small"
                         @click="clearTopicSearch"
-                        icon="cancel"/></ui-button>
+                        icon="cancel"></ui-button>
                 </div>
                 <ui-checkbox-group
                   id="searchFilters"
@@ -138,14 +138,24 @@
                   :vertical="window.screen.availWidth < 667"
                 ></ui-checkbox-group>
                 <br />
-                <ui-textbox
-                    key="txtSearch"
-                    name="search"
-                    type="text"
-                    placeholder="find a song"
-                    icon="search"
-                    v-model="searchText"
-                    ></ui-textbox>
+                <div class="row">
+                    <ui-textbox
+                        style="width: 80%; margin-right: 0.5em"
+                        key="txtSearch"
+                        name="search"
+                        type="text"
+                        placeholder="find a song"
+                        icon="search"
+                        v-model="searchText"
+                        ></ui-textbox>
+                    <ui-button
+                        icon="stars"
+                        @click="autoSearch"
+                        >auto</ui-button>
+                </div>
+                <div v-if="smartSearchMessage.length > 0" style="margin-left: 2em" class="label disabled">
+                    {{ smartSearchMessage }}
+                </div>
 
                 <ui-button v-for="song in filteredSongs"
                     :class="{
@@ -222,6 +232,6 @@
                 </ui-modal>
             </div>
         </div>
-        <script type="text/javascript" src="dist/bundle1b6eb170ff676e.min.js"></script>
+        <script type="text/javascript" src="dist/bundle3cd44776b75c2c.min.js"></script>
     </body>
 </html>
