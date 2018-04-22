@@ -1,7 +1,7 @@
 {
    "entrance": {
-      "number": "427",
-      "title": "Christ, the Lord, Is Risen Today (LLANFAIR)"
+      "number": "435",
+      "title": "Let Heaven Rejoice"
    },
    "offertory": {
       "number": "725",
@@ -12,8 +12,8 @@
       "title": "Gift of Finest Wheat"
    },
    "recession": {
-      "number": "431",
-      "title": "The Strife Is O’er"
+      "number": "439",
+      "title": "Alleluia, alleluia! Give thanks to the risen Lord"
    },
    "stats": {
       "2": {
@@ -160,25 +160,33 @@
          "lastSung": "01-04-2018"
       },
       "427": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "08-04-2018"
+      },
+      "431": {
          "count": 2,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "08-04-2018"
+      },
+      "435": {
+         "count": 1,
          "sungFor": {
             "entrance": true
          },
          "lastSung": "22-04-2018"
       },
-      "431": {
+      "439": {
          "count": 3,
          "sungFor": {
+            "offertory": true,
             "recession": true
          },
          "lastSung": "22-04-2018"
-      },
-      "439": {
-         "count": 2,
-         "sungFor": {
-            "offertory": true
-         },
-         "lastSung": "08-04-2018"
       },
       "451": {
          "count": 2,
