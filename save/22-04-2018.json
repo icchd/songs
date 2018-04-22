@@ -1,7 +1,7 @@
 {
    "entrance": {
-      "number": "779",
-      "title": "The Church’s One Foundation"
+      "number": "427",
+      "title": "Christ, the Lord, Is Risen Today (LLANFAIR)"
    },
    "offertory": {
       "number": "725",
@@ -12,8 +12,8 @@
       "title": "Gift of Finest Wheat"
    },
    "recession": {
-      "number": "",
-      "title": ""
+      "number": "431",
+      "title": "The Strife Is O’er"
    },
    "stats": {
       "2": {
@@ -160,18 +160,18 @@
          "lastSung": "01-04-2018"
       },
       "427": {
-         "count": 1,
+         "count": 2,
          "sungFor": {
             "entrance": true
          },
-         "lastSung": "08-04-2018"
+         "lastSung": "22-04-2018"
       },
       "431": {
-         "count": 2,
+         "count": 3,
          "sungFor": {
             "recession": true
          },
-         "lastSung": "08-04-2018"
+         "lastSung": "22-04-2018"
       },
       "439": {
          "count": 2,
@@ -569,8 +569,8 @@
          }
       },
       "779": {
-         "count": 2,
-         "lastSung": "22-04-2018",
+         "count": 1,
+         "lastSung": "27-08-2017",
          "sungFor": {
             "entrance": true
          }
@@ -718,8 +718,8 @@
          }
       },
       "": {
-         "count": 10,
-         "lastSung": "22-04-2018",
+         "count": 9,
+         "lastSung": "30-03-2018",
          "sungFor": {
             "recession": true,
             "communion": true,
