@@ -31,6 +31,14 @@ describe("getAllSaints", function () {
     });
 });
 
+describe("getAscensionDay", function () {
+    it("works as expected", function () {
+        expect(oHolidays.getAscensionDay(2017).format("DD-MM-YYYY")).to.equal("25-05-2017");
+        expect(oHolidays.getAscensionDay(2018).format("DD-MM-YYYY")).to.equal("10-05-2018");
+        expect(oHolidays.getAscensionDay(2024).format("DD-MM-YYYY")).to.equal("09-05-2024");
+    });
+});
+
 describe("getLiturgicalYear", function () {
     it("works as expected", function() {
         [
@@ -105,10 +113,14 @@ describe("getAllHolidays", function() {
         {
             "date": "15-04-2017",
             "description": "Holy Saturday"
-        }, 
+        },
         {
             "date": "16-04-2017",
             "description": "Easter Sunday"
+        },
+        {
+            "date": "25-05-2017",
+            "description": "Ascension Day"
         },
         {
             "date": "01-11-2017",

@@ -43,6 +43,9 @@ function getHolySaturday(m, iYear) {
 function getEpiphany(m, iYear) {
     return m({ year: iYear, month: 0, day: 6 });
 }
+function getAscensionDay(m, iYear) {
+    return getEasterSunday(m, iYear).add(39, "days");
+}
 
 function getAllSaints(m, iYear) {
     return m({ year: iYear, month: 10, day: 0 });
@@ -191,7 +194,8 @@ var oHolidayGetters = {
     getPalmSunday: getPalmSunday,
     getHolyThursday: getHolyThursday,
     getGoodFriday: getGoodFriday,
-    getHolySaturday: getHolySaturday
+    getHolySaturday: getHolySaturday,
+    getAscensionDay: getAscensionDay
 };
 
 var oPublic = {
