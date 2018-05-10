@@ -14680,20 +14680,24 @@ init().then(function (oEnv) {
             smartSearchMessage: ""
         },
         mounted: function () {
+            var that = this;
             var sHash = document.URL.split("#")[1];
             if (sHash) {
                 var aHash = sHash.split("_");
                 var sInitialDate = aHash[0];
                 var sInitialSongSet = aHash[1];
 
-                this.setCurrentFeast(m(sInitialDate, "DD-MM-YYYY"));
-                this.setSongsFromString(sInitialSongSet);
+                this.setCurrentFeast(m(sInitialDate, "DD-MM-YYYY"))
+                    .then(function () {
+                        that.setSongsFromString(sInitialSongSet);
+                    });
+
                 return;
             }
 
-            this.setCurrentFeast(oInitialFestiveDay);
-
-            this.refreshSelectedState();
+            this.setCurrentFeast(oInitialFestiveDay).then(function () {
+                that.refreshSelectedState();
+            });
         },
         filters: {
             hasKeys: function (oStats) {
@@ -14783,7 +14787,7 @@ init().then(function (oEnv) {
                 var that = this;
                 sSongs.split(",").forEach(function (sSongNumber, iIdx) {
                     if (/^[0-9]+$/.test(sSongNumber)) {
-                        that.setSongByNumber(sSongNumber, that.possibleMoments[iIdx]);
+                        that.setSongByNumber(sSongNumber, A_MOMENTS[iIdx]);
                     }
                 });
             },
@@ -14870,7 +14874,7 @@ init().then(function (oEnv) {
             loadStatistics: function (oFestiveDay, iMaxDaysBack) {
                 var that = this;
 
-                new Array(iMaxDaysBack).join(",").split(",").reduce(function (oPreviousPromise) {
+                return new Array(iMaxDaysBack).join(",").split(",").reduce(function (oPreviousPromise) {
 
                     return oPreviousPromise.catch(function (oTryWithThisDate) {
 
@@ -14890,7 +14894,7 @@ init().then(function (oEnv) {
                 that.possibleMoments.splice(0, that.possibleMoments.length);
 
                 // Attempt to load songs
-                this.$http.get("save/" + oFestiveDay.format("DD-MM-YYYY") + ".json").then(function (oData) {
+                return this.$http.get("save/" + oFestiveDay.format("DD-MM-YYYY") + ".json").then(function (oData) {
                     if (oData.status !== 200) {
                         return;
                     }
@@ -14923,9 +14927,10 @@ init().then(function (oEnv) {
 
                 this.currentFeast = oFeastDay;
 
-                this.loadCurrentSongSelection(oFeastDay);
-
-                this.loadStatistics(oFeastDay, 5);
+                return Promise.all([
+                    this.loadCurrentSongSelection(oFeastDay),
+                    this.loadStatistics(oFeastDay, 5)
+                ]);
             },
             onPreviousSundayClicked: function () {
                 this.setCurrentFeast(catholicHolidays.getPreviousFestiveDay(this.currentFeast));
@@ -15006,6 +15011,10 @@ init().then(function (oEnv) {
             },
             setSongByItem: function (oSong, sMoment) {
                 var that = this;
+
+                if (!this.selectedSongs[sMoment]) {
+                    this.selectedSongs[sMoment] = {};
+                }
 
                 if (this.selectedSongs[sMoment].number) {
                     this.addSongToRecents(this.selectedSongs[sMoment]);  // TODO
