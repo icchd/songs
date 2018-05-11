@@ -1,19 +1,19 @@
 {
    "entrance": {
-      "number": "790",
-      "title": "Come, Worship the Lord"
+      "number": "",
+      "title": ""
    },
    "offertory": {
-      "number": "760",
-      "title": "Unless a Grain of Wheat (Farrell)"
+      "number": "",
+      "title": ""
    },
    "communion": {
-      "number": "806",
-      "title": "Let Us Break Bread Together"
+      "number": "",
+      "title": ""
    },
    "recession": {
-      "number": "849",
-      "title": "They’ll Know We Are Christians"
+      "number": "",
+      "title": ""
    },
    "stats": {
       "2": {
@@ -548,8 +548,8 @@
          }
       },
       "760": {
-         "count": 5,
-         "lastSung": "13-05-2018",
+         "count": 4,
+         "lastSung": "29-04-2018",
          "sungFor": {
             "offertory": true
          }
@@ -591,8 +591,8 @@
          }
       },
       "790": {
-         "count": 9,
-         "lastSung": "13-05-2018",
+         "count": 8,
+         "lastSung": "28-01-2018",
          "sungFor": {
             "entrance": true
          }
@@ -620,8 +620,8 @@
          }
       },
       "806": {
-         "count": 7,
-         "lastSung": "13-05-2018",
+         "count": 6,
+         "lastSung": "29-04-2018",
          "sungFor": {
             "communion": true
          }
@@ -719,8 +719,8 @@
          }
       },
       "849": {
-         "count": 8,
-         "lastSung": "13-05-2018",
+         "count": 7,
+         "lastSung": "28-01-2018",
          "sungFor": {
             "recession": true
          }
@@ -733,8 +733,8 @@
          }
       },
       "": {
-         "count": 9,
-         "lastSung": "30-03-2018",
+         "count": 13,
+         "lastSung": "13-05-2018",
          "sungFor": {
             "recession": true,
             "communion": true,
