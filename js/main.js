@@ -554,7 +554,7 @@ init().then(function (oEnv) {
                     }
                 }
             };
-            var sApiEndpoint = O_APIS[that.api];
+            var sApiEndpoint = O_APIS[app.api];
             request.open("POST", sApiEndpoint, true);
             request.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
 
