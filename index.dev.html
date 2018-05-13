@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>ICCH Songs</title>
-        <link rel="stylesheet" type="text/css" href="js/keen-ui.min.css">
+        <link rel="stylesheet" type="text/css" href="node_modules/keen-ui/dist/keen-ui.css"> 
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto" rel="stylesheet">
         <meta http-equiv="cache-control" content="max-age=0" />
@@ -222,6 +222,13 @@
                     title="Enter Password"
                     ref="saveDialog">
 
+                    <ui-radio-group 
+                        name="api"
+                        v-model="api"
+                        :options="['Primary API', 'Backup API']">
+                        Save via
+                        </ui-radio-group>
+
                     <ui-textbox
                         name="password"
                         type="password"
@@ -234,9 +241,9 @@
             </div>
         </div>
         <script src="node_modules/moment/min/moment-with-locales.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/vue.min.js"></script>
-        <script src="js/vue-resource.min.js"></script>
-        <script src="js/keen-ui.min.js"></script>
+        <script src="node_modules/vue/dist/vue.min.js"></script>
+        <script src="node_modules/vue-resource/dist/vue-resource.min.js"></script>
+        <script src="node_modules/keen-ui/dist/keen-ui.min.js"></script>
         <script src="js/catholicHolidays.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/catholicReadings.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/qrcode.js" type="text/javascript" charset="utf-8"></script>

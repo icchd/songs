@@ -1,4 +1,3 @@
-var S_HEROKU_ENDPOINT = "https://icch-api-icch-api.a3c1.starter-us-west-1.openshiftapps.com/songs";
 var I_MAX_SONGS_IN_SEARCH = 80;
 var A_MOMENTS = ["entrance", "offertory", "communion", "recession"];
 var O_MOMENT_ICON = {
@@ -6,6 +5,11 @@ var O_MOMENT_ICON = {
     offertory: "grain",
     communion: "lens",
     recession: "file_upload"
+};
+
+var O_APIS = {
+    "Primary API": "https://icch-api-icch-api.a3c1.starter-us-west-1.openshiftapps.com/songs",
+    "Backup API": "http://icch-api.herokuapp.com/songs"
 };
 
 /* global QRCode Vue moment catholicReadings */
@@ -23,6 +27,7 @@ init().then(function (oEnv) {
     app = new Vue({
         el: "#app",
         data: {
+            api: "Primary API",
             newMomentName: "",
             showHangingDisplay: false,
             qrCodeUrl: "",
@@ -549,7 +554,8 @@ init().then(function (oEnv) {
                     }
                 }
             };
-            request.open("POST", S_HEROKU_ENDPOINT, true);
+            var sApiEndpoint = O_APIS[that.api];
+            request.open("POST", sApiEndpoint, true);
             request.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
 
             var oClone = JSON.parse(JSON.stringify(app.selectedSongs));

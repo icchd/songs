@@ -221,6 +221,13 @@
                     title="Enter Password"
                     ref="saveDialog">
 
+                    <ui-radio-group 
+                        name="api"
+                        v-model="api"
+                        :options="['Primary API', 'Backup API']">
+                        Save via
+                        </ui-radio-group>
+
                     <ui-textbox
                         name="password"
                         type="password"

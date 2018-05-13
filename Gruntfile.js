@@ -47,7 +47,7 @@ module.exports = function(grunt) {
         options: { separator: ';' },
         css: {
             src: [
-                "js/keen-ui.min.css",
+                "node_modules/keen-ui/dist/keen-ui.min.css",
                 "css/style.css"
             ],
             dest: "dist/style.css",
@@ -58,9 +58,9 @@ module.exports = function(grunt) {
                 "js/moment-with-locales.js",
                 "js/catholicHolidays.js",
                 "js/catholicReadings.js",
-                "js/vue.min.js",
-                "js/vue-resource.min.js",
-                "js/keen-ui.min.js",
+                "node_modules/vue/dist/vue.min.js",
+                "node_modules/vue-resource/dist/vue-resource.min.js",
+                "node_modules/keen-ui/dist/keen-ui.min.js",
                 "js/qrcode.js",
                 "js/main.js"
             ],
