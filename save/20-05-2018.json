@@ -15,6 +15,10 @@
       "number": "452",
       "title": "Lord, You Give the Great Commission"
    },
+   "sequence": {
+      "number": "459",
+      "title": "Come, O Holy Spirit"
+   },
    "stats": {
       "2": {
          "count": 1,
@@ -214,6 +218,13 @@
          "count": 1,
          "sungFor": {
             "communion": true
+         },
+         "lastSung": "20-05-2018"
+      },
+      "459": {
+         "count": 1,
+         "sungFor": {
+            "sequence": true
          },
          "lastSung": "20-05-2018"
       },
@@ -797,6 +808,7 @@
    },
    "momentsOrder": [
       "entrance",
+      "sequence",
       "offertory",
       "communion",
       "recession"
