@@ -1,7 +1,7 @@
 {
    "entrance": {
-      "number": "850",
-      "title": "In Christ There Is No East or West"
+      "number": "467",
+      "title": "All Hail, Adored Trinity"
    },
    "offertory": {
       "number": "721",
@@ -12,8 +12,8 @@
       "title": "Behold the Lamb"
    },
    "recession": {
-      "number": "828",
-      "title": "Go Make of All Disciples"
+      "number": "466",
+      "title": "All Praise and Glad Thanksgiving"
    },
    "stats": {
       "2": {
@@ -233,11 +233,18 @@
          "lastSung": "20-05-2018"
       },
       "466": {
-         "count": 2,
-         "lastSung": "11-02-2018",
+         "count": 3,
+         "lastSung": "27-05-2018",
          "sungFor": {
             "recession": true
          }
+      },
+      "467": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "27-05-2018"
       },
       "477": {
          "count": 1,
@@ -748,13 +755,6 @@
             "communion": true
          }
       },
-      "828": {
-         "count": 1,
-         "sungFor": {
-            "recession": true
-         },
-         "lastSung": "27-05-2018"
-      },
       "829": {
          "count": 2,
          "lastSung": "05-11-2017",
@@ -790,13 +790,6 @@
          "sungFor": {
             "recession": true
          }
-      },
-      "850": {
-         "count": 1,
-         "sungFor": {
-            "entrance": true
-         },
-         "lastSung": "27-05-2018"
       },
       "851": {
          "count": 1,
