@@ -4,12 +4,12 @@
       "title": "All Hail, Adored Trinity"
    },
    "offertory": {
-      "number": "721",
-      "title": "How Can I Keep from Singing"
+      "number": "468",
+      "title": "On This Day, the First of Days"
    },
    "communion": {
-      "number": "809",
-      "title": "Behold the Lamb"
+      "number": "470",
+      "title": "How Wonderful the Three-in-One"
    },
    "recession": {
       "number": "466",
@@ -243,6 +243,20 @@
          "count": 1,
          "sungFor": {
             "entrance": true
+         },
+         "lastSung": "27-05-2018"
+      },
+      "468": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "27-05-2018"
+      },
+      "470": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
          },
          "lastSung": "27-05-2018"
       },
@@ -534,13 +548,6 @@
             "recession": true
          }
       },
-      "721": {
-         "count": 1,
-         "sungFor": {
-            "offertory": true
-         },
-         "lastSung": "27-05-2018"
-      },
       "722": {
          "count": 2,
          "lastSung": "21-01-2018",
@@ -693,8 +700,8 @@
          }
       },
       "809": {
-         "count": 7,
-         "lastSung": "27-05-2018",
+         "count": 6,
+         "lastSung": "11-03-2018",
          "sungFor": {
             "communion": true
          }
