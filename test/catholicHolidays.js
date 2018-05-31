@@ -123,6 +123,10 @@ describe("getAllHolidays", function() {
             "description": "Ascension Day"
         },
         {
+            "date": "15-06-2017",
+            "description": "Corpus Christi"
+        },
+        {
             "date": "01-11-2017",
             "description": "All Saints"
         },

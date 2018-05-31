@@ -14305,6 +14305,10 @@ function getEasterSunday(m, iYear) {
     return m({ year: iYear, month: (c / 31 | 0) - 1, day: c % 31 + 1 });
 }
 
+function getCorpusChristi(m, iYear) {
+    return getEasterSunday(m, iYear).add(60, "days");
+}
+
 function getFirstSundayOfLent(m, iYear) {
     return getEasterSunday(m, iYear).subtract(6, "weeks");
 }
@@ -14487,7 +14491,8 @@ var oHolidayGetters = {
     getHolyThursday: getHolyThursday,
     getGoodFriday: getGoodFriday,
     getHolySaturday: getHolySaturday,
-    getAscensionDay: getAscensionDay
+    getAscensionDay: getAscensionDay,
+    getCorpusChristi: getCorpusChristi
 };
 
 var oPublic = {
