@@ -1,19 +1,19 @@
 {
    "entrance": {
-      "number": "602",
-      "title": "The God of Abraham Praise"
+      "number": "",
+      "title": ""
    },
    "offertory": {
-      "number": "793",
-      "title": "Come to the feast of heaven and earth"
+      "number": "",
+      "title": ""
    },
    "communion": {
-      "number": "824",
-      "title": "Amén. El Cuerpo de Cristo"
+      "number": "",
+      "title": ""
    },
    "recession": {
-      "number": "720",
-      "title": "Seek Ye First"
+      "number": "",
+      "title": ""
    },
    "stats": {
       "2": {
@@ -397,8 +397,8 @@
          }
       },
       "602": {
-         "count": 3,
-         "lastSung": "03-06-2018",
+         "count": 2,
+         "lastSung": "25-02-2018",
          "sungFor": {
             "entrance": true,
             "offertory": true
@@ -542,8 +542,8 @@
          }
       },
       "720": {
-         "count": 5,
-         "lastSung": "03-06-2018",
+         "count": 4,
+         "lastSung": "24-09-2017",
          "sungFor": {
             "recession": true
          }
@@ -678,8 +678,8 @@
          }
       },
       "793": {
-         "count": 6,
-         "lastSung": "03-06-2018",
+         "count": 5,
+         "lastSung": "22-10-2017",
          "sungFor": {
             "offertory": true,
             "entrance": true
@@ -756,8 +756,8 @@
          }
       },
       "824": {
-         "count": 3,
-         "lastSung": "03-06-2018",
+         "count": 2,
+         "lastSung": "18-02-2018",
          "sungFor": {
             "communion": true
          }
@@ -806,8 +806,8 @@
          }
       },
       "": {
-         "count": 9,
-         "lastSung": "30-03-2018",
+         "count": 13,
+         "lastSung": "03-06-2018",
          "sungFor": {
             "recession": true,
             "communion": true,
