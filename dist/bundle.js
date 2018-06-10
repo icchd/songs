@@ -14859,26 +14859,6 @@ init().then(function (oEnv) {
 
                 this.openModal("qrcode");
             },
-            onFilterCheckboxClicked: function () {
-                var that = this;
-                setTimeout(function () {
-                    /*
-                     * keenui's v-model doesn't work on phones, therefore we need to
-                     * keep track of the value manually as this is changed...
-                     */
-                    var aCheckboxLabels = document.querySelectorAll("#searchFilters label");
-                    var i;
-                    that.searchFilterFlags = [];
-                    for (i = 0; i < aCheckboxLabels.length; i++) {
-                        // we have found the index
-                        var sLabelValue = that.possibleSearchFilterFlags[i];
-                        var bSelected = aCheckboxLabels[i].value === "true";
-                        if (bSelected) {
-                            that.searchFilterFlags.push(sLabelValue);
-                        }
-                    }
-                }, 0);
-            },
             loadStatistics: function (oFestiveDay, iMaxDaysBack) {
                 var that = this;
 

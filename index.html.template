@@ -131,11 +131,10 @@
                 </div>
                 <ui-checkbox-group
                   id="searchFilters"
-                  @input="onFilterCheckboxClicked"
-                  :value="[]"
                   :disabled="stats | hasKeys | not"
                   :options="possibleSearchFilterFlags"
                   :vertical="window.screen.availWidth < 667"
+                  v-model="searchFilterFlags"
                 ></ui-checkbox-group>
                 <br />
                 <div class="row">
