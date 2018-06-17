@@ -4,12 +4,12 @@
       "title": "For the Beauty of the Earth"
    },
    "offertory": {
-      "number": "811",
-      "title": "Seed, Scattered and Sown"
+      "number": "760",
+      "title": "Unless a Grain of Wheat (Farrell)"
    },
    "communion": {
-      "number": "706",
-      "title": "Be Not Afraid"
+      "number": "811",
+      "title": "Seed, Scattered and Sown"
    },
    "recession": {
       "number": "636",
@@ -525,8 +525,8 @@
          "lastSung": "11-03-2018"
       },
       "706": {
-         "count": 6,
-         "lastSung": "17-06-2018",
+         "count": 5,
+         "lastSung": "13-05-2018",
          "sungFor": {
             "offertory": true,
             "entrance": true,
@@ -642,8 +642,8 @@
          }
       },
       "760": {
-         "count": 4,
-         "lastSung": "29-04-2018",
+         "count": 5,
+         "lastSung": "17-06-2018",
          "sungFor": {
             "offertory": true
          }
@@ -732,8 +732,7 @@
          "count": 5,
          "lastSung": "17-06-2018",
          "sungFor": {
-            "communion": true,
-            "offertory": true
+            "communion": true
          }
       },
       "813": {
