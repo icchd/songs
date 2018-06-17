@@ -12,8 +12,8 @@
       "title": "Be Not Afraid"
    },
    "recession": {
-      "number": "643",
-      "title": "Give Thanks to the Lord"
+      "number": "636",
+      "title": "Now Thank We All Our God"
    },
    "stats": {
       "2": {
@@ -439,6 +439,13 @@
          },
          "lastSung": "13-05-2018"
       },
+      "636": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "17-06-2018"
+      },
       "637": {
          "count": 1,
          "sungFor": {
@@ -450,13 +457,6 @@
          "count": 1,
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "17-06-2018"
-      },
-      "643": {
-         "count": 1,
-         "sungFor": {
-            "recession": true
          },
          "lastSung": "17-06-2018"
       },
