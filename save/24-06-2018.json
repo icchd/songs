@@ -15,6 +15,10 @@
       "number": "830",
       "title": "Awake from your slumber"
    },
+   "baptism": {
+      "number": "542",
+      "title": "Baptized in Water"
+   },
    "stats": {
       "2": {
          "count": 1,
@@ -346,10 +350,11 @@
          "lastSung": "18-02-2018"
       },
       "542": {
-         "count": 2,
-         "lastSung": "07-01-2018",
+         "count": 3,
+         "lastSung": "24-06-2018",
          "sungFor": {
-            "offertory": true
+            "offertory": true,
+            "baptism": true
          }
       },
       "560": {
@@ -861,6 +866,7 @@
    },
    "momentsOrder": [
       "entrance",
+      "baptism",
       "offertory",
       "communion",
       "recession"
