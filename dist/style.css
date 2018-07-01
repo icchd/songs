@@ -188,3 +188,11 @@ button.ui-button.one-song.has-links {
 .label {
     margin-bottom: 0.5em;
 }
+
+
+.suggestion-links {
+    overflow: hidden;
+}
+.suggestion-links li {
+    white-space: pre;
+}

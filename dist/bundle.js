@@ -14685,7 +14685,21 @@ init().then(function (oEnv) {
             songs: oEnv.songs,
             stats: {},
             topics: oEnv.topics,
-            smartSearchMessage: ""
+            smartSearchMessage: "",
+            suggestionLinks: [
+                { name: "Music Ministry - Our Lady of Mount Carmel" , url: "https://olmcwentyliturgy.org/welcome/resources-for-liturgical-ministers/liturgical-ministries/music/music-suggestions/" },
+                { name: "Liturgytools.net"                          , url: "http://www.liturgytools.net/p/roman-catholic-lectionary-based-hymn.html" },
+                { name: "As One Voice"                              , url: "http://www.asonevoice.com.au/liturgical-song-selection" },
+                { name: "Hymnary.org"                               , url: "https://hymnary.org/browse/lectionary" },
+                { name: "CanticaNOVA"                               , url: "http://www.canticanova.com/pln_main.htm" },
+                { name: "Blessed Sacrament Catholic Community"      , url: "http://cc.blessedsacramentnc.org/music" },
+                { name: "The Historic Church of Saint Patrick"      , url: "http://www.stpatshistoric.org/index.php/bulletins/" },
+                { name: "The Sunday Website at St Louis University" , url: "http://liturgy.slu.edu/" },
+                { name: "Canadian Conference of Catholic Bishops (Year A)", url: "http://www.cccb.ca/site/Files/CBW_III_Music_suggestions_YrA.html" },
+                { name: "Canadian Conference of Catholic Bishops (Year B)", url: "http://www.cccb.ca/site/Files/CBW_III_Music_suggestions_YrB.html" },
+                { name: "Canadian Conference of Catholic Bishops (Year C)", url: "http://www.cccb.ca/site/Files/CBW_III_Music_suggestions_YrC.html" },
+                { name: "Catholic Diocese of Wollongong", url: "http://www.liturgydow.org.au/suggestions.html" }
+            ],
         },
         mounted: function () {
             var that = this;
