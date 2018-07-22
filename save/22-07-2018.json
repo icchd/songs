@@ -12,8 +12,8 @@
       "title": "To Be Your Bread"
    },
    "recession": {
-      "number": "739",
-      "title": "Let There Be Peace on Earth"
+      "number": "733",
+      "title": "The King of Love My Shepherd Is"
    },
    "stats": {
       "2": {
@@ -609,8 +609,8 @@
          }
       },
       "733": {
-         "count": 1,
-         "lastSung": "26-03-2017",
+         "count": 2,
+         "lastSung": "22-07-2018",
          "sungFor": {
             "recession": true
          }
@@ -623,8 +623,8 @@
          }
       },
       "739": {
-         "count": 2,
-         "lastSung": "22-07-2018",
+         "count": 1,
+         "lastSung": "07-05-2017",
          "sungFor": {
             "recession": true
          }
