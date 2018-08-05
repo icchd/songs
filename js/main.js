@@ -8,8 +8,8 @@ var O_MOMENT_ICON = {
 };
 
 var O_APIS = {
-    "Primary API": "https://icch-api-icch-api.a3c1.starter-us-west-1.openshiftapps.com/songs",
-    "Backup API": "http://icch-api.herokuapp.com/songs"
+    "Cloudno.de": "http://icch-api.cloudno.de/songs",
+    "Heroku": "http://icch-api.herokuapp.com/songs"
 };
 
 /* global QRCode Vue moment catholicReadings */
@@ -27,7 +27,8 @@ init().then(function (oEnv) {
     app = new Vue({
         el: "#app",
         data: {
-            api: "Primary API",
+            possibleApis: Object.keys(O_APIS),
+            api: Object.keys(O_APIS)[0],
             newMomentName: "",
             showHangingDisplay: false,
             qrCodeUrl: "",
