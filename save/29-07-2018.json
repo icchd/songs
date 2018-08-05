@@ -882,10 +882,5 @@
          "lastSung": "04-03-2018"
       }
    },
-   "momentsOrder": [
-      "entrance",
-      "offertory",
-      "communion",
-      "recession"
-   ]
+   "momentsOrder": ["entrance", "offertory", "communion", "recession"]
 }
