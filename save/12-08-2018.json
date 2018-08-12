@@ -8,12 +8,12 @@
       "title": "Loving and Forgiving"
    },
    "communion": {
-      "number": "821",
-      "title": "Taste and See (Hurd)"
+      "number": "822",
+      "title": "I Am the Living Bread"
    },
    "recession": {
-      "number": "",
-      "title": ""
+      "number": "768",
+      "title": "Sent Forth by God’s Blessing"
    },
    "stats": {
       "2": {
@@ -680,8 +680,8 @@
          }
       },
       "768": {
-         "count": 9,
-         "lastSung": "15-07-2018",
+         "count": 10,
+         "lastSung": "12-08-2018",
          "sungFor": {
             "recession": true
          }
@@ -787,15 +787,15 @@
          }
       },
       "821": {
-         "count": 7,
-         "lastSung": "12-08-2018",
+         "count": 6,
+         "lastSung": "11-02-2018",
          "sungFor": {
             "communion": true
          }
       },
       "822": {
-         "count": 5,
-         "lastSung": "05-08-2018",
+         "count": 6,
+         "lastSung": "12-08-2018",
          "sungFor": {
             "communion": true
          }
@@ -872,8 +872,8 @@
          }
       },
       "": {
-         "count": 10,
-         "lastSung": "12-08-2018",
+         "count": 9,
+         "lastSung": "30-03-2018",
          "sungFor": {
             "recession": true,
             "communion": true,
