@@ -61,6 +61,11 @@ init().then(function (oEnv) {
                 { name: "Canadian Conference of Catholic Bishops (Year C)", url: "http://www.cccb.ca/site/Files/CBW_III_Music_suggestions_YrC.html" },
                 { name: "Catholic Diocese of Wollongong", url: "http://www.liturgydow.org.au/suggestions.html" }
             ],
+            automaticSuggestions: {
+                sunday: "Last sunday",
+                suggestions: {
+                }
+            }
         },
         mounted: function () {
             var that = this;
@@ -434,6 +439,10 @@ init().then(function (oEnv) {
             save: function () {
                 this.$refs.saveDialog.close();
                 save(this.password);
+            },
+            suggest: function () {
+                this.$refs.suggestionDialog.close();
+                suggest(this.password);
             }
         },
         computed: {
@@ -522,8 +531,17 @@ init().then(function (oEnv) {
         },
     });
 
-    function save(sPassword) {
-        var that = this;
+    function suggest(sPassword) {
+        return sendPostRequest({
+            type: "suggestions",
+            password: sPassword
+        }).then(function (oResponse) {
+            app.automaticSuggestions.sunday = oResponse.result.sunday;
+            app.automaticSuggestions.suggestions = oResponse.result.suggestions;
+        });
+    }
+
+    function sendPostRequest (oBody) {
         return new Promise(function (fnDone, fnError) {
             var request = new XMLHttpRequest();
             request.onreadystatechange = function () {
@@ -540,7 +558,6 @@ init().then(function (oEnv) {
                             return;
                         }
 
-                        alert("Saved");
                         fnDone(oResponse);
 
                     } catch (oError) {
@@ -549,46 +566,54 @@ init().then(function (oEnv) {
                     }
                 }
             };
+
             var sApiEndpoint = O_APIS[app.api];
             request.open("POST", sApiEndpoint, true);
             request.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+            request.send(JSON.stringify(oBody, null, 3));
+        });
+    }
 
-            var oClone = JSON.parse(JSON.stringify(app.selectedSongs));
-            oClone.stats = JSON.parse(JSON.stringify(app.stats));
+    function save(sPassword) {
+        var oClone = JSON.parse(JSON.stringify(app.selectedSongs));
+        oClone.stats = JSON.parse(JSON.stringify(app.stats));
 
-            oClone.momentsOrder = JSON.parse(JSON.stringify(app.possibleMoments));
+        oClone.momentsOrder = JSON.parse(JSON.stringify(app.possibleMoments));
 
-            // update stats
-            Object.keys(app.selectedSongs).forEach(function (sMoment) {
-                var sSongNumber = app.selectedSongs[sMoment].number;
-                if (!oClone.stats[sSongNumber]) {
-                    oClone.stats[sSongNumber] = {
-                        count: 0,
-                        sungFor: {}
-                    };
-                }
+        // update stats
+        Object.keys(app.selectedSongs).forEach(function (sMoment) {
+            var sSongNumber = app.selectedSongs[sMoment].number;
+            if (!oClone.stats[sSongNumber]) {
+                oClone.stats[sSongNumber] = {
+                    count: 0,
+                    sungFor: {}
+                };
+            }
 
-                // update sungFor statistics
-                var oSongSungMoments = oClone.stats[sSongNumber].sungFor || {};
-                var oAllMoments = Object.keys(oSongSungMoments).filter(function (sMoment) {
-                    return oSongSungMoments[sMoment] === true;
-                }).reduce(function (o, sMoment) {
-                    o[sMoment] = true;
-                    return o;
-                }, {});
+            // update sungFor statistics
+            var oSongSungMoments = oClone.stats[sSongNumber].sungFor || {};
+            var oAllMoments = Object.keys(oSongSungMoments).filter(function (sMoment) {
+                return oSongSungMoments[sMoment] === true;
+            }).reduce(function (o, sMoment) {
+                o[sMoment] = true;
+                return o;
+            }, {});
 
-                // add current moment
-                oAllMoments[sMoment] = true;
+            // add current moment
+            oAllMoments[sMoment] = true;
 
-                oClone.stats[sSongNumber].count++;
-                oClone.stats[sSongNumber].lastSung = app.currentFeast.format("DD-MM-YYYY");
-                oClone.stats[sSongNumber].sungFor = oAllMoments;
+            oClone.stats[sSongNumber].count++;
+            oClone.stats[sSongNumber].lastSung = app.currentFeast.format("DD-MM-YYYY");
+            oClone.stats[sSongNumber].sungFor = oAllMoments;
 
-            });
+        });
 
-            oClone.password = sPassword;
-            oClone.saveAs = app.currentFeast.format("DD-MM-YYYY") + ".json";
-            request.send(JSON.stringify(oClone, null, 3));
+        oClone.password = sPassword;
+        oClone.saveAs = app.currentFeast.format("DD-MM-YYYY") + ".json";
+        oClone.type = "save";
+
+        return sendPostRequest(oClone).then(function () {
+            alert("Saved");
         });
     }
 });

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>ICCH Songs</title>
-        <link rel="stylesheet" href="dist/style9513e578c640f8.min.css" />
+        <link rel="stylesheet" href="dist/style34a0c022fb044c.min.css" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto" rel="stylesheet">
         <meta http-equiv="cache-control" content="max-age=0" />
         <meta http-equiv="cache-control" content="no-cache" />
@@ -15,7 +15,7 @@
     <body>
         <div id="app">
             <div id="header">
-                <div id="version">ver. 9513e578c640f8</div>
+                <div id="version">ver. 34a0c022fb044c</div>
                 <ui-fab
                     id="btnPrevSunday"
                     @click="onPreviousSundayClicked()"
@@ -145,7 +145,18 @@
                     <li v-for="link in suggestionLinks">
                         <a :href="link.url" target="_blank">{{ link.name }}</a>
                     </li>
+                    <li>
+                        <ui-button @click="openModal('suggestionDialog')">Suggest Automatically</ui-button>
+                    </li>
                 </ul>
+
+                <h3 v-if="Object.keys(automaticSuggestions.suggestions).length > 0">Automatic Suggestions: {{ automaticSuggestions.sunday }}</h3>
+                <div v-if="Object.keys(automaticSuggestions.suggestions).length > 0" v-for="moment in Object.keys(automaticSuggestions.suggestions)">
+                    <h4>{{ moment }}</h4>
+                    <ul>
+                        <li v-for="song in automaticSuggestions.suggestions[moment]">{{ song }}</li>
+                    </ul>
+                </div>
 
                 <ui-modal
                     size="large"
@@ -213,8 +224,29 @@
                     <ui-button @click="save">Save</ui-button>
 
                 </ui-modal>
+
+                <ui-modal 
+                    title="Enter Password"
+                    ref="suggestionDialog">
+
+                    <ui-radio-group 
+                        name="api"
+                        v-model="api"
+                        :options="possibleApis">
+                        Suggest via
+                        </ui-radio-group>
+
+                    <ui-textbox
+                        name="password"
+                        type="password"
+                        icon="vpn_key"
+                        v-model:text="password"></ui-textbox>
+
+                    <ui-button @click="suggest">Request</ui-button>
+
+                </ui-modal>
             </div>
         </div>
-        <script type="text/javascript" src="dist/bundle9513e578c640f8.min.js"></script>
+        <script type="text/javascript" src="dist/bundle34a0c022fb044c.min.js"></script>
     </body>
 </html>

@@ -146,7 +146,18 @@
                     <li v-for="link in suggestionLinks">
                         <a :href="link.url" target="_blank">{{ link.name }}</a>
                     </li>
+                    <li>
+                        <ui-button @click="openModal('suggestionDialog')">Suggest Automatically</ui-button>
+                    </li>
                 </ul>
+
+                <h3 v-if="Object.keys(automaticSuggestions.suggestions).length > 0">Automatic Suggestions: {{ automaticSuggestions.sunday }}</h3>
+                <div v-if="Object.keys(automaticSuggestions.suggestions).length > 0" v-for="moment in Object.keys(automaticSuggestions.suggestions)">
+                    <h4>{{ moment }}</h4>
+                    <ul>
+                        <li v-for="song in automaticSuggestions.suggestions[moment]">{{ song }}</li>
+                    </ul>
+                </div>
 
                 <ui-modal
                     size="large"
@@ -212,6 +223,27 @@
                         v-model:text="password"></ui-textbox>
 
                     <ui-button @click="save">Save</ui-button>
+
+                </ui-modal>
+
+                <ui-modal 
+                    title="Enter Password"
+                    ref="suggestionDialog">
+
+                    <ui-radio-group 
+                        name="api"
+                        v-model="api"
+                        :options="possibleApis">
+                        Suggest via
+                        </ui-radio-group>
+
+                    <ui-textbox
+                        name="password"
+                        type="password"
+                        icon="vpn_key"
+                        v-model:text="password"></ui-textbox>
+
+                    <ui-button @click="suggest">Request</ui-button>
 
                 </ui-modal>
             </div>
