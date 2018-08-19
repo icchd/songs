@@ -4,8 +4,8 @@
       "title": "Alleluia! Sing to Jesus"
    },
    "offertory": {
-      "number": "637",
-      "title": "All My Days"
+      "number": "628",
+      "title": "How Great Thou Art"
    },
    "communion": {
       "number": "813",
@@ -454,6 +454,13 @@
          },
          "lastSung": "29-07-2018"
       },
+      "628": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "19-08-2018"
+      },
       "636": {
          "count": 1,
          "sungFor": {
@@ -462,11 +469,11 @@
          "lastSung": "17-06-2018"
       },
       "637": {
-         "count": 2,
+         "count": 1,
          "sungFor": {
             "offertory": true
          },
-         "lastSung": "19-08-2018"
+         "lastSung": "04-02-2018"
       },
       "642": {
          "count": 1,
