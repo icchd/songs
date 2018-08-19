@@ -8,8 +8,8 @@
       "title": "All My Days"
    },
    "communion": {
-      "number": "821",
-      "title": "Taste and See (Hurd)"
+      "number": "813",
+      "title": "Pan de Vida"
    },
    "recession": {
       "number": "466",
@@ -752,8 +752,8 @@
          }
       },
       "813": {
-         "count": 1,
-         "lastSung": "18-06-2017",
+         "count": 2,
+         "lastSung": "19-08-2018",
          "sungFor": {
             "communion": true
          }
@@ -787,8 +787,8 @@
          }
       },
       "821": {
-         "count": 7,
-         "lastSung": "19-08-2018",
+         "count": 6,
+         "lastSung": "11-02-2018",
          "sungFor": {
             "communion": true
          }
