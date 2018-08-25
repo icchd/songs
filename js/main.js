@@ -132,16 +132,23 @@ init().then(function (oEnv) {
                 var sDD = this.currentFeast.format("DD");
                 catholicReadings.getReadings(sYYYY, sMM, sDD).then(function (oReadings) {
                     var aAllReadings = [];
-                    var aSearchTerms = Object.keys(oReadings)
-                        .map(function (sKey) {
-                            return oReadings[sKey].map(function (sReading) {
+                    var aSearchTerms = [];
+
+                    Object.keys(oReadings)
+                        .forEach(function (sKey) {
+                            oReadings[sKey].forEach(function (sReading) {
                                 if (sReading) {
                                     aAllReadings.push(sKey + ": " + sReading);
-                                    return sReading.split(":")[0] + ":";
+
+                                    var sBookName = sReading.split(" ")[0];
+                                    var aIntervals = sReading.replace(sBookName, "").split(/,\s*/).map(function (s) { return s.trim(); });
+                                    aIntervals.forEach(function (sInterval) {
+                                        aSearchTerms.push(sBookName + " " + sInterval);
+                                    });
                                 }
-                                return "";
-                            }).join("||");
+                            });
                         });
+
                     that.searchText = aSearchTerms.join(" || ");
                     that.smartSearchMessage = "From readings: " + aAllReadings.join(", ");
                 });
