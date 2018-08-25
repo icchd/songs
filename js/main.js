@@ -141,9 +141,15 @@ init().then(function (oEnv) {
                                     aAllReadings.push(sKey + ": " + sReading);
 
                                     var sBookName = sReading.split(" ")[0];
-                                    var aIntervals = sReading.replace(sBookName, "").split(/,\s*/).map(function (s) { return s.trim(); });
+                                    var sReadingWithoutBookName = sReading.replace(sBookName, "");
+                                    var sChapter = sReadingWithoutBookName.split(":")[0].trim();
+                                    var sReadingWithoutBookNameAndChapter = sReadingWithoutBookName.replace(sChapter + ":", "");
+                                    var aIntervals = sReadingWithoutBookNameAndChapter
+                                        .split(/,\s*/)
+                                        .map(function (s) { return s.trim(); });
+
                                     aIntervals.forEach(function (sInterval) {
-                                        aSearchTerms.push(sBookName + " " + sInterval);
+                                        aSearchTerms.push(sBookName + " " + sChapter + ":" + sInterval);
                                     });
                                 }
                             });
@@ -483,9 +489,11 @@ init().then(function (oEnv) {
                 // -------
 
                 var sSearchText = this.searchText;
-                var aSearches = sSearchText.toLowerCase().split("||").map(function (x) { return x.trim(); });
+                var aSearches = sSearchText.toLowerCase()
+                    .split("||")
+                    .map(function (x) { return x.trim(); });
 
-                return this.songs.reduce(function (aFilteredSongs, oSong, iIdx) {
+                return this.songs.reduce(function (aFilteredSongs, oSong) {
                     if (aFilteredSongs.length > I_MAX_SONGS_IN_SEARCH) {
                         return aFilteredSongs;
                     }
@@ -496,7 +504,56 @@ init().then(function (oEnv) {
                     });
 
                     var bAtLeastOneTermContainedInScripturesSearchableString = aSearches.some(function (sSearch) {
-                        return oSong.scripturesSearchableString.indexOf(sSearch) > -1;
+                        var aMatch = /^((\d\s)?[a-z]+)\s(\d+):(.+)$/.exec(sSearch);
+                        if (!aMatch) {
+                            return false;
+                        }
+
+                        var sBook = aMatch[1];
+                        var sChapter = aMatch[3];
+                        var sInterval = aMatch[4];
+
+                        if (!oSong.scripturesSearchableIndex[sBook]) {
+                            return;
+                        }
+                        if (!oSong.scripturesSearchableIndex[sBook][sChapter]) {
+                            return;
+                        }
+
+                        var aIntervals = [];
+                        if (sInterval.indexOf("-") > -1) {
+                            var aInterval = sInterval.split("-").map(function(s) {
+                                return parseInt(s, 10);
+                            });
+                            for (var i=aInterval[0]; i<=aInterval[1]; i++) {
+                                aIntervals.push(i);
+                            }
+                        } else {
+                            var iPoint = parseInt(sInterval, 10);
+                            aIntervals.push(iPoint);
+                        }
+
+                        var bFound = aIntervals.some(function (iSearchPoint) {
+                            return oSong.scripturesSearchableIndex[sBook][sChapter].some(function (vPointOrInterval) {
+                                if (typeof vPointOrInterval === "object") {
+                                    return iSearchPoint >= vPointOrInterval[0] && iSearchPoint <= vPointOrInterval[1];
+                                }
+                                return iSearchPoint === vPointOrInterval;
+                            });
+                        });
+
+                        return bFound;
+
+                        // var iFoundAtPos = oSong.scripturesSearchableString.indexOf(sSearch);
+                        // if (iFoundAtPos > -1) {
+                        //     var sNextChar = oSong.scripturesSearchableString.charAt(iFoundAtPos + sSearch.length);
+                        //     var bTerminationAfterMatch = sNextChar === "" /* end of line */ || sNextChar === " " || sNextChar === ",";
+                        //     if (bTerminationAfterMatch) {
+                        //         console.log("matched " + sSearch);
+                        //     }
+                        //     return bTerminationAfterMatch;
+                        // }
+                        // return false;
                     });
 
                     var bMatchesSearch = oSong.number === sSearchText
@@ -649,12 +706,35 @@ function init() {
         });
     }
 
-    function createSearachableString (oScriptures) {
-        return Object.keys(oScriptures).map(function (sBook) {
-            return oScriptures[sBook].map(function (sScripture) {
-                return (sBook + " " + sScripture).toLowerCase();
-            }).join(" ");
-        }).join(" ");
+    function createSearachableIndex (oScriptures) {
+        function toInt(s) {
+            return parseInt(s, 10);
+        }
+        var oIdx = {};
+        Object.keys(oScriptures)
+            .forEach(function (sBook) {
+                var sBookLowerCase = sBook.toLowerCase();
+                oIdx[sBookLowerCase] = {};
+                oScriptures[sBook]
+                    .forEach(function (sScripture) {
+                        var sChapter = sScripture.split(":")[0];
+                        var sParts = sScripture.split(":")[1];
+
+                        if (typeof sParts === "undefined") {
+                            oIdx[sBookLowerCase][sChapter] = [ [1, 9999] ];
+                            return;
+                        }
+
+                        oIdx[sBookLowerCase][sChapter] = sParts.split(", ").map(function(s) {
+                            if (s.indexOf("-") > -1) {
+                                return s.split("-").map(toInt);
+                            }
+                            return toInt(s);
+                        });
+                    });
+            });
+
+        return oIdx;
     }
 
     function collectUniqueTopics (oSong, oUniqueTopics) {
@@ -678,7 +758,7 @@ function init() {
                 if (!oSong.hasOwnProperty("number")) {
                     oSong.number = "other-" + (++iLastOtherSongId);
                 }
-                oSong.scripturesSearchableString = createSearachableString(oSong.scriptures);
+                oSong.scripturesSearchableIndex = createSearachableIndex(oSong.scriptures);
                 collectDefaultSongFieldsFromSong(oSong, oDefaultSongFields);
                 collectUniqueTopics(oSong, oUniqueTopics);
             });
