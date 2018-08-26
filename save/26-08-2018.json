@@ -4,8 +4,8 @@
       "title": "The Church’s One Foundation"
    },
    "offertory": {
-      "number": "680",
-      "title": "Your Words Are Spirit and Life"
+      "number": "692",
+      "title": "There Is a Longing"
    },
    "communion": {
       "number": "821",
@@ -525,19 +525,13 @@
             "entrance": true
          }
       },
-      "680": {
-         "count": 1,
+      "692": {
+         "count": 3,
          "sungFor": {
+            "communion": true,
             "offertory": true
          },
          "lastSung": "26-08-2018"
-      },
-      "692": {
-         "count": 2,
-         "sungFor": {
-            "communion": true
-         },
-         "lastSung": "25-03-2018"
       },
       "704": {
          "count": 2,
