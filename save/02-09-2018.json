@@ -12,8 +12,8 @@
       "title": "Ubi Caritas (Rosania)"
    },
    "recession": {
-      "number": "617",
-      "title": "Joyful, Joyful, We Adore You"
+      "number": "619",
+      "title": "Blessed by Your Sacriﬁce"
    },
    "stats": {
       "2": {
@@ -455,7 +455,14 @@
          }
       },
       "617": {
-         "count": 3,
+         "count": 2,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "29-07-2018"
+      },
+      "619": {
+         "count": 1,
          "sungFor": {
             "recession": true
          },
