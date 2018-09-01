@@ -1,15 +1,15 @@
 {
    "entrance": {
-      "number": "451",
-      "title": "Hail the Day That Sees Him Rise"
+      "number": "608",
+      "title": "Come, Christians, Join to Sing"
    },
    "offertory": {
-      "number": "",
-      "title": ""
+      "number": "629",
+      "title": "For the Fruits of This Creation"
    },
    "communion": {
-      "number": "",
-      "title": ""
+      "number": "754",
+      "title": "Ubi Caritas (Rosania)"
    },
    "recession": {
       "number": "617",
@@ -196,11 +196,11 @@
          "lastSung": "20-05-2018"
       },
       "451": {
-         "count": 4,
+         "count": 3,
          "sungFor": {
             "entrance": true
          },
-         "lastSung": "02-09-2018"
+         "lastSung": "10-05-2018"
       },
       "452": {
          "count": 2,
@@ -433,6 +433,13 @@
             "entrance": true
          }
       },
+      "608": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "02-09-2018"
+      },
       "610": {
          "count": 1,
          "sungFor": {
@@ -460,6 +467,13 @@
             "offertory": true
          },
          "lastSung": "19-08-2018"
+      },
+      "629": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "02-09-2018"
       },
       "636": {
          "count": 1,
@@ -525,19 +539,13 @@
             "entrance": true
          }
       },
-      "680": {
-         "count": 1,
+      "692": {
+         "count": 3,
          "sungFor": {
+            "communion": true,
             "offertory": true
          },
          "lastSung": "26-08-2018"
-      },
-      "692": {
-         "count": 2,
-         "sungFor": {
-            "communion": true
-         },
-         "lastSung": "25-03-2018"
       },
       "704": {
          "count": 2,
@@ -671,6 +679,13 @@
          "sungFor": {
             "communion": true
          }
+      },
+      "754": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "02-09-2018"
       },
       "760": {
          "count": 5,
@@ -887,8 +902,8 @@
          }
       },
       "": {
-         "count": 11,
-         "lastSung": "02-09-2018",
+         "count": 9,
+         "lastSung": "30-03-2018",
          "sungFor": {
             "recession": true,
             "communion": true,
