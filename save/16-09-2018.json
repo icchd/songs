@@ -12,8 +12,8 @@
       "title": "Only This I Want"
    },
    "recession": {
-      "number": "522",
-      "title": "Lift High the Cross"
+      "number": "523",
+      "title": "Glory in the Cross"
    },
    "stats": {
       "2": {
@@ -305,18 +305,18 @@
          "lastSung": "25-02-2018"
       },
       "522": {
-         "count": 6,
-         "lastSung": "16-09-2018",
+         "count": 5,
+         "lastSung": "25-03-2018",
          "sungFor": {
             "recession": true
          }
       },
       "523": {
-         "count": 1,
+         "count": 2,
          "sungFor": {
             "recession": true
          },
-         "lastSung": "29-04-2018"
+         "lastSung": "16-09-2018"
       },
       "524": {
          "count": 1,
