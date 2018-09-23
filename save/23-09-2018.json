@@ -12,8 +12,8 @@
       "title": "Gift of Finest Wheat"
    },
    "recession": {
-      "number": "851",
-      "title": "Companions on the Journey"
+      "number": "849",
+      "title": "They’ll Know We Are Christians"
    },
    "stats": {
       "2": {
@@ -903,15 +903,15 @@
          "lastSung": "10-06-2018"
       },
       "849": {
-         "count": 9,
-         "lastSung": "03-06-2018",
+         "count": 10,
+         "lastSung": "23-09-2018",
          "sungFor": {
             "recession": true
          }
       },
       "851": {
-         "count": 2,
-         "lastSung": "23-09-2018",
+         "count": 1,
+         "lastSung": "02-07-2017",
          "sungFor": {
             "recession": true
          }
