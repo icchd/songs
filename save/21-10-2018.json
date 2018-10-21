@@ -4,8 +4,8 @@
       "title": "Alleluia! Sing to Jesus"
    },
    "offertory": {
-      "number": "738",
-      "title": "Make me a channel of your peace"
+      "number": "724",
+      "title": "Shelter Me, O God"
    },
    "communion": {
       "number": "723",
@@ -637,8 +637,8 @@
          }
       },
       "724": {
-         "count": 2,
-         "lastSung": "28-01-2018",
+         "count": 3,
+         "lastSung": "21-10-2018",
          "sungFor": {
             "offertory": true
          }
@@ -667,8 +667,8 @@
          }
       },
       "738": {
-         "count": 5,
-         "lastSung": "21-10-2018",
+         "count": 4,
+         "lastSung": "23-09-2018",
          "sungFor": {
             "offertory": true
          }
