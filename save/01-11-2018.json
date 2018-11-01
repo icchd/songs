@@ -4,12 +4,12 @@
       "title": "For All the Saints"
    },
    "offertory": {
-      "number": "",
-      "title": ""
+      "number": "659",
+      "title": "Blessed are the poor in spirit, longing for their Lord"
    },
    "communion": {
-      "number": "",
-      "title": ""
+      "number": "814",
+      "title": "One bread, one body, one cup, one call (Frenzel/Keil)"
    },
    "recession": {
       "number": "784",
@@ -527,8 +527,8 @@
          }
       },
       "659": {
-         "count": 4,
-         "lastSung": "14-10-2018",
+         "count": 5,
+         "lastSung": "01-11-2018",
          "sungFor": {
             "offertory": true
          }
@@ -825,8 +825,8 @@
          }
       },
       "814": {
-         "count": 5,
-         "lastSung": "07-10-2018",
+         "count": 6,
+         "lastSung": "01-11-2018",
          "sungFor": {
             "communion": true
          }
@@ -938,8 +938,8 @@
          }
       },
       "": {
-         "count": 11,
-         "lastSung": "01-11-2018",
+         "count": 9,
+         "lastSung": "30-03-2018",
          "sungFor": {
             "recession": true,
             "communion": true,
