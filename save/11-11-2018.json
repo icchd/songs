@@ -8,8 +8,8 @@
       "title": "Blessed are the poor in spirit, longing for their Lord"
    },
    "communion": {
-      "number": "813",
-      "title": "Pan de Vida"
+      "number": "814",
+      "title": "One bread, one body, one cup, one call (Frenzel/Keil)"
    },
    "recession": {
       "number": "838",
@@ -825,15 +825,15 @@
          }
       },
       "813": {
-         "count": 3,
-         "lastSung": "11-11-2018",
+         "count": 2,
+         "lastSung": "19-08-2018",
          "sungFor": {
             "communion": true
          }
       },
       "814": {
-         "count": 6,
-         "lastSung": "01-11-2018",
+         "count": 7,
+         "lastSung": "11-11-2018",
          "sungFor": {
             "communion": true
          }
