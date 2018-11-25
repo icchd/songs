@@ -12,8 +12,8 @@
       "title": "Behold the Lamb"
    },
    "recession": {
-      "number": "746",
-      "title": "Love Divine, All Loves Excelling"
+      "number": "733",
+      "title": "The King of Love My Shepherd Is"
    },
    "stats": {
       "2": {
@@ -675,8 +675,8 @@
          }
       },
       "733": {
-         "count": 2,
-         "lastSung": "22-07-2018",
+         "count": 3,
+         "lastSung": "25-11-2018",
          "sungFor": {
             "recession": true
          }
@@ -696,12 +696,12 @@
          }
       },
       "746": {
-         "count": 3,
+         "count": 2,
          "sungFor": {
             "entrance": true,
             "recession": true
          },
-         "lastSung": "25-11-2018"
+         "lastSung": "26-08-2018"
       },
       "749": {
          "count": 5,
