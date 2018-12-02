@@ -16,6 +16,8 @@ describe("getEasterSunday", function () {
 
 describe("getFirstSundayOfAdvent", function () {
     it("works as expected", function () {
+        expect(oHolidays.getFirstSundayOfAdvent(2018).format("DD-MM-YYYY")).to.equal("02-12-2018");
+        expect(oHolidays.getFirstSundayOfAdvent(2017).format("DD-MM-YYYY")).to.equal("03-12-2017");
         expect(oHolidays.getFirstSundayOfAdvent(1996).format("DD-MM-YYYY")).to.equal("01-12-1996");
         expect(oHolidays.getSecondSundayOfAdvent(1996).format("DD-MM-YYYY")).to.equal("08-12-1996");
         expect(oHolidays.getThirdSundayOfAdvent(1996).format("DD-MM-YYYY")).to.equal("15-12-1996");
