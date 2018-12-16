@@ -12,8 +12,8 @@
       "title": "Bread of Life"
    },
    "recession": {
-      "number": "354",
-      "title": "The Snow Lay on the Ground"
+      "number": "315",
+      "title": "On Jordan’s Bank"
    },
    "stats": {
       "2": {
@@ -31,10 +31,11 @@
          }
       },
       "315": {
-         "count": 2,
-         "lastSung": "09-12-2018",
+         "count": 3,
+         "lastSung": "16-12-2018",
          "sungFor": {
-            "entrance": true
+            "entrance": true,
+            "recession": true
          }
       },
       "316": {
@@ -98,12 +99,11 @@
          "lastSung": "25-12-2017"
       },
       "354": {
-         "count": 3,
+         "count": 2,
          "sungFor": {
-            "offertory": true,
-            "recession": true
+            "offertory": true
          },
-         "lastSung": "16-12-2018"
+         "lastSung": "06-01-2018"
       },
       "363": {
          "count": 2,
