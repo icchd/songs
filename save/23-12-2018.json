@@ -1,19 +1,19 @@
 {
    "entrance": {
-      "number": "311",
-      "title": "O Come, O Come, Emmanuel"
+      "number": "316",
+      "title": "O Come, Divine Messiah"
    },
    "offertory": {
       "number": "325",
       "title": "Creator of the Stars of Night"
    },
    "communion": {
-      "number": "820",
-      "title": "One Bread, One Body (Foley)"
+      "number": "311",
+      "title": "O Come, O Come, Emmanuel"
    },
    "recession": {
-      "number": "345",
-      "title": "Hark! the Herald Angels Sing"
+      "number": "329",
+      "title": "People, Look East"
    },
    "stats": {
       "2": {
@@ -27,7 +27,8 @@
          "count": 3,
          "lastSung": "23-12-2018",
          "sungFor": {
-            "entrance": true
+            "entrance": true,
+            "communion": true
          }
       },
       "315": {
@@ -39,8 +40,8 @@
          }
       },
       "316": {
-         "count": 2,
-         "lastSung": "24-12-2017",
+         "count": 3,
+         "lastSung": "23-12-2018",
          "sungFor": {
             "entrance": true,
             "recession": true
@@ -70,8 +71,8 @@
          "lastSung": "25-11-2018"
       },
       "329": {
-         "count": 2,
-         "lastSung": "02-12-2018",
+         "count": 3,
+         "lastSung": "23-12-2018",
          "sungFor": {
             "recession": true
          }
@@ -91,12 +92,12 @@
          "lastSung": "06-01-2018"
       },
       "345": {
-         "count": 3,
+         "count": 2,
          "sungFor": {
             "recession": true,
             "entrance": true
          },
-         "lastSung": "23-12-2018"
+         "lastSung": "31-12-2017"
       },
       "352": {
          "count": 1,
@@ -876,8 +877,8 @@
          }
       },
       "820": {
-         "count": 4,
-         "lastSung": "23-12-2018",
+         "count": 3,
+         "lastSung": "24-06-2018",
          "sungFor": {
             "communion": true
          }
