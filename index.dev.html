@@ -19,18 +19,18 @@
                 <div id="version">ver. DEVELOPMENT</div>
                 <ui-fab
                     id="btnPrevSunday"
-                    @click="onPreviousSundayClicked()"
+                    @click="onPreviousSundayClicked('day')"
                     size="small"
                     icon="skip_previous"
                     ></ui-fab>
                 <ui-fab
                     id="btnNextSunday"
-                    @click="onNextSundayClicked()"
+                    @click="onNextSundayClicked('day')"
                     size="small"
                     icon="skip_next"
                     ></ui-fab>
                 <h1>Songs for {{ currentFeastName }} <a target="_blank" :href="'http://www.usccb.org/bible/readings/' + currentFeastDateShort + '.cfm'">{{ currentFeastDate }}</a></h1>
-                <h2>Year {{ currentLiturgicalYear }}</h2>
+                <h2>Year {{ currentLiturgicalYear }} <a @click="onPreviousSundayClicked('year')" href="#">prev</a>&nbsp<a @click="onNextSundayClicked('year')" href="#">next</a></h2>
             </div>
             <div id="content">
                 <ul :class="{

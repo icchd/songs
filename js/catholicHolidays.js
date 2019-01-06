@@ -187,6 +187,48 @@ function _isFestiveDay(oDay, aFestiveDays) {
     return aMappedFestiveDays.indexOf(sDay) >= 0;
 }
 
+function _generateFeastsAroundDay(m, oAroundDay, iWindow) {
+    var iSearchDirection = 0;
+    var aLastDayDirection = [oAroundDay, oAroundDay];
+    var aFeastsAroundDay = [oAroundDay];
+    var oLastSearchDay = null;
+    while (iWindow--) {
+        iSearchDirection = 1 - iSearchDirection;
+        oLastSearchDay = aLastDayDirection[iSearchDirection];
+
+        var oLastSearchDayIncremented = iSearchDirection === 0 ? getPreviousFestiveDay(m, oLastSearchDay) : getNextFestiveDay(m, oLastSearchDay);
+
+        aLastDayDirection[iSearchDirection] = oLastSearchDayIncremented;
+
+        aFeastsAroundDay.push(oLastSearchDayIncremented);
+    }
+    return aFeastsAroundDay;
+}
+
+function _findFeastAroundDayByName(m, oAroundDay, sFeastName) {
+    var iSearchWindow = 5;
+    var aPossibleMatchingFeasts = _generateFeastsAroundDay(m, oAroundDay, iSearchWindow);
+
+    var oMatchingFeast = aPossibleMatchingFeasts.filter(function (oFeast) {
+        return getFeastName(m, oFeast) === sFeastName;
+    })[0];
+
+    return oMatchingFeast;
+}
+
+function getFeastLastYear(m, oCurrentFestiveDay) {
+    var oSearchAroundFestiveDay = oCurrentFestiveDay.clone().subtract(1, "year");
+    var sDesiredFeastName = getFeastName(m, oCurrentFestiveDay);
+
+    return _findFeastAroundDayByName(m, oSearchAroundFestiveDay, sDesiredFeastName);
+}
+function getFeastNextYear(m, oCurrentFestiveDay) {
+    var oSearchAroundFestiveDay = oCurrentFestiveDay.clone().add(1, "year");
+    var sDesiredFeastName = getFeastName(m, oCurrentFestiveDay);
+
+    return _findFeastAroundDayByName(m, oSearchAroundFestiveDay, sDesiredFeastName);
+}
+
 var oHolidayGetters = {
     getAllSaints: getAllSaints,
     getEasterSunday: getEasterSunday,
@@ -214,6 +256,8 @@ var oPublic = {
     getAllHolidays: getAllHolidays,
     getNextFestiveDay: getNextFestiveDay,
     getPreviousFestiveDay: getPreviousFestiveDay,
+    getFeastLastYear: getFeastLastYear,
+    getFeastNextYear: getFeastNextYear,
     getFeastName: getFeastName,
     getLiturgicalYear: getLiturgicalYear
 };
@@ -221,7 +265,9 @@ var oPublic = {
 var oPrivate = {
     _isFestiveDay: _isFestiveDay,
     _getNextFestiveDay: _getNextFestiveDay,
-    _getPreviousFestiveDay: _getPreviousFestiveDay
+    _getPreviousFestiveDay: _getPreviousFestiveDay,
+    _findFeastAroundDayByName: _findFeastAroundDayByName,
+    _generateFeastsAroundDay: _generateFeastsAroundDay
 };
 
 module.exports = {

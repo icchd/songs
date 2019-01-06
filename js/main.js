@@ -313,11 +313,39 @@ init().then(function (oEnv) {
                     this.loadStatistics(oFeastDay, 5)
                 ]);
             },
-            onPreviousSundayClicked: function () {
-                this.setCurrentFeast(catholicHolidays.getPreviousFestiveDay(this.currentFeast));
+            onPreviousSundayClicked: function (sGranularity) {
+                var oNextFestiveDay = null;
+
+                switch (sGranularity) {
+                    case "day":
+                        oNextFestiveDay = catholicHolidays.getPreviousFestiveDay(this.currentFeast);
+                        break;
+
+                    case "year":
+                        oNextFestiveDay = catholicHolidays.getFeastLastYear(this.currentFeast);
+                        break;
+                    default:
+                        throw new Error("Invalid granularity " + sGranularity);
+                }
+
+                this.setCurrentFeast(oNextFestiveDay);
             },
-            onNextSundayClicked: function () {
-                this.setCurrentFeast(catholicHolidays.getNextFestiveDay(this.currentFeast));
+            onNextSundayClicked: function (sGranularity) {
+                var oNextFestiveDay = null;
+
+                switch (sGranularity) {
+                    case "day":
+                        oNextFestiveDay = catholicHolidays.getNextFestiveDay(this.currentFeast);
+                        break;
+
+                    case "year":
+                        oNextFestiveDay = catholicHolidays.getFeastNextYear(this.currentFeast);
+                        break;
+                    default:
+                        throw new Error("Invalid granularity " + sGranularity);
+                }
+
+                this.setCurrentFeast(oNextFestiveDay);
             },
             loadStatsFrom: function (sFilename) {
                 var that = this;

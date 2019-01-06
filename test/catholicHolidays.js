@@ -307,3 +307,21 @@ describe("getFeastName", function () {
         ).to.equal("All Saints");
     });
 });
+
+describe("_generateFeastsAroundDay", function () {
+    it("returns the expected array of dates", function () {
+        var oSunday = m({ year: 2019, month: 0, day: 6 });
+        var aGotWindow = oHolidays._generateFeastsAroundDay(m, oSunday, 5);
+
+        var aGotWindowForTest = aGotWindow.map(x => x.format("DD-MM-YYYY"));
+
+        expect(aGotWindowForTest).to.deep.equal([
+            "06-01-2019",
+            "13-01-2019",
+            "01-01-2019",
+            "20-01-2019",
+            "30-12-2018",
+            "27-01-2019"
+        ]);
+    });
+});
