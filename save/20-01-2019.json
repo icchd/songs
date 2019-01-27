@@ -12,8 +12,8 @@
       "title": "One Bread, One Body (Foley)"
    },
    "recession": {
-      "number": "665",
-      "title": "Siyahamba/We Are Marching"
+      "number": "548",
+      "title": "River of Glory"
    },
    "stats": {
       "2": {
@@ -431,12 +431,12 @@
          }
       },
       "548": {
-         "count": 2,
+         "count": 3,
          "sungFor": {
             "entrance": true,
             "recession": true
          },
-         "lastSung": "13-01-2019"
+         "lastSung": "20-01-2019"
       },
       "560": {
          "count": 4,
@@ -619,8 +619,8 @@
          }
       },
       "665": {
-         "count": 2,
-         "lastSung": "20-01-2019",
+         "count": 1,
+         "lastSung": "18-06-2017",
          "sungFor": {
             "recession": true
          }
