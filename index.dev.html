@@ -52,6 +52,7 @@
                         </div>
                     </li>
                 </ul>
+                <ui-button @click="openModal('addNewSongDialog')" icon="add" color="default">Add Song</ui-button>
                 <ui-button @click="showQrCode" icon="select_all" color="default">QR</ui-button>
                 <ui-button @click="toggleHangingDisplay" icon="view_agenda" color="default">Display</ui-button>
                 <ui-icon-button @click="openModal('saveDialog')" icon="save" id="btnSave" color="primary"></ui-icon-button>
@@ -204,7 +205,40 @@
                         * {{ selectedSong.notes }}
                     </p>
                 </ui-modal>
+                <ui-modal
+                    title="Add Song"
+                    ref="addNewSongDialog">
 
+                    <ui-textbox
+                        name="title"
+                        type="text"
+                        v-model:text="newSong.text">Title</ui-textbox>
+
+                    <ui-textbox
+                        name="links"
+                        type="text"
+                        v-model:text="newSong.links">Links</ui-textbox>
+
+                    <ui-textbox
+                        name="topics"
+                        type="text"
+                        v-model:text="newSong.topics">Topics</ui-textbox>
+
+                    <ui-radio-group 
+                        name="api"
+                        v-model="api"
+                        :options="possibleApis">
+                        Save via
+                        </ui-radio-group>
+
+                    <ui-textbox
+                        name="password"
+                        type="password"
+                        icon="vpn_key"
+                        v-model:text="password"></ui-textbox>
+
+                    <ui-button @click="saveNewSong">Save</ui-button>
+                </ui-modal>
                 <ui-modal 
                     title="Enter Password"
                     ref="saveDialog">

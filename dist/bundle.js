@@ -14834,6 +14834,11 @@ init().then(function (oEnv) {
             stats: {},
             topics: oEnv.topics,
             smartSearchMessage: "",
+            newSong: {
+                title: "",
+                links: [],
+                topics: []
+            },
             suggestionLinks: [
                 { name: "Music Ministry - Our Lady of Mount Carmel" , url: "https://olmcwentyliturgy.org/welcome/resources-for-liturgical-ministers/liturgical-ministries/music/music-suggestions/" },
                 { name: "Liturgytools.net"                          , url: "http://www.liturgytools.net/p/roman-catholic-lectionary-based-hymn.html" },
@@ -15268,6 +15273,10 @@ init().then(function (oEnv) {
                 this.$refs.saveDialog.close();
                 save(this.password);
             },
+            saveNewSong: function () {
+                this.$refs.saveNewSongDialog.close();
+                saveNewSong(this.password);
+            },
             suggest: function () {
                 this.$refs.suggestionDialog.close();
                 suggest(this.password);
@@ -15453,9 +15462,33 @@ init().then(function (oEnv) {
         });
     }
 
+    function resetNewSong () {
+        app.newSong.title = "";
+        app.newSong.links = "";
+        app.newSong.topics = "";
+    }
+
+    function clone (oObject) {
+        return JSON.parse(JSON.stringify(oObject));
+    }
+
+    function saveNewSong (sPassword) {
+        var oNewSong = clone(app.newSong);
+        var oNewSongNoPass = clone(app.newSong);
+
+        oNewSong.password = sPassword;
+        oNewSong.type = "newSong";
+
+        return sendPostRequest(oNewSong).then(function() {
+            resetNewSong();
+            alert("New Song was added");
+            app.songs.push(oNewSongNoPass);
+        });
+    }
+
     function save(sPassword) {
-        var oClone = JSON.parse(JSON.stringify(app.selectedSongs));
-        oClone.stats = JSON.parse(JSON.stringify(app.stats));
+        var oClone = clone(app.selectedSongs);
+        oClone.stats = clone(app.stats);
 
         oClone.momentsOrder = JSON.parse(JSON.stringify(app.possibleMoments));
 
