@@ -690,8 +690,12 @@ init().then(function (oEnv) {
     }
 
     function saveNewSong (sPassword) {
-        app.newSong.links = app.newSong.linksText.split(/,\s*/g);
-        app.newSong.topics = app.newSong.topicsText.split(/,\s*/g);
+        if ((app.newSong.linksText || "").length > 0) {
+            app.newSong.links = app.newSong.linksText.split(/,\s*/g);
+        }
+        if ((app.newSong.topicsText || "").length > 0) {
+            app.newSong.topics = app.newSong.topicsText.split(/,\s*/g);
+        }
 
         var oNewSong = clone(app.newSong);
         delete oNewSong.topicsText;
