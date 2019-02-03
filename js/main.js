@@ -487,7 +487,7 @@ init().then(function (oEnv) {
                 save(this.password);
             },
             saveNewSong: function () {
-                this.$refs.saveNewSongDialog.close();
+                this.$refs.addNewSongDialog.close();
                 saveNewSong(this.password);
             },
             suggest: function () {
@@ -690,7 +690,7 @@ init().then(function (oEnv) {
         var oNewSongNoPass = clone(app.newSong);
 
         oNewSong.password = sPassword;
-        oNewSong.type = "newSong";
+        oNewSong.type = "saveNewSong";
 
         return sendPostRequest(oNewSong).then(function() {
             resetNewSong();
