@@ -2,7 +2,7 @@
    "list": [
       {
          "title": "Mambo Sawa Sawa",
-         "links": "https://youtu.be/g-tDjpzSvCo",
+         "links": ["https://youtu.be/g-tDjpzSvCo"],
          "topics": []
       },
       {
