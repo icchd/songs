@@ -14836,8 +14836,10 @@ init().then(function (oEnv) {
             smartSearchMessage: "",
             newSong: {
                 title: "",
+                linksText: "",
                 links: [],
-                topics: []
+                topics: [],
+                scriptures: {}
             },
             suggestionLinks: [
                 { name: "Music Ministry - Our Lady of Mount Carmel" , url: "https://olmcwentyliturgy.org/welcome/resources-for-liturgical-ministers/liturgical-ministries/music/music-suggestions/" },
@@ -15464,8 +15466,10 @@ init().then(function (oEnv) {
 
     function resetNewSong () {
         app.newSong.title = "";
-        app.newSong.links = "";
-        app.newSong.topics = "";
+        app.newSong.links.splice(0);
+        app.newSong.topics.splice(0);
+        app.newSong.linksText = "";
+        app.newSong.topicsText = "";
     }
 
     function clone (oObject) {
@@ -15473,8 +15477,14 @@ init().then(function (oEnv) {
     }
 
     function saveNewSong (sPassword) {
+        app.newSong.links = app.newSong.linksText.split(/,\s*/g);
+        app.newSong.topics = app.newSong.topicsText.split(/,\s*/g);
+
         var oNewSong = clone(app.newSong);
-        var oNewSongNoPass = clone(app.newSong);
+        delete oNewSong.topicsText;
+        delete oNewSong.linksText;
+
+        var oNewSongNoPass = clone(oNewSong);
 
         oNewSong.password = sPassword;
         oNewSong.type = "saveNewSong";
