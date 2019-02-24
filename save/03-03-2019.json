@@ -8,12 +8,16 @@
       "title": "Let Us Break Bread Together"
    },
    "communion": {
-      "number": "",
-      "title": ""
+      "number": "832",
+      "title": "Here I Am, Lord (Schutte)"
    },
    "recession": {
       "number": "849",
       "title": "They’ll Know We Are Christians"
+   },
+   "baptism": {
+      "number": "542",
+      "title": "Baptized in Water"
    },
    "stats": {
       "2": {
@@ -423,8 +427,8 @@
          "lastSung": "18-02-2018"
       },
       "542": {
-         "count": 4,
-         "lastSung": "10-02-2019",
+         "count": 5,
+         "lastSung": "03-03-2019",
          "sungFor": {
             "offertory": true,
             "baptism": true
@@ -989,11 +993,11 @@
          }
       },
       "832": {
-         "count": 3,
+         "count": 4,
          "sungFor": {
             "communion": true
          },
-         "lastSung": "10-02-2019"
+         "lastSung": "03-03-2019"
       },
       "836": {
          "count": 3,
@@ -1031,8 +1035,8 @@
          }
       },
       "": {
-         "count": 10,
-         "lastSung": "03-03-2019",
+         "count": 9,
+         "lastSung": "30-03-2018",
          "sungFor": {
             "recession": true,
             "communion": true,
