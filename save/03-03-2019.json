@@ -15,10 +15,6 @@
       "number": "849",
       "title": "They’ll Know We Are Christians"
    },
-   "baptism": {
-      "number": "542",
-      "title": "Baptized in Water"
-   },
    "stats": {
       "2": {
          "count": 1,
@@ -427,8 +423,8 @@
          "lastSung": "18-02-2018"
       },
       "542": {
-         "count": 5,
-         "lastSung": "03-03-2019",
+         "count": 4,
+         "lastSung": "10-02-2019",
          "sungFor": {
             "offertory": true,
             "baptism": true
