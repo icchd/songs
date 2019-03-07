@@ -1,7 +1,7 @@
 {
    "entrance": {
-      "number": "704",
-      "title": "And he will raise you up on eagle’s wings"
+      "number": "793",
+      "title": "Come to the feast of heaven and earth"
    },
    "offertory": {
       "number": "628",
@@ -12,8 +12,8 @@
       "title": "I Am the Living Bread"
    },
    "recession": {
-      "number": "609",
-      "title": "Blessed Assurance"
+      "number": "713",
+      "title": "Amazing Grace"
    },
    "stats": {
       "2": {
@@ -518,13 +518,6 @@
          },
          "lastSung": "02-09-2018"
       },
-      "609": {
-         "count": 1,
-         "sungFor": {
-            "recession": true
-         },
-         "lastSung": "08-03-2019"
-      },
       "610": {
          "count": 2,
          "sungFor": {
@@ -655,11 +648,10 @@
          "lastSung": "28-10-2018"
       },
       "704": {
-         "count": 4,
-         "lastSung": "08-03-2019",
+         "count": 3,
+         "lastSung": "09-09-2018",
          "sungFor": {
-            "offertory": true,
-            "entrance": true
+            "offertory": true
          }
       },
       "705": {
@@ -694,11 +686,12 @@
          "lastSung": "18-11-2018"
       },
       "713": {
-         "count": 3,
-         "lastSung": "01-04-2018",
+         "count": 4,
+         "lastSung": "08-03-2019",
          "sungFor": {
             "offertory": true,
-            "communion": true
+            "communion": true,
+            "recession": true
          }
       },
       "714": {
@@ -882,8 +875,8 @@
          }
       },
       "793": {
-         "count": 7,
-         "lastSung": "05-08-2018",
+         "count": 8,
+         "lastSung": "08-03-2019",
          "sungFor": {
             "offertory": true,
             "entrance": true
