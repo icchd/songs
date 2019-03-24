@@ -24,6 +24,19 @@ h2 {
     text-transform: capitalize;
 }
 
+.finalList.textDisplay button {
+    display: none;
+}
+.textDisplayOnly {
+    display: none;
+}
+.finalList.textDisplay .new-moment {
+    display: none;
+}
+.finalList.textDisplay .textDisplayOnly {
+    display: block;
+}
+
 .finalList > .moment > b {
     text-transform: capitalize;
 }
@@ -41,15 +54,18 @@ h2 {
     z-index: 9999;
     border-right: 0.1em solid #AAAEB5;
 }
+.hangingDisplay~#btn-display {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 99999;
+}
 .hangingDisplay.finalList .song-number {
     background: black;
     min-width: 3em;
     display: block;
     margin-bottom: 0.1em;
     margin-left: 0;
-}
-.hangingDisplay.finalList .reading {
-    display: block;
 }
 .hangingDisplay.finalList .reading .song-number {
     position: fixed;
@@ -106,12 +122,6 @@ h2 {
     padding-left: 0;
     list-style: none;
     line-height: 1.5em;
-}
-.finalList .song-number {
-    margin-left: 0.5em;
-}
-.finalList .song-title {
-    margin-left: 0.5em;
 }
 #btnClear {
     float: right;
@@ -190,4 +200,15 @@ button.ui-button.one-song.has-links {
 }
 .suggestion-links li {
     white-space: pre;
+}
+
+.noclick {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    opacity: 0.5;
+    z-index: 5000;
 }

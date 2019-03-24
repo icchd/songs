@@ -27,6 +27,7 @@ init().then(function (oEnv) {
     app = new Vue({
         el: "#app",
         data: {
+            displayType: "interface",
             possibleApis: Object.keys(O_APIS),
             api: Object.keys(O_APIS)[0],
             newMomentName: "",
@@ -175,18 +176,27 @@ init().then(function (oEnv) {
                 }
                 return sNumber;
             },
-            toggleHangingDisplay: function () {
-                var that = this;
-                var bCanToggle = true;
-                if (!this.showHangingDisplay) {
-                    bCanToggle = this.possibleMoments.every(function (sMoment) {
-                        return that.selectedSongs[sMoment].number;
-                    });
+            toggleDisplayType: function () {
+                var aDisplayTypes = ["copypaste", "interface"];
+                if (this.canToggleHangingDisplay()) {
+                    aDisplayTypes.push("hanging");
                 }
 
-                if (bCanToggle) {
-                    this.showHangingDisplay = !this.showHangingDisplay;
-                }
+                var iDisplayTypeIdx = aDisplayTypes.indexOf(this.displayType);
+
+                var iNextDisplayTypeIdx = iDisplayTypeIdx + 1 >= aDisplayTypes.length
+                    ? 0
+                    : iDisplayTypeIdx + 1;
+
+                this.displayType = aDisplayTypes[iNextDisplayTypeIdx];
+            },
+            canToggleHangingDisplay: function () {
+                var that = this;
+                var bAllSongsAssigned = this.possibleMoments.every(function (sMoment) {
+                    return that.selectedSongs[sMoment].number;
+                });
+
+                return bAllSongsAssigned;
             },
             clearTopicSearch: function () {
                 this.searchTopics = [];
