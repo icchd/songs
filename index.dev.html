@@ -126,7 +126,7 @@
                 <br />
                 <div class="row">
                     <ui-textbox
-                        style="width: 80%; margin-right: 0.5em"
+                        style="width:50%; margin-right: 0.5em"
                         key="txtSearch"
                         name="search"
                         type="text"
@@ -138,6 +138,10 @@
                         icon="stars"
                         @click="autoSearch"
                         >auto</ui-button>
+                    <ui-button
+                        icon="cancel"
+                        @click="clearSearchText"
+                        ></ui-button>
                 </div>
                 <div v-if="smartSearchMessage.length > 0" style="margin-left: 2em" class="label disabled">
                     {{ smartSearchMessage }}

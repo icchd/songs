@@ -163,15 +163,17 @@ h2 {
 }
 
 .row > * {
-    float: left
+    float: left;
+    margin-left: 0.5em;
+}
+.row > *:first-child {
+    float: left;
+    margin-left: 0;
 }
 .row:after {
     display: table;
     content: "";
     clear: both;
-}
-#btnClearTopics {
-    margin-left: 1em;
 }
 
 a {

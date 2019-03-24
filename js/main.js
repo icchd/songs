@@ -198,6 +198,9 @@ init().then(function (oEnv) {
 
                 return bAllSongsAssigned;
             },
+            clearSearchText: function () {
+                this.searchText = "";
+            },
             clearTopicSearch: function () {
                 this.searchTopics = [];
             },

@@ -34,15 +34,22 @@
             <div id="content">
                 <ul :class="{
                     finalList: true,
-                    hangingDisplay: showHangingDisplay
+                    hangingDisplay: displayType === 'hanging',
+                    textDisplay: displayType === 'copypaste'
                     }">
-                    <li class="reading"><b>Reading:</b><span class="song-number">&nbsp;</span></li>
+                    <li class="textDisplayOnly">
+                        Dear Choir,<br/>
+                        <br />
+                        please find below my selection of today's hymns:<br/>
+                        <br/>
+                    </li>
+                    <li class="reading"><b>Reading:</b><span class="song-number">123</span></li>
                     <li class="moment" v-for="(moment, idx) in possibleMoments">
                         <ui-icon-button :disabled="idx === 0" type="secondary" size="small" icon="arrow_drop_up" @click="moveMomentUp(moment)"></ui-icon-button>
                         <ui-icon-button :disabled="idx === possibleMoments.length - 1" type="secondary" size="small" icon="arrow_drop_down" @click="moveMomentDown(moment)"></ui-icon-button>
                         <ui-icon-button type="secondary" size="small" icon="clear" @click="deleteMoment(moment)"></ui-icon-button>
                         <!-- ui-icon-button type="secondary" size="small" icon="mode_edit" @click="editMoment(moment)"></ui-icon-button -->
-                        <b>{{ moment }}:</b><span class="song-number" @click="toggleHangingDisplay">{{ formatSongNumber(selectedSongs[moment].number) }}</span><span class="song-title">{{ selectedSongs[moment].title }}</span><ui-button type="secondary" @click="removeSong(moment)" size="small" v-if="selectedSongs[moment].number && selectedSongs[moment].number.length > 0" icon="delete"></ui-button>
+                        <b>{{ moment }}:</b><span class="song-number">&nbsp;{{ formatSongNumber(selectedSongs[moment].number) }}&nbsp;</span><span class="song-title">{{ selectedSongs[moment].title }}</span><ui-button type="secondary" @click="removeSong(moment)" size="small" v-if="selectedSongs[moment].number && selectedSongs[moment].number.length > 0" icon="delete"></ui-button>
                     </li>
                     <li class="new-moment">
                         <div class="row">
@@ -50,10 +57,18 @@
                             <ui-icon-button size="small" icon="add" @click="addNewMoment"></ui-icon-button>
                         </div>
                     </li>
+                    <li class="textDisplayOnly">
+                        <br/>
+                        Be aware that you can always access the current (and past) selection of hymns 
+                        online at <a href="https://goo.gl/95SuXt">https://goo.gl/95SuXt</a>.<br />
+                        <br/>
+                        Looking forward to singing with you!
+                        <br/>
+                    </li>
                 </ul>
                 <ui-button @click="openModal('addNewSongDialog')" icon="add" color="default">Add Song</ui-button>
                 <ui-button @click="showQrCode" icon="select_all" color="default">QR</ui-button>
-                <ui-button @click="toggleHangingDisplay" icon="view_agenda" color="default">Display</ui-button>
+                <ui-button id="btn-display" @click="toggleDisplayType" icon="refresh" color="default">Display</ui-button>
                 <ui-icon-button @click="openModal('saveDialog')" icon="save" id="btnSave" color="primary"></ui-icon-button>
                 <ui-icon-button id="btnClear" @click="clearSongs" icon="clear" color="default"></ui-icon-button>
                 <h2>History</h2>
@@ -110,7 +125,7 @@
                 <br />
                 <div class="row">
                     <ui-textbox
-                        style="width: 80%; margin-right: 0.5em"
+                        style="width:50%; margin-right: 0.5em"
                         key="txtSearch"
                         name="search"
                         type="text"
@@ -122,6 +137,10 @@
                         icon="stars"
                         @click="autoSearch"
                         >auto</ui-button>
+                    <ui-button
+                        icon="cancel"
+                        @click="clearSearchText"
+                        ></ui-button>
                 </div>
                 <div v-if="smartSearchMessage.length > 0" style="margin-left: 2em" class="label disabled">
                     {{ smartSearchMessage }}
@@ -280,6 +299,7 @@
 
                 </ui-modal>
             </div>
+            <div v-if="displayType === 'hanging'" class="noclick"></div>
         </div>
         <script type="text/javascript" src="dist/bundle__CACHEBUSTERTOKEN__.min.js"></script>
     </body>
