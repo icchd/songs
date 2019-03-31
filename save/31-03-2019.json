@@ -1,7 +1,7 @@
 {
    "entrance": {
-      "number": "790",
-      "title": "Come, Worship the Lord"
+      "number": "793",
+      "title": "Come to the feast of heaven and earth"
    },
    "offertory": {
       "number": "659",
@@ -874,8 +874,8 @@
          "lastSung": "01-11-2018"
       },
       "790": {
-         "count": 13,
-         "lastSung": "31-03-2019",
+         "count": 12,
+         "lastSung": "03-03-2019",
          "sungFor": {
             "entrance": true
          }
@@ -889,8 +889,8 @@
          }
       },
       "793": {
-         "count": 7,
-         "lastSung": "05-08-2018",
+         "count": 8,
+         "lastSung": "31-03-2019",
          "sungFor": {
             "offertory": true,
             "entrance": true
