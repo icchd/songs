@@ -19,6 +19,10 @@
       "number": "",
       "title": ""
    },
+   "adoration": {
+      "number": "406",
+      "title": "Pange Lingua Gloriosi/ Sing of Glory (ST. THOMAS: TANTUM ERGO/Hagan)"
+   },
    "stats": {
       "2": {
          "count": 1,
@@ -190,6 +194,13 @@
          "sungFor": {
             "recession": true
          }
+      },
+      "406": {
+         "count": 1,
+         "sungFor": {
+            "adoration": true
+         },
+         "lastSung": "18-04-2019"
       },
       "411": {
          "count": 1,
@@ -1080,6 +1091,7 @@
       "entrance",
       "footwashing",
       "offertory",
-      "communion"
+      "communion",
+      "adoration"
    ]
 }
