@@ -1,7 +1,11 @@
 {
    "entrance": {
-      "number": "",
-      "title": ""
+      "number": "523",
+      "title": "Glory in the Cross"
+   },
+   "footwashing": {
+      "number": "other-3",
+      "title": "So You Must Do"
    },
    "offertory": {
       "number": "738",
@@ -14,10 +18,6 @@
    "recession": {
       "number": "",
       "title": ""
-   },
-   "footwashing": {
-      "number": "other-3",
-      "title": "So You Must Do"
    },
    "stats": {
       "2": {
@@ -379,11 +379,12 @@
          }
       },
       "523": {
-         "count": 2,
+         "count": 3,
          "sungFor": {
-            "recession": true
+            "recession": true,
+            "entrance": true
          },
-         "lastSung": "16-09-2018"
+         "lastSung": "18-04-2019"
       },
       "524": {
          "count": 1,
@@ -1051,7 +1052,7 @@
          }
       },
       "": {
-         "count": 11,
+         "count": 10,
          "lastSung": "18-04-2019",
          "sungFor": {
             "recession": true,
@@ -1079,7 +1080,6 @@
       "entrance",
       "footwashing",
       "offertory",
-      "communion",
-      "recession"
+      "communion"
    ]
 }
