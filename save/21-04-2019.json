@@ -1,19 +1,23 @@
 {
    "entrance": {
-      "number": "713",
-      "title": "Amazing Grace"
+      "number": "431",
+      "title": "The Strife Is O’er"
    },
    "offertory": {
       "number": "628",
       "title": "How Great Thou Art"
    },
    "communion": {
-      "number": "723",
-      "title": "There Is a Balm in Gilead"
+      "number": "713",
+      "title": "Amazing Grace"
    },
    "recession": {
       "number": "477",
       "title": "Alleluia! Sing to Jesus"
+   },
+   "easter sequence": {
+      "number": "421",
+      "title": "Christians, to the Paschal Victim"
    },
    "stats": {
       "2": {
@@ -187,12 +191,26 @@
             "recession": true
          }
       },
+      "406": {
+         "count": 1,
+         "sungFor": {
+            "adoration": true
+         },
+         "lastSung": "18-04-2019"
+      },
       "411": {
          "count": 1,
          "sungFor": {
             "offertory": true
          },
          "lastSung": "25-03-2018"
+      },
+      "421": {
+         "count": 1,
+         "sungFor": {
+            "easter sequence": true
+         },
+         "lastSung": "21-04-2019"
       },
       "422": {
          "count": 1,
@@ -209,11 +227,12 @@
          "lastSung": "08-04-2018"
       },
       "431": {
-         "count": 3,
+         "count": 4,
          "sungFor": {
-            "recession": true
+            "recession": true,
+            "entrance": true
          },
-         "lastSung": "06-05-2018"
+         "lastSung": "21-04-2019"
       },
       "435": {
          "count": 2,
@@ -376,11 +395,12 @@
          }
       },
       "523": {
-         "count": 2,
+         "count": 3,
          "sungFor": {
-            "recession": true
+            "recession": true,
+            "entrance": true
          },
-         "lastSung": "16-09-2018"
+         "lastSung": "18-04-2019"
       },
       "524": {
          "count": 1,
@@ -707,8 +727,7 @@
          "sungFor": {
             "offertory": true,
             "communion": true,
-            "recession": true,
-            "entrance": true
+            "recession": true
          }
       },
       "714": {
@@ -740,8 +759,8 @@
          }
       },
       "723": {
-         "count": 4,
-         "lastSung": "21-04-2019",
+         "count": 3,
+         "lastSung": "21-10-2018",
          "sungFor": {
             "communion": true
          }
@@ -777,8 +796,8 @@
          }
       },
       "738": {
-         "count": 4,
-         "lastSung": "23-09-2018",
+         "count": 5,
+         "lastSung": "18-04-2019",
          "sungFor": {
             "offertory": true
          }
@@ -900,8 +919,8 @@
          }
       },
       "803": {
-         "count": 4,
-         "lastSung": "23-09-2018",
+         "count": 5,
+         "lastSung": "18-04-2019",
          "sungFor": {
             "communion": true
          }
@@ -1049,8 +1068,8 @@
          }
       },
       "": {
-         "count": 9,
-         "lastSung": "30-03-2018",
+         "count": 10,
+         "lastSung": "18-04-2019",
          "sungFor": {
             "recession": true,
             "communion": true,
@@ -1064,10 +1083,18 @@
             "communion": true
          },
          "lastSung": "09-09-2018"
+      },
+      "other-3": {
+         "count": 1,
+         "sungFor": {
+            "footwashing": true
+         },
+         "lastSung": "18-04-2019"
       }
    },
    "momentsOrder": [
       "entrance",
+      "easter sequence",
       "offertory",
       "communion",
       "recession"
