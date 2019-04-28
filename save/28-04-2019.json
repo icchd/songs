@@ -4,12 +4,12 @@
       "title": "At the Lamb’s High Feast"
    },
    "offertory": {
-      "number": "423",
-      "title": "Three Days"
+      "number": "746",
+      "title": "Love Divine, All Loves Excelling"
    },
    "communion": {
-      "number": "",
-      "title": ""
+      "number": "809",
+      "title": "Behold the Lamb"
    },
    "recession": {
       "number": "445",
@@ -214,13 +214,6 @@
             "sequence": true
          },
          "lastSung": "01-04-2018"
-      },
-      "423": {
-         "count": 1,
-         "sungFor": {
-            "offertory": true
-         },
-         "lastSung": "28-04-2019"
       },
       "424": {
          "count": 1,
@@ -827,12 +820,13 @@
          }
       },
       "746": {
-         "count": 3,
+         "count": 4,
          "sungFor": {
             "entrance": true,
-            "recession": true
+            "recession": true,
+            "offertory": true
          },
-         "lastSung": "03-02-2019"
+         "lastSung": "28-04-2019"
       },
       "749": {
          "count": 6,
@@ -951,8 +945,8 @@
          }
       },
       "809": {
-         "count": 7,
-         "lastSung": "25-11-2018",
+         "count": 8,
+         "lastSung": "28-04-2019",
          "sungFor": {
             "communion": true
          }
@@ -1085,8 +1079,8 @@
          }
       },
       "": {
-         "count": 11,
-         "lastSung": "28-04-2019",
+         "count": 10,
+         "lastSung": "18-04-2019",
          "sungFor": {
             "recession": true,
             "communion": true,
