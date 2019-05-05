@@ -8,8 +8,8 @@
       "title": "All Creatures of Our God and King"
    },
    "communion": {
-      "number": "832",
-      "title": "Here I Am, Lord (Schutte)"
+      "number": "682",
+      "title": "Worthy Is the Lamb"
    },
    "recession": {
       "number": "482",
@@ -671,6 +671,13 @@
             "entrance": true
          }
       },
+      "682": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "05-05-2019"
+      },
       "689": {
          "count": 1,
          "sungFor": {
@@ -1044,11 +1051,11 @@
          }
       },
       "832": {
-         "count": 5,
+         "count": 4,
          "sungFor": {
             "communion": true
          },
-         "lastSung": "05-05-2019"
+         "lastSung": "03-03-2019"
       },
       "836": {
          "count": 3,
