@@ -383,7 +383,7 @@ init().then(function (oEnv) {
             clearSong: function (sMoment) {
                 var that = this;
                 Object.keys(this.selectedSongs[sMoment]).forEach(function (sKey) {
-                    that.selectedSongs[sMoment][sKey] = "";
+                    Vue.set(that.selectedSongs[sMoment], sKey, "");
                 });
             },
             clearSongs: function () {
