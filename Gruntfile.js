@@ -60,7 +60,7 @@ module.exports = function(grunt) {
                 "js/catholicReadings.js",
                 "node_modules/vue/dist/vue.min.js",
                 "node_modules/vue-resource/dist/vue-resource.min.js",
-                "node_modules/keen-ui/dist/keen-ui.min.js",
+                "node_modules/keen-ui/dist/keen-ui.js",
                 "js/qrcode.js",
                 "js/main.js"
             ],
@@ -75,7 +75,12 @@ module.exports = function(grunt) {
             oResult["dist/bundle" + sToken + ".min.js"] = ['dist/bundle.js'];
 
             return oResult;
-          })(TOKEN)
+          })(TOKEN),
+          options: {
+              compress: true,
+              "!ie8": true,
+              sourceMap: true
+          }
         }
      },
      cssmin: {
