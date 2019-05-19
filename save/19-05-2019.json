@@ -4,8 +4,8 @@
       "title": "Rejoice, the Lord Is King"
    },
    "offertory": {
-      "number": "403",
-      "title": "As I Have Done for You"
+      "number": "746",
+      "title": "Love Divine, All Loves Excelling"
    },
    "communion": {
       "number": "751",
@@ -186,13 +186,6 @@
          "sungFor": {
             "recession": true
          }
-      },
-      "403": {
-         "count": 1,
-         "sungFor": {
-            "offertory": true
-         },
-         "lastSung": "19-05-2019"
       },
       "406": {
          "count": 1,
@@ -841,13 +834,13 @@
          }
       },
       "746": {
-         "count": 4,
+         "count": 5,
          "sungFor": {
             "entrance": true,
             "recession": true,
             "offertory": true
          },
-         "lastSung": "28-04-2019"
+         "lastSung": "19-05-2019"
       },
       "749": {
          "count": 6,
