@@ -1,7 +1,7 @@
 {
    "entrance": {
-      "number": "",
-      "title": ""
+      "number": "466",
+      "title": "All Praise and Glad Thanksgiving"
    },
    "offertory": {
       "number": "832",
@@ -304,10 +304,11 @@
          "lastSung": "03-02-2019"
       },
       "466": {
-         "count": 4,
-         "lastSung": "19-08-2018",
+         "count": 5,
+         "lastSung": "16-06-2019",
          "sungFor": {
-            "recession": true
+            "recession": true,
+            "entrance": true
          }
       },
       "467": {
@@ -1102,8 +1103,8 @@
          }
       },
       "": {
-         "count": 16,
-         "lastSung": "16-06-2019",
+         "count": 15,
+         "lastSung": "09-06-2019",
          "sungFor": {
             "recession": true,
             "communion": true,
