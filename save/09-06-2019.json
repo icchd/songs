@@ -1,15 +1,15 @@
 {
    "entrance": {
-      "number": "",
-      "title": ""
+      "number": "461",
+      "title": "Come Down, O Love Divine"
    },
    "offertory": {
       "number": "",
       "title": ""
    },
    "communion": {
-      "number": "",
-      "title": ""
+      "number": "824",
+      "title": "Amén. El Cuerpo de Cristo"
    },
    "recession": {
       "number": "",
@@ -300,12 +300,13 @@
          "lastSung": "20-05-2018"
       },
       "461": {
-         "count": 3,
+         "count": 4,
          "sungFor": {
             "recession": true,
-            "offertory": true
+            "offertory": true,
+            "entrance": true
          },
-         "lastSung": "03-02-2019"
+         "lastSung": "09-06-2019"
       },
       "466": {
          "count": 4,
@@ -1026,8 +1027,8 @@
          }
       },
       "824": {
-         "count": 3,
-         "lastSung": "31-05-2018",
+         "count": 4,
+         "lastSung": "09-06-2019",
          "sungFor": {
             "communion": true
          }
@@ -1097,7 +1098,7 @@
          }
       },
       "": {
-         "count": 15,
+         "count": 13,
          "lastSung": "09-06-2019",
          "sungFor": {
             "recession": true,
@@ -1124,9 +1125,9 @@
    },
    "momentsOrder": [
       "entrance",
+      "pentecost sequence",
       "offertory",
       "communion",
-      "recession",
-      "pentecost sequence"
+      "recession"
    ]
 }
