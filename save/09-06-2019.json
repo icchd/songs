@@ -3,6 +3,10 @@
       "number": "461",
       "title": "Come Down, O Love Divine"
    },
+   "pentecost sequence": {
+      "number": "",
+      "title": ""
+   },
    "offertory": {
       "number": "",
       "title": ""
@@ -12,12 +16,8 @@
       "title": "Amén. El Cuerpo de Cristo"
    },
    "recession": {
-      "number": "",
-      "title": ""
-   },
-   "pentecost sequence": {
-      "number": "",
-      "title": ""
+      "number": "849",
+      "title": "They’ll Know We Are Christians"
    },
    "stats": {
       "2": {
@@ -1084,8 +1084,8 @@
          "lastSung": "24-02-2019"
       },
       "849": {
-         "count": 13,
-         "lastSung": "19-05-2019",
+         "count": 14,
+         "lastSung": "09-06-2019",
          "sungFor": {
             "recession": true
          }
@@ -1098,7 +1098,7 @@
          }
       },
       "": {
-         "count": 13,
+         "count": 12,
          "lastSung": "09-06-2019",
          "sungFor": {
             "recession": true,
