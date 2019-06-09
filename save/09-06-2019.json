@@ -4,12 +4,12 @@
       "title": "Come Down, O Love Divine"
    },
    "pentecost sequence": {
-      "number": "",
-      "title": ""
+      "number": "459",
+      "title": "Come, O Holy Spirit"
    },
    "offertory": {
-      "number": "",
-      "title": ""
+      "number": "560",
+      "title": "Loving and Forgiving"
    },
    "communion": {
       "number": "824",
@@ -293,11 +293,12 @@
          "lastSung": "20-05-2018"
       },
       "459": {
-         "count": 1,
+         "count": 2,
          "sungFor": {
-            "sequence": true
+            "sequence": true,
+            "pentecost sequence": true
          },
-         "lastSung": "20-05-2018"
+         "lastSung": "09-06-2019"
       },
       "461": {
          "count": 4,
@@ -476,8 +477,8 @@
          "lastSung": "13-01-2019"
       },
       "560": {
-         "count": 7,
-         "lastSung": "02-06-2019",
+         "count": 8,
+         "lastSung": "09-06-2019",
          "sungFor": {
             "offertory": true
          }
@@ -1098,14 +1099,13 @@
          }
       },
       "": {
-         "count": 12,
-         "lastSung": "09-06-2019",
+         "count": 10,
+         "lastSung": "18-04-2019",
          "sungFor": {
             "recession": true,
             "communion": true,
             "offertory": true,
-            "entrance": true,
-            "pentecost sequence": true
+            "entrance": true
          }
       },
       "other-1": {
