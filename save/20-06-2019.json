@@ -15,6 +15,10 @@
       "number": "477",
       "title": "Alleluia! Sing to Jesus"
    },
+   "sequence": {
+      "number": "473",
+      "title": "Laud, O Zion"
+   },
    "stats": {
       "2": {
          "count": 1,
@@ -331,6 +335,13 @@
             "communion": true
          },
          "lastSung": "27-05-2018"
+      },
+      "473": {
+         "count": 1,
+         "sungFor": {
+            "sequence": true
+         },
+         "lastSung": "20-06-2019"
       },
       "477": {
          "count": 5,
@@ -1130,6 +1141,7 @@
    },
    "momentsOrder": [
       "entrance",
+      "sequence",
       "offertory",
       "communion",
       "recession"
