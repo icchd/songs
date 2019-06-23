@@ -12,6 +12,8 @@ var O_APIS = {
     "Heroku": "http://icch-api.herokuapp.com/songs"
 };
 
+var S_FEAST_NAME_API = "http://calapi.inadiutorium.cz/api/v0/en/calendars/default";
+
 /* global QRCode Vue moment catholicReadings */
 
 var m = function () { return moment.apply(this, arguments).locale("en-gb"); };
@@ -19,6 +21,7 @@ var m = function () { return moment.apply(this, arguments).locale("en-gb"); };
 var catholicHolidays = catholicHolidays.createLibrary(m);
 
 var oInitialFestiveDay = catholicHolidays.getNextFestiveDay(m().subtract(14, "hours"));
+var sInitialFeastName = catholicHolidays.getFeastName(oInitialFestiveDay);
 
 var qrCodeObj;
 var app;
@@ -34,6 +37,7 @@ init().then(function (oEnv) {
             showHangingDisplay: false,
             qrCodeUrl: "",
             currentFeast: oInitialFestiveDay,
+            currentFeastName: sInitialFeastName,
             password: "",
             possibleMoments: [],
             possibleSearchFilterFlags: ["any known songs"].concat(A_MOMENTS),
@@ -328,6 +332,19 @@ init().then(function (oEnv) {
 
                 this.currentFeast = oFeastDay;
 
+                var sFeastName = catholicHolidays.getFeastName(oFeastDay);
+                this.currentFeastName = sFeastName;
+                if (sFeastName === "Sunday") {
+                    return this.$http.get(S_FEAST_NAME_API + "/" + oFeastDay.format("YYYY/MM/DD")).then(function (oData) {
+                        if (oData.status !== 200) {
+                            return;
+                        }
+                        if (oData.body.celebrations && oData.body.celebrations.length > 0) {
+                            this.currentFeastName = oData.body.celebrations[0].title;
+                        }
+                    }.bind(this));
+                }
+
                 return Promise.all([
                     this.loadCurrentSongSelection(oFeastDay),
                     this.loadStatistics(oFeastDay, 5)
@@ -520,9 +537,6 @@ init().then(function (oEnv) {
             },
             currentFeastDateShort: function () {
                 return m(this.currentFeast, "DD-MM-YYYY").format("MMDDYY");
-            },
-            currentFeastName: function () {
-                return catholicHolidays.getFeastName(this.currentFeast);
             },
             filteredSongs: function () {
                 var that = this;
@@ -771,93 +785,95 @@ init().then(function (oEnv) {
 });
 
 
+
+
 function getDefaultFieldValue(vValue) {
-    var sFieldType = typeof vValue;
-    var sFieldObjectType = Object.prototype.toString.apply(vValue);
+var sFieldType = typeof vValue;
+var sFieldObjectType = Object.prototype.toString.apply(vValue);
 
-    if (sFieldType === "string") { return ""; }
-    if (sFieldObjectType === "[object Array]") { return []; }
-    if (sFieldObjectType === "[object Object]") { return {}; }
+if (sFieldType === "string") { return ""; }
+if (sFieldObjectType === "[object Array]") { return []; }
+if (sFieldObjectType === "[object Object]") { return {}; }
 
-    throw new Error("Unknown type: " + sFieldType);
+throw new Error("Unknown type: " + sFieldType);
 }
 
 function init() {
 
-    function collectDefaultSongFieldsFromSong(oSong, oDefaultSongFields) {
-        Object.keys(oSong).forEach(function (sKey) {
-            if (!oDefaultSongFields[sKey]) {
-                var vValue = oSong[sKey];
+function collectDefaultSongFieldsFromSong(oSong, oDefaultSongFields) {
+Object.keys(oSong).forEach(function (sKey) {
+    if (!oDefaultSongFields[sKey]) {
+        var vValue = oSong[sKey];
 
-                oDefaultSongFields[sKey] = getDefaultFieldValue(vValue);
-            }
-        });
+        oDefaultSongFields[sKey] = getDefaultFieldValue(vValue);
     }
+});
+}
 
-    function createSearachableIndex (oScriptures) {
-        function toInt(s) {
-            return parseInt(s, 10);
-        }
-        var oIdx = {};
-        Object.keys(oScriptures)
-            .forEach(function (sBook) {
-                var sBookLowerCase = sBook.toLowerCase();
-                oIdx[sBookLowerCase] = {};
-                oScriptures[sBook]
-                    .forEach(function (sScripture) {
-                        var sChapter = sScripture.split(":")[0];
-                        var sParts = sScripture.split(":")[1];
+function createSearachableIndex (oScriptures) {
+function toInt(s) {
+    return parseInt(s, 10);
+}
+var oIdx = {};
+Object.keys(oScriptures)
+    .forEach(function (sBook) {
+        var sBookLowerCase = sBook.toLowerCase();
+        oIdx[sBookLowerCase] = {};
+        oScriptures[sBook]
+            .forEach(function (sScripture) {
+                var sChapter = sScripture.split(":")[0];
+                var sParts = sScripture.split(":")[1];
 
-                        if (typeof sParts === "undefined") {
-                            oIdx[sBookLowerCase][sChapter] = [ [1, 9999] ];
-                            return;
-                        }
-
-                        oIdx[sBookLowerCase][sChapter] = sParts.split(", ").map(function(s) {
-                            if (s.indexOf("-") > -1) {
-                                return s.split("-").map(toInt);
-                            }
-                            return toInt(s);
-                        });
-                    });
-            });
-
-        return oIdx;
-    }
-
-    function collectUniqueTopics (oSong, oUniqueTopics) {
-        oSong.topics.forEach(function (sTopic) {
-            oUniqueTopics[sTopic] = true;
-        });
-    }
-
-    return new Promise(function (fnInitDone) {
-
-        // check the url and log in with the log-in hash
-        Vue.http.get("songs.json").then(function (oData) {
-            var aSongs = oData.body.list;
-            var aTopics = [];
-            var oDefaultSongFields = {}; // discover song fields
-            var oUniqueTopics = {};
-
-            var iLastOtherSongId = 0;
-
-            aSongs.forEach(function(oSong) {
-                if (!oSong.hasOwnProperty("number")) {
-                    oSong.number = "other-" + (++iLastOtherSongId);
+                if (typeof sParts === "undefined") {
+                    oIdx[sBookLowerCase][sChapter] = [ [1, 9999] ];
+                    return;
                 }
-                oSong.scripturesSearchableIndex = createSearachableIndex(oSong.scriptures);
-                collectDefaultSongFieldsFromSong(oSong, oDefaultSongFields);
-                collectUniqueTopics(oSong, oUniqueTopics);
-            });
 
-            aTopics = Object.keys(oUniqueTopics).sort();
-
-            fnInitDone({
-                songs: aSongs,
-                topics: aTopics,
-                defaultSongFields: oDefaultSongFields
+                oIdx[sBookLowerCase][sChapter] = sParts.split(", ").map(function(s) {
+                    if (s.indexOf("-") > -1) {
+                        return s.split("-").map(toInt);
+                    }
+                    return toInt(s);
+                });
             });
-        });
     });
+
+return oIdx;
+}
+
+function collectUniqueTopics (oSong, oUniqueTopics) {
+oSong.topics.forEach(function (sTopic) {
+    oUniqueTopics[sTopic] = true;
+});
+}
+
+return new Promise(function (fnInitDone) {
+
+// check the url and log in with the log-in hash
+Vue.http.get("songs.json").then(function (oData) {
+    var aSongs = oData.body.list;
+    var aTopics = [];
+    var oDefaultSongFields = {}; // discover song fields
+    var oUniqueTopics = {};
+
+    var iLastOtherSongId = 0;
+
+    aSongs.forEach(function(oSong) {
+        if (!oSong.hasOwnProperty("number")) {
+            oSong.number = "other-" + (++iLastOtherSongId);
+        }
+        oSong.scripturesSearchableIndex = createSearachableIndex(oSong.scriptures);
+        collectDefaultSongFieldsFromSong(oSong, oDefaultSongFields);
+        collectUniqueTopics(oSong, oUniqueTopics);
+    });
+
+    aTopics = Object.keys(oUniqueTopics).sort();
+
+    fnInitDone({
+        songs: aSongs,
+        topics: aTopics,
+        defaultSongFields: oDefaultSongFields
+    });
+});
+});
 }
