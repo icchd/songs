@@ -74,6 +74,7 @@ module.exports = function(grunt) {
                 "js/moment-with-locales.js",
                 "js/catholicHolidays.js",
                 "js/catholicReadings.js",
+                "js/catholicReadingsLookup.js",
                 "node_modules/vue/dist/vue.min.js",
                 "node_modules/vue-resource/dist/vue-resource.min.js",
                 "node_modules/keen-ui/dist/keen-ui.js",
