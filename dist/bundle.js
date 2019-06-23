@@ -30961,7 +30961,7 @@ var O_APIS = {
 
 var S_FEAST_NAME_API = "http://calapi.inadiutorium.cz/api/v0/en/calendars/default";
 
-/* global QRCode Vue moment catholicReadings */
+/* global QRCode Vue moment catholicReadings catholicReadingsLookup */
 
 var m = function () { return moment.apply(this, arguments).locale("en-gb"); };
 
@@ -30999,6 +30999,7 @@ init().then(function (oEnv) {
             stats: {},
             topics: oEnv.topics,
             smartSearchMessage: "",
+            lastAutoSearchMatchedLocalLookup: false,
             newSong: {
                 title: "",
                 linksText: "",
@@ -31089,13 +31090,21 @@ init().then(function (oEnv) {
                 var sYYYY = this.currentFeast.format("YYYY");
                 var sMM = this.currentFeast.format("MM");
                 var sDD = this.currentFeast.format("DD");
-                catholicReadings.getReadings(sYYYY, sMM, sDD).then(function (oReadings) {
+                var sCurrentLiturgicalYear = this.currentLiturgicalYear;
+                this.lastAutoSearchMatchedLocalLookup = catholicReadingsLookup.hasReadings(sCurrentLiturgicalYear, this.currentFeastName);
+                setTimeout(function () {
+                    this.lastAutoSearchMatchedLocalLookup = false;
+                }.bind(this), 2000);
+                (this.lastAutoSearchMatchedLocalLookup
+                    ? Promise.resolve(catholicReadingsLookup.getReadings(sCurrentLiturgicalYear, this.currentFeastName, true /* bLongNames */))
+                    : catholicReadings.getReadings(sYYYY, sMM, sDD)
+                ).then(function (oReadings) {
                     var aAllReadings = [];
                     var aSearchTerms = [];
 
                     Object.keys(oReadings)
                         .forEach(function (sKey) {
-                            oReadings[sKey].forEach(function (sReading) {
+                            (oReadings[sKey] || []).forEach(function (sReading) {
                                 if (sReading) {
                                     aAllReadings.push(sKey + ": " + sReading);
 

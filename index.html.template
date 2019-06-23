@@ -134,7 +134,7 @@
                         v-model="searchText"
                         ></ui-textbox>
                     <ui-button
-                        icon="stars"
+                        :icon="lastAutoSearchMatchedLocalLookup ? 'done' : 'find_in_page'"
                         @click="autoSearch"
                         >auto</ui-button>
                     <ui-button

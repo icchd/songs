@@ -135,7 +135,7 @@
                         v-model="searchText"
                         ></ui-textbox>
                     <ui-button
-                        icon="stars"
+                        :icon="lastAutoSearchMatchedLocalLookup ? 'done' : 'find_in_page'"
                         @click="autoSearch"
                         >auto</ui-button>
                     <ui-button
@@ -308,6 +308,7 @@
         <script src="node_modules/keen-ui/dist/keen-ui.min.js"></script>
         <script src="js/catholicHolidays.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/catholicReadings.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/catholicReadingsLookup.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/qrcode.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/main.js"></script>
     </body>

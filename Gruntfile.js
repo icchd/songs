@@ -16,6 +16,22 @@ module.exports = function(grunt) {
             }
         }
       },
+      catholicReadingsLookup: {
+        files: {
+          'js/catholicReadingsLookup.js': ['lib/catholicReadingsLookup.js']
+        },
+        options: {
+            transform: [
+                ["browserify-shim"],
+                ["babelify", {
+                    "presets": ["es2015"]
+                }]
+            ],
+            browserifyOptions: {
+              standalone: 'catholicReadingsLookup'
+            }
+        }
+      },
       catholicReadings: {
         files: {
           'js/catholicReadings.js': ['lib/catholicReadings.js']
