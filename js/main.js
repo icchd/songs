@@ -344,7 +344,7 @@ init().then(function (oEnv) {
                 var sFeastName = catholicHolidays.getFeastName(oFeastDay);
                 this.currentFeastName = sFeastName;
                 if (sFeastName === "Sunday") {
-                    return this.$http.get(S_FEAST_NAME_API + "/" + oFeastDay.format("YYYY/MM/DD")).then(function (oData) {
+                    this.$http.get(S_FEAST_NAME_API + "/" + oFeastDay.format("YYYY/MM/DD")).then(function (oData) {
                         if (oData.status !== 200) {
                             return;
                         }

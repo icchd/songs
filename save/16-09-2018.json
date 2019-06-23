@@ -41,25 +41,25 @@
          "count": 2,
          "lastSung": "24-12-2017",
          "sungFor": {
-            "entrance": true,
-            "recession": true
+            "recession": true,
+            "entrance": true
          }
       },
       "323": {
          "count": 3,
          "lastSung": "09-09-2018",
          "sungFor": {
+            "entrance": true,
             "offertory": true,
-            "recession": true,
-            "entrance": true
+            "recession": true
          }
       },
       "328": {
          "count": 1,
+         "lastSung": "24-12-2017",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "24-12-2017"
+         }
       },
       "329": {
          "count": 1,
@@ -70,53 +70,53 @@
       },
       "336": {
          "count": 2,
+         "lastSung": "06-01-2018",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "06-01-2018"
+         }
       },
       "341": {
          "count": 2,
+         "lastSung": "06-01-2018",
          "sungFor": {
             "recession": true
-         },
-         "lastSung": "06-01-2018"
+         }
       },
       "345": {
          "count": 2,
+         "lastSung": "31-12-2017",
          "sungFor": {
-            "recession": true,
-            "entrance": true
-         },
-         "lastSung": "31-12-2017"
+            "entrance": true,
+            "recession": true
+         }
       },
       "352": {
          "count": 1,
+         "lastSung": "25-12-2017",
          "sungFor": {
             "offertory": true
-         },
-         "lastSung": "25-12-2017"
+         }
       },
       "354": {
          "count": 2,
+         "lastSung": "06-01-2018",
          "sungFor": {
             "offertory": true
-         },
-         "lastSung": "06-01-2018"
+         }
       },
       "363": {
          "count": 2,
+         "lastSung": "01-01-2018",
          "sungFor": {
             "communion": true
-         },
-         "lastSung": "01-01-2018"
+         }
       },
       "364": {
          "count": 1,
+         "lastSung": "06-01-2018",
          "sungFor": {
             "communion": true
-         },
-         "lastSung": "06-01-2018"
+         }
       },
       "388": {
          "count": 1,
@@ -127,17 +127,17 @@
       },
       "391": {
          "count": 2,
+         "lastSung": "04-03-2018",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "04-03-2018"
+         }
       },
       "399": {
          "count": 1,
+         "lastSung": "25-03-2018",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "25-03-2018"
+         }
       },
       "400": {
          "count": 1,
@@ -146,92 +146,99 @@
             "recession": true
          }
       },
+      "402": {
+         "count": 1,
+         "lastSung": "29-03-2018",
+         "sungFor": {
+            "washing of feet": true
+         }
+      },
       "411": {
          "count": 1,
+         "lastSung": "25-03-2018",
          "sungFor": {
             "offertory": true
-         },
-         "lastSung": "25-03-2018"
+         }
       },
       "422": {
          "count": 1,
+         "lastSung": "01-04-2018",
          "sungFor": {
             "sequence": true
-         },
-         "lastSung": "01-04-2018"
+         }
       },
       "427": {
          "count": 1,
+         "lastSung": "08-04-2018",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "08-04-2018"
+         }
       },
       "431": {
          "count": 3,
+         "lastSung": "06-05-2018",
          "sungFor": {
             "recession": true
-         },
-         "lastSung": "06-05-2018"
+         }
       },
       "435": {
          "count": 2,
+         "lastSung": "06-05-2018",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "06-05-2018"
+         }
       },
       "439": {
          "count": 3,
-         "sungFor": {
-            "offertory": true,
-            "recession": true
-         },
-         "lastSung": "22-04-2018"
-      },
-      "449": {
-         "count": 1,
-         "sungFor": {
-            "entrance": true
-         },
-         "lastSung": "20-05-2018"
-      },
-      "451": {
-         "count": 3,
-         "sungFor": {
-            "entrance": true
-         },
-         "lastSung": "10-05-2018"
-      },
-      "452": {
-         "count": 2,
-         "sungFor": {
-            "offertory": true,
-            "recession": true
-         },
-         "lastSung": "20-05-2018"
-      },
-      "454": {
-         "count": 1,
-         "sungFor": {
-            "communion": true
-         },
-         "lastSung": "20-05-2018"
-      },
-      "459": {
-         "count": 1,
-         "sungFor": {
-            "sequence": true
-         },
-         "lastSung": "20-05-2018"
-      },
-      "461": {
-         "count": 2,
+         "lastSung": "22-04-2018",
          "sungFor": {
             "recession": true,
             "offertory": true
-         },
-         "lastSung": "20-05-2018"
+         }
+      },
+      "449": {
+         "count": 1,
+         "lastSung": "20-05-2018",
+         "sungFor": {
+            "entrance": true
+         }
+      },
+      "451": {
+         "count": 3,
+         "lastSung": "10-05-2018",
+         "sungFor": {
+            "entrance": true
+         }
+      },
+      "452": {
+         "count": 2,
+         "lastSung": "20-05-2018",
+         "sungFor": {
+            "recession": true,
+            "offertory": true
+         }
+      },
+      "454": {
+         "count": 1,
+         "lastSung": "20-05-2018",
+         "sungFor": {
+            "communion": true
+         }
+      },
+      "459": {
+         "count": 1,
+         "lastSung": "20-05-2018",
+         "sungFor": {
+            "sequence": true
+         }
+      },
+      "461": {
+         "count": 2,
+         "lastSung": "20-05-2018",
+         "sungFor": {
+            "offertory": true,
+            "recession": true
+         }
       },
       "466": {
          "count": 4,
@@ -242,31 +249,31 @@
       },
       "467": {
          "count": 1,
+         "lastSung": "27-05-2018",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "27-05-2018"
+         }
       },
       "468": {
          "count": 1,
+         "lastSung": "27-05-2018",
          "sungFor": {
             "offertory": true
-         },
-         "lastSung": "27-05-2018"
+         }
       },
       "470": {
          "count": 1,
+         "lastSung": "27-05-2018",
          "sungFor": {
             "communion": true
-         },
-         "lastSung": "27-05-2018"
+         }
       },
       "477": {
          "count": 2,
+         "lastSung": "19-08-2018",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "19-08-2018"
+         }
       },
       "480": {
          "count": 1,
@@ -284,10 +291,10 @@
       },
       "486": {
          "count": 1,
+         "lastSung": "04-02-2018",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "04-02-2018"
+         }
       },
       "505": {
          "count": 2,
@@ -299,10 +306,10 @@
       },
       "518": {
          "count": 1,
+         "lastSung": "25-02-2018",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "25-02-2018"
+         }
       },
       "522": {
          "count": 5,
@@ -313,17 +320,17 @@
       },
       "523": {
          "count": 2,
+         "lastSung": "16-09-2018",
          "sungFor": {
             "recession": true
-         },
-         "lastSung": "16-09-2018"
+         }
       },
       "524": {
          "count": 1,
+         "lastSung": "16-09-2018",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "16-09-2018"
+         }
       },
       "526": {
          "count": 2,
@@ -334,39 +341,39 @@
       },
       "533": {
          "count": 1,
+         "lastSung": "18-03-2018",
          "sungFor": {
             "recession": true
-         },
-         "lastSung": "18-03-2018"
+         }
       },
       "535": {
          "count": 1,
+         "lastSung": "01-01-2018",
          "sungFor": {
             "recession": true
-         },
-         "lastSung": "01-01-2018"
+         }
       },
       "539": {
          "count": 1,
+         "lastSung": "18-02-2018",
          "sungFor": {
             "offertory": true
-         },
-         "lastSung": "18-02-2018"
+         }
       },
       "542": {
          "count": 3,
          "lastSung": "24-06-2018",
          "sungFor": {
-            "offertory": true,
-            "baptism": true
+            "baptism": true,
+            "offertory": true
          }
       },
       "548": {
          "count": 1,
+         "lastSung": "05-08-2018",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "05-08-2018"
+         }
       },
       "560": {
          "count": 3,
@@ -377,24 +384,24 @@
       },
       "586": {
          "count": 1,
+         "lastSung": "13-05-2018",
          "sungFor": {
             "offertory": true
-         },
-         "lastSung": "13-05-2018"
+         }
       },
       "587": {
          "count": 1,
+         "lastSung": "11-03-2018",
          "sungFor": {
             "recession": true
-         },
-         "lastSung": "11-03-2018"
+         }
       },
       "593": {
          "count": 1,
+         "lastSung": "15-07-2018",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "15-07-2018"
+         }
       },
       "595": {
          "count": 5,
@@ -415,8 +422,8 @@
          "count": 5,
          "lastSung": "11-02-2018",
          "sungFor": {
-            "recession": true,
-            "entrance": true
+            "entrance": true,
+            "recession": true
          }
       },
       "602": {
@@ -443,17 +450,17 @@
       },
       "608": {
          "count": 1,
+         "lastSung": "02-09-2018",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "02-09-2018"
+         }
       },
       "610": {
          "count": 1,
+         "lastSung": "21-01-2018",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "21-01-2018"
+         }
       },
       "612": {
          "count": 1,
@@ -464,59 +471,66 @@
       },
       "617": {
          "count": 2,
+         "lastSung": "29-07-2018",
          "sungFor": {
             "recession": true
-         },
-         "lastSung": "29-07-2018"
+         }
       },
       "619": {
          "count": 1,
+         "lastSung": "02-09-2018",
          "sungFor": {
             "recession": true
-         },
-         "lastSung": "02-09-2018"
+         }
+      },
+      "621": {
+         "count": 1,
+         "lastSung": "29-03-2018",
+         "sungFor": {
+            "entrance": true
+         }
       },
       "628": {
          "count": 1,
+         "lastSung": "19-08-2018",
          "sungFor": {
             "offertory": true
-         },
-         "lastSung": "19-08-2018"
+         }
       },
       "629": {
          "count": 1,
+         "lastSung": "02-09-2018",
          "sungFor": {
             "offertory": true
-         },
-         "lastSung": "02-09-2018"
+         }
       },
       "636": {
          "count": 1,
+         "lastSung": "17-06-2018",
          "sungFor": {
             "recession": true
-         },
-         "lastSung": "17-06-2018"
+         }
       },
       "637": {
          "count": 1,
+         "lastSung": "04-02-2018",
          "sungFor": {
             "offertory": true
-         },
-         "lastSung": "04-02-2018"
+         }
       },
       "642": {
          "count": 1,
+         "lastSung": "17-06-2018",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "17-06-2018"
+         }
       },
       "650": {
          "count": 3,
          "lastSung": "01-04-2018",
          "sungFor": {
-            "entrance": true,
-            "sprinkling of water": true
+            "sprinkling of water": true,
+            "entrance": true
          }
       },
       "655": {
@@ -534,7 +548,7 @@
          }
       },
       "661": {
-         "count": 9,
+         "count": 10,
          "lastSung": "03-06-2018",
          "sungFor": {
             "offertory": true
@@ -556,11 +570,11 @@
       },
       "692": {
          "count": 3,
+         "lastSung": "26-08-2018",
          "sungFor": {
-            "communion": true,
-            "offertory": true
-         },
-         "lastSung": "26-08-2018"
+            "offertory": true,
+            "communion": true
+         }
       },
       "704": {
          "count": 3,
@@ -571,19 +585,19 @@
       },
       "705": {
          "count": 2,
+         "lastSung": "01-07-2018",
          "sungFor": {
-            "entrance": true,
-            "recession": true
-         },
-         "lastSung": "01-07-2018"
+            "recession": true,
+            "entrance": true
+         }
       },
       "706": {
          "count": 6,
          "lastSung": "15-07-2018",
          "sungFor": {
+            "communion": true,
             "offertory": true,
-            "entrance": true,
-            "communion": true
+            "entrance": true
          }
       },
       "709": {
@@ -597,8 +611,8 @@
          "count": 3,
          "lastSung": "01-04-2018",
          "sungFor": {
-            "offertory": true,
-            "communion": true
+            "communion": true,
+            "offertory": true
          }
       },
       "714": {
@@ -675,11 +689,11 @@
       },
       "746": {
          "count": 2,
+         "lastSung": "26-08-2018",
          "sungFor": {
-            "entrance": true,
-            "recession": true
-         },
-         "lastSung": "26-08-2018"
+            "recession": true,
+            "entrance": true
+         }
       },
       "749": {
          "count": 3,
@@ -697,10 +711,10 @@
       },
       "754": {
          "count": 1,
+         "lastSung": "02-09-2018",
          "sungFor": {
             "communion": true
-         },
-         "lastSung": "02-09-2018"
+         }
       },
       "760": {
          "count": 5,
@@ -711,10 +725,10 @@
       },
       "764": {
          "count": 1,
+         "lastSung": "21-01-2018",
          "sungFor": {
             "recession": true
-         },
-         "lastSung": "21-01-2018"
+         }
       },
       "766": {
          "count": 5,
@@ -812,10 +826,10 @@
       },
       "816": {
          "count": 1,
+         "lastSung": "22-07-2018",
          "sungFor": {
             "communion": true
-         },
-         "lastSung": "22-07-2018"
+         }
       },
       "819": {
          "count": 5,
@@ -846,7 +860,7 @@
          }
       },
       "824": {
-         "count": 3,
+         "count": 4,
          "lastSung": "31-05-2018",
          "sungFor": {
             "communion": true
@@ -854,10 +868,10 @@
       },
       "825": {
          "count": 1,
+         "lastSung": "22-07-2018",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "22-07-2018"
+         }
       },
       "829": {
          "count": 3,
@@ -876,10 +890,10 @@
       },
       "832": {
          "count": 2,
+         "lastSung": "08-07-2018",
          "sungFor": {
             "communion": true
-         },
-         "lastSung": "08-07-2018"
+         }
       },
       "836": {
          "count": 3,
@@ -890,17 +904,17 @@
       },
       "837": {
          "count": 2,
+         "lastSung": "16-09-2018",
          "sungFor": {
             "offertory": true
-         },
-         "lastSung": "16-09-2018"
+         }
       },
       "838": {
          "count": 1,
+         "lastSung": "10-06-2018",
          "sungFor": {
             "recession": true
-         },
-         "lastSung": "10-06-2018"
+         }
       },
       "849": {
          "count": 9,
@@ -917,7 +931,7 @@
          }
       },
       "": {
-         "count": 9,
+         "count": 10,
          "lastSung": "30-03-2018",
          "sungFor": {
             "recession": true,
@@ -928,10 +942,17 @@
       },
       "other-1": {
          "count": 2,
+         "lastSung": "09-09-2018",
          "sungFor": {
             "communion": true
-         },
-         "lastSung": "09-09-2018"
+         }
+      },
+      "undefined": {
+         "count": 28,
+         "lastSung": "16-09-2018",
+         "sungFor": {
+            "momentsOrder": true
+         }
       }
    },
    "momentsOrder": [
