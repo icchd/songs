@@ -4,8 +4,8 @@
       "title": "Sing a New Song"
    },
    "offertory": {
-      "number": "829",
-      "title": "The Servant Song"
+      "number": "837",
+      "title": "Servant Song"
    },
    "communion": {
       "number": "820",
@@ -1075,8 +1075,8 @@
          }
       },
       "829": {
-         "count": 5,
-         "lastSung": "30-06-2019",
+         "count": 4,
+         "lastSung": "09-12-2018",
          "sungFor": {
             "offertory": true
          }
@@ -1105,8 +1105,8 @@
          }
       },
       "837": {
-         "count": 2,
-         "lastSung": "16-09-2018",
+         "count": 3,
+         "lastSung": "30-06-2019",
          "sungFor": {
             "offertory": true
          }
