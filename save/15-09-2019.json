@@ -4,8 +4,8 @@
       "title": "Come to the feast of heaven and earth"
    },
    "offertory": {
-      "number": "724",
-      "title": "Shelter Me, O God"
+      "number": "725",
+      "title": "Because the Lord Is My Shepherd"
    },
    "communion": {
       "number": "706",
@@ -851,15 +851,15 @@
          }
       },
       "724": {
-         "count": 6,
-         "lastSung": "15-09-2019",
+         "count": 5,
+         "lastSung": "25-08-2019",
          "sungFor": {
             "offertory": true
          }
       },
       "725": {
-         "count": 6,
-         "lastSung": "22-07-2018",
+         "count": 7,
+         "lastSung": "15-09-2019",
          "sungFor": {
             "offertory": true,
             "communion": true
