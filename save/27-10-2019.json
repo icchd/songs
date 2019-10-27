@@ -4,8 +4,8 @@
       "title": "Come to the feast of heaven and earth"
    },
    "offertory": {
-      "number": "692",
-      "title": "There Is a Longing"
+      "number": "847",
+      "title": "The Cry of the Poor"
    },
    "communion": {
       "number": "661",
@@ -747,8 +747,8 @@
          }
       },
       "692": {
-         "count": 5,
-         "lastSung": "27-10-2019",
+         "count": 4,
+         "lastSung": "14-04-2019",
          "sungFor": {
             "offertory": true,
             "communion": true
@@ -1162,6 +1162,13 @@
             "offertory": true
          },
          "lastSung": "01-09-2019"
+      },
+      "847": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "27-10-2019"
       },
       "849": {
          "count": 14,
