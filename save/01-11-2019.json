@@ -8,8 +8,8 @@
       "title": "Jerusalem, My Happy Home"
    },
    "communion": {
-      "number": "533",
-      "title": "Church of God, Elect and Glorious"
+      "number": "819",
+      "title": "Bread of Life"
    },
    "recession": {
       "number": "789",
@@ -444,11 +444,10 @@
          }
       },
       "533": {
-         "count": 3,
-         "lastSung": "01-11-2019",
+         "count": 2,
+         "lastSung": "22-09-2019",
          "sungFor": {
-            "recession": true,
-            "communion": true
+            "recession": true
          }
       },
       "535": {
@@ -1086,8 +1085,8 @@
          }
       },
       "819": {
-         "count": 6,
-         "lastSung": "16-12-2018",
+         "count": 7,
+         "lastSung": "01-11-2019",
          "sungFor": {
             "communion": true
          }
