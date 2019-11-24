@@ -1,7 +1,7 @@
 {
    "entrance": {
-      "number": "608",
-      "title": "Come, Christians, Join to Sing"
+      "number": "478",
+      "title": "Rejoice, the Lord Is King"
    },
    "offertory": {
       "number": "600",
@@ -12,8 +12,8 @@
       "title": "Behold the Lamb"
    },
    "recession": {
-      "number": "478",
-      "title": "Rejoice, the Lord Is King"
+      "number": "485",
+      "title": "To Jesus Christ, Our Sovereign King"
    },
    "stats": {
       "2": {
@@ -367,8 +367,7 @@
          "count": 3,
          "lastSung": "24-11-2019",
          "sungFor": {
-            "entrance": true,
-            "recession": true
+            "entrance": true
          }
       },
       "480": {
@@ -385,6 +384,13 @@
             "recession": true,
             "entrance": true
          }
+      },
+      "485": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "24-11-2019"
       },
       "486": {
          "count": 1,
@@ -591,8 +597,8 @@
          }
       },
       "608": {
-         "count": 3,
-         "lastSung": "24-11-2019",
+         "count": 2,
+         "lastSung": "03-11-2019",
          "sungFor": {
             "entrance": true
          }
