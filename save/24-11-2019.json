@@ -12,8 +12,8 @@
       "title": "Behold the Lamb"
    },
    "recession": {
-      "number": "733",
-      "title": "The King of Love My Shepherd Is"
+      "number": "478",
+      "title": "Rejoice, the Lord Is King"
    },
    "stats": {
       "2": {
@@ -364,10 +364,11 @@
          }
       },
       "478": {
-         "count": 2,
-         "lastSung": "19-05-2019",
+         "count": 3,
+         "lastSung": "24-11-2019",
          "sungFor": {
-            "entrance": true
+            "entrance": true,
+            "recession": true
          }
       },
       "480": {
@@ -890,8 +891,8 @@
          }
       },
       "733": {
-         "count": 6,
-         "lastSung": "24-11-2019",
+         "count": 5,
+         "lastSung": "15-09-2019",
          "sungFor": {
             "recession": true
          }
