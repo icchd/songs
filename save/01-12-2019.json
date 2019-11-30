@@ -4,8 +4,8 @@
       "title": "O Come, Divine Messiah"
    },
    "offertory": {
-      "number": "",
-      "title": ""
+      "number": "328",
+      "title": "Come, O Long-Expected Jesus"
    },
    "communion": {
       "number": "311",
@@ -71,10 +71,11 @@
          }
       },
       "328": {
-         "count": 2,
-         "lastSung": "25-11-2018",
+         "count": 3,
+         "lastSung": "01-12-2019",
          "sungFor": {
-            "entrance": true
+            "entrance": true,
+            "offertory": true
          }
       },
       "329": {
@@ -1214,7 +1215,7 @@
          }
       },
       "": {
-         "count": 13,
+         "count": 12,
          "lastSung": "01-12-2019",
          "sungFor": {
             "recession": true,
