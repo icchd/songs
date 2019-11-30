@@ -8,8 +8,8 @@
       "title": ""
    },
    "communion": {
-      "number": "",
-      "title": ""
+      "number": "332",
+      "title": "Wake, O Wake, and Sleep No Longer"
    },
    "recession": {
       "number": "",
@@ -24,8 +24,8 @@
          }
       },
       "311": {
-         "count": 5,
-         "lastSung": "01-12-2019",
+         "count": 4,
+         "lastSung": "25-12-2018",
          "sungFor": {
             "entrance": true,
             "communion": true
@@ -40,8 +40,8 @@
          }
       },
       "316": {
-         "count": 4,
-         "lastSung": "01-12-2019",
+         "count": 3,
+         "lastSung": "23-12-2018",
          "sungFor": {
             "entrance": true,
             "recession": true
@@ -90,6 +90,20 @@
          "sungFor": {
             "recession": true
          }
+      },
+      "330": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "08-12-2019"
+      },
+      "332": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "15-12-2019"
       },
       "333": {
          "count": 3,
