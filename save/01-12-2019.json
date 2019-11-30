@@ -12,8 +12,8 @@
       "title": "O Come, O Come, Emmanuel"
    },
    "recession": {
-      "number": "",
-      "title": ""
+      "number": "329",
+      "title": "People, Look East"
    },
    "stats": {
       "2": {
@@ -79,8 +79,8 @@
          }
       },
       "329": {
-         "count": 3,
-         "lastSung": "23-12-2018",
+         "count": 4,
+         "lastSung": "01-12-2019",
          "sungFor": {
             "recession": true
          }
@@ -1215,8 +1215,8 @@
          }
       },
       "": {
-         "count": 12,
-         "lastSung": "01-12-2019",
+         "count": 11,
+         "lastSung": "18-04-2019",
          "sungFor": {
             "recession": true,
             "communion": true,
