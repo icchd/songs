@@ -1,7 +1,7 @@
 {
    "entrance": {
-      "number": "330",
-      "title": "Lift Up Your Heads, Ye Mighty Gates"
+      "number": "323",
+      "title": "Ready the Way"
    },
    "offertory": {
       "number": "",
@@ -24,8 +24,8 @@
          }
       },
       "311": {
-         "count": 4,
-         "lastSung": "25-12-2018",
+         "count": 5,
+         "lastSung": "01-12-2019",
          "sungFor": {
             "entrance": true,
             "communion": true
@@ -40,8 +40,8 @@
          }
       },
       "316": {
-         "count": 3,
-         "lastSung": "23-12-2018",
+         "count": 4,
+         "lastSung": "01-12-2019",
          "sungFor": {
             "entrance": true,
             "recession": true
@@ -55,8 +55,8 @@
          "lastSung": "17-11-2019"
       },
       "323": {
-         "count": 5,
-         "lastSung": "16-12-2018",
+         "count": 6,
+         "lastSung": "08-12-2019",
          "sungFor": {
             "offertory": true,
             "recession": true,
@@ -83,13 +83,6 @@
          "sungFor": {
             "recession": true
          }
-      },
-      "330": {
-         "count": 1,
-         "sungFor": {
-            "entrance": true
-         },
-         "lastSung": "08-12-2019"
       },
       "333": {
          "count": 3,
@@ -1221,7 +1214,7 @@
          }
       },
       "": {
-         "count": 14,
+         "count": 16,
          "lastSung": "08-12-2019",
          "sungFor": {
             "recession": true,
