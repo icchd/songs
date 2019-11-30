@@ -4,8 +4,8 @@
       "title": "Ready the Way"
    },
    "offertory": {
-      "number": "",
-      "title": ""
+      "number": "342",
+      "title": "Wake from Your Sleep"
    },
    "communion": {
       "number": "",
@@ -71,15 +71,16 @@
          }
       },
       "328": {
-         "count": 2,
-         "lastSung": "25-11-2018",
+         "count": 3,
+         "lastSung": "01-12-2019",
          "sungFor": {
-            "entrance": true
+            "entrance": true,
+            "offertory": true
          }
       },
       "329": {
-         "count": 3,
-         "lastSung": "23-12-2018",
+         "count": 4,
+         "lastSung": "01-12-2019",
          "sungFor": {
             "recession": true
          }
@@ -106,6 +107,13 @@
             "gloria": true,
             "recession": true
          }
+      },
+      "342": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "08-12-2019"
       },
       "343": {
          "count": 1,
@@ -1214,7 +1222,7 @@
          }
       },
       "": {
-         "count": 16,
+         "count": 13,
          "lastSung": "08-12-2019",
          "sungFor": {
             "recession": true,
