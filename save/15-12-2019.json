@@ -4,8 +4,8 @@
       "title": "The Advent of Our King"
    },
    "offertory": {
-      "number": "",
-      "title": ""
+      "number": "333",
+      "title": "Adeste ﬁdeles, laeti triumphantes"
    },
    "communion": {
       "number": "332",
@@ -106,10 +106,11 @@
          "lastSung": "15-12-2019"
       },
       "333": {
-         "count": 3,
-         "lastSung": "06-01-2019",
+         "count": 4,
+         "lastSung": "15-12-2019",
          "sungFor": {
-            "entrance": true
+            "entrance": true,
+            "offertory": true
          }
       },
       "336": {
@@ -1235,7 +1236,7 @@
          }
       },
       "": {
-         "count": 16,
+         "count": 15,
          "lastSung": "15-12-2019",
          "sungFor": {
             "recession": true,
