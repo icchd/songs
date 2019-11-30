@@ -4,8 +4,8 @@
       "title": "Lift Up Your Heads, Ye Mighty Gates"
    },
    "offertory": {
-      "number": "",
-      "title": ""
+      "number": "325",
+      "title": "Creator of the Stars of Night"
    },
    "communion": {
       "number": "",
@@ -71,8 +71,8 @@
          }
       },
       "325": {
-         "count": 2,
-         "lastSung": "25-12-2018",
+         "count": 3,
+         "lastSung": "22-12-2019",
          "sungFor": {
             "offertory": true
          }
@@ -1228,7 +1228,7 @@
          }
       },
       "": {
-         "count": 19,
+         "count": 18,
          "lastSung": "22-12-2019",
          "sungFor": {
             "recession": true,
