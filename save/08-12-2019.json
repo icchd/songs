@@ -8,12 +8,12 @@
       "title": "Wake from Your Sleep"
    },
    "communion": {
-      "number": "",
-      "title": ""
+      "number": "692",
+      "title": "There Is a Longing"
    },
    "recession": {
-      "number": "",
-      "title": ""
+      "number": "315",
+      "title": "On Jordan’s Bank"
    },
    "stats": {
       "2": {
@@ -32,8 +32,8 @@
          }
       },
       "315": {
-         "count": 3,
-         "lastSung": "16-12-2018",
+         "count": 4,
+         "lastSung": "08-12-2019",
          "sungFor": {
             "recession": true,
             "entrance": true
@@ -770,8 +770,8 @@
          }
       },
       "692": {
-         "count": 4,
-         "lastSung": "14-04-2019",
+         "count": 5,
+         "lastSung": "08-12-2019",
          "sungFor": {
             "offertory": true,
             "communion": true
@@ -1222,8 +1222,8 @@
          }
       },
       "": {
-         "count": 13,
-         "lastSung": "08-12-2019",
+         "count": 11,
+         "lastSung": "18-04-2019",
          "sungFor": {
             "recession": true,
             "communion": true,
