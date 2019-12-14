@@ -4,8 +4,8 @@
       "title": "Ready the Way"
    },
    "offertory": {
-      "number": "342",
-      "title": "Wake from Your Sleep"
+      "number": "322",
+      "title": "The Advent of Our King"
    },
    "communion": {
       "number": "692",
@@ -53,6 +53,13 @@
             "entrance": true
          },
          "lastSung": "17-11-2019"
+      },
+      "322": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "08-12-2019"
       },
       "323": {
          "count": 6,
@@ -107,13 +114,6 @@
             "gloria": true,
             "recession": true
          }
-      },
-      "342": {
-         "count": 1,
-         "sungFor": {
-            "offertory": true
-         },
-         "lastSung": "08-12-2019"
       },
       "343": {
          "count": 1,
