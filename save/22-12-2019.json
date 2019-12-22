@@ -8,12 +8,12 @@
       "title": "Creator of the Stars of Night"
    },
    "communion": {
-      "number": "",
-      "title": ""
+      "number": "311",
+      "title": "O Come, O Come, Emmanuel"
    },
    "recession": {
-      "number": "",
-      "title": ""
+      "number": "331",
+      "title": "See How the Virgin Waits"
    },
    "stats": {
       "2": {
@@ -24,16 +24,16 @@
          }
       },
       "311": {
-         "count": 5,
-         "lastSung": "01-12-2019",
+         "count": 6,
+         "lastSung": "22-12-2019",
          "sungFor": {
             "entrance": true,
             "communion": true
          }
       },
       "315": {
-         "count": 3,
-         "lastSung": "16-12-2018",
+         "count": 4,
+         "lastSung": "08-12-2019",
          "sungFor": {
             "recession": true,
             "entrance": true
@@ -54,16 +54,9 @@
          },
          "lastSung": "17-11-2019"
       },
-      "322": {
-         "count": 1,
-         "sungFor": {
-            "entrance": true
-         },
-         "lastSung": "15-12-2019"
-      },
       "323": {
-         "count": 5,
-         "lastSung": "16-12-2018",
+         "count": 6,
+         "lastSung": "08-12-2019",
          "sungFor": {
             "offertory": true,
             "recession": true,
@@ -71,22 +64,24 @@
          }
       },
       "325": {
-         "count": 3,
+         "count": 4,
          "lastSung": "22-12-2019",
          "sungFor": {
             "offertory": true
          }
       },
       "328": {
-         "count": 2,
-         "lastSung": "25-11-2018",
+         "count": 4,
+         "lastSung": "15-12-2019",
          "sungFor": {
-            "entrance": true
+            "entrance": true,
+            "offertory": true,
+            "recession": true
          }
       },
       "329": {
-         "count": 3,
-         "lastSung": "23-12-2018",
+         "count": 4,
+         "lastSung": "01-12-2019",
          "sungFor": {
             "recession": true
          }
@@ -98,9 +93,16 @@
          },
          "lastSung": "22-12-2019"
       },
+      "331": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "22-12-2019"
+      },
       "333": {
-         "count": 3,
-         "lastSung": "06-01-2019",
+         "count": 4,
+         "lastSung": "15-12-2019",
          "sungFor": {
             "entrance": true
          }
@@ -120,6 +122,13 @@
             "gloria": true,
             "recession": true
          }
+      },
+      "342": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "08-12-2019"
       },
       "343": {
          "count": 1,
@@ -776,8 +785,8 @@
          }
       },
       "692": {
-         "count": 4,
-         "lastSung": "14-04-2019",
+         "count": 5,
+         "lastSung": "08-12-2019",
          "sungFor": {
             "offertory": true,
             "communion": true
@@ -1071,8 +1080,8 @@
          "lastSung": "22-09-2019"
       },
       "806": {
-         "count": 14,
-         "lastSung": "08-09-2019",
+         "count": 15,
+         "lastSung": "15-12-2019",
          "sungFor": {
             "communion": true,
             "offertory": true
@@ -1228,8 +1237,8 @@
          }
       },
       "": {
-         "count": 18,
-         "lastSung": "22-12-2019",
+         "count": 11,
+         "lastSung": "18-04-2019",
          "sungFor": {
             "recession": true,
             "communion": true,
