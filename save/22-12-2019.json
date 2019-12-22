@@ -4,8 +4,8 @@
       "title": "Lift Up Your Heads, Ye Mighty Gates"
    },
    "offertory": {
-      "number": "325",
-      "title": "Creator of the Stars of Night"
+      "number": "323",
+      "title": "Ready the Way"
    },
    "communion": {
       "number": "311",
@@ -55,8 +55,8 @@
          "lastSung": "17-11-2019"
       },
       "323": {
-         "count": 6,
-         "lastSung": "08-12-2019",
+         "count": 7,
+         "lastSung": "22-12-2019",
          "sungFor": {
             "offertory": true,
             "recession": true,
@@ -64,8 +64,8 @@
          }
       },
       "325": {
-         "count": 4,
-         "lastSung": "22-12-2019",
+         "count": 3,
+         "lastSung": "15-12-2019",
          "sungFor": {
             "offertory": true
          }
