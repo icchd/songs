@@ -1,7 +1,7 @@
 {
    "entrance": {
-      "number": "345",
-      "title": "Hark! the Herald Angels Sing"
+      "number": "490",
+      "title": "Sing of Mary"
    },
    "offertory": {
       "number": "661",
@@ -12,8 +12,8 @@
       "title": "Behold the Lamb"
    },
    "recession": {
-      "number": "336",
-      "title": "Joy to the World"
+      "number": "345",
+      "title": "Hark! the Herald Angels Sing"
    },
    "stats": {
       "2": {
@@ -101,12 +101,11 @@
          }
       },
       "336": {
-         "count": 5,
-         "lastSung": "01-01-2020",
+         "count": 4,
+         "lastSung": "25-12-2019",
          "sungFor": {
             "offertory": true,
-            "entrance": true,
-            "recession": true
+            "entrance": true
          }
       },
       "341": {
@@ -430,6 +429,13 @@
          "sungFor": {
             "entrance": true
          }
+      },
+      "490": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "01-01-2020"
       },
       "500": {
          "count": 1,
