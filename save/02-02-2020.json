@@ -16,8 +16,8 @@
       "title": "Ubi Caritas (Rosania)"
    },
    "recession": {
-      "number": "",
-      "title": ""
+      "number": "830",
+      "title": "Awake from your slumber"
    },
    "stats": {
       "2": {
@@ -1246,8 +1246,8 @@
          }
       },
       "830": {
-         "count": 6,
-         "lastSung": "17-02-2019",
+         "count": 7,
+         "lastSung": "02-02-2020",
          "sungFor": {
             "recession": true,
             "entrance": true
@@ -1311,8 +1311,8 @@
          }
       },
       "": {
-         "count": 12,
-         "lastSung": "02-02-2020",
+         "count": 11,
+         "lastSung": "18-04-2019",
          "sungFor": {
             "recession": true,
             "communion": true,
