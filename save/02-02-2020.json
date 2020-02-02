@@ -12,8 +12,8 @@
       "title": "Here I Am, Lord (Schutte)"
    },
    "communion": {
-      "number": "810",
-      "title": "Bread for the World"
+      "number": "754",
+      "title": "Ubi Caritas (Rosania)"
    },
    "recession": {
       "number": "",
@@ -1032,8 +1032,8 @@
          }
       },
       "754": {
-         "count": 1,
-         "lastSung": "02-09-2018",
+         "count": 2,
+         "lastSung": "02-02-2020",
          "sungFor": {
             "communion": true
          }
@@ -1167,13 +1167,6 @@
          "sungFor": {
             "communion": true
          }
-      },
-      "810": {
-         "count": 1,
-         "sungFor": {
-            "communion": true
-         },
-         "lastSung": "02-02-2020"
       },
       "811": {
          "count": 7,
