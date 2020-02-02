@@ -3,9 +3,13 @@
       "number": "",
       "title": ""
    },
+   "blessing of candles": {
+      "number": "661",
+      "title": "Christ Be Our Light"
+   },
    "offertory": {
-      "number": "",
-      "title": ""
+      "number": "832",
+      "title": "Here I Am, Lord (Schutte)"
    },
    "communion": {
       "number": "",
@@ -14,10 +18,6 @@
    "recession": {
       "number": "",
       "title": ""
-   },
-   "blessing of candles": {
-      "number": "661",
-      "title": "Christ Be Our Light"
    },
    "stats": {
       "2": {
@@ -1247,8 +1247,8 @@
          }
       },
       "832": {
-         "count": 6,
-         "lastSung": "01-09-2019",
+         "count": 7,
+         "lastSung": "02-02-2020",
          "sungFor": {
             "offertory": true,
             "communion": true
@@ -1304,7 +1304,7 @@
          }
       },
       "": {
-         "count": 15,
+         "count": 14,
          "lastSung": "02-02-2020",
          "sungFor": {
             "recession": true,
