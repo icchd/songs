@@ -1,7 +1,7 @@
 {
    "entrance": {
-      "number": "",
-      "title": ""
+      "number": "795",
+      "title": "Come to the Feast/ Ven al Banquete"
    },
    "blessing of candles": {
       "number": "661",
@@ -1132,6 +1132,13 @@
             "offertory": true
          }
       },
+      "795": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "02-02-2020"
+      },
       "803": {
          "count": 7,
          "lastSung": "18-08-2019",
@@ -1304,7 +1311,7 @@
          }
       },
       "": {
-         "count": 14,
+         "count": 13,
          "lastSung": "02-02-2020",
          "sungFor": {
             "recession": true,
