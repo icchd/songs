@@ -12,8 +12,8 @@
       "title": "Here I Am, Lord (Schutte)"
    },
    "communion": {
-      "number": "",
-      "title": ""
+      "number": "810",
+      "title": "Bread for the World"
    },
    "recession": {
       "number": "",
@@ -1168,6 +1168,13 @@
             "communion": true
          }
       },
+      "810": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "02-02-2020"
+      },
       "811": {
          "count": 7,
          "lastSung": "22-09-2019",
@@ -1311,7 +1318,7 @@
          }
       },
       "": {
-         "count": 13,
+         "count": 12,
          "lastSung": "02-02-2020",
          "sungFor": {
             "recession": true,
