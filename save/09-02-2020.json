@@ -12,8 +12,8 @@
       "title": ""
    },
    "recession": {
-      "number": "",
-      "title": ""
+      "number": "738",
+      "title": "Make me a channel of your peace"
    },
    "stats": {
       "2": {
@@ -983,10 +983,11 @@
          }
       },
       "738": {
-         "count": 5,
-         "lastSung": "18-04-2019",
+         "count": 6,
+         "lastSung": "09-02-2020",
          "sungFor": {
-            "offertory": true
+            "offertory": true,
+            "recession": true
          }
       },
       "739": {
@@ -1300,7 +1301,7 @@
          }
       },
       "": {
-         "count": 13,
+         "count": 12,
          "lastSung": "09-02-2020",
          "sungFor": {
             "recession": true,
