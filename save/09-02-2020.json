@@ -8,12 +8,12 @@
       "title": "Whatsoever You Do"
    },
    "communion": {
-      "number": "",
-      "title": ""
+      "number": "660",
+      "title": "Blessed are they who are poor in spirit"
    },
    "recession": {
-      "number": "738",
-      "title": "Make me a channel of your peace"
+      "number": "665",
+      "title": "Siyahamba/We Are Marching"
    },
    "stats": {
       "2": {
@@ -782,6 +782,13 @@
             "recession": true
          }
       },
+      "660": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "09-02-2020"
+      },
       "661": {
          "count": 17,
          "lastSung": "02-02-2020",
@@ -799,8 +806,8 @@
          "lastSung": "26-01-2020"
       },
       "665": {
-         "count": 2,
-         "lastSung": "18-08-2019",
+         "count": 3,
+         "lastSung": "09-02-2020",
          "sungFor": {
             "recession": true
          }
@@ -983,11 +990,10 @@
          }
       },
       "738": {
-         "count": 6,
-         "lastSung": "09-02-2020",
+         "count": 5,
+         "lastSung": "18-04-2019",
          "sungFor": {
-            "offertory": true,
-            "recession": true
+            "offertory": true
          }
       },
       "739": {
@@ -1301,8 +1307,8 @@
          }
       },
       "": {
-         "count": 12,
-         "lastSung": "09-02-2020",
+         "count": 11,
+         "lastSung": "18-04-2019",
          "sungFor": {
             "recession": true,
             "communion": true,
