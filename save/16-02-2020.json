@@ -8,8 +8,8 @@
       "title": "Your Words Are Spirit and Life"
    },
    "communion": {
-      "number": "751",
-      "title": "Christians, Let Us Love One Another"
+      "number": "other-4",
+      "title": "I Believe"
    },
    "recession": {
       "number": "659",
@@ -1021,8 +1021,8 @@
          }
       },
       "751": {
-         "count": 6,
-         "lastSung": "16-02-2020",
+         "count": 5,
+         "lastSung": "18-08-2019",
          "sungFor": {
             "communion": true,
             "offertory": true
@@ -1337,6 +1337,13 @@
          "sungFor": {
             "footwashing": true
          }
+      },
+      "other-4": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "16-02-2020"
       }
    },
    "momentsOrder": [
