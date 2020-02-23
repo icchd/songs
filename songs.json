@@ -1,14 +1,6 @@
 {
    "list": [
       {
-         "title": "In the Lord I'll be ever thankful",
-         "links": [
-            "https://www.youtube.com/watch?v=uAx8gjQrsOY"
-         ],
-         "topics": [],
-         "scriptures": {}
-      },
-      {
          "number": "340",
          "title": "A Child Is Born in Bethlehem",
          "topics": [],
@@ -19687,12 +19679,22 @@
          ]
       },
       {
+         "title": "In the Lord I'll be ever thankful",
+         "links": [
+            "https://www.youtube.com/watch?v=uAx8gjQrsOY"
+         ],
+         "topics": [],
+         "scriptures": {},
+         "number": "other-1"
+      },
+      {
          "title": "Mambo Sawa Sawa",
          "links": [
             "https://youtu.be/g-tDjpzSvCo"
          ],
          "topics": [],
-         "scriptures": {}
+         "scriptures": {},
+         "number": "other-2"
       },
       {
          "title": "So You Must Do",
@@ -19703,7 +19705,8 @@
             "Holy Thursday",
             "Footwashing"
          ],
-         "scriptures": {}
+         "scriptures": {},
+         "number": "other-3"
       },
       {
          "title": "I Believe",
@@ -19711,13 +19714,15 @@
             "https://youtu.be/uOXHvnSeoAo"
          ],
          "topics": [],
-         "scriptures": {}
+         "scriptures": {},
+         "number": "other-4"
       },
       {
          "title": "Eat This Bread (Taizé)",
          "links": [],
          "topics": [],
-         "scriptures": {}
+         "scriptures": {},
+         "number": "other-5"
       }
    ]
 }

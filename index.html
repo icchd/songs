@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>ICCH Songs</title>
-        <link rel="stylesheet" href="dist/style70c3e894cceb38.min.css" />
+        <link rel="stylesheet" href="dist/stylee6f0dcf95bb88.min.css" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto" rel="stylesheet">
         <meta http-equiv="cache-control" content="max-age=0" />
         <meta http-equiv="cache-control" content="no-cache" />
@@ -15,12 +15,18 @@
     <body>
         <div id="app">
             <div id="header">
-                <div id="version">ver. 70c3e894cceb38</div>
+                <div id="version">ver. e6f0dcf95bb88</div>
                 <ui-fab
                     id="btnPrevSunday"
                     @click="onPreviousSundayClicked('day')"
                     size="small"
                     icon="skip_previous"
+                    ></ui-fab>
+                <ui-fab
+                    id="btnCurSunday"
+                    @click="setInitialFeast()"
+                    size="small"
+                    icon="home"
                     ></ui-fab>
                 <ui-fab
                     id="btnNextSunday"
@@ -66,11 +72,15 @@
                         <br/>
                     </li>
                 </ul>
+                <ui-icon-button id="btnCopy" @click="copyContent()" icon="file_copy" color="default"></ui-icon-button>
+                <ui-icon-button id="btnPaste" :disabled="clipboard.length === 0" @click="pasteContent()" icon="assignment" color="default"></ui-icon-button>
+                <ui-icon-button @click="openModal('saveDialog')" icon="save" id="btnSave" color="primary"></ui-icon-button>
+                <ui-icon-button id="btnClear" @click="clearSongs" icon="clear" color="default"></ui-icon-button>
+                <br />
+                <br />
                 <ui-button @click="openModal('addNewSongDialog')" icon="add" color="default">Add Song</ui-button>
                 <ui-button @click="showQrCode" icon="select_all" color="default">QR</ui-button>
                 <ui-button id="btn-display" @click="toggleDisplayType" icon="refresh" color="default">Display</ui-button>
-                <ui-icon-button @click="openModal('saveDialog')" icon="save" id="btnSave" color="primary"></ui-icon-button>
-                <ui-icon-button id="btnClear" @click="clearSongs" icon="clear" color="default"></ui-icon-button>
                 <h2>History</h2>
                 <p v-if="recentSongs.length === 0">
                     No songs removed from schedule yet...
@@ -301,6 +311,6 @@
             </div>
             <div v-if="displayType === 'hanging'" class="noclick"></div>
         </div>
-        <script type="text/javascript" src="dist/bundle70c3e894cceb38.min.js"></script>
+        <script type="text/javascript" src="dist/bundlee6f0dcf95bb88.min.js"></script>
     </body>
 </html>

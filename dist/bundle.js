@@ -35084,6 +35084,8 @@ init().then(function (oEnv) {
     app = new Vue({
         el: "#app",
         data: {
+            lastOtherSongId: oEnv.lastOtherSongId,
+            clipboard: "",
             displayType: "interface",
             possibleApis: Object.keys(O_APIS),
             api: Object.keys(O_APIS)[0],
@@ -35150,9 +35152,7 @@ init().then(function (oEnv) {
                 return;
             }
 
-            this.setCurrentFeast(oInitialFestiveDay).then(function () {
-                that.refreshSelectedState();
-            });
+            this.setInitialFeast();
         },
         filters: {
             hasKeys: function (oStats) {
@@ -35286,8 +35286,8 @@ init().then(function (oEnv) {
                 this.possibleMoments.splice(iMomentPosition, 1);
                 this.$forceUpdate();
             },
-            addNewMoment: function () {
-                var sMoment = this.newMomentName.toLowerCase().trim();
+            addNewMoment: function (sNewMoment) {
+                var sMoment = sNewMoment || this.newMomentName.toLowerCase().trim();
                 if (sMoment === "") {
                     return; // empty moment
                 }
@@ -35391,6 +35391,11 @@ init().then(function (oEnv) {
                     }
                 });
             },
+            setInitialFeast: function () {
+                this.setCurrentFeast(oInitialFestiveDay).then(function () {
+                    this.refreshSelectedState();
+                }.bind(this));
+            },
             setCurrentFeast: function (oFeastDay) {
 
                 this.currentFeast = oFeastDay;
@@ -35441,6 +35446,85 @@ init().then(function (oEnv) {
             },
             onNextSundayClicked: function (sGranularity) {
                 this.onNeighbouringSundayClicked(sGranularity, "next");
+            },
+            copyContent: function () {
+                var oClipboardsFor = {
+                    "interface": this.copySongSelection,
+                    "copypaste": this.copySongSelectionMessage
+                };
+
+                if (oClipboardsFor[this.displayType]) {
+                    oClipboardsFor[this.displayType]();
+                } else {
+                    alert("Cannot copy content. Please change display type.");
+                }
+            },
+            copySongSelectionMessage: function () {
+                var oNode = document.querySelector(".textDisplay");
+                if (oNode) {
+                    this.copyContentOfNode(oNode, true);
+                }
+            },
+            copyText: function (sText, bAlertOnSuccess) {
+                var oTextArea = document.querySelector("#textareaForCopyPaste");
+                if (!oTextArea) {
+                    oTextArea = document.createElement("textarea");
+                    oTextArea.id = "textareaForCopyPaste";
+                    document.body.appendChild(oTextArea);
+                }
+
+                oTextArea.value = sText;
+                this.copyContentOfNode(oTextArea, bAlertOnSuccess);
+            },
+            copyContentOfNode: function (oNode, bAlertOnSuccess) {
+                var oRange = document.createRange();
+                var oSelection = window.getSelection();
+                oRange.selectNode(oNode);
+                oSelection.addRange(oRange);
+
+                try {
+                    var bSuccess = document.execCommand("copy");
+                    if (bSuccess) {
+                        if (bAlertOnSuccess) {
+                            alert("Copy successful");
+                        }
+                        return;
+                    }
+                    alert("Cannot copy display message");
+                } catch(oError) {
+                    alert("Cannot copy display message. An error occurred: " + oError);
+                }
+
+                if (oSelection.removeRange) {
+                    oSelection.removeRange(oRange);
+                    return;
+                }
+                oSelection.removeAllRanges();
+            },
+            copySongSelection: function () {
+                var oSongSelectionForCopy = {
+                    momentOrder: this.possibleMoments,
+                    selectedSongs: this.selectedSongs
+                };
+
+                var sSongSelectionForCopy = JSON.stringify(oSongSelectionForCopy);
+
+                this.clipboard = sSongSelectionForCopy;
+                this.copyText(sSongSelectionForCopy, false /*bAlertOnSuccess*/);
+            },
+            pasteContent: function () {
+                try {
+                    var oSongSelectionForCopy = JSON.parse(this.clipboard);
+                    oSongSelectionForCopy.momentOrder.forEach(function (sMoment) {
+                        var sSongNumber = oSongSelectionForCopy.selectedSongs[sMoment].number;
+                        if (!this.selectedSongs[sMoment]) {
+                            this.addNewMoment(sMoment);
+                        }
+                        this.setSongByNumber(sSongNumber, sMoment);
+                    }.bind(this));
+                } catch (e) {
+                    alert("Error pasting: " + e);
+                }
             },
             loadStatsFrom: function (sFilename) {
                 var that = this;
@@ -35667,17 +35751,6 @@ init().then(function (oEnv) {
                         });
 
                         return bFound;
-
-                        // var iFoundAtPos = oSong.scripturesSearchableString.indexOf(sSearch);
-                        // if (iFoundAtPos > -1) {
-                        //     var sNextChar = oSong.scripturesSearchableString.charAt(iFoundAtPos + sSearch.length);
-                        //     var bTerminationAfterMatch = sNextChar === "" /* end of line */ || sNextChar === " " || sNextChar === ",";
-                        //     if (bTerminationAfterMatch) {
-                        //         console.log("matched " + sSearch);
-                        //     }
-                        //     return bTerminationAfterMatch;
-                        // }
-                        // return false;
                     });
 
                     var bMatchesSearch = oSong.number === sSearchText
@@ -35768,6 +35841,7 @@ init().then(function (oEnv) {
         app.newSong.topics.splice(0);
         app.newSong.linksText = "";
         app.newSong.topicsText = "";
+        app.newSong.number = "";
     }
 
     function clone (oObject) {
@@ -35775,6 +35849,7 @@ init().then(function (oEnv) {
     }
 
     function saveNewSong (sPassword) {
+        app.newSong.number = getNewSongId();
         if ((app.newSong.linksText || "").length > 0) {
             app.newSong.links = app.newSong.linksText.split(/,\s*/g);
         }
@@ -35840,98 +35915,112 @@ init().then(function (oEnv) {
             alert("Saved");
         });
     }
+
+    function getNewSongId() {
+        app.lastOtherSongId++;
+        return "other-" + app.lastOtherSongId;
+    }
 });
 
 
-
-
 function getDefaultFieldValue(vValue) {
-var sFieldType = typeof vValue;
-var sFieldObjectType = Object.prototype.toString.apply(vValue);
+    var sFieldType = typeof vValue;
+    var sFieldObjectType = Object.prototype.toString.apply(vValue);
 
-if (sFieldType === "string") { return ""; }
-if (sFieldObjectType === "[object Array]") { return []; }
-if (sFieldObjectType === "[object Object]") { return {}; }
+    if (sFieldType === "string") {
+        return "";
+    }
+    if (sFieldObjectType === "[object Array]") {
+        return [];
+    }
+    if (sFieldObjectType === "[object Object]") {
+        return {};
+    }
 
-throw new Error("Unknown type: " + sFieldType);
+    throw new Error("Unknown type: " + sFieldType);
 }
 
 function init() {
 
-function collectDefaultSongFieldsFromSong(oSong, oDefaultSongFields) {
-Object.keys(oSong).forEach(function (sKey) {
-    if (!oDefaultSongFields[sKey]) {
-        var vValue = oSong[sKey];
+    function collectDefaultSongFieldsFromSong(oSong, oDefaultSongFields) {
+        Object.keys(oSong).forEach(function(sKey) {
+            if (!oDefaultSongFields[sKey]) {
+                var vValue = oSong[sKey];
 
-        oDefaultSongFields[sKey] = getDefaultFieldValue(vValue);
+                oDefaultSongFields[sKey] = getDefaultFieldValue(vValue);
+            }
+        });
     }
-});
-}
 
-function createSearachableIndex (oScriptures) {
-function toInt(s) {
-    return parseInt(s, 10);
-}
-var oIdx = {};
-Object.keys(oScriptures)
-    .forEach(function (sBook) {
-        var sBookLowerCase = sBook.toLowerCase();
-        oIdx[sBookLowerCase] = {};
-        oScriptures[sBook]
-            .forEach(function (sScripture) {
-                var sChapter = sScripture.split(":")[0];
-                var sParts = sScripture.split(":")[1];
-
-                if (typeof sParts === "undefined") {
-                    oIdx[sBookLowerCase][sChapter] = [ [1, 9999] ];
-                    return;
-                }
-
-                oIdx[sBookLowerCase][sChapter] = sParts.split(", ").map(function(s) {
-                    if (s.indexOf("-") > -1) {
-                        return s.split("-").map(toInt);
-                    }
-                    return toInt(s);
-                });
-            });
-    });
-
-return oIdx;
-}
-
-function collectUniqueTopics (oSong, oUniqueTopics) {
-oSong.topics.forEach(function (sTopic) {
-    oUniqueTopics[sTopic] = true;
-});
-}
-
-return new Promise(function (fnInitDone) {
-
-// check the url and log in with the log-in hash
-Vue.http.get("songs.json").then(function (oData) {
-    var aSongs = oData.body.list;
-    var aTopics = [];
-    var oDefaultSongFields = {}; // discover song fields
-    var oUniqueTopics = {};
-
-    var iLastOtherSongId = 0;
-
-    aSongs.forEach(function(oSong) {
-        if (!oSong.hasOwnProperty("number")) {
-            oSong.number = "other-" + (++iLastOtherSongId);
+    function createSearachableIndex(oScriptures) {
+        function toInt(s) {
+            return parseInt(s, 10);
         }
-        oSong.scripturesSearchableIndex = createSearachableIndex(oSong.scriptures);
-        collectDefaultSongFieldsFromSong(oSong, oDefaultSongFields);
-        collectUniqueTopics(oSong, oUniqueTopics);
-    });
+        var oIdx = {};
+        Object.keys(oScriptures)
+            .forEach(function(sBook) {
+                var sBookLowerCase = sBook.toLowerCase();
+                oIdx[sBookLowerCase] = {};
+                oScriptures[sBook]
+                    .forEach(function(sScripture) {
+                        var sChapter = sScripture.split(":")[0];
+                        var sParts = sScripture.split(":")[1];
 
-    aTopics = Object.keys(oUniqueTopics).sort();
+                        if (typeof sParts === "undefined") {
+                            oIdx[sBookLowerCase][sChapter] = [
+                                [1, 9999]
+                            ];
+                            return;
+                        }
 
-    fnInitDone({
-        songs: aSongs,
-        topics: aTopics,
-        defaultSongFields: oDefaultSongFields
+                        oIdx[sBookLowerCase][sChapter] = sParts.split(", ").map(function(s) {
+                            if (s.indexOf("-") > -1) {
+                                return s.split("-").map(toInt);
+                            }
+                            return toInt(s);
+                        });
+                    });
+            });
+
+        return oIdx;
+    }
+
+
+    function collectUniqueTopics(oSong, oUniqueTopics) {
+        oSong.topics.forEach(function(sTopic) {
+            oUniqueTopics[sTopic] = true;
+        });
+    }
+
+    return new Promise(function(fnInitDone) {
+
+        // check the url and log in with the log-in hash
+        Vue.http.get("songs.json").then(function(oData) {
+            var aSongs = oData.body.list;
+            var aTopics = [];
+            var oDefaultSongFields = {}; // discover song fields
+            var oUniqueTopics = {};
+
+
+            var iLastNewSongId = 0;
+
+            aSongs.forEach(function(oSong) {
+                if (!oSong.hasOwnProperty("number")) {
+                    oSong.number = "other-" + (++iLastNewSongId);
+                }
+                oSong.scripturesSearchableIndex = createSearachableIndex(oSong.scriptures);
+                collectDefaultSongFieldsFromSong(oSong, oDefaultSongFields);
+                collectUniqueTopics(oSong, oUniqueTopics);
+            });
+
+            aTopics = Object.keys(oUniqueTopics).sort();
+
+            fnInitDone({
+                lastOtherSongId: iLastNewSongId,
+                songs: aSongs,
+                topics: aTopics,
+                defaultSongFields: oDefaultSongFields
+            });
+        });
     });
-});
-});
 }

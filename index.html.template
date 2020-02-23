@@ -23,6 +23,12 @@
                     icon="skip_previous"
                     ></ui-fab>
                 <ui-fab
+                    id="btnCurSunday"
+                    @click="setInitialFeast()"
+                    size="small"
+                    icon="home"
+                    ></ui-fab>
+                <ui-fab
                     id="btnNextSunday"
                     @click="onNextSundayClicked('day')"
                     size="small"
@@ -66,11 +72,15 @@
                         <br/>
                     </li>
                 </ul>
+                <ui-icon-button id="btnCopy" @click="copyContent()" icon="file_copy" color="default"></ui-icon-button>
+                <ui-icon-button id="btnPaste" :disabled="clipboard.length === 0" @click="pasteContent()" icon="assignment" color="default"></ui-icon-button>
+                <ui-icon-button @click="openModal('saveDialog')" icon="save" id="btnSave" color="primary"></ui-icon-button>
+                <ui-icon-button id="btnClear" @click="clearSongs" icon="clear" color="default"></ui-icon-button>
+                <br />
+                <br />
                 <ui-button @click="openModal('addNewSongDialog')" icon="add" color="default">Add Song</ui-button>
                 <ui-button @click="showQrCode" icon="select_all" color="default">QR</ui-button>
                 <ui-button id="btn-display" @click="toggleDisplayType" icon="refresh" color="default">Display</ui-button>
-                <ui-icon-button @click="openModal('saveDialog')" icon="save" id="btnSave" color="primary"></ui-icon-button>
-                <ui-icon-button id="btnClear" @click="clearSongs" icon="clear" color="default"></ui-icon-button>
                 <h2>History</h2>
                 <p v-if="recentSongs.length === 0">
                     No songs removed from schedule yet...

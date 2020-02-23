@@ -219,3 +219,7 @@ button.ui-button.one-song.has-links {
     opacity: 0.5;
     z-index: 5000;
 }
+
+#btnCurSunday {
+    float: left;
+}
