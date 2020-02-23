@@ -14590,12 +14590,17 @@ function _generateFeastsAroundDay(m, oAroundDay, iWindow) {
 }
 
 function _findFeastAroundDayByName(m, oAroundDay, sFeastName) {
-    var iSearchWindow = 5;
+    var iSearchWindow = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 5;
+
     var aPossibleMatchingFeasts = _generateFeastsAroundDay(m, oAroundDay, iSearchWindow);
 
     var oMatchingFeast = aPossibleMatchingFeasts.filter(function (oFeast) {
         return getFeastName(m, oFeast) === sFeastName;
     })[0];
+
+    if (!oMatchingFeast) {
+        return _findFeastAroundDayByName(m, oAroundDay, sFeastName, iSearchWindow * 2);
+    }
 
     return oMatchingFeast;
 }
@@ -35408,39 +35413,34 @@ init().then(function (oEnv) {
                     this.loadStatistics(oFeastDay, 5)
                 ]);
             },
-            onPreviousSundayClicked: function (sGranularity) {
-                var oNextFestiveDay = null;
+            onNeighbouringSundayClicked: function (sGranularity, sPrevOrNext) {
+                var oMethods = {
+                    "day": {
+                        "previous": catholicHolidays.getPreviousFestiveDay,
+                        "next": catholicHolidays.getNextFestiveDay
+                    },
+                    "year": {
+                        "previous": catholicHolidays.getFeastLastYear,
+                        "next": catholicHolidays.getFeastNextYear
+                    }
+                };
 
-                switch (sGranularity) {
-                    case "day":
-                        oNextFestiveDay = catholicHolidays.getPreviousFestiveDay(this.currentFeast);
-                        break;
-
-                    case "year":
-                        oNextFestiveDay = catholicHolidays.getFeastLastYear(this.currentFeast);
-                        break;
-                    default:
-                        throw new Error("Invalid granularity " + sGranularity);
+                try {
+                    var oNextFestiveDay = oMethods[sGranularity][sPrevOrNext](this.currentFeast);
+                    if (!oNextFestiveDay) {
+                        alert("Cannot find " + this.currentFeastName + " in " + sPrevOrNext + " " + sGranularity);
+                        return;
+                    }
+                    this.setCurrentFeast(oNextFestiveDay);
+                } catch (e) {
+                    throw new Error(e);
                 }
-
-                this.setCurrentFeast(oNextFestiveDay);
+            },
+            onPreviousSundayClicked: function (sGranularity) {
+                this.onNeighbouringSundayClicked(sGranularity, "previous");
             },
             onNextSundayClicked: function (sGranularity) {
-                var oNextFestiveDay = null;
-
-                switch (sGranularity) {
-                    case "day":
-                        oNextFestiveDay = catholicHolidays.getNextFestiveDay(this.currentFeast);
-                        break;
-
-                    case "year":
-                        oNextFestiveDay = catholicHolidays.getFeastNextYear(this.currentFeast);
-                        break;
-                    default:
-                        throw new Error("Invalid granularity " + sGranularity);
-                }
-
-                this.setCurrentFeast(oNextFestiveDay);
+                this.onNeighbouringSundayClicked(sGranularity, "next");
             },
             loadStatsFrom: function (sFilename) {
                 var that = this;

@@ -206,12 +206,17 @@ function _generateFeastsAroundDay(m, oAroundDay, iWindow) {
 }
 
 function _findFeastAroundDayByName(m, oAroundDay, sFeastName) {
-    var iSearchWindow = 5;
+    var iSearchWindow = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 5;
+
     var aPossibleMatchingFeasts = _generateFeastsAroundDay(m, oAroundDay, iSearchWindow);
 
     var oMatchingFeast = aPossibleMatchingFeasts.filter(function (oFeast) {
         return getFeastName(m, oFeast) === sFeastName;
     })[0];
+
+    if (!oMatchingFeast) {
+        return _findFeastAroundDayByName(m, oAroundDay, sFeastName, iSearchWindow * 2);
+    }
 
     return oMatchingFeast;
 }
