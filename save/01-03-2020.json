@@ -4,16 +4,16 @@
       "title": "Lord, Who throughout These Forty Days"
    },
    "offertory": {
-      "number": "377",
-      "title": "Turn to Me"
+      "number": "562",
+      "title": "Create in Me"
    },
    "communion": {
       "number": "394",
       "title": "Again We Keep This Solemn Fast"
    },
    "recession": {
-      "number": "",
-      "title": ""
+      "number": "382",
+      "title": "This Season Calls Us"
    },
    "stats": {
       "2": {
@@ -226,10 +226,10 @@
          },
          "lastSung": "05-01-2020"
       },
-      "377": {
+      "382": {
          "count": 1,
          "sungFor": {
-            "offertory": true
+            "recession": true
          },
          "lastSung": "01-03-2020"
       },
@@ -598,6 +598,13 @@
          "sungFor": {
             "offertory": true
          }
+      },
+      "562": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "01-03-2020"
       },
       "586": {
          "count": 1,
@@ -1322,8 +1329,8 @@
          }
       },
       "": {
-         "count": 14,
-         "lastSung": "01-03-2020",
+         "count": 13,
+         "lastSung": "23-02-2020",
          "sungFor": {
             "recession": true,
             "communion": true,
