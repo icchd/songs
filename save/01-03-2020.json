@@ -15,6 +15,14 @@
       "number": "",
       "title": ""
    },
+   "communion 1": {
+      "number": "other-1",
+      "title": "In the Lord I'll be ever thankful"
+   },
+   "communion 2": {
+      "number": "other-5",
+      "title": "Eat This Bread (Taizé)"
+   },
    "stats": {
       "2": {
          "count": 1,
@@ -1326,8 +1334,8 @@
          }
       },
       "other-1": {
-         "count": 3,
-         "lastSung": "23-02-2020",
+         "count": 4,
+         "lastSung": "01-03-2020",
          "sungFor": {
             "communion": true,
             "communion 1": true
@@ -1353,6 +1361,13 @@
             "communion": true
          },
          "lastSung": "16-02-2020"
+      },
+      "other-5": {
+         "count": 1,
+         "sungFor": {
+            "communion 2": true
+         },
+         "lastSung": "01-03-2020"
       }
    },
    "momentsOrder": [
