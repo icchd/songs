@@ -4,16 +4,16 @@
       "title": "Forty Days and Forty Nights"
    },
    "offertory": {
-      "number": "",
-      "title": ""
+      "number": "518",
+      "title": "’Tis Good, Lord, to Be Here"
    },
    "communion": {
-      "number": "",
-      "title": ""
+      "number": "806",
+      "title": "Let Us Break Bread Together"
    },
    "recession": {
-      "number": "",
-      "title": ""
+      "number": "768",
+      "title": "Sent Forth by God’s Blessing"
    },
    "stats": {
       "2": {
@@ -233,6 +233,13 @@
          },
          "lastSung": "08-03-2020"
       },
+      "382": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "01-03-2020"
+      },
       "388": {
          "count": 2,
          "lastSung": "03-11-2019",
@@ -241,12 +248,19 @@
          }
       },
       "391": {
-         "count": 4,
-         "lastSung": "07-04-2019",
+         "count": 5,
+         "lastSung": "01-03-2020",
          "sungFor": {
             "recession": true,
             "entrance": true
          }
+      },
+      "394": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "01-03-2020"
       },
       "399": {
          "count": 3,
@@ -498,10 +512,11 @@
          }
       },
       "518": {
-         "count": 2,
-         "lastSung": "17-03-2019",
+         "count": 3,
+         "lastSung": "08-03-2020",
          "sungFor": {
-            "entrance": true
+            "entrance": true,
+            "offertory": true
          }
       },
       "522": {
@@ -591,6 +606,13 @@
          "sungFor": {
             "offertory": true
          }
+      },
+      "562": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "01-03-2020"
       },
       "586": {
          "count": 1,
@@ -1072,8 +1094,8 @@
          }
       },
       "768": {
-         "count": 13,
-         "lastSung": "21-07-2019",
+         "count": 14,
+         "lastSung": "08-03-2020",
          "sungFor": {
             "recession": true
          }
@@ -1158,8 +1180,8 @@
          "lastSung": "22-09-2019"
       },
       "806": {
-         "count": 15,
-         "lastSung": "15-12-2019",
+         "count": 16,
+         "lastSung": "08-03-2020",
          "sungFor": {
             "communion": true,
             "offertory": true
@@ -1315,8 +1337,8 @@
          }
       },
       "": {
-         "count": 16,
-         "lastSung": "08-03-2020",
+         "count": 13,
+         "lastSung": "23-02-2020",
          "sungFor": {
             "recession": true,
             "communion": true,
