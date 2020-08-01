@@ -1,0 +1,62 @@
+{
+   "entrance": {
+      "number": "",
+      "title": ""
+   },
+   "offertory": {
+      "number": "650",
+      "title": "Come to the Water (Foley)"
+   },
+   "communion": {
+      "number": "803",
+      "title": "Gift of Finest Wheat"
+   },
+   "recession": {
+      "number": "",
+      "title": ""
+   },
+   "[object MouseEvent]": {
+      "number": "713",
+      "title": "Amazing Grace"
+   },
+   "stats": {
+      "650": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "02-08-2020"
+      },
+      "713": {
+         "count": 1,
+         "sungFor": {
+            "[object MouseEvent]": true
+         },
+         "lastSung": "02-08-2020"
+      },
+      "803": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "02-08-2020"
+      },
+      "": {
+         "count": 2,
+         "sungFor": {
+            "entrance": true,
+            "recession": true
+         },
+         "lastSung": "02-08-2020"
+      }
+   },
+   "momentsOrder": [
+      "entrance",
+      "offertory",
+      "communion",
+      {
+         "isTrusted": true
+      },
+      "recession"
+   ]
+}
