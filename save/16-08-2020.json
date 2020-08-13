@@ -1,0 +1,70 @@
+{
+   "entrance": {
+      "number": "700",
+      "title": "We Walk By Faith"
+   },
+   "offertory": {
+      "number": "674",
+      "title": "Praise to You, O Christ Our Savior"
+   },
+   "communion": {
+      "number": "",
+      "title": ""
+   },
+   "recession": {
+      "number": "",
+      "title": ""
+   },
+   "stats": {
+      "650": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "02-08-2020"
+      },
+      "674": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "16-08-2020"
+      },
+      "700": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "16-08-2020"
+      },
+      "713": {
+         "count": 1,
+         "sungFor": {
+            "[object MouseEvent]": true
+         },
+         "lastSung": "02-08-2020"
+      },
+      "803": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "02-08-2020"
+      },
+      "": {
+         "count": 4,
+         "sungFor": {
+            "entrance": true,
+            "recession": true,
+            "communion": true
+         },
+         "lastSung": "16-08-2020"
+      }
+   },
+   "momentsOrder": [
+      "entrance",
+      "offertory",
+      "communion",
+      "recession"
+   ]
+}
