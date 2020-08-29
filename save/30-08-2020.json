@@ -8,8 +8,8 @@
       "title": "Make me a channel of your peace"
    },
    "communion": {
-      "number": "",
-      "title": ""
+      "number": "814",
+      "title": "One bread, one body, one cup, one call (Frenzel/Keil)"
    },
    "recession": {
       "number": "524",
@@ -86,6 +86,13 @@
          },
          "lastSung": "02-08-2020"
       },
+      "814": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "30-08-2020"
+      },
       "822": {
          "count": 1,
          "sungFor": {
@@ -101,13 +108,13 @@
          "lastSung": "23-08-2020"
       },
       "": {
-         "count": 5,
+         "count": 4,
          "sungFor": {
             "entrance": true,
             "recession": true,
             "communion": true
          },
-         "lastSung": "30-08-2020"
+         "lastSung": "16-08-2020"
       }
    },
    "momentsOrder": [
