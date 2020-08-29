@@ -1,0 +1,119 @@
+{
+   "entrance": {
+      "number": "793",
+      "title": "Come to the feast of heaven and earth"
+   },
+   "offertory": {
+      "number": "738",
+      "title": "Make me a channel of your peace"
+   },
+   "communion": {
+      "number": "",
+      "title": ""
+   },
+   "recession": {
+      "number": "524",
+      "title": "Take Up Your Cross"
+   },
+   "stats": {
+      "524": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "30-08-2020"
+      },
+      "600": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "23-08-2020"
+      },
+      "650": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "02-08-2020"
+      },
+      "674": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "16-08-2020"
+      },
+      "697": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "23-08-2020"
+      },
+      "700": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "16-08-2020"
+      },
+      "713": {
+         "count": 1,
+         "sungFor": {
+            "[object MouseEvent]": true
+         },
+         "lastSung": "02-08-2020"
+      },
+      "738": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "30-08-2020"
+      },
+      "793": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "30-08-2020"
+      },
+      "803": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "02-08-2020"
+      },
+      "822": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "23-08-2020"
+      },
+      "840": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "23-08-2020"
+      },
+      "": {
+         "count": 5,
+         "sungFor": {
+            "entrance": true,
+            "recession": true,
+            "communion": true
+         },
+         "lastSung": "30-08-2020"
+      }
+   },
+   "momentsOrder": [
+      "entrance",
+      "offertory",
+      "communion",
+      "recession"
+   ]
+}
