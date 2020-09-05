@@ -4,8 +4,8 @@
       "title": "Come, Worship the Lord"
    },
    "offertory": {
-      "number": "752",
-      "title": "Love One Another"
+      "number": "797",
+      "title": "Draw Us in the Spirit’s Tether E"
    },
    "communion": {
       "number": "754",
@@ -72,13 +72,6 @@
          },
          "lastSung": "30-08-2020"
       },
-      "752": {
-         "count": 1,
-         "sungFor": {
-            "offertory": true
-         },
-         "lastSung": "06-09-2020"
-      },
       "754": {
          "count": 1,
          "sungFor": {
@@ -99,6 +92,13 @@
             "entrance": true
          },
          "lastSung": "30-08-2020"
+      },
+      "797": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "06-09-2020"
       },
       "803": {
          "count": 1,
