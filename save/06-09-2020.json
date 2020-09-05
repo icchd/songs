@@ -1,0 +1,154 @@
+{
+   "entrance": {
+      "number": "790",
+      "title": "Come, Worship the Lord"
+   },
+   "offertory": {
+      "number": "752",
+      "title": "Love One Another"
+   },
+   "communion": {
+      "number": "754",
+      "title": "Ubi Caritas (Rosania)"
+   },
+   "recession": {
+      "number": "849",
+      "title": "They’ll Know We Are Christians"
+   },
+   "stats": {
+      "524": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "30-08-2020"
+      },
+      "600": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "23-08-2020"
+      },
+      "650": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "02-08-2020"
+      },
+      "674": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "16-08-2020"
+      },
+      "697": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "23-08-2020"
+      },
+      "700": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "16-08-2020"
+      },
+      "713": {
+         "count": 1,
+         "sungFor": {
+            "[object MouseEvent]": true
+         },
+         "lastSung": "02-08-2020"
+      },
+      "738": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "30-08-2020"
+      },
+      "752": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "06-09-2020"
+      },
+      "754": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "06-09-2020"
+      },
+      "790": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "06-09-2020"
+      },
+      "793": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "30-08-2020"
+      },
+      "803": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "02-08-2020"
+      },
+      "814": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "30-08-2020"
+      },
+      "822": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "23-08-2020"
+      },
+      "840": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "23-08-2020"
+      },
+      "849": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "06-09-2020"
+      },
+      "": {
+         "count": 4,
+         "sungFor": {
+            "entrance": true,
+            "recession": true,
+            "communion": true
+         },
+         "lastSung": "16-08-2020"
+      }
+   },
+   "momentsOrder": [
+      "entrance",
+      "offertory",
+      "communion",
+      "recession"
+   ]
+}
