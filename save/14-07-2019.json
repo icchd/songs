@@ -284,8 +284,8 @@
          "count": 4,
          "lastSung": "07-07-2019",
          "sungFor": {
-            "offertory": true,
-            "recession": true
+            "recession": true,
+            "offertory": true
          }
       },
       "454": {
@@ -425,8 +425,8 @@
          "count": 4,
          "lastSung": "23-06-2019",
          "sungFor": {
-            "entrance": true,
-            "recession": true
+            "recession": true,
+            "entrance": true
          }
       },
       "524": {
@@ -533,8 +533,8 @@
          "count": 8,
          "lastSung": "07-07-2019",
          "sungFor": {
-            "entrance": true,
-            "offertory": true
+            "offertory": true,
+            "entrance": true
          }
       },
       "597": {
@@ -569,10 +569,10 @@
       },
       "604": {
          "count": 1,
+         "lastSung": "23-06-2019",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "23-06-2019"
+         }
       },
       "607": {
          "count": 3,
@@ -684,8 +684,8 @@
          "count": 8,
          "lastSung": "14-07-2019",
          "sungFor": {
-            "offertory": true,
-            "recession": true
+            "recession": true,
+            "offertory": true
          }
       },
       "661": {
@@ -712,10 +712,10 @@
       },
       "680": {
          "count": 1,
+         "lastSung": "14-07-2019",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "14-07-2019"
+         }
       },
       "682": {
          "count": 1,
@@ -855,8 +855,8 @@
          "count": 7,
          "lastSung": "23-06-2019",
          "sungFor": {
-            "recession": true,
-            "offertory": true
+            "offertory": true,
+            "recession": true
          }
       },
       "733": {
@@ -1158,8 +1158,8 @@
          }
       },
       "undefined": {
-         "count": 74,
-         "lastSung": "20-06-2019",
+         "count": 78,
+         "lastSung": "14-07-2019",
          "sungFor": {
             "momentsOrder": true
          }
