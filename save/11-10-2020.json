@@ -1,19 +1,19 @@
 {
    "entrance": {
-      "number": "482",
-      "title": "All Hail the Power of Jesus’ Name"
+      "number": "790",
+      "title": "Come, Worship the Lord"
    },
    "offertory": {
-      "number": "760",
-      "title": "Unless a Grain of Wheat (Farrell)"
+      "number": "793",
+      "title": "Come to the feast of heaven and earth"
    },
    "communion": {
-      "number": "806",
-      "title": "Let Us Break Bread Together"
+      "number": "821",
+      "title": "Taste and See (Hurd)"
    },
    "recession": {
-      "number": "597",
-      "title": "Praise to the Lord"
+      "number": "849",
+      "title": "They’ll Know We Are Christians"
    },
    "stats": {
       "2": {
@@ -462,7 +462,7 @@
       },
       "482": {
          "count": 8,
-         "lastSung": "11-10-2020",
+         "lastSung": "04-10-2020",
          "sungFor": {
             "recession": true,
             "entrance": true
@@ -662,7 +662,7 @@
       },
       "597": {
          "count": 9,
-         "lastSung": "11-10-2020",
+         "lastSung": "04-10-2020",
          "sungFor": {
             "entrance": true,
             "recession": true
@@ -1100,7 +1100,7 @@
       },
       "760": {
          "count": 8,
-         "lastSung": "11-10-2020",
+         "lastSung": "04-10-2020",
          "sungFor": {
             "offertory": true
          }
@@ -1170,8 +1170,8 @@
          }
       },
       "790": {
-         "count": 15,
-         "lastSung": "06-09-2020",
+         "count": 16,
+         "lastSung": "11-10-2020",
          "sungFor": {
             "entrance": true
          }
@@ -1185,8 +1185,8 @@
          }
       },
       "793": {
-         "count": 14,
-         "lastSung": "27-09-2020",
+         "count": 15,
+         "lastSung": "11-10-2020",
          "sungFor": {
             "entrance": true,
             "offertory": true
@@ -1215,7 +1215,7 @@
       },
       "806": {
          "count": 17,
-         "lastSung": "11-10-2020",
+         "lastSung": "04-10-2020",
          "sungFor": {
             "communion": true,
             "offertory": true
@@ -1271,8 +1271,8 @@
          }
       },
       "821": {
-         "count": 13,
-         "lastSung": "26-01-2020",
+         "count": 14,
+         "lastSung": "11-10-2020",
          "sungFor": {
             "communion": true
          }
@@ -1364,8 +1364,8 @@
          }
       },
       "849": {
-         "count": 15,
-         "lastSung": "06-09-2020",
+         "count": 16,
+         "lastSung": "11-10-2020",
          "sungFor": {
             "recession": true
          }
