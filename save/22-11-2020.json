@@ -1,7 +1,7 @@
 {
    "entrance": {
-      "number": "",
-      "title": ""
+      "number": "481",
+      "title": "Hail, Redeemer, King Divine"
    },
    "offertory": {
       "number": "",
@@ -459,6 +459,13 @@
          "sungFor": {
             "entrance": true
          }
+      },
+      "481": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "22-11-2020"
       },
       "482": {
          "count": 8,
@@ -1393,7 +1400,7 @@
          "lastSung": "27-09-2020"
       },
       "": {
-         "count": 19,
+         "count": 18,
          "lastSung": "22-11-2020",
          "sungFor": {
             "recession": true,
