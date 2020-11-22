@@ -4,12 +4,12 @@
       "title": "Hail, Redeemer, King Divine"
    },
    "offertory": {
-      "number": "",
-      "title": ""
+      "number": "486",
+      "title": "The King of Kings, Christ Jesus Reigns"
    },
    "communion": {
-      "number": "",
-      "title": ""
+      "number": "806",
+      "title": "Let Us Break Bread Together"
    },
    "recession": {
       "number": "485",
@@ -483,10 +483,11 @@
          }
       },
       "486": {
-         "count": 1,
-         "lastSung": "04-02-2018",
+         "count": 2,
+         "lastSung": "22-11-2020",
          "sungFor": {
-            "entrance": true
+            "entrance": true,
+            "offertory": true
          }
       },
       "490": {
@@ -714,8 +715,8 @@
          }
       },
       "608": {
-         "count": 2,
-         "lastSung": "03-11-2019",
+         "count": 3,
+         "lastSung": "15-11-2020",
          "sungFor": {
             "entrance": true
          }
@@ -749,8 +750,8 @@
          }
       },
       "619": {
-         "count": 1,
-         "lastSung": "02-09-2018",
+         "count": 2,
+         "lastSung": "08-11-2020",
          "sungFor": {
             "recession": true
          }
@@ -854,10 +855,11 @@
          }
       },
       "664": {
-         "count": 1,
-         "lastSung": "26-01-2020",
+         "count": 2,
+         "lastSung": "15-11-2020",
          "sungFor": {
-            "entrance": true
+            "entrance": true,
+            "recession": true
          }
       },
       "665": {
@@ -876,8 +878,8 @@
          }
       },
       "680": {
-         "count": 2,
-         "lastSung": "16-02-2020",
+         "count": 3,
+         "lastSung": "08-11-2020",
          "sungFor": {
             "offertory": true,
             "entrance": true
@@ -1149,6 +1151,13 @@
             "offertory": true
          }
       },
+      "774": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "08-11-2020"
+      },
       "778": {
          "count": 1,
          "lastSung": "26-01-2020",
@@ -1229,16 +1238,16 @@
          }
       },
       "806": {
-         "count": 17,
-         "lastSung": "04-10-2020",
+         "count": 18,
+         "lastSung": "22-11-2020",
          "sungFor": {
             "communion": true,
             "offertory": true
          }
       },
       "809": {
-         "count": 11,
-         "lastSung": "19-01-2020",
+         "count": 12,
+         "lastSung": "15-11-2020",
          "sungFor": {
             "communion": true
          }
@@ -1265,8 +1274,8 @@
          }
       },
       "816": {
-         "count": 3,
-         "lastSung": "03-11-2019",
+         "count": 4,
+         "lastSung": "08-11-2020",
          "sungFor": {
             "communion": true
          }
@@ -1344,8 +1353,8 @@
          }
       },
       "837": {
-         "count": 4,
-         "lastSung": "14-07-2019",
+         "count": 5,
+         "lastSung": "15-11-2020",
          "sungFor": {
             "offertory": true
          }
@@ -1400,8 +1409,8 @@
          "lastSung": "27-09-2020"
       },
       "": {
-         "count": 18,
-         "lastSung": "22-11-2020",
+         "count": 16,
+         "lastSung": "16-08-2020",
          "sungFor": {
             "recession": true,
             "communion": true,
