@@ -4,16 +4,16 @@
       "title": "On Jordan’s Bank"
    },
    "offertory": {
-      "number": "323",
-      "title": "Ready the Way"
+      "number": "714",
+      "title": "Like a shepherd I will feed you"
    },
    "communion": {
-      "number": "",
-      "title": ""
+      "number": "822",
+      "title": "I Am the Living Bread"
    },
    "recession": {
-      "number": "",
-      "title": ""
+      "number": "323",
+      "title": "Ready the Way"
    },
    "stats": {
       "2": {
@@ -993,8 +993,8 @@
          }
       },
       "714": {
-         "count": 3,
-         "lastSung": "12-05-2019",
+         "count": 4,
+         "lastSung": "06-12-2020",
          "sungFor": {
             "offertory": true
          }
@@ -1303,8 +1303,8 @@
          }
       },
       "822": {
-         "count": 12,
-         "lastSung": "23-08-2020",
+         "count": 13,
+         "lastSung": "06-12-2020",
          "sungFor": {
             "communion": true
          }
@@ -1410,8 +1410,8 @@
          "lastSung": "27-09-2020"
       },
       "": {
-         "count": 18,
-         "lastSung": "06-12-2020",
+         "count": 16,
+         "lastSung": "16-08-2020",
          "sungFor": {
             "recession": true,
             "communion": true,
