@@ -114,19 +114,19 @@ function getPreviousFestiveDay(m, oStartFromDay) {
     return _getPreviousFestiveDay(m, oStartFromDay, aFestiveDaysThisYear);
 }
 
+function getFourthSundayOfAdvent(m, iYear) {
+    // Nearest Sunday before 25 December
+    var o25Dec = m({ year: iYear, month: 11, day: 25 });
+    return _getPreviousDay(o25Dec, "Sunday");
+}
 function getFirstSundayOfAdvent(m, iYear) {
-    // Nearest Sunday to 30 November
-    var o30Nov = m({ year: iYear, month: 10, day: 30 });
-    return _getNextDay(o30Nov, "Sunday");
+    return getFourthSundayOfAdvent(m, iYear).subtract(3, "week");
 }
 function getSecondSundayOfAdvent(m, iYear) {
-    return getFirstSundayOfAdvent(m, iYear).add(1, "week");
+    return getFourthSundayOfAdvent(m, iYear).subtract(2, "week");
 }
 function getThirdSundayOfAdvent(m, iYear) {
-    return getSecondSundayOfAdvent(m, iYear).add(1, "week");
-}
-function getFourthSundayOfAdvent(m, iYear) {
-    return getThirdSundayOfAdvent(m, iYear).add(1, "week");
+    return getFourthSundayOfAdvent(m, iYear).subtract(1, "week");
 }
 
 function getLiturgicalYear(m, mCurrentDate) {
@@ -170,6 +170,14 @@ function _getNextDay(oStartDay, sDayName) {
     var oDay = oStartDay.clone();
     while (oDay.format("dddd") !== sDayName) {
         oDay.add(1, "day");
+    }
+    return oDay;
+}
+
+function _getPreviousDay(oStartDay, sDayName) {
+    var oDay = oStartDay.clone();
+    while (oDay.format("dddd") !== sDayName) {
+        oDay.subtract(1, "day");
     }
     return oDay;
 }
