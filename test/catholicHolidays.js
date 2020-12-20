@@ -20,6 +20,7 @@ describe("getFirstSundayOfAdvent", function () {
         expect(oHolidays.getFirstSundayOfAdvent(2020).format("DD-MM-YYYY")).to.equal("29-11-2020");
         expect(oHolidays.getFirstSundayOfAdvent(2018).format("DD-MM-YYYY")).to.equal("02-12-2018");
         expect(oHolidays.getFirstSundayOfAdvent(2017).format("DD-MM-YYYY")).to.equal("03-12-2017");
+        expect(oHolidays.getFirstSundayOfAdvent(1996).format("DD-MM-YYYY")).to.equal("01-12-1996");
         expect(oHolidays.getSecondSundayOfAdvent(1996).format("DD-MM-YYYY")).to.equal("08-12-1996");
         expect(oHolidays.getThirdSundayOfAdvent(1996).format("DD-MM-YYYY")).to.equal("15-12-1996");
         expect(oHolidays.getFourthSundayOfAdvent(1996).format("DD-MM-YYYY")).to.equal("22-12-1996");
