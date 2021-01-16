@@ -8,16 +8,12 @@
       "title": "Be Not Afraid"
    },
    "communion": {
-      "number": "832",
-      "title": "Here I Am, Lord (Schutte)"
+      "number": "",
+      "title": ""
    },
    "recession": {
       "number": "768",
       "title": "Sent Forth by God’s Blessing"
-   },
-   "[object MouseEvent]": {
-      "number": "",
-      "title": ""
    },
    "stats": {
       "2": {
@@ -1386,8 +1382,8 @@
          }
       },
       "832": {
-         "count": 8,
-         "lastSung": "17-01-2021",
+         "count": 7,
+         "lastSung": "02-02-2020",
          "sungFor": {
             "offertory": true,
             "communion": true
@@ -1463,8 +1459,7 @@
             "recession": true,
             "communion": true,
             "entrance": true,
-            "offertory": true,
-            "[object MouseEvent]": true
+            "offertory": true
          }
       },
       "other-1": {
