@@ -8,8 +8,8 @@
       "title": "The Lord Is My Light (Walker)"
    },
    "communion": {
-      "number": "706",
-      "title": "Be Not Afraid"
+      "number": "822",
+      "title": "I Am the Living Bread"
    },
    "recession": {
       "number": "617",
@@ -1046,8 +1046,8 @@
          }
       },
       "706": {
-         "count": 12,
-         "lastSung": "16-05-2021",
+         "count": 11,
+         "lastSung": "17-01-2021",
          "sungFor": {
             "communion": true,
             "offertory": true,
@@ -1390,8 +1390,8 @@
          }
       },
       "822": {
-         "count": 14,
-         "lastSung": "28-02-2021",
+         "count": 15,
+         "lastSung": "16-05-2021",
          "sungFor": {
             "communion": true
          }
