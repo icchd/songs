@@ -4,8 +4,8 @@
       "title": "Alleluia! Sing to Jesus"
    },
    "offertory": {
-      "number": "586",
-      "title": "I Know That My Redeemer Lives (Soper)"
+      "number": "587",
+      "title": "The Lord Is My Light (Walker)"
    },
    "communion": {
       "number": "706",
@@ -704,15 +704,15 @@
          }
       },
       "586": {
-         "count": 2,
-         "lastSung": "16-05-2021",
+         "count": 1,
+         "lastSung": "13-05-2018",
          "sungFor": {
             "offertory": true
          }
       },
       "587": {
-         "count": 3,
-         "lastSung": "26-01-2020",
+         "count": 4,
+         "lastSung": "16-05-2021",
          "sungFor": {
             "offertory": true,
             "recession": true
