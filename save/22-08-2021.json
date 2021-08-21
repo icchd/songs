@@ -12,8 +12,8 @@
       "title": "Soul of My Savior"
    },
    "recession": {
-      "number": "",
-      "title": ""
+      "number": "836",
+      "title": "Take Christ to the World"
    },
    "stats": {
       "2": {
@@ -1472,8 +1472,8 @@
          }
       },
       "836": {
-         "count": 4,
-         "lastSung": "13-09-2020",
+         "count": 5,
+         "lastSung": "22-08-2021",
          "sungFor": {
             "recession": true
          }
@@ -1549,8 +1549,8 @@
          "lastSung": "25-07-2021"
       },
       "": {
-         "count": 19,
-         "lastSung": "22-08-2021",
+         "count": 18,
+         "lastSung": "14-02-2021",
          "sungFor": {
             "recession": true,
             "communion": true,
