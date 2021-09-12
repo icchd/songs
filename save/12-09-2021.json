@@ -1,7 +1,7 @@
 {
    "entrance": {
-      "number": "",
-      "title": ""
+      "number": "604",
+      "title": "All People That on Earth Do Dwell"
    },
    "offertory": {
       "number": "837",
@@ -12,8 +12,8 @@
       "title": "One bread, one body, one cup, one call (Frenzel/Keil)"
    },
    "recession": {
-      "number": "",
-      "title": ""
+      "number": "778",
+      "title": "One Spirit, One Church"
    },
    "stats": {
       "2": {
@@ -791,8 +791,8 @@
          }
       },
       "604": {
-         "count": 1,
-         "lastSung": "23-06-2019",
+         "count": 2,
+         "lastSung": "12-09-2021",
          "sungFor": {
             "entrance": true
          }
@@ -1271,8 +1271,8 @@
          "lastSung": "08-11-2020"
       },
       "778": {
-         "count": 1,
-         "lastSung": "26-01-2020",
+         "count": 2,
+         "lastSung": "12-09-2021",
          "sungFor": {
             "recession": true
          }
@@ -1550,8 +1550,8 @@
          "lastSung": "25-07-2021"
       },
       "": {
-         "count": 20,
-         "lastSung": "12-09-2021",
+         "count": 18,
+         "lastSung": "14-02-2021",
          "sungFor": {
             "recession": true,
             "communion": true,
