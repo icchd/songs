@@ -8,8 +8,8 @@
       "title": "Loving and Forgiving"
    },
    "communion": {
-      "number": "706",
-      "title": "Be Not Afraid"
+      "number": "824",
+      "title": "Amén. El Cuerpo de Cristo"
    },
    "recession": {
       "number": "715",
@@ -1063,8 +1063,8 @@
          }
       },
       "706": {
-         "count": 13,
-         "lastSung": "26-09-2021",
+         "count": 12,
+         "lastSung": "11-07-2021",
          "sungFor": {
             "communion": true,
             "offertory": true,
@@ -1429,8 +1429,8 @@
          }
       },
       "824": {
-         "count": 8,
-         "lastSung": "14-03-2021",
+         "count": 9,
+         "lastSung": "26-09-2021",
          "sungFor": {
             "communion": true
          }
