@@ -1,11 +1,11 @@
 {
    "entrance": {
-      "number": "478",
-      "title": "Rejoice, the Lord Is King"
+      "number": "322",
+      "title": "The Advent of Our King"
    },
    "offertory": {
-      "number": "",
-      "title": ""
+      "number": "478",
+      "title": "Rejoice, the Lord Is King"
    },
    "communion": {
       "number": "819",
@@ -55,8 +55,8 @@
          }
       },
       "322": {
-         "count": 2,
-         "lastSung": "29-11-2020",
+         "count": 3,
+         "lastSung": "12-12-2021",
          "sungFor": {
             "offertory": true,
             "entrance": true
@@ -518,7 +518,8 @@
          "count": 4,
          "lastSung": "12-12-2021",
          "sungFor": {
-            "entrance": true
+            "entrance": true,
+            "offertory": true
          }
       },
       "480": {
@@ -1564,8 +1565,8 @@
          "lastSung": "25-07-2021"
       },
       "": {
-         "count": 19,
-         "lastSung": "12-12-2021",
+         "count": 18,
+         "lastSung": "14-02-2021",
          "sungFor": {
             "recession": true,
             "communion": true,
