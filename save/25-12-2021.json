@@ -1,7 +1,7 @@
 {
    "entrance": {
-      "number": "341",
-      "title": "Angels We Have Heard on High"
+      "number": "346",
+      "title": "Good Christian Friends, Rejoice"
    },
    "offertory": {
       "number": "333",
@@ -14,6 +14,10 @@
    "recession": {
       "number": "368",
       "title": "Songs of Thankfulness and Praise"
+   },
+   "[object PointerEvent]": {
+      "number": "341",
+      "title": "Angels We Have Heard on High"
    },
    "stats": {
       "2": {
@@ -138,7 +142,7 @@
          "sungFor": {
             "gloria": true,
             "recession": true,
-            "entrance": true
+            "[object PointerEvent]": true
          }
       },
       "343": {
@@ -164,11 +168,12 @@
          }
       },
       "346": {
-         "count": 1,
+         "count": 2,
          "sungFor": {
-            "recession": true
+            "recession": true,
+            "entrance": true
          },
-         "lastSung": "25-12-2020"
+         "lastSung": "25-12-2021"
       },
       "352": {
          "count": 3,
@@ -1622,6 +1627,9 @@
    },
    "momentsOrder": [
       "entrance",
+      {
+         "isTrusted": true
+      },
       "offertory",
       "communion",
       "recession"
