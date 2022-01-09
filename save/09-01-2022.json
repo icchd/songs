@@ -12,8 +12,8 @@
       "title": "Amazing Grace"
    },
    "recession": {
-      "number": "372",
-      "title": "When Jesus Comes to Be Baptized"
+      "number": "363",
+      "title": "The First Noel"
    },
    "stats": {
       "2": {
@@ -237,10 +237,11 @@
          }
       },
       "363": {
-         "count": 5,
-         "lastSung": "06-01-2020",
+         "count": 6,
+         "lastSung": "09-01-2022",
          "sungFor": {
-            "communion": true
+            "communion": true,
+            "recession": true
          }
       },
       "364": {
@@ -286,13 +287,6 @@
          "sungFor": {
             "offertory": true
          }
-      },
-      "372": {
-         "count": 1,
-         "sungFor": {
-            "recession": true
-         },
-         "lastSung": "09-01-2022"
       },
       "379": {
          "count": 1,
