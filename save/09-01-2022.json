@@ -8,8 +8,8 @@
       "title": "Christ Be Our Light"
    },
    "communion": {
-      "number": "365",
-      "title": "What Child Is This"
+      "number": "713",
+      "title": "Amazing Grace"
    },
    "recession": {
       "number": "372",
@@ -252,12 +252,11 @@
          }
       },
       "365": {
-         "count": 2,
+         "count": 1,
          "sungFor": {
-            "offertory": true,
-            "communion": true
+            "offertory": true
          },
-         "lastSung": "09-01-2022"
+         "lastSung": "01-01-2022"
       },
       "367": {
          "count": 2,
@@ -1138,8 +1137,8 @@
          }
       },
       "713": {
-         "count": 13,
-         "lastSung": "21-11-2021",
+         "count": 14,
+         "lastSung": "09-01-2022",
          "sungFor": {
             "[object MouseEvent]": true,
             "offertory": true,
