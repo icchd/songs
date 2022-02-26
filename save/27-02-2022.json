@@ -1,7 +1,7 @@
 {
    "entrance": {
-      "number": "",
-      "title": ""
+      "number": "621",
+      "title": "Immortal, Invisible, God Only Wise"
    },
    "offertory": {
       "number": "",
@@ -813,6 +813,13 @@
             "recession": true
          }
       },
+      "598": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "20-02-2022"
+      },
       "600": {
          "count": 3,
          "lastSung": "23-08-2020",
@@ -893,8 +900,8 @@
          }
       },
       "621": {
-         "count": 2,
-         "lastSung": "25-10-2020",
+         "count": 3,
+         "lastSung": "27-02-2022",
          "sungFor": {
             "entrance": true
          }
@@ -1021,8 +1028,8 @@
          "lastSung": "20-12-2020"
       },
       "680": {
-         "count": 3,
-         "lastSung": "08-11-2020",
+         "count": 4,
+         "lastSung": "20-02-2022",
          "sungFor": {
             "offertory": true,
             "entrance": true
@@ -1207,10 +1214,11 @@
          }
       },
       "738": {
-         "count": 9,
-         "lastSung": "19-09-2021",
+         "count": 10,
+         "lastSung": "20-02-2022",
          "sungFor": {
-            "offertory": true
+            "offertory": true,
+            "recession": true
          }
       },
       "739": {
@@ -1382,10 +1390,11 @@
          "lastSung": "01-08-2021"
       },
       "797": {
-         "count": 1,
-         "lastSung": "06-09-2020",
+         "count": 2,
+         "lastSung": "20-02-2022",
          "sungFor": {
-            "offertory": true
+            "offertory": true,
+            "communion": true
          }
       },
       "803": {
@@ -1603,7 +1612,7 @@
          "lastSung": "25-07-2021"
       },
       "": {
-         "count": 21,
+         "count": 20,
          "lastSung": "27-02-2022",
          "sungFor": {
             "recession": true,
