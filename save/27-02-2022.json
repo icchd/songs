@@ -4,16 +4,16 @@
       "title": "Immortal, Invisible, God Only Wise"
    },
    "offertory": {
-      "number": "",
-      "title": ""
+      "number": "697",
+      "title": "Center of My Life"
    },
    "communion": {
       "number": "551",
       "title": "O Breathe on Me, O Breath of God"
    },
    "recession": {
-      "number": "",
-      "title": ""
+      "number": "642",
+      "title": "For the Beauty of the Earth"
    },
    "stats": {
       "2": {
@@ -942,10 +942,11 @@
          }
       },
       "642": {
-         "count": 2,
-         "lastSung": "13-06-2021",
+         "count": 3,
+         "lastSung": "27-02-2022",
          "sungFor": {
-            "entrance": true
+            "entrance": true,
+            "recession": true
          }
       },
       "649": {
@@ -1079,8 +1080,8 @@
          }
       },
       "697": {
-         "count": 1,
-         "lastSung": "23-08-2020",
+         "count": 2,
+         "lastSung": "27-02-2022",
          "sungFor": {
             "offertory": true
          }
@@ -1612,8 +1613,8 @@
          "lastSung": "25-07-2021"
       },
       "": {
-         "count": 20,
-         "lastSung": "27-02-2022",
+         "count": 18,
+         "lastSung": "14-02-2021",
          "sungFor": {
             "recession": true,
             "communion": true,
