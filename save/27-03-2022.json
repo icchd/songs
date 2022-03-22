@@ -1,48 +1,27 @@
 {
    "entrance": {
-      "number": "1",
-      "title": "Lord, open my lips"
+      "number": "",
+      "title": ""
    },
    "offertory": {
-      "number": "2",
-      "title": "Morning Hymn: This Day God Gives Me"
+      "number": "",
+      "title": ""
    },
    "communion": {
-      "number": "3",
-      "title": "As morning breaks I look to you"
+      "number": "",
+      "title": ""
    },
    "recession": {
-      "number": "4",
-      "title": "Blest be the God of Israel who comes to set us free"
+      "number": "",
+      "title": ""
    },
    "stats": {
-      "1": {
-         "count": 1,
-         "sungFor": {
-            "entrance": true
-         },
-         "lastSung": "27-03-2022"
-      },
       "2": {
-         "count": 2,
-         "lastSung": "27-03-2022",
+         "count": 1,
+         "lastSung": "13-08-2017",
          "sungFor": {
             "offertory": true
          }
-      },
-      "3": {
-         "count": 1,
-         "sungFor": {
-            "communion": true
-         },
-         "lastSung": "27-03-2022"
-      },
-      "4": {
-         "count": 1,
-         "sungFor": {
-            "recession": true
-         },
-         "lastSung": "27-03-2022"
       },
       "311": {
          "count": 8,
@@ -1634,8 +1613,8 @@
          "lastSung": "25-07-2021"
       },
       "": {
-         "count": 18,
-         "lastSung": "14-02-2021",
+         "count": 22,
+         "lastSung": "27-03-2022",
          "sungFor": {
             "recession": true,
             "communion": true,
