@@ -8,8 +8,8 @@
       "title": "Because the Lord Is My Shepherd"
    },
    "communion": {
-      "number": "",
-      "title": ""
+      "number": "818",
+      "title": "All you who are thirsty, come to the water"
    },
    "recession": {
       "number": "636",
@@ -1462,6 +1462,13 @@
             "communion": true
          }
       },
+      "818": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "27-03-2022"
+      },
       "819": {
          "count": 9,
          "lastSung": "12-12-2021",
@@ -1613,8 +1620,8 @@
          "lastSung": "25-07-2021"
       },
       "": {
-         "count": 19,
-         "lastSung": "27-03-2022",
+         "count": 18,
+         "lastSung": "14-02-2021",
          "sungFor": {
             "recession": true,
             "communion": true,
