@@ -12,8 +12,12 @@
       "title": "Ubi Caritas (Hurd)"
    },
    "recession": {
-      "number": "406",
-      "title": "Pange Lingua Gloriosi/ Sing of Glory (ST. THOMAS: TANTUM ERGO/Hagan)"
+      "number": "",
+      "title": ""
+   },
+   "[object PointerEvent]": {
+      "number": "403",
+      "title": "As I Have Done for You"
    },
    "stats": {
       "2": {
@@ -353,12 +357,18 @@
             "washing of feet": true
          }
       },
-      "406": {
-         "count": 2,
-         "lastSung": "14-04-2022",
+      "403": {
+         "count": 1,
          "sungFor": {
-            "adoration": true,
-            "recession": true
+            "[object PointerEvent]": true
+         },
+         "lastSung": "14-04-2022"
+      },
+      "406": {
+         "count": 1,
+         "lastSung": "18-04-2019",
+         "sungFor": {
+            "adoration": true
          }
       },
       "411": {
@@ -1623,8 +1633,8 @@
          "lastSung": "25-07-2021"
       },
       "": {
-         "count": 18,
-         "lastSung": "14-02-2021",
+         "count": 19,
+         "lastSung": "14-04-2022",
          "sungFor": {
             "recession": true,
             "communion": true,
@@ -1672,6 +1682,9 @@
    },
    "momentsOrder": [
       "entrance",
+      {
+         "isTrusted": true
+      },
       "offertory",
       "communion",
       "recession"
