@@ -4,8 +4,8 @@
       "title": "Glory in the Cross"
    },
    "offertory": {
-      "number": "",
-      "title": ""
+      "number": "551",
+      "title": "O Breathe on Me, O Breath of God"
    },
    "communion": {
       "number": "805",
@@ -724,12 +724,13 @@
          }
       },
       "551": {
-         "count": 2,
+         "count": 3,
          "sungFor": {
             "recession": true,
-            "communion": true
+            "communion": true,
+            "offertory": true
          },
-         "lastSung": "27-02-2022"
+         "lastSung": "14-04-2022"
       },
       "557": {
          "count": 1,
@@ -1622,8 +1623,8 @@
          "lastSung": "25-07-2021"
       },
       "": {
-         "count": 19,
-         "lastSung": "14-04-2022",
+         "count": 18,
+         "lastSung": "14-02-2021",
          "sungFor": {
             "recession": true,
             "communion": true,
