@@ -12,8 +12,8 @@
       "title": "Ubi Caritas (Hurd)"
    },
    "recession": {
-      "number": "",
-      "title": ""
+      "number": "406",
+      "title": "Pange Lingua Gloriosi/ Sing of Glory (ST. THOMAS: TANTUM ERGO/Hagan)"
    },
    "[object PointerEvent]": {
       "number": "403",
@@ -365,10 +365,11 @@
          "lastSung": "14-04-2022"
       },
       "406": {
-         "count": 1,
-         "lastSung": "18-04-2019",
+         "count": 2,
+         "lastSung": "14-04-2022",
          "sungFor": {
-            "adoration": true
+            "adoration": true,
+            "recession": true
          }
       },
       "411": {
@@ -1633,8 +1634,8 @@
          "lastSung": "25-07-2021"
       },
       "": {
-         "count": 19,
-         "lastSung": "14-04-2022",
+         "count": 18,
+         "lastSung": "14-02-2021",
          "sungFor": {
             "recession": true,
             "communion": true,
