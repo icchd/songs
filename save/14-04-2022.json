@@ -4,20 +4,16 @@
       "title": "Glory in the Cross"
    },
    "offertory": {
-      "number": "",
-      "title": ""
+      "number": "551",
+      "title": "O Breathe on Me, O Breath of God"
    },
    "communion": {
       "number": "805",
       "title": "Ubi Caritas (Hurd)"
    },
    "recession": {
-      "number": "",
-      "title": ""
-   },
-   "[object PointerEvent]": {
-      "number": "",
-      "title": ""
+      "number": "406",
+      "title": "Pange Lingua Gloriosi/ Sing of Glory (ST. THOMAS: TANTUM ERGO/Hagan)"
    },
    "stats": {
       "2": {
@@ -358,10 +354,11 @@
          }
       },
       "406": {
-         "count": 1,
-         "lastSung": "18-04-2019",
+         "count": 2,
+         "lastSung": "14-04-2022",
          "sungFor": {
-            "adoration": true
+            "adoration": true,
+            "recession": true
          }
       },
       "411": {
@@ -727,12 +724,13 @@
          }
       },
       "551": {
-         "count": 2,
+         "count": 3,
          "sungFor": {
             "recession": true,
-            "communion": true
+            "communion": true,
+            "offertory": true
          },
-         "lastSung": "27-02-2022"
+         "lastSung": "14-04-2022"
       },
       "557": {
          "count": 1,
@@ -1625,14 +1623,13 @@
          "lastSung": "25-07-2021"
       },
       "": {
-         "count": 21,
-         "lastSung": "14-04-2022",
+         "count": 18,
+         "lastSung": "14-02-2021",
          "sungFor": {
             "recession": true,
             "communion": true,
             "entrance": true,
-            "offertory": true,
-            "[object PointerEvent]": true
+            "offertory": true
          }
       },
       "other-1": {
