@@ -1,0 +1,54 @@
+{
+   "entrance": {
+      "number": "790",
+      "title": "Come, Worship the Lord"
+   },
+   "offertory": {
+      "number": "766",
+      "title": "Only This I Want"
+   },
+   "communion": {
+      "number": "822",
+      "title": "I Am the Living Bread"
+   },
+   "recession": {
+      "number": "720",
+      "title": "Seek Ye First"
+   },
+   "stats": {
+      "720": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "31-07-2022"
+      },
+      "766": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "31-07-2022"
+      },
+      "790": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "31-07-2022"
+      },
+      "822": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "31-07-2022"
+      }
+   },
+   "momentsOrder": [
+      "entrance",
+      "offertory",
+      "communion",
+      "recession"
+   ]
+}
