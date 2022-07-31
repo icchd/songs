@@ -266,8 +266,8 @@
          "count": 4,
          "lastSung": "18-10-2020",
          "sungFor": {
-            "recession": true,
-            "entrance": true
+            "entrance": true,
+            "recession": true
          }
       },
       "400": {
@@ -464,8 +464,8 @@
          "count": 8,
          "lastSung": "04-10-2020",
          "sungFor": {
-            "recession": true,
-            "entrance": true
+            "entrance": true,
+            "recession": true
          }
       },
       "485": {
@@ -641,8 +641,8 @@
          "count": 5,
          "lastSung": "18-10-2020",
          "sungFor": {
-            "entrance": true,
-            "offertory": true
+            "offertory": true,
+            "entrance": true
          }
       },
       "595": {
@@ -665,8 +665,8 @@
          "count": 9,
          "lastSung": "04-10-2020",
          "sungFor": {
-            "entrance": true,
-            "recession": true
+            "recession": true,
+            "entrance": true
          }
       },
       "600": {
@@ -729,10 +729,10 @@
       },
       "614": {
          "count": 1,
+         "lastSung": "18-10-2020",
          "sungFor": {
             "recession": true
-         },
-         "lastSung": "18-10-2020"
+         }
       },
       "617": {
          "count": 5,
@@ -826,8 +826,8 @@
          "count": 11,
          "lastSung": "01-11-2020",
          "sungFor": {
-            "recession": true,
-            "offertory": true
+            "offertory": true,
+            "recession": true
          }
       },
       "660": {
@@ -841,8 +841,8 @@
          "count": 18,
          "lastSung": "27-09-2020",
          "sungFor": {
-            "blessing of candles": true,
             "offertory": true,
+            "blessing of candles": true,
             "communion": true
          }
       },
@@ -850,8 +850,8 @@
          "count": 2,
          "lastSung": "15-11-2020",
          "sungFor": {
-            "entrance": true,
-            "recession": true
+            "recession": true,
+            "entrance": true
          }
       },
       "665": {
@@ -977,8 +977,8 @@
          "count": 11,
          "lastSung": "20-09-2020",
          "sungFor": {
-            "[object MouseEvent]": true,
             "offertory": true,
+            "[object MouseEvent]": true,
             "communion": true,
             "recession": true
          }
@@ -1145,10 +1145,10 @@
       },
       "774": {
          "count": 1,
+         "lastSung": "08-11-2020",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "08-11-2020"
+         }
       },
       "778": {
          "count": 1,
@@ -1204,8 +1204,8 @@
          "count": 15,
          "lastSung": "11-10-2020",
          "sungFor": {
-            "entrance": true,
-            "offertory": true
+            "offertory": true,
+            "entrance": true
          }
       },
       "797": {
@@ -1395,10 +1395,10 @@
       },
       "857": {
          "count": 1,
+         "lastSung": "27-09-2020",
          "sungFor": {
             "communion": true
-         },
-         "lastSung": "27-09-2020"
+         }
       },
       "": {
          "count": 16,
@@ -1419,8 +1419,8 @@
          }
       },
       "undefined": {
-         "count": 121,
-         "lastSung": "06-09-2020",
+         "count": 131,
+         "lastSung": "15-11-2020",
          "sungFor": {
             "momentsOrder": true
          }

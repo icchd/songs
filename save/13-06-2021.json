@@ -43,8 +43,8 @@
          "count": 5,
          "lastSung": "13-12-2020",
          "sungFor": {
-            "entrance": true,
-            "recession": true
+            "recession": true,
+            "entrance": true
          }
       },
       "319": {
@@ -58,17 +58,17 @@
          "count": 2,
          "lastSung": "29-11-2020",
          "sungFor": {
-            "offertory": true,
-            "entrance": true
+            "entrance": true,
+            "offertory": true
          }
       },
       "323": {
          "count": 8,
          "lastSung": "06-12-2020",
          "sungFor": {
+            "recession": true,
             "offertory": true,
-            "entrance": true,
-            "recession": true
+            "entrance": true
          }
       },
       "325": {
@@ -82,9 +82,9 @@
          "count": 5,
          "lastSung": "20-12-2020",
          "sungFor": {
+            "entrance": true,
             "recession": true,
-            "offertory": true,
-            "entrance": true
+            "offertory": true
          }
       },
       "329": {
@@ -103,25 +103,25 @@
       },
       "331": {
          "count": 1,
+         "lastSung": "20-12-2020",
          "sungFor": {
             "recession": true
-         },
-         "lastSung": "20-12-2020"
+         }
       },
       "332": {
          "count": 1,
+         "lastSung": "13-12-2020",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "13-12-2020"
+         }
       },
       "333": {
          "count": 6,
          "lastSung": "25-12-2020",
          "sungFor": {
+            "offertory": true,
             "recession": true,
-            "entrance": true,
-            "offertory": true
+            "entrance": true
          }
       },
       "336": {
@@ -149,10 +149,10 @@
       },
       "344": {
          "count": 1,
+         "lastSung": "25-12-2020",
          "sungFor": {
             "communion": true
-         },
-         "lastSung": "25-12-2020"
+         }
       },
       "345": {
          "count": 5,
@@ -164,10 +164,10 @@
       },
       "346": {
          "count": 1,
+         "lastSung": "25-12-2020",
          "sungFor": {
             "recession": true
-         },
-         "lastSung": "25-12-2020"
+         }
       },
       "352": {
          "count": 3,
@@ -258,10 +258,10 @@
       },
       "379": {
          "count": 1,
+         "lastSung": "07-03-2021",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "07-03-2021"
+         }
       },
       "380": {
          "count": 1,
@@ -303,8 +303,8 @@
          "count": 5,
          "lastSung": "28-03-2021",
          "sungFor": {
-            "recession": true,
-            "entrance": true
+            "entrance": true,
+            "recession": true
          }
       },
       "400": {
@@ -351,10 +351,10 @@
       },
       "423": {
          "count": 1,
+         "lastSung": "11-04-2021",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "11-04-2021"
+         }
       },
       "424": {
          "count": 3,
@@ -367,8 +367,8 @@
          "count": 2,
          "lastSung": "11-04-2021",
          "sungFor": {
-            "entrance": true,
-            "recession": true
+            "recession": true,
+            "entrance": true
          }
       },
       "431": {
@@ -381,10 +381,10 @@
       },
       "433": {
          "count": 1,
+         "lastSung": "18-04-2021",
          "sungFor": {
             "offertory": true
-         },
-         "lastSung": "18-04-2021"
+         }
       },
       "435": {
          "count": 4,
@@ -403,17 +403,17 @@
       },
       "441": {
          "count": 1,
+         "lastSung": "18-04-2021",
          "sungFor": {
             "recession": true
-         },
-         "lastSung": "18-04-2021"
+         }
       },
       "443": {
          "count": 1,
+         "lastSung": "02-05-2021",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "02-05-2021"
+         }
       },
       "445": {
          "count": 1,
@@ -463,8 +463,8 @@
          "count": 5,
          "lastSung": "23-05-2021",
          "sungFor": {
-            "entrance": true,
             "offertory": true,
+            "entrance": true,
             "recession": true
          }
       },
@@ -472,8 +472,8 @@
          "count": 7,
          "lastSung": "30-05-2021",
          "sungFor": {
-            "entrance": true,
-            "recession": true
+            "recession": true,
+            "entrance": true
          }
       },
       "467": {
@@ -505,11 +505,11 @@
          }
       },
       "477": {
-         "count": 5,
-         "lastSung": "20-06-2019",
+         "count": 6,
+         "lastSung": "16-05-2021",
          "sungFor": {
-            "recession": true,
-            "entrance": true
+            "entrance": true,
+            "recession": true
          }
       },
       "478": {
@@ -528,17 +528,17 @@
       },
       "481": {
          "count": 1,
+         "lastSung": "22-11-2020",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "22-11-2020"
+         }
       },
       "482": {
          "count": 8,
          "lastSung": "04-10-2020",
          "sungFor": {
-            "recession": true,
-            "entrance": true
+            "entrance": true,
+            "recession": true
          }
       },
       "485": {
@@ -581,16 +581,16 @@
          "count": 3,
          "lastSung": "13-12-2020",
          "sungFor": {
-            "communion": true,
-            "offertory": true
+            "offertory": true,
+            "communion": true
          }
       },
       "518": {
          "count": 4,
          "lastSung": "28-02-2021",
          "sungFor": {
-            "offertory": true,
-            "entrance": true
+            "entrance": true,
+            "offertory": true
          }
       },
       "522": {
@@ -662,8 +662,8 @@
          "count": 5,
          "lastSung": "10-01-2021",
          "sungFor": {
-            "baptism": true,
-            "offertory": true
+            "offertory": true,
+            "baptism": true
          }
       },
       "548": {
@@ -677,10 +677,10 @@
       },
       "551": {
          "count": 1,
+         "lastSung": "10-01-2021",
          "sungFor": {
             "recession": true
-         },
-         "lastSung": "10-01-2021"
+         }
       },
       "557": {
          "count": 1,
@@ -711,8 +711,8 @@
          }
       },
       "587": {
-         "count": 3,
-         "lastSung": "26-01-2020",
+         "count": 4,
+         "lastSung": "16-05-2021",
          "sungFor": {
             "offertory": true,
             "recession": true
@@ -722,16 +722,16 @@
          "count": 5,
          "lastSung": "18-10-2020",
          "sungFor": {
-            "entrance": true,
-            "offertory": true
+            "offertory": true,
+            "entrance": true
          }
       },
       "594": {
          "count": 1,
+         "lastSung": "02-05-2021",
          "sungFor": {
             "offertory": true
-         },
-         "lastSung": "02-05-2021"
+         }
       },
       "595": {
          "count": 8,
@@ -745,8 +745,8 @@
          "count": 9,
          "lastSung": "17-01-2021",
          "sungFor": {
-            "offertory": true,
-            "entrance": true
+            "entrance": true,
+            "offertory": true
          }
       },
       "597": {
@@ -769,8 +769,8 @@
          "count": 8,
          "lastSung": "28-02-2021",
          "sungFor": {
-            "entrance": true,
-            "offertory": true
+            "offertory": true,
+            "entrance": true
          }
       },
       "603": {
@@ -817,14 +817,14 @@
       },
       "614": {
          "count": 1,
+         "lastSung": "18-10-2020",
          "sungFor": {
             "recession": true
-         },
-         "lastSung": "18-10-2020"
+         }
       },
       "617": {
-         "count": 5,
-         "lastSung": "23-02-2020",
+         "count": 6,
+         "lastSung": "16-05-2021",
          "sungFor": {
             "recession": true
          }
@@ -897,10 +897,10 @@
          "count": 6,
          "lastSung": "10-01-2021",
          "sungFor": {
+            "entrance": true,
             "offertory": true,
             "communion": true,
-            "sprinkling of water": true,
-            "entrance": true
+            "sprinkling of water": true
          }
       },
       "655": {
@@ -914,8 +914,8 @@
          "count": 11,
          "lastSung": "01-11-2020",
          "sungFor": {
-            "recession": true,
-            "offertory": true
+            "offertory": true,
+            "recession": true
          }
       },
       "660": {
@@ -929,8 +929,8 @@
          "count": 19,
          "lastSung": "29-11-2020",
          "sungFor": {
-            "blessing of candles": true,
             "offertory": true,
+            "blessing of candles": true,
             "communion": true
          }
       },
@@ -938,8 +938,8 @@
          "count": 2,
          "lastSung": "15-11-2020",
          "sungFor": {
-            "entrance": true,
-            "recession": true
+            "recession": true,
+            "entrance": true
          }
       },
       "665": {
@@ -959,10 +959,10 @@
       },
       "675": {
          "count": 1,
+         "lastSung": "20-12-2020",
          "sungFor": {
             "offertory": true
-         },
-         "lastSung": "20-12-2020"
+         }
       },
       "680": {
          "count": 3,
@@ -1041,16 +1041,16 @@
          "count": 7,
          "lastSung": "14-03-2021",
          "sungFor": {
-            "recession": true,
-            "entrance": true
+            "entrance": true,
+            "recession": true
          }
       },
       "706": {
          "count": 11,
          "lastSung": "17-01-2021",
          "sungFor": {
-            "communion": true,
             "offertory": true,
+            "communion": true,
             "entrance": true
          }
       },
@@ -1072,8 +1072,8 @@
          "count": 11,
          "lastSung": "20-09-2020",
          "sungFor": {
-            "[object MouseEvent]": true,
             "offertory": true,
+            "[object MouseEvent]": true,
             "communion": true,
             "recession": true
          }
@@ -1132,8 +1132,8 @@
          "count": 8,
          "lastSung": "07-02-2021",
          "sungFor": {
-            "offertory": true,
-            "recession": true
+            "recession": true,
+            "offertory": true
          }
       },
       "733": {
@@ -1241,10 +1241,10 @@
       },
       "774": {
          "count": 1,
+         "lastSung": "08-11-2020",
          "sungFor": {
             "entrance": true
-         },
-         "lastSung": "08-11-2020"
+         }
       },
       "778": {
          "count": 1,
@@ -1390,8 +1390,8 @@
          }
       },
       "822": {
-         "count": 14,
-         "lastSung": "28-02-2021",
+         "count": 15,
+         "lastSung": "16-05-2021",
          "sungFor": {
             "communion": true
          }
@@ -1412,10 +1412,10 @@
       },
       "828": {
          "count": 1,
+         "lastSung": "02-05-2021",
          "sungFor": {
             "recession": true
-         },
-         "lastSung": "02-05-2021"
+         }
       },
       "829": {
          "count": 7,
@@ -1498,24 +1498,24 @@
       },
       "854": {
          "count": 1,
+         "lastSung": "07-03-2021",
          "sungFor": {
             "communion": true
-         },
-         "lastSung": "07-03-2021"
+         }
       },
       "857": {
          "count": 1,
+         "lastSung": "27-09-2020",
          "sungFor": {
             "communion": true
-         },
-         "lastSung": "27-09-2020"
+         }
       },
       "": {
          "count": 18,
          "lastSung": "14-02-2021",
          "sungFor": {
-            "recession": true,
             "communion": true,
+            "recession": true,
             "entrance": true,
             "offertory": true
          }
@@ -1529,8 +1529,8 @@
          }
       },
       "undefined": {
-         "count": 121,
-         "lastSung": "06-09-2020",
+         "count": 157,
+         "lastSung": "13-06-2021",
          "sungFor": {
             "momentsOrder": true
          }
@@ -1553,8 +1553,8 @@
          "count": 2,
          "lastSung": "13-12-2020",
          "sungFor": {
-            "communion 2": true,
-            "communion": true
+            "communion": true,
+            "communion 2": true
          }
       }
    },

@@ -968,8 +968,8 @@
          "count": 11,
          "lastSung": "20-09-2020",
          "sungFor": {
-            "[object MouseEvent]": true,
             "offertory": true,
+            "[object MouseEvent]": true,
             "communion": true,
             "recession": true
          }
@@ -1396,8 +1396,8 @@
          }
       },
       "undefined": {
-         "count": 121,
-         "lastSung": "06-09-2020",
+         "count": 123,
+         "lastSung": "20-09-2020",
          "sungFor": {
             "momentsOrder": true
          }
