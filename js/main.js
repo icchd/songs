@@ -8,6 +8,7 @@ var O_MOMENT_ICON = {
 };
 
 var O_APIS = {
+    "AWS": "http://ec2-18-204-18-96.compute-1.amazonaws.com:8081/songs",
     "Cloudno.de": "http://icch-api.cloudno.de/songs",
     "Heroku": "http://icch-api.herokuapp.com/songs"
 };
