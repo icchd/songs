@@ -8,9 +8,8 @@ var O_MOMENT_ICON = {
 };
 
 var O_APIS = {
+    "GLITCH": "https://icch-api.glitch.me/songs",
     "AWS": "http://ec2-18-204-18-96.compute-1.amazonaws.com:8081/songs",
-    "Cloudno.de": "http://icch-api.cloudno.de/songs",
-    "Heroku": "http://icch-api.herokuapp.com/songs"
 };
 
 var S_FEAST_NAME_API = "http://calapi.inadiutorium.cz/api/v0/en/calendars/default";
