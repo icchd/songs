@@ -116,8 +116,8 @@
          }
       },
       "333": {
-         "count": 6,
-         "lastSung": "25-12-2020",
+         "count": 7,
+         "lastSung": "27-12-2020",
          "sungFor": {
             "offertory": true,
             "recession": true,
@@ -125,8 +125,8 @@
          }
       },
       "336": {
-         "count": 5,
-         "lastSung": "25-12-2020",
+         "count": 6,
+         "lastSung": "27-12-2020",
          "sungFor": {
             "entrance": true,
             "offertory": true
@@ -148,8 +148,8 @@
          }
       },
       "344": {
-         "count": 1,
-         "lastSung": "25-12-2020",
+         "count": 2,
+         "lastSung": "27-12-2020",
          "sungFor": {
             "communion": true
          }
@@ -163,8 +163,8 @@
          }
       },
       "346": {
-         "count": 1,
-         "lastSung": "25-12-2020",
+         "count": 2,
+         "lastSung": "27-12-2020",
          "sungFor": {
             "recession": true
          }
@@ -285,8 +285,8 @@
          }
       },
       "391": {
-         "count": 5,
-         "lastSung": "01-03-2020",
+         "count": 6,
+         "lastSung": "21-02-2021",
          "sungFor": {
             "entrance": true,
             "recession": true
@@ -565,7 +565,7 @@
          }
       },
       "522": {
-         "count": 7,
+         "count": 8,
          "lastSung": "28-03-2021",
          "sungFor": {
             "recession": true
@@ -616,8 +616,8 @@
          }
       },
       "539": {
-         "count": 1,
-         "lastSung": "18-02-2018",
+         "count": 2,
+         "lastSung": "21-02-2021",
          "sungFor": {
             "offertory": true
          }
@@ -1361,7 +1361,7 @@
          }
       },
       "824": {
-         "count": 8,
+         "count": 9,
          "lastSung": "14-03-2021",
          "sungFor": {
             "communion": true
@@ -1486,7 +1486,7 @@
          }
       },
       "undefined": {
-         "count": 148,
+         "count": 150,
          "lastSung": "28-03-2021",
          "sungFor": {
             "momentsOrder": true
