@@ -4,16 +4,16 @@
       "title": "Let the Heavens Be Glad"
    },
    "offertory": {
-      "number": "",
-      "title": ""
+      "number": "680",
+      "title": "Your Words Are Spirit and Life"
    },
    "communion": {
-      "number": "",
-      "title": ""
+      "number": "805",
+      "title": "Ubi Caritas (Hurd)"
    },
    "recession": {
-      "number": "",
-      "title": ""
+      "number": "612",
+      "title": "Praise, My Soul, the King of Heaven"
    },
    "stats": {
       "2": {
@@ -915,10 +915,11 @@
          }
       },
       "612": {
-         "count": 4,
-         "lastSung": "23-04-2023",
+         "count": 5,
+         "lastSung": "30-07-2023",
          "sungFor": {
-            "entrance": true
+            "entrance": true,
+            "recession": true
          }
       },
       "614": {
@@ -1080,8 +1081,8 @@
          }
       },
       "680": {
-         "count": 7,
-         "lastSung": "16-07-2023",
+         "count": 8,
+         "lastSung": "30-07-2023",
          "sungFor": {
             "entrance": true,
             "offertory": true
@@ -1474,8 +1475,8 @@
          }
       },
       "805": {
-         "count": 3,
-         "lastSung": "18-09-2022",
+         "count": 4,
+         "lastSung": "30-07-2023",
          "sungFor": {
             "offertory": true,
             "communion": true
@@ -1704,8 +1705,8 @@
          }
       },
       "": {
-         "count": 26,
-         "lastSung": "30-07-2023",
+         "count": 23,
+         "lastSung": "03-04-2022",
          "sungFor": {
             "[object PointerEvent]": true,
             "recession": true,
