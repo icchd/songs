@@ -344,8 +344,8 @@ init().then(function (oEnv) {
 
                 this.currentFeast = oFeastDay;
 
-                const sFeastNameAPI = O_APIS[this.api].replace(/songs$/,"feastName");
-                const sFeastName = catholicHolidays.getFeastName(oFeastDay);
+                var sFeastNameAPI = O_APIS[this.api].replace(/songs$/,"feastName");
+                var sFeastName = catholicHolidays.getFeastName(oFeastDay);
                 this.currentFeastName = sFeastName;
                 if (sFeastName === "Sunday") {
 
@@ -353,7 +353,7 @@ init().then(function (oEnv) {
                         if (oData.status !== 200 || oData.body.success === false) {
                             return;
                         }
-                        const feastNameData = oData.body.result;
+                        var feastNameData = oData.body.result;
                         if (feastNameData.celebrations && feastNameData.celebrations.length > 0) {
                             this.currentFeastName = feastNameData.celebrations[0].title;
                         }
