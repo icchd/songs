@@ -35631,8 +35631,6 @@ var O_APIS = {
     "AWS": "http://ec2-18-204-18-96.compute-1.amazonaws.com:8081/songs",
 };
 
-var S_FEAST_NAME_API = "http://calapi.inadiutorium.cz/api/v0/en/calendars/default";
-
 /* global QRCode Vue moment catholicReadings catholicReadingsLookup */
 
 var m = function () { return moment.apply(this, arguments).locale("en-gb"); };
@@ -35965,15 +35963,18 @@ init().then(function (oEnv) {
 
                 this.currentFeast = oFeastDay;
 
+                var sFeastNameAPI = O_APIS[this.api].replace(/songs$/,"feastName");
                 var sFeastName = catholicHolidays.getFeastName(oFeastDay);
                 this.currentFeastName = sFeastName;
                 if (sFeastName === "Sunday") {
-                    this.$http.get(S_FEAST_NAME_API + "/" + oFeastDay.format("YYYY/MM/DD")).then(function (oData) {
-                        if (oData.status !== 200) {
+
+                    this.$http.get(sFeastNameAPI + "/" + oFeastDay.format("YYYY/MM/DD")).then(function (oData) {
+                        if (oData.status !== 200 || oData.body.success === false) {
                             return;
                         }
-                        if (oData.body.celebrations && oData.body.celebrations.length > 0) {
-                            this.currentFeastName = oData.body.celebrations[0].title;
+                        var feastNameData = oData.body.result;
+                        if (feastNameData.celebrations && feastNameData.celebrations.length > 0) {
+                            this.currentFeastName = feastNameData.celebrations[0].title;
                         }
                     }.bind(this));
                 }
