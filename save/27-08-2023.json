@@ -1,15 +1,15 @@
 {
    "entrance": {
-      "number": "",
-      "title": ""
+      "number": "600",
+      "title": "All Creatures of Our God and King"
    },
    "offertory": {
-      "number": "",
-      "title": ""
+      "number": "637",
+      "title": "All My Days"
    },
    "communion": {
-      "number": "",
-      "title": ""
+      "number": "820",
+      "title": "One Bread, One Body (Foley)"
    },
    "recession": {
       "number": "840",
@@ -864,8 +864,8 @@
          }
       },
       "600": {
-         "count": 5,
-         "lastSung": "20-11-2022",
+         "count": 6,
+         "lastSung": "27-08-2023",
          "sungFor": {
             "offertory": true,
             "entrance": true
@@ -973,8 +973,8 @@
          }
       },
       "637": {
-         "count": 2,
-         "lastSung": "07-02-2021",
+         "count": 3,
+         "lastSung": "27-08-2023",
          "sungFor": {
             "offertory": true
          }
@@ -1554,8 +1554,8 @@
          }
       },
       "820": {
-         "count": 13,
-         "lastSung": "02-07-2023",
+         "count": 14,
+         "lastSung": "27-08-2023",
          "sungFor": {
             "communion": true
          }
@@ -1712,8 +1712,8 @@
          }
       },
       "": {
-         "count": 26,
-         "lastSung": "27-08-2023",
+         "count": 23,
+         "lastSung": "03-04-2022",
          "sungFor": {
             "[object PointerEvent]": true,
             "recession": true,
