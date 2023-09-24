@@ -1,7 +1,7 @@
 {
    "entrance": {
-      "number": "709",
-      "title": "A Mighty Fortress"
+      "number": "",
+      "title": ""
    },
    "offertory": {
       "number": "713",
@@ -14,6 +14,10 @@
    "recession": {
       "number": "720",
       "title": "Seek Ye First"
+   },
+   "[object PointerEvent]": {
+      "number": "709",
+      "title": "A Mighty Fortress"
    },
    "stats": {
       "2": {
@@ -954,7 +958,8 @@
          "count": 6,
          "lastSung": "20-09-2020",
          "sungFor": {
-            "entrance": true
+            "entrance": true,
+            "[object PointerEvent]": true
          }
       },
       "710": {
@@ -968,8 +973,8 @@
          "count": 11,
          "lastSung": "20-09-2020",
          "sungFor": {
-            "offertory": true,
             "[object MouseEvent]": true,
+            "offertory": true,
             "communion": true,
             "recession": true
          }
@@ -1378,8 +1383,8 @@
          }
       },
       "": {
-         "count": 16,
-         "lastSung": "16-08-2020",
+         "count": 17,
+         "lastSung": "20-09-2020",
          "sungFor": {
             "recession": true,
             "communion": true,
@@ -1396,8 +1401,8 @@
          }
       },
       "undefined": {
-         "count": 123,
-         "lastSung": "20-09-2020",
+         "count": 122,
+         "lastSung": "13-09-2020",
          "sungFor": {
             "momentsOrder": true
          }
@@ -1425,7 +1430,9 @@
       }
    },
    "momentsOrder": [
-      "entrance",
+      {
+         "isTrusted": true
+      },
       "offertory",
       "communion",
       "recession"
