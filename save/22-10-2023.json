@@ -1,11 +1,11 @@
 {
    "entrance": {
-      "number": "607",
-      "title": "Sing a New Song"
+      "number": "593",
+      "title": "Holy God, We Praise Thy Name"
    },
    "offertory": {
-      "number": "",
-      "title": ""
+      "number": "607",
+      "title": "Sing a New Song"
    },
    "communion": {
       "number": "824",
@@ -816,8 +816,8 @@
          }
       },
       "593": {
-         "count": 9,
-         "lastSung": "14-08-2022",
+         "count": 10,
+         "lastSung": "22-10-2023",
          "sungFor": {
             "entrance": true,
             "offertory": true
@@ -897,7 +897,8 @@
          "count": 7,
          "lastSung": "22-10-2023",
          "sungFor": {
-            "entrance": true
+            "entrance": true,
+            "offertory": true
          }
       },
       "608": {
@@ -1712,8 +1713,8 @@
          }
       },
       "": {
-         "count": 25,
-         "lastSung": "22-10-2023",
+         "count": 24,
+         "lastSung": "10-09-2023",
          "sungFor": {
             "[object PointerEvent]": true,
             "recession": true,
