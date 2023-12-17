@@ -8,8 +8,8 @@
       "title": "Holy Is His Name"
    },
    "communion": {
-      "number": "other-5",
-      "title": "Eat This Bread (Taizé)"
+      "number": "692",
+      "title": "There Is a Longing"
    },
    "recession": {
       "number": "316",
@@ -43,8 +43,8 @@
          "count": 5,
          "lastSung": "13-12-2020",
          "sungFor": {
-            "recession": true,
-            "entrance": true
+            "entrance": true,
+            "recession": true
          }
       },
       "319": {
@@ -103,10 +103,10 @@
       },
       "332": {
          "count": 1,
-         "lastSung": "13-12-2020",
          "sungFor": {
             "entrance": true
-         }
+         },
+         "lastSung": "13-12-2020"
       },
       "333": {
          "count": 5,
@@ -523,8 +523,8 @@
          "count": 3,
          "lastSung": "13-12-2020",
          "sungFor": {
-            "offertory": true,
-            "communion": true
+            "communion": true,
+            "offertory": true
          }
       },
       "518": {
@@ -915,8 +915,8 @@
          }
       },
       "692": {
-         "count": 5,
-         "lastSung": "08-12-2019",
+         "count": 6,
+         "lastSung": "13-12-2020",
          "sungFor": {
             "communion": true,
             "offertory": true
@@ -1435,8 +1435,8 @@
          }
       },
       "undefined": {
-         "count": 135,
-         "lastSung": "13-12-2020",
+         "count": 134,
+         "lastSung": "06-12-2020",
          "sungFor": {
             "momentsOrder": true
          }
@@ -1456,10 +1456,9 @@
          }
       },
       "other-5": {
-         "count": 2,
-         "lastSung": "13-12-2020",
+         "count": 1,
+         "lastSung": "23-02-2020",
          "sungFor": {
-            "communion": true,
             "communion 2": true
          }
       }
