@@ -1,0 +1,54 @@
+{
+   "entrance": {
+      "number": "595",
+      "title": "All the Ends of the Earth"
+   },
+   "offertory": {
+      "number": "661",
+      "title": "Christ Be Our Light"
+   },
+   "communion": {
+      "number": "806",
+      "title": "Let Us Break Bread Together"
+   },
+   "recession": {
+      "number": "849",
+      "title": "They’ll Know We Are Christians"
+   },
+   "stats": {
+      "595": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "02-06-2024"
+      },
+      "661": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "02-06-2024"
+      },
+      "806": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "02-06-2024"
+      },
+      "849": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "02-06-2024"
+      }
+   },
+   "momentsOrder": [
+      "entrance",
+      "offertory",
+      "communion",
+      "recession"
+   ]
+}
