@@ -1,0 +1,82 @@
+{
+   "entrance": {
+      "number": "709",
+      "title": "A Mighty Fortress"
+   },
+   "offertory": {
+      "number": "713",
+      "title": "Amazing Grace"
+   },
+   "communion": {
+      "number": "809",
+      "title": "Behold the Lamb"
+   },
+   "recession": {
+      "number": "597",
+      "title": "Praise to the Lord"
+   },
+   "stats": {
+      "597": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "23-06-2024"
+      },
+      "709": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "23-06-2024"
+      },
+      "713": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "23-06-2024"
+      },
+      "722": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "09-06-2024"
+      },
+      "746": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "09-06-2024"
+      },
+      "809": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "23-06-2024"
+      },
+      "837": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "09-06-2024"
+      },
+      "838": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "09-06-2024"
+      }
+   },
+   "momentsOrder": [
+      "entrance",
+      "offertory",
+      "communion",
+      "recession"
+   ]
+}
