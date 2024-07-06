@@ -1,0 +1,124 @@
+{
+   "entrance": {
+      "number": "661",
+      "title": "Christ Be Our Light"
+   },
+   "offertory": {
+      "number": "596",
+      "title": "Glory and Praise to Our God"
+   },
+   "communion": {
+      "number": "820",
+      "title": "One Bread, One Body (Foley)"
+   },
+   "recession": {
+      "number": "830",
+      "title": "Awake from your slumber"
+   },
+   "stats": {
+      "596": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "07-07-2024"
+      },
+      "597": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "23-06-2024"
+      },
+      "607": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "30-06-2024"
+      },
+      "617": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "30-06-2024"
+      },
+      "661": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "07-07-2024"
+      },
+      "709": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "23-06-2024"
+      },
+      "713": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "23-06-2024"
+      },
+      "722": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "09-06-2024"
+      },
+      "746": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "09-06-2024"
+      },
+      "809": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "23-06-2024"
+      },
+      "820": {
+         "count": 2,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "07-07-2024"
+      },
+      "830": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "07-07-2024"
+      },
+      "837": {
+         "count": 2,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "30-06-2024"
+      },
+      "838": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "09-06-2024"
+      }
+   },
+   "momentsOrder": [
+      "entrance",
+      "offertory",
+      "communion",
+      "recession"
+   ]
+}
