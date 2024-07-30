@@ -116,6 +116,9 @@ h2 {
 .one-song {
     margin: 1px;
 }
+button.ui-button.one-song.banned {
+    display: none;
+}
 
 .finalList {
     position: relative;

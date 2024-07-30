@@ -293,6 +293,7 @@
       {
          "title": "Advent/Christmas Gospel Acclamation",
          "number": "268",
+         "banned": true,
          "topics": [],
          "scriptures": {}
       },
@@ -5916,6 +5917,7 @@
       },
       {
          "number": "606",
+         "banned": true,
          "title": "He Is the Lord",
          "topics": [
             "CELEBRATIONS",
@@ -6593,6 +6595,7 @@
       },
       {
          "number": "822",
+         "banned": true,
          "title": "I Am the Living Bread",
          "topics": [],
          "scriptures": {
@@ -7853,6 +7856,7 @@
       },
       {
          "number": "694",
+         "banned": true,
          "title": "Jesus, Come to Us",
          "topics": [
             "DEVOTIONAL",
@@ -8865,6 +8869,7 @@
       {
          "title": "Like a shepherd I will feed you",
          "number": "714",
+         "banned": true,
          "topics": [
             "CARE OF THE SICK",
             "COURAGE",
@@ -17493,6 +17498,7 @@
       {
          "title": "To Be Your Bread",
          "number": "816",
+         "banned": true,
          "topics": [],
          "scriptures": {},
          "links": [
@@ -19061,6 +19067,7 @@
       },
       {
          "number": "569",
+         "banned": true,
          "title": "Where There Is Love",
          "topics": [
             "CHARITY",

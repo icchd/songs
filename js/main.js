@@ -597,7 +597,9 @@ init().then(function (oEnv) {
                     return oCopy;
                 }, {});
 
-                this.recentSongs.unshift(oSongCopy);
+                if (!oOriginalSong.banned) {
+                    this.recentSongs.unshift(oSongCopy);
+                }
 
                 if (this.recentSongs.length > 10) {
                     this.recentSongs.pop();
@@ -650,6 +652,9 @@ init().then(function (oEnv) {
 
                 return this.songs.reduce(function (aFilteredSongs, oSong) {
                     if (aFilteredSongs.length > I_MAX_SONGS_IN_SEARCH) {
+                        return aFilteredSongs;
+                    }
+                    if (oSong.banned) {
                         return aFilteredSongs;
                     }
 
@@ -876,6 +881,9 @@ function getDefaultFieldValue(vValue) {
 
     if (sFieldType === "string") {
         return "";
+    }
+    if (sFieldType === "boolean") {
+        return true;
     }
     if (sFieldObjectType === "[object Array]") {
         return [];

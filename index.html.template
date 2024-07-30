@@ -89,6 +89,7 @@
                     <ui-button v-for="song in recentSongs"
                         :class="{
                            'one-song': true,
+                           'banned': song.banned,
                            'has-links': song.links && song.links.length > 0
                         }"
                         type="primary"
@@ -159,6 +160,7 @@
                 <ui-button v-for="song in filteredSongs"
                     :class="{
                        'one-song': true,
+                       'banned': song.banned,
                        'has-links': song.links && song.links.length > 0
                     }"
                     type="primary"
