@@ -8,14 +8,25 @@
       "title": "Because the Lord Is My Shepherd"
    },
    "communion": {
-      "number": "",
-      "title": ""
+      "number": "824",
+      "title": "Amén. El Cuerpo de Cristo"
    },
    "recession": {
       "number": "720",
       "title": "Seek Ye First"
    },
+   "baptism": {
+      "number": "542",
+      "title": "Baptized in Water"
+   },
    "stats": {
+      "542": {
+         "count": 1,
+         "sungFor": {
+            "baptism": true
+         },
+         "lastSung": "04-08-2024"
+      },
       "593": {
          "count": 1,
          "sungFor": {
@@ -177,6 +188,13 @@
          },
          "lastSung": "07-07-2024"
       },
+      "824": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "04-08-2024"
+      },
       "825": {
          "count": 1,
          "sungFor": {
@@ -211,13 +229,6 @@
             "recession": true
          },
          "lastSung": "28-07-2024"
-      },
-      "": {
-         "count": 1,
-         "sungFor": {
-            "communion": true
-         },
-         "lastSung": "04-08-2024"
       }
    },
    "momentsOrder": [
