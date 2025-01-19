@@ -1,0 +1,82 @@
+{
+   "entrance": {
+      "number": "642",
+      "title": "For the Beauty of the Earth"
+   },
+   "offertory": {
+      "number": "760",
+      "title": "Unless a Grain of Wheat (Farrell)"
+   },
+   "communion": {
+      "number": "811",
+      "title": "Seed, Scattered and Sown"
+   },
+   "recession": {
+      "number": "636",
+      "title": "Now Thank We All Our God"
+   },
+   "stats": {
+      "636": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "16-06-2024"
+      },
+      "642": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "16-06-2024"
+      },
+      "722": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "09-06-2024"
+      },
+      "746": {
+         "count": 1,
+         "sungFor": {
+            "entrance": true
+         },
+         "lastSung": "09-06-2024"
+      },
+      "760": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "16-06-2024"
+      },
+      "811": {
+         "count": 1,
+         "sungFor": {
+            "communion": true
+         },
+         "lastSung": "16-06-2024"
+      },
+      "837": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "09-06-2024"
+      },
+      "838": {
+         "count": 1,
+         "sungFor": {
+            "recession": true
+         },
+         "lastSung": "09-06-2024"
+      }
+   },
+   "momentsOrder": [
+      "entrance",
+      "offertory",
+      "communion",
+      "recession"
+   ]
+}
