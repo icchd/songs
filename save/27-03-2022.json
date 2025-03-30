@@ -8,8 +8,8 @@
       "title": "Because the Lord Is My Shepherd"
    },
    "communion": {
-      "number": "818",
-      "title": "All you who are thirsty, come to the water"
+      "number": "650",
+      "title": "Come to the Water (Foley)"
    },
    "recession": {
       "number": "636",
@@ -961,8 +961,8 @@
          }
       },
       "650": {
-         "count": 7,
-         "lastSung": "04-04-2021",
+         "count": 8,
+         "lastSung": "27-03-2022",
          "sungFor": {
             "sprinkling of water": true,
             "entrance": true,
@@ -1115,8 +1115,8 @@
          "count": 11,
          "lastSung": "27-03-2022",
          "sungFor": {
-            "entrance": true,
-            "recession": true
+            "recession": true,
+            "entrance": true
          }
       },
       "706": {
@@ -1465,13 +1465,6 @@
             "communion": true
          }
       },
-      "818": {
-         "count": 1,
-         "lastSung": "27-03-2022",
-         "sungFor": {
-            "communion": true
-         }
-      },
       "819": {
          "count": 9,
          "lastSung": "12-12-2021",
@@ -1642,8 +1635,8 @@
          }
       },
       "undefined": {
-         "count": 202,
-         "lastSung": "27-03-2022",
+         "count": 201,
+         "lastSung": "20-03-2022",
          "sungFor": {
             "momentsOrder": true
          }
