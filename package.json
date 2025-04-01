@@ -43,7 +43,7 @@
     "xmlhttprequest": "^1.8.0"
   },
   "dependencies": {
-    "moment": "^2.20.1"
+    "moment": "^2.29.4"
   },
   "browserify-shim": {
     "xmlhttprequest": "global:window"
