@@ -4,12 +4,12 @@
       "title": "Shepherd of Souls"
    },
    "offertory": {
-      "number": "",
-      "title": ""
+      "number": "840",
+      "title": "Lord, Whose Love in Humble Service"
    },
    "communion": {
-      "number": "",
-      "title": ""
+      "number": "832",
+      "title": "Here I Am, Lord (Schutte)"
    },
    "recession": {
       "number": "404",
@@ -1063,8 +1063,8 @@
          }
       },
       "832": {
-         "count": 2,
-         "lastSung": "08-07-2018",
+         "count": 3,
+         "lastSung": "17-04-2025",
          "sungFor": {
             "communion": true
          }
@@ -1090,6 +1090,13 @@
             "recession": true
          }
       },
+      "840": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "17-04-2025"
+      },
       "849": {
          "count": 10,
          "lastSung": "23-09-2018",
@@ -1105,8 +1112,8 @@
          }
       },
       "": {
-         "count": 12,
-         "lastSung": "17-04-2025",
+         "count": 10,
+         "lastSung": "30-03-2018",
          "sungFor": {
             "recession": true,
             "communion": true,
