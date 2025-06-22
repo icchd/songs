@@ -4,8 +4,8 @@
       "title": "From All That Dwell below the Skies/Praise God from Whom All Blessings Flow"
    },
    "offertory": {
-      "number": "596",
-      "title": "Glory and Praise to Our God"
+      "number": "727",
+      "title": "In Every Age"
    },
    "communion": {
       "number": "811",
@@ -14,6 +14,10 @@
    "recession": {
       "number": "452",
       "title": "Lord, You Give the Great Commission"
+   },
+   "sequence": {
+      "number": "473",
+      "title": "Laud, O Zion"
    },
    "stats": {
       "2": {
@@ -284,8 +288,8 @@
          "count": 4,
          "lastSung": "07-07-2019",
          "sungFor": {
-            "recession": true,
-            "offertory": true
+            "offertory": true,
+            "recession": true
          }
       },
       "454": {
@@ -342,8 +346,8 @@
          }
       },
       "473": {
-         "count": 1,
-         "lastSung": "20-06-2019",
+         "count": 2,
+         "lastSung": "07-07-2019",
          "sungFor": {
             "sequence": true
          }
@@ -530,11 +534,11 @@
          }
       },
       "596": {
-         "count": 8,
-         "lastSung": "07-07-2019",
+         "count": 7,
+         "lastSung": "04-11-2018",
          "sungFor": {
-            "offertory": true,
-            "entrance": true
+            "entrance": true,
+            "offertory": true
          }
       },
       "597": {
@@ -843,6 +847,13 @@
             "communion": true
          }
       },
+      "727": {
+         "count": 1,
+         "sungFor": {
+            "offertory": true
+         },
+         "lastSung": "07-07-2019"
+      },
       "729": {
          "count": 7,
          "lastSung": "23-06-2019",
@@ -1150,8 +1161,8 @@
          }
       },
       "undefined": {
-         "count": 77,
-         "lastSung": "07-07-2019",
+         "count": 76,
+         "lastSung": "30-06-2019",
          "sungFor": {
             "momentsOrder": true
          }
